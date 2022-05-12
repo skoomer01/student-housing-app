@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "ec19d8cf-e4a1-4f4d-a03d-afdb8ded31f7": {
+      "ProjectGuid": "ec19d8cf-e4a1-4f4d-a03d-afdb8ded31f7",
+      "DisplayName": "Student housing",
+      "ColorIndex": 0
+    }
+  },
+  "NextColorIndex": 1
+}
