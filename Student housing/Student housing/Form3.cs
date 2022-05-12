@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Student_housing
 {
-    public partial class LOGIN : Form
+    public partial class ADMIN : Form
     {
-        public LOGIN()
+        public ADMIN()
         {
             InitializeComponent();
         }

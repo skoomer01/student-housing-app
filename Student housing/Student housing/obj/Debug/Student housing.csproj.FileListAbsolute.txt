@@ -9,3 +9,5 @@ C:\Teme Andrei\Student housing\Student housing\Student housing\obj\Debug\Student
 C:\Teme Andrei\Student housing\Student housing\Student housing\obj\Debug\Student housing.csproj.CoreCompileInputs.cache
 C:\Teme Andrei\Student housing\Student housing\Student housing\obj\Debug\Student housing.exe
 C:\Teme Andrei\Student housing\Student housing\Student housing\obj\Debug\Student housing.pdb
+C:\Teme Andrei\Student housing\Student housing\Student housing\obj\Debug\Student_housing.LOGIN.resources
+C:\Teme Andrei\Student housing\Student housing\Student housing\obj\Debug\Student_housing.STUDENT.resources

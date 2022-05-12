@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace Student_housing
 {
-    public partial class LOGIN : Form
+    public partial class STUDENT : Form
     {
-        public LOGIN()
+        public STUDENT()
         {
             InitializeComponent();
+        }
+
+        private void STUDENT_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
