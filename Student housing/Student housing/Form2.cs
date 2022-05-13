@@ -12,9 +12,12 @@ namespace Student_housing
 {
     public partial class STUDENT : Form
     {
-        public STUDENT()
+        User currentUser;
+
+        public STUDENT(UserManager userManager, User currentUser)
         {
             InitializeComponent();
+            this.currentUser = currentUser;
         }
 
         private void STUDENT_Load(object sender, EventArgs e)

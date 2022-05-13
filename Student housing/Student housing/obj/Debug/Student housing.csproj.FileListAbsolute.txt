@@ -11,3 +11,15 @@ C:\Teme Andrei\Student housing\Student housing\Student housing\obj\Debug\Student
 C:\Teme Andrei\Student housing\Student housing\Student housing\obj\Debug\Student housing.pdb
 C:\Teme Andrei\Student housing\Student housing\Student housing\obj\Debug\Student_housing.LOGIN.resources
 C:\Teme Andrei\Student housing\Student housing\Student housing\obj\Debug\Student_housing.STUDENT.resources
+C:\Users\Admin\Desktop\student house\student-housing\Student housing\Student housing\bin\Debug\Student housing.exe.config
+C:\Users\Admin\Desktop\student house\student-housing\Student housing\Student housing\bin\Debug\Student housing.exe
+C:\Users\Admin\Desktop\student house\student-housing\Student housing\Student housing\bin\Debug\Student housing.pdb
+C:\Users\Admin\Desktop\student house\student-housing\Student housing\Student housing\obj\Debug\Student housing.csproj.AssemblyReference.cache
+C:\Users\Admin\Desktop\student house\student-housing\Student housing\Student housing\obj\Debug\Student_housing.LOGIN.resources
+C:\Users\Admin\Desktop\student house\student-housing\Student housing\Student housing\obj\Debug\Student_housing.STUDENT.resources
+C:\Users\Admin\Desktop\student house\student-housing\Student housing\Student housing\obj\Debug\Student_housing.ADMIN.resources
+C:\Users\Admin\Desktop\student house\student-housing\Student housing\Student housing\obj\Debug\Student_housing.Properties.Resources.resources
+C:\Users\Admin\Desktop\student house\student-housing\Student housing\Student housing\obj\Debug\Student housing.csproj.GenerateResource.cache
+C:\Users\Admin\Desktop\student house\student-housing\Student housing\Student housing\obj\Debug\Student housing.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Desktop\student house\student-housing\Student housing\Student housing\obj\Debug\Student housing.exe
+C:\Users\Admin\Desktop\student house\student-housing\Student housing\Student housing\obj\Debug\Student housing.pdb
