@@ -94,10 +94,6 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.tpAgreements = new System.Windows.Forms.TabPage();
-            this.tpComplaint = new System.Windows.Forms.TabPage();
-            this.tpEvents = new System.Windows.Forms.TabPage();
-            this.tpFavours = new System.Windows.Forms.TabPage();
-            this.pbNotification = new System.Windows.Forms.PictureBox();
             this.btn_AgreementDeleteSelected = new System.Windows.Forms.Button();
             this.btn_AgreementEditSelected = new System.Windows.Forms.Button();
             this.btn_AgreementRejectSelected = new System.Windows.Forms.Button();
@@ -107,14 +103,18 @@
             this.label15 = new System.Windows.Forms.Label();
             this.tbNewAgreementDescription = new System.Windows.Forms.TextBox();
             this.label20 = new System.Windows.Forms.Label();
-            this.Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Description = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Between = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Date = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label21 = new System.Windows.Forms.Label();
             this.dgvAgreementsStudent = new System.Windows.Forms.DataGridView();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Date = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Between = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Description = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnBack = new System.Windows.Forms.Button();
+            this.tpComplaint = new System.Windows.Forms.TabPage();
+            this.tpEvents = new System.Windows.Forms.TabPage();
+            this.tpFavours = new System.Windows.Forms.TabPage();
+            this.pbNotification = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pbProfile)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogOut)).BeginInit();
             this.tcStudent.SuspendLayout();
@@ -127,8 +127,8 @@
             this.panel1.SuspendLayout();
             this.tpTrash.SuspendLayout();
             this.tpAgreements.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbNotification)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAgreementsStudent)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbNotification)).BeginInit();
             this.SuspendLayout();
             // 
             // pbProfile
@@ -478,7 +478,7 @@
             this.lbExpenses.FormattingEnabled = true;
             this.lbExpenses.ItemHeight = 16;
             this.lbExpenses.Location = new System.Drawing.Point(353, 166);
-            this.lbExpenses.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.lbExpenses.Margin = new System.Windows.Forms.Padding(4);
             this.lbExpenses.Name = "lbExpenses";
             this.lbExpenses.Size = new System.Drawing.Size(260, 276);
             this.lbExpenses.TabIndex = 67;
@@ -535,7 +535,7 @@
             // txtBoxTotal
             // 
             this.txtBoxTotal.Location = new System.Drawing.Point(14, 207);
-            this.txtBoxTotal.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtBoxTotal.Margin = new System.Windows.Forms.Padding(4);
             this.txtBoxTotal.Name = "txtBoxTotal";
             this.txtBoxTotal.Size = new System.Drawing.Size(272, 22);
             this.txtBoxTotal.TabIndex = 59;
@@ -553,7 +553,7 @@
             // txtBoxExpenseTitle
             // 
             this.txtBoxExpenseTitle.Location = new System.Drawing.Point(14, 154);
-            this.txtBoxExpenseTitle.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtBoxExpenseTitle.Margin = new System.Windows.Forms.Padding(4);
             this.txtBoxExpenseTitle.Name = "txtBoxExpenseTitle";
             this.txtBoxExpenseTitle.Size = new System.Drawing.Size(272, 22);
             this.txtBoxExpenseTitle.TabIndex = 57;
@@ -825,49 +825,6 @@
             this.tpAgreements.Text = "AGREEMENTS";
             this.tpAgreements.UseVisualStyleBackColor = true;
             // 
-            // tpComplaint
-            // 
-            this.tpComplaint.Location = new System.Drawing.Point(25, 4);
-            this.tpComplaint.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tpComplaint.Name = "tpComplaint";
-            this.tpComplaint.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tpComplaint.Size = new System.Drawing.Size(1637, 686);
-            this.tpComplaint.TabIndex = 3;
-            this.tpComplaint.Text = "COMPLAINTS";
-            this.tpComplaint.UseVisualStyleBackColor = true;
-            // 
-            // tpEvents
-            // 
-            this.tpEvents.Location = new System.Drawing.Point(25, 4);
-            this.tpEvents.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tpEvents.Name = "tpEvents";
-            this.tpEvents.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tpEvents.Size = new System.Drawing.Size(1637, 686);
-            this.tpEvents.TabIndex = 4;
-            this.tpEvents.Text = "EVENTS";
-            this.tpEvents.UseVisualStyleBackColor = true;
-            // 
-            // tpFavours
-            // 
-            this.tpFavours.Location = new System.Drawing.Point(25, 4);
-            this.tpFavours.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tpFavours.Name = "tpFavours";
-            this.tpFavours.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tpFavours.Size = new System.Drawing.Size(1637, 686);
-            this.tpFavours.TabIndex = 5;
-            this.tpFavours.Text = "FAVOURS";
-            this.tpFavours.UseVisualStyleBackColor = true;
-            // 
-            // pbNotification
-            // 
-            this.pbNotification.Image = ((System.Drawing.Image)(resources.GetObject("pbNotification.Image")));
-            this.pbNotification.Location = new System.Drawing.Point(1416, 34);
-            this.pbNotification.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pbNotification.Name = "pbNotification";
-            this.pbNotification.Size = new System.Drawing.Size(91, 77);
-            this.pbNotification.TabIndex = 6;
-            this.pbNotification.TabStop = false;
-            // 
             // btn_AgreementDeleteSelected
             // 
             this.btn_AgreementDeleteSelected.BackColor = System.Drawing.Color.White;
@@ -946,6 +903,7 @@
             this.cbAgreement.Name = "cbAgreement";
             this.cbAgreement.Size = new System.Drawing.Size(121, 24);
             this.cbAgreement.TabIndex = 32;
+            this.cbAgreement.SelectedIndexChanged += new System.EventHandler(this.cbAgreement_SelectedIndexChanged);
             // 
             // label15
             // 
@@ -978,46 +936,6 @@
             this.label20.Size = new System.Drawing.Size(87, 18);
             this.label20.TabIndex = 29;
             this.label20.Text = "Description:";
-            // 
-            // Status
-            // 
-            this.Status.HeaderText = "Status";
-            this.Status.MinimumWidth = 6;
-            this.Status.Name = "Status";
-            this.Status.ReadOnly = true;
-            this.Status.Width = 126;
-            // 
-            // Description
-            // 
-            this.Description.HeaderText = "Description";
-            this.Description.MinimumWidth = 6;
-            this.Description.Name = "Description";
-            this.Description.ReadOnly = true;
-            this.Description.Width = 376;
-            // 
-            // Between
-            // 
-            this.Between.HeaderText = "Between";
-            this.Between.MinimumWidth = 6;
-            this.Between.Name = "Between";
-            this.Between.ReadOnly = true;
-            this.Between.Width = 130;
-            // 
-            // Date
-            // 
-            this.Date.HeaderText = "Date";
-            this.Date.MinimumWidth = 6;
-            this.Date.Name = "Date";
-            this.Date.ReadOnly = true;
-            this.Date.Width = 125;
-            // 
-            // ID
-            // 
-            this.ID.HeaderText = "ID";
-            this.ID.MinimumWidth = 6;
-            this.ID.Name = "ID";
-            this.ID.ReadOnly = true;
-            this.ID.Width = 30;
             // 
             // label21
             // 
@@ -1057,6 +975,46 @@
             this.dgvAgreementsStudent.Size = new System.Drawing.Size(792, 330);
             this.dgvAgreementsStudent.TabIndex = 27;
             // 
+            // ID
+            // 
+            this.ID.HeaderText = "ID";
+            this.ID.MinimumWidth = 6;
+            this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
+            this.ID.Width = 30;
+            // 
+            // Date
+            // 
+            this.Date.HeaderText = "Date";
+            this.Date.MinimumWidth = 6;
+            this.Date.Name = "Date";
+            this.Date.ReadOnly = true;
+            this.Date.Width = 125;
+            // 
+            // Between
+            // 
+            this.Between.HeaderText = "Between";
+            this.Between.MinimumWidth = 6;
+            this.Between.Name = "Between";
+            this.Between.ReadOnly = true;
+            this.Between.Width = 130;
+            // 
+            // Description
+            // 
+            this.Description.HeaderText = "Description";
+            this.Description.MinimumWidth = 6;
+            this.Description.Name = "Description";
+            this.Description.ReadOnly = true;
+            this.Description.Width = 376;
+            // 
+            // Status
+            // 
+            this.Status.HeaderText = "Status";
+            this.Status.MinimumWidth = 6;
+            this.Status.Name = "Status";
+            this.Status.ReadOnly = true;
+            this.Status.Width = 126;
+            // 
             // btnBack
             // 
             this.btnBack.Location = new System.Drawing.Point(19, 6);
@@ -1066,6 +1024,49 @@
             this.btnBack.TabIndex = 26;
             this.btnBack.Text = "Back";
             this.btnBack.UseVisualStyleBackColor = true;
+            // 
+            // tpComplaint
+            // 
+            this.tpComplaint.Location = new System.Drawing.Point(25, 4);
+            this.tpComplaint.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tpComplaint.Name = "tpComplaint";
+            this.tpComplaint.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tpComplaint.Size = new System.Drawing.Size(1637, 686);
+            this.tpComplaint.TabIndex = 3;
+            this.tpComplaint.Text = "COMPLAINTS";
+            this.tpComplaint.UseVisualStyleBackColor = true;
+            // 
+            // tpEvents
+            // 
+            this.tpEvents.Location = new System.Drawing.Point(25, 4);
+            this.tpEvents.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tpEvents.Name = "tpEvents";
+            this.tpEvents.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tpEvents.Size = new System.Drawing.Size(1637, 686);
+            this.tpEvents.TabIndex = 4;
+            this.tpEvents.Text = "EVENTS";
+            this.tpEvents.UseVisualStyleBackColor = true;
+            // 
+            // tpFavours
+            // 
+            this.tpFavours.Location = new System.Drawing.Point(25, 4);
+            this.tpFavours.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tpFavours.Name = "tpFavours";
+            this.tpFavours.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tpFavours.Size = new System.Drawing.Size(1637, 686);
+            this.tpFavours.TabIndex = 5;
+            this.tpFavours.Text = "FAVOURS";
+            this.tpFavours.UseVisualStyleBackColor = true;
+            // 
+            // pbNotification
+            // 
+            this.pbNotification.Image = ((System.Drawing.Image)(resources.GetObject("pbNotification.Image")));
+            this.pbNotification.Location = new System.Drawing.Point(1416, 34);
+            this.pbNotification.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pbNotification.Name = "pbNotification";
+            this.pbNotification.Size = new System.Drawing.Size(91, 77);
+            this.pbNotification.TabIndex = 6;
+            this.pbNotification.TabStop = false;
             // 
             // STUDENT
             // 
@@ -1081,7 +1082,6 @@
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "STUDENT";
             this.Text = "STUDENT";
-            this.Load += new System.EventHandler(this.STUDENT_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pbProfile)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogOut)).EndInit();
             this.tcStudent.ResumeLayout(false);
@@ -1100,8 +1100,8 @@
             this.tpTrash.PerformLayout();
             this.tpAgreements.ResumeLayout(false);
             this.tpAgreements.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbNotification)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAgreementsStudent)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbNotification)).EndInit();
             this.ResumeLayout(false);
 
         }

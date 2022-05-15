@@ -31,7 +31,7 @@ namespace Student_housing
             User user3 = new User("Bogdan", "2222");
             userManager.addUser(user3);
         }
-
+    
         private void btLogIn_Click(object sender, EventArgs e)
         {
             string username = Convert.ToString(tbxUsername.Text);

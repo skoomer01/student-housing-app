@@ -8,9 +8,11 @@ namespace Student_housing
 {
     public class User
     {
-        //aributes
-        private String username;
-        private String password;
+        //instance variables
+        private string username;
+        private string password;
+        private string firstName;
+        private string lastName;
 
         //constructor
         public User(String username, String password)
@@ -21,16 +23,31 @@ namespace Student_housing
 
 
         //property
-        public String Username
+        public string Username
         {
             get { return this.username; }
             set { this.username = value; }
         }
 
-        public String Password
+        public string Password
         {
             get { return this.password; }
             set { this.password = value; }
+        }
+
+        //methods
+        public string GetFirstName()
+        {
+            return this.firstName;
+        }
+        public string GetLastName()
+        {
+            return this.lastName;
+
+        }
+        public string GetUsername()
+        {
+            return this.username;
         }
 
     }

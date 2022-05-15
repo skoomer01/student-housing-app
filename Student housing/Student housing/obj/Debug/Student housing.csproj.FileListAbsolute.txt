@@ -23,3 +23,16 @@ C:\Users\Admin\Desktop\student house\student-housing\Student housing\Student hou
 C:\Users\Admin\Desktop\student house\student-housing\Student housing\Student housing\obj\Debug\Student housing.csproj.CoreCompileInputs.cache
 C:\Users\Admin\Desktop\student house\student-housing\Student housing\Student housing\obj\Debug\Student housing.exe
 C:\Users\Admin\Desktop\student house\student-housing\Student housing\Student housing\obj\Debug\Student housing.pdb
+C:\Users\Bodanel\Desktop\loll\AGRWEEEEEEEEEEEEEMENTS\student-housing\Student housing\Student housing\obj\Debug\Student housing.csproj.AssemblyReference.cache
+C:\Users\Bodanel\Desktop\loll\AGRWEEEEEEEEEEEEEMENTS\student-housing\Student housing\Student housing\obj\Debug\Student housing.csproj.SuggestedBindingRedirects.cache
+C:\Users\Bodanel\Desktop\loll\AGRWEEEEEEEEEEEEEMENTS\student-housing\Student housing\Student housing\obj\Debug\Student_housing.LOGIN.resources
+C:\Users\Bodanel\Desktop\loll\AGRWEEEEEEEEEEEEEMENTS\student-housing\Student housing\Student housing\obj\Debug\Student_housing.STUDENT.resources
+C:\Users\Bodanel\Desktop\loll\AGRWEEEEEEEEEEEEEMENTS\student-housing\Student housing\Student housing\obj\Debug\Student_housing.ADMIN.resources
+C:\Users\Bodanel\Desktop\loll\AGRWEEEEEEEEEEEEEMENTS\student-housing\Student housing\Student housing\obj\Debug\Student_housing.Properties.Resources.resources
+C:\Users\Bodanel\Desktop\loll\AGRWEEEEEEEEEEEEEMENTS\student-housing\Student housing\Student housing\obj\Debug\Student housing.csproj.GenerateResource.cache
+C:\Users\Bodanel\Desktop\loll\AGRWEEEEEEEEEEEEEMENTS\student-housing\Student housing\Student housing\obj\Debug\Student housing.csproj.CoreCompileInputs.cache
+C:\Users\Bodanel\Desktop\loll\AGRWEEEEEEEEEEEEEMENTS\student-housing\Student housing\Student housing\obj\Debug\Student housing.exe
+C:\Users\Bodanel\Desktop\loll\AGRWEEEEEEEEEEEEEMENTS\student-housing\Student housing\Student housing\obj\Debug\Student housing.pdb
+C:\Users\Bodanel\Desktop\loll\AGRWEEEEEEEEEEEEEMENTS\student-housing\Student housing\Student housing\bin\Debug\Student housing.exe.config
+C:\Users\Bodanel\Desktop\loll\AGRWEEEEEEEEEEEEEMENTS\student-housing\Student housing\Student housing\bin\Debug\Student housing.exe
+C:\Users\Bodanel\Desktop\loll\AGRWEEEEEEEEEEEEEMENTS\student-housing\Student housing\Student housing\bin\Debug\Student housing.pdb
