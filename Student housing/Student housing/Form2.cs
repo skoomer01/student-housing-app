@@ -12,13 +12,37 @@ namespace Student_housing
 {
     public partial class STUDENT : Form
     {
+        //attributes that are objects
         private User currentUser;
         ManageAgreements studentAgreement = ManageAgreements.Instance;
+        Trash trash = new Trash();
+
+        //initialization for indexes for cleaning
+        int indexUserKitchen = 0;
+        int indexUserBathroom = 0;
+        int indexUserToilet = 0;
+        int indexUserSharedSpace = 0;
+
+        //initialization for indexes for expenses
+        int indexSharedKitchenItems = 0;
+        int indexSharedBathroomItems = 0;
+        int indexSharedToiletPaper = 0;
+        int indexSharedDishSoap = 0;
 
         public STUDENT(UserManager userManager, User currentUser)
         {
             InitializeComponent();
             this.currentUser = currentUser;
+        }
+
+        private void STUDENT_Load(object sender, EventArgs e)
+        {
+            tbxUserTrash.Text = trash.GetUser();
+
+            tbxCleaningBathroom.Text = Cleaning.AddUsers(0);
+            tbxCleaningKitchen.Text = Cleaning.AddUsers(0);
+            tbxCleaningShared.Text = Cleaning.AddUsers(0);
+            tbxCleaningToilet.Text = Cleaning.AddUsers(0);
         }
 
         public void UpdateUI()
@@ -297,29 +321,200 @@ namespace Student_housing
 
         }
 
-        private void tpCleaning_Click(object sender, EventArgs e)
-        {
 
+        # region <Trash task>
+        //All the buttons for the trash task
+        private void btn_TrashThrown_Click(object sender, EventArgs e)
+        {
+            if (currentUser.Username == tbxUserTrash.Text)
+            {
+                tbxUserTrash.Text = trash.GetUser();
+            }
+            else
+            {
+                if (cbx_TrashForSomeoneElse.Checked)
+                {
+                    tbxUserTrash.Text = trash.GetUser();
+                    cbx_TrashForSomeoneElse.Checked = false;
+                }
+                else
+                {
+
+                }
+            }
         }
 
-        private void panel2_Paint(object sender, PaintEventArgs e)
+        private void btn_NotifyTrash_Click(object sender, EventArgs e)
         {
+            User user = new User(Convert.ToString(tbxUserTrash.Text), "");
+            //creates an object for the notification
+        }
+        #endregion <Trash task>
 
+        #region <Cleaning task>
+        //All the buttons for the cleaning task
+        private void btnTaskComplete_Click(object sender, EventArgs e)
+        {
+            if (cbxCleaningBathroom.Checked == true)
+            {
+                if ((currentUser.Username == tbxCleaningBathroom.Text) || (cbxCleaningForSmnElse.Checked == true))
+                {
+                    cbxCleaningForSmnElse.Checked = false;
+                    cbxCleaningBathroom.Checked = false;
+                    indexUserBathroom++;
+                    tbxCleaningBathroom.Text = Cleaning.AddUsers(indexUserBathroom);
+                    lblCleaningBathroom.Text = "Bathroom";
+                }
+            }
+
+            if (cbxCleaningKitchen.Checked == true)
+            {
+                if ((currentUser.Username == tbxCleaningKitchen.Text) || (cbxCleaningForSmnElse.Checked == true))
+                {
+                    cbxCleaningForSmnElse.Checked = false;
+                    cbxCleaningKitchen.Checked = false;
+                    indexUserKitchen++;
+                    tbxCleaningKitchen.Text = Cleaning.AddUsers(indexUserKitchen);
+                    lblCleaningKitchen.Text = "Kitchen";
+                }
+            }
+
+            if (cbxCleaningToilet.Checked == true)
+            {
+                if ((currentUser.Username == tbxCleaningToilet.Text) || (cbxCleaningForSmnElse.Checked == true))
+                {
+                    cbxCleaningForSmnElse.Checked = false;
+                    cbxCleaningToilet.Checked = false;
+                    indexUserToilet++;
+                    tbxCleaningToilet.Text = Cleaning.AddUsers(indexUserToilet);
+                    lblCleaningToilet.Text = "Toilet";
+                }
+            }
+
+            if (cbxCleaningShared.Checked == true)
+            {
+                if ((currentUser.Username == tbxCleaningShared.Text) || (cbxCleaningForSmnElse.Checked == true))
+                {
+                    cbxCleaningForSmnElse.Checked = false;
+                    cbxCleaningShared.Checked = false;
+                    indexUserSharedSpace++;
+                    tbxCleaningShared.Text = Cleaning.AddUsers(indexUserSharedSpace);
+                    lblCleaningShared.Text = "Shared space";
+                }
+            }
         }
 
-        private void tpComplaint_Click(object sender, EventArgs e)
+        private void btnTaskPending_Click(object sender, EventArgs e)
         {
+            if (cbxCleaningBathroom.Checked == true)
+            {
+                if ((currentUser.Username == tbxCleaningBathroom.Text) || (cbxCleaningForSmnElse.Checked == true))
+                {
+                    if (cbxCleaningForSmnElse.Checked == true)
+                    {
+                        //notification to be added
+                    }
+                    else
+                    {
+                        User user = new User(Convert.ToString(tbxCleaningBathroom.Text), "");
+                        //notification to be added
+                    }
 
+                    lblCleaningBathroom.Text = "Bathroom (pending)";
+
+                }
+            }
+
+            if (cbxCleaningKitchen.Checked == true)
+            {
+                if ((currentUser.Username == tbxCleaningKitchen.Text) || (cbxCleaningForSmnElse.Checked == true))
+                {
+                    if (cbxCleaningKitchen.Checked == true)
+                    {
+                        //notification to be added
+                    }
+                    else
+                    {
+                        User user = new User(Convert.ToString(tbxCleaningKitchen.Text), "");
+                        //notification to be added
+                    }
+
+                    lblCleaningKitchen.Text = "Kitchen (pending)";
+
+                }
+            }
+
+            if (cbxCleaningToilet.Checked == true)
+            {
+                if ((currentUser.Username == tbxCleaningToilet.Text) || (cbxCleaningForSmnElse.Checked == true))
+                {
+                    if (cbxCleaningToilet.Checked == true)
+                    {
+                        //notification to be added
+                    }
+                    else
+                    {
+                        User user = new User(Convert.ToString(tbxCleaningToilet.Text), "");
+                        //notification to be added
+                    }
+
+                    lblCleaningToilet.Text = "Toilet (pending)";
+
+                }
+            }
+
+            if (cbxCleaningShared.Checked == true)
+            {
+                if ((currentUser.Username == tbxCleaningShared.Text) || (cbxCleaningForSmnElse.Checked == true))
+                {
+                    if (cbxCleaningShared.Checked == true)
+                    {
+                        //notification to be added
+                    }
+                    else
+                    {
+                        User user = new User(Convert.ToString(tbxCleaningShared.Text), "");
+                        //notification to be added
+
+                    }
+
+                    lblCleaningShared.Text = "Shared Space (pending)";
+
+                }
+            }
+        }
+        #endregion <Cleaning task>
+
+        #region <Normal Expenses>
+        //All the buttons for the normal expenses
+        private void btn_Bought_Click(object sender, EventArgs e)
+        {
+            if (cbxItemsSoap.Checked == true)
+            {
+                indexSharedDishSoap++;
+                tbxSharedItemsSoap.Text = NormalExpenses.AddTenants(indexSharedDishSoap);
+            }
+            else if (cbxItemsToilet.Checked == true)
+            {
+                indexSharedToiletPaper++;
+                tbxSharedItemsToilet.Text = NormalExpenses.AddTenants(indexSharedToiletPaper);
+            }
+            else if (cbxItemsBathroom.Checked == true)
+            {
+                indexSharedBathroomItems++;
+                tbxSharedItemsBath.Text = NormalExpenses.AddTenants(indexSharedBathroomItems);
+            }
+            else if (cbxItemsKitchen.Checked == true)
+            {
+                indexSharedKitchenItems++;
+                tbxSharedItemsKitchen.Text = NormalExpenses.AddTenants(indexSharedKitchenItems);
+            }
         }
 
-        private void lblPlanParty_Click(object sender, EventArgs e)
+        private void btn_BoughtReport_Click(object sender, EventArgs e)
         {
-
+            //notification to be added
         }
-
-        private void lblPartyPlanMonth_Click(object sender, EventArgs e)
-        {
-
-        }
+        #endregion <Normal Expenses>
     }
 }

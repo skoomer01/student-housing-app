@@ -41,21 +41,22 @@
             this.tpTasks = new System.Windows.Forms.TabPage();
             this.tpStudent = new System.Windows.Forms.TabControl();
             this.tpCleaning = new System.Windows.Forms.TabPage();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.checkBox6 = new System.Windows.Forms.CheckBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.checkBox5 = new System.Windows.Forms.CheckBox();
-            this.checkBox4 = new System.Windows.Forms.CheckBox();
-            this.checkBox3 = new System.Windows.Forms.CheckBox();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
+            this.label24 = new System.Windows.Forms.Label();
+            this.btnTaskPending = new System.Windows.Forms.Button();
+            this.btnTaskComplete = new System.Windows.Forms.Button();
+            this.cbxCleaningForSmnElse = new System.Windows.Forms.CheckBox();
+            this.tbxCleaningShared = new System.Windows.Forms.TextBox();
+            this.tbxCleaningToilet = new System.Windows.Forms.TextBox();
+            this.tbxCleaningBathroom = new System.Windows.Forms.TextBox();
+            this.tbxCleaningKitchen = new System.Windows.Forms.TextBox();
+            this.lblCleaningShared = new System.Windows.Forms.Label();
+            this.lblCleaningToilet = new System.Windows.Forms.Label();
+            this.lblCleaningBathroom = new System.Windows.Forms.Label();
+            this.lblCleaningKitchen = new System.Windows.Forms.Label();
+            this.cbxCleaningShared = new System.Windows.Forms.CheckBox();
+            this.cbxCleaningToilet = new System.Windows.Forms.CheckBox();
+            this.cbxCleaningBathroom = new System.Windows.Forms.CheckBox();
+            this.cbxCleaningKitchen = new System.Windows.Forms.CheckBox();
             this.tpExpenses = new System.Windows.Forms.TabPage();
             this.panel2 = new System.Windows.Forms.Panel();
             this.button7 = new System.Windows.Forms.Button();
@@ -71,25 +72,26 @@
             this.label19 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
+            this.tbxSharedItemsKitchen = new System.Windows.Forms.TextBox();
+            this.tbxSharedItemsSoap = new System.Windows.Forms.TextBox();
+            this.tbxSharedItemsBath = new System.Windows.Forms.TextBox();
+            this.tbxSharedItemsToilet = new System.Windows.Forms.TextBox();
+            this.btn_BoughtReport = new System.Windows.Forms.Button();
+            this.btn_Bought = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
-            this.checkBox7 = new System.Windows.Forms.CheckBox();
-            this.checkBox8 = new System.Windows.Forms.CheckBox();
-            this.checkBox9 = new System.Windows.Forms.CheckBox();
-            this.checkBox10 = new System.Windows.Forms.CheckBox();
+            this.cbxItemsKitchen = new System.Windows.Forms.CheckBox();
+            this.cbxItemsBathroom = new System.Windows.Forms.CheckBox();
+            this.cbxItemsToilet = new System.Windows.Forms.CheckBox();
+            this.cbxItemsSoap = new System.Windows.Forms.CheckBox();
             this.label9 = new System.Windows.Forms.Label();
             this.tpTrash = new System.Windows.Forms.TabPage();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.btn_NotifyTrash = new System.Windows.Forms.Button();
+            this.btn_TrashThrown = new System.Windows.Forms.Button();
+            this.cbx_TrashForSomeoneElse = new System.Windows.Forms.CheckBox();
+            this.tbxUserTrash = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.tpAgreements = new System.Windows.Forms.TabPage();
             this.btn_AgreementDeleteSelected = new System.Windows.Forms.Button();
@@ -109,17 +111,15 @@
             this.Description = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tpComplaint = new System.Windows.Forms.TabPage();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.button9 = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
             this.tpEvents = new System.Windows.Forms.TabPage();
-            this.tpTechnical = new System.Windows.Forms.TabPage();
-            this.pbNotification = new System.Windows.Forms.PictureBox();
-            this.textBox10 = new System.Windows.Forms.TextBox();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.label24 = new System.Windows.Forms.Label();
+            this.richTextBox2 = new System.Windows.Forms.RichTextBox();
+            this.label25 = new System.Windows.Forms.Label();
             this.dudPartyYear = new System.Windows.Forms.DomainUpDown();
             this.dudPartyMonth = new System.Windows.Forms.DomainUpDown();
             this.dudPartyDay = new System.Windows.Forms.DomainUpDown();
@@ -133,8 +133,8 @@
             this.lblPartyPlanMonth = new System.Windows.Forms.Label();
             this.lblPartyPlanDay = new System.Windows.Forms.Label();
             this.lblPlanParty = new System.Windows.Forms.Label();
-            this.label25 = new System.Windows.Forms.Label();
-            this.richTextBox2 = new System.Windows.Forms.RichTextBox();
+            this.tpTechnical = new System.Windows.Forms.TabPage();
+            this.pbNotification = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pbProfile)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogOut)).BeginInit();
             this.tcStudent.SuspendLayout();
@@ -156,10 +156,10 @@
             // pbProfile
             // 
             this.pbProfile.Image = ((System.Drawing.Image)(resources.GetObject("pbProfile.Image")));
-            this.pbProfile.Location = new System.Drawing.Point(43, 19);
-            this.pbProfile.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pbProfile.Location = new System.Drawing.Point(29, 12);
+            this.pbProfile.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.pbProfile.Name = "pbProfile";
-            this.pbProfile.Size = new System.Drawing.Size(132, 128);
+            this.pbProfile.Size = new System.Drawing.Size(88, 83);
             this.pbProfile.TabIndex = 0;
             this.pbProfile.TabStop = false;
             // 
@@ -167,19 +167,20 @@
             // 
             this.lblTitle.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.lblTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(1)))), ((int)(((byte)(21)))), ((int)(((byte)(101)))));
-            this.lblTitle.Location = new System.Drawing.Point(181, 82);
+            this.lblTitle.Location = new System.Drawing.Point(121, 53);
+            this.lblTitle.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(500, 62);
+            this.lblTitle.Size = new System.Drawing.Size(333, 40);
             this.lblTitle.TabIndex = 3;
             this.lblTitle.Text = "Welcome back, <name>";
             // 
             // pbLogOut
             // 
             this.pbLogOut.Image = ((System.Drawing.Image)(resources.GetObject("pbLogOut.Image")));
-            this.pbLogOut.Location = new System.Drawing.Point(1791, 42);
-            this.pbLogOut.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pbLogOut.Location = new System.Drawing.Point(1194, 27);
+            this.pbLogOut.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.pbLogOut.Name = "pbLogOut";
-            this.pbLogOut.Size = new System.Drawing.Size(94, 96);
+            this.pbLogOut.Size = new System.Drawing.Size(63, 62);
             this.pbLogOut.TabIndex = 4;
             this.pbLogOut.TabStop = false;
             // 
@@ -194,12 +195,12 @@
             this.tcStudent.Controls.Add(this.tpTechnical);
             this.tcStudent.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tcStudent.HotTrack = true;
-            this.tcStudent.Location = new System.Drawing.Point(12, 145);
-            this.tcStudent.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tcStudent.Location = new System.Drawing.Point(8, 94);
+            this.tcStudent.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.tcStudent.Multiline = true;
             this.tcStudent.Name = "tcStudent";
             this.tcStudent.SelectedIndex = 0;
-            this.tcStudent.Size = new System.Drawing.Size(1874, 868);
+            this.tcStudent.Size = new System.Drawing.Size(1249, 564);
             this.tcStudent.TabIndex = 5;
             // 
             // tpRules
@@ -210,11 +211,11 @@
             this.tpRules.Controls.Add(this.listBox2);
             this.tpRules.Controls.Add(this.listBox1);
             this.tpRules.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tpRules.Location = new System.Drawing.Point(80, 4);
-            this.tpRules.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tpRules.Location = new System.Drawing.Point(60, 4);
+            this.tpRules.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.tpRules.Name = "tpRules";
-            this.tpRules.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tpRules.Size = new System.Drawing.Size(1790, 860);
+            this.tpRules.Padding = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.tpRules.Size = new System.Drawing.Size(1185, 556);
             this.tpRules.TabIndex = 0;
             this.tpRules.Text = "RULES";
             // 
@@ -222,9 +223,10 @@
             // 
             this.label3.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(1)))), ((int)(((byte)(21)))), ((int)(((byte)(101)))));
-            this.label3.Location = new System.Drawing.Point(1213, 55);
+            this.label3.Location = new System.Drawing.Point(809, 36);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(327, 51);
+            this.label3.Size = new System.Drawing.Size(218, 33);
             this.label3.TabIndex = 5;
             this.label3.Text = "GUIDELINES";
             // 
@@ -232,9 +234,10 @@
             // 
             this.label2.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(1)))), ((int)(((byte)(21)))), ((int)(((byte)(101)))));
-            this.label2.Location = new System.Drawing.Point(357, 55);
+            this.label2.Location = new System.Drawing.Point(238, 36);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(185, 53);
+            this.label2.Size = new System.Drawing.Size(123, 34);
             this.label2.TabIndex = 4;
             this.label2.Text = "RULES";
             // 
@@ -243,11 +246,11 @@
             this.listBox2.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(1)))), ((int)(((byte)(21)))), ((int)(((byte)(101)))));
             this.listBox2.FormattingEnabled = true;
-            this.listBox2.ItemHeight = 33;
-            this.listBox2.Location = new System.Drawing.Point(1094, 128);
-            this.listBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.listBox2.ItemHeight = 21;
+            this.listBox2.Location = new System.Drawing.Point(729, 83);
+            this.listBox2.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.listBox2.Name = "listBox2";
-            this.listBox2.Size = new System.Drawing.Size(561, 631);
+            this.listBox2.Size = new System.Drawing.Size(375, 403);
             this.listBox2.TabIndex = 1;
             // 
             // listBox1
@@ -255,21 +258,21 @@
             this.listBox1.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(1)))), ((int)(((byte)(21)))), ((int)(((byte)(101)))));
             this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 33;
-            this.listBox1.Location = new System.Drawing.Point(191, 128);
-            this.listBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.listBox1.ItemHeight = 21;
+            this.listBox1.Location = new System.Drawing.Point(127, 83);
+            this.listBox1.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(561, 631);
+            this.listBox1.Size = new System.Drawing.Size(375, 403);
             this.listBox1.TabIndex = 0;
             // 
             // tpTasks
             // 
             this.tpTasks.Controls.Add(this.tpStudent);
-            this.tpTasks.Location = new System.Drawing.Point(80, 4);
-            this.tpTasks.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tpTasks.Location = new System.Drawing.Point(60, 4);
+            this.tpTasks.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.tpTasks.Name = "tpTasks";
-            this.tpTasks.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tpTasks.Size = new System.Drawing.Size(1790, 860);
+            this.tpTasks.Padding = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.tpTasks.Size = new System.Drawing.Size(1185, 556);
             this.tpTasks.TabIndex = 1;
             this.tpTasks.Text = "TASKS";
             this.tpTasks.UseVisualStyleBackColor = true;
@@ -280,221 +283,236 @@
             this.tpStudent.Controls.Add(this.tpExpenses);
             this.tpStudent.Controls.Add(this.tpTrash);
             this.tpStudent.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tpStudent.Location = new System.Drawing.Point(6, 2);
-            this.tpStudent.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tpStudent.Location = new System.Drawing.Point(4, 1);
+            this.tpStudent.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.tpStudent.Name = "tpStudent";
             this.tpStudent.SelectedIndex = 0;
-            this.tpStudent.Size = new System.Drawing.Size(1830, 850);
+            this.tpStudent.Size = new System.Drawing.Size(1220, 552);
             this.tpStudent.TabIndex = 0;
             // 
             // tpCleaning
             // 
             this.tpCleaning.BackColor = System.Drawing.Color.Ivory;
             this.tpCleaning.Controls.Add(this.label24);
-            this.tpCleaning.Controls.Add(this.button4);
-            this.tpCleaning.Controls.Add(this.button3);
-            this.tpCleaning.Controls.Add(this.checkBox6);
-            this.tpCleaning.Controls.Add(this.textBox5);
-            this.tpCleaning.Controls.Add(this.textBox4);
-            this.tpCleaning.Controls.Add(this.textBox3);
-            this.tpCleaning.Controls.Add(this.textBox2);
-            this.tpCleaning.Controls.Add(this.label8);
-            this.tpCleaning.Controls.Add(this.label7);
-            this.tpCleaning.Controls.Add(this.label6);
-            this.tpCleaning.Controls.Add(this.label5);
-            this.tpCleaning.Controls.Add(this.checkBox5);
-            this.tpCleaning.Controls.Add(this.checkBox4);
-            this.tpCleaning.Controls.Add(this.checkBox3);
-            this.tpCleaning.Controls.Add(this.checkBox2);
-            this.tpCleaning.Location = new System.Drawing.Point(4, 42);
-            this.tpCleaning.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tpCleaning.Controls.Add(this.btnTaskPending);
+            this.tpCleaning.Controls.Add(this.btnTaskComplete);
+            this.tpCleaning.Controls.Add(this.cbxCleaningForSmnElse);
+            this.tpCleaning.Controls.Add(this.tbxCleaningShared);
+            this.tpCleaning.Controls.Add(this.tbxCleaningToilet);
+            this.tpCleaning.Controls.Add(this.tbxCleaningBathroom);
+            this.tpCleaning.Controls.Add(this.tbxCleaningKitchen);
+            this.tpCleaning.Controls.Add(this.lblCleaningShared);
+            this.tpCleaning.Controls.Add(this.lblCleaningToilet);
+            this.tpCleaning.Controls.Add(this.lblCleaningBathroom);
+            this.tpCleaning.Controls.Add(this.lblCleaningKitchen);
+            this.tpCleaning.Controls.Add(this.cbxCleaningShared);
+            this.tpCleaning.Controls.Add(this.cbxCleaningToilet);
+            this.tpCleaning.Controls.Add(this.cbxCleaningBathroom);
+            this.tpCleaning.Controls.Add(this.cbxCleaningKitchen);
+            this.tpCleaning.Location = new System.Drawing.Point(4, 30);
+            this.tpCleaning.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.tpCleaning.Name = "tpCleaning";
-            this.tpCleaning.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tpCleaning.Size = new System.Drawing.Size(1822, 804);
+            this.tpCleaning.Padding = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.tpCleaning.Size = new System.Drawing.Size(1212, 518);
             this.tpCleaning.TabIndex = 0;
             this.tpCleaning.Text = "CLEANING";
-            this.tpCleaning.Click += new System.EventHandler(this.tpCleaning_Click);
             // 
-            // button4
+            // label24
             // 
-            this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(171)))), ((int)(((byte)(188)))));
-            this.button4.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(1)))), ((int)(((byte)(21)))), ((int)(((byte)(101)))));
-            this.button4.Location = new System.Drawing.Point(511, 462);
-            this.button4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(212, 48);
-            this.button4.TabIndex = 14;
-            this.button4.Text = "Task pending";
-            this.button4.UseVisualStyleBackColor = false;
+            this.label24.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label24.Location = new System.Drawing.Point(518, 1);
+            this.label24.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(139, 41);
+            this.label24.TabIndex = 15;
+            this.label24.Text = "Cleaning";
             // 
-            // button3
+            // btnTaskPending
             // 
-            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(171)))), ((int)(((byte)(188)))));
-            this.button3.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(1)))), ((int)(((byte)(21)))), ((int)(((byte)(101)))));
-            this.button3.Location = new System.Drawing.Point(127, 462);
-            this.button3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(212, 48);
-            this.button3.TabIndex = 13;
-            this.button3.Text = "Task completed";
-            this.button3.UseVisualStyleBackColor = false;
+            this.btnTaskPending.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(171)))), ((int)(((byte)(188)))));
+            this.btnTaskPending.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTaskPending.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(1)))), ((int)(((byte)(21)))), ((int)(((byte)(101)))));
+            this.btnTaskPending.Location = new System.Drawing.Point(681, 326);
+            this.btnTaskPending.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.btnTaskPending.Name = "btnTaskPending";
+            this.btnTaskPending.Size = new System.Drawing.Size(152, 40);
+            this.btnTaskPending.TabIndex = 14;
+            this.btnTaskPending.Text = "Task pending";
+            this.btnTaskPending.UseVisualStyleBackColor = false;
+            this.btnTaskPending.Click += new System.EventHandler(this.btnTaskPending_Click);
             // 
-            // checkBox6
+            // btnTaskComplete
             // 
-            this.checkBox6.AutoSize = true;
-            this.checkBox6.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(1)))), ((int)(((byte)(21)))), ((int)(((byte)(101)))));
-            this.checkBox6.Location = new System.Drawing.Point(257, 394);
-            this.checkBox6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.checkBox6.Name = "checkBox6";
-            this.checkBox6.Size = new System.Drawing.Size(366, 37);
-            this.checkBox6.TabIndex = 12;
-            this.checkBox6.Text = "I\'m cleaning for someone else";
-            this.checkBox6.UseVisualStyleBackColor = true;
+            this.btnTaskComplete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(171)))), ((int)(((byte)(188)))));
+            this.btnTaskComplete.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTaskComplete.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(1)))), ((int)(((byte)(21)))), ((int)(((byte)(101)))));
+            this.btnTaskComplete.Location = new System.Drawing.Point(382, 326);
+            this.btnTaskComplete.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.btnTaskComplete.Name = "btnTaskComplete";
+            this.btnTaskComplete.Size = new System.Drawing.Size(178, 40);
+            this.btnTaskComplete.TabIndex = 13;
+            this.btnTaskComplete.Text = "Task completed";
+            this.btnTaskComplete.UseVisualStyleBackColor = false;
+            this.btnTaskComplete.Click += new System.EventHandler(this.btnTaskComplete_Click);
             // 
-            // textBox5
+            // cbxCleaningForSmnElse
             // 
-            this.textBox5.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(1)))), ((int)(((byte)(21)))), ((int)(((byte)(101)))));
-            this.textBox5.Location = new System.Drawing.Point(615, 308);
-            this.textBox5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox5.Multiline = true;
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(183, 33);
-            this.textBox5.TabIndex = 11;
+            this.cbxCleaningForSmnElse.AutoSize = true;
+            this.cbxCleaningForSmnElse.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbxCleaningForSmnElse.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(1)))), ((int)(((byte)(21)))), ((int)(((byte)(101)))));
+            this.cbxCleaningForSmnElse.Location = new System.Drawing.Point(471, 282);
+            this.cbxCleaningForSmnElse.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.cbxCleaningForSmnElse.Name = "cbxCleaningForSmnElse";
+            this.cbxCleaningForSmnElse.Size = new System.Drawing.Size(250, 25);
+            this.cbxCleaningForSmnElse.TabIndex = 12;
+            this.cbxCleaningForSmnElse.Text = "I\'m cleaning for someone else";
+            this.cbxCleaningForSmnElse.UseVisualStyleBackColor = true;
             // 
-            // textBox4
+            // tbxCleaningShared
             // 
-            this.textBox4.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(1)))), ((int)(((byte)(21)))), ((int)(((byte)(101)))));
-            this.textBox4.Location = new System.Drawing.Point(615, 235);
-            this.textBox4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox4.Multiline = true;
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(183, 33);
-            this.textBox4.TabIndex = 10;
+            this.tbxCleaningShared.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbxCleaningShared.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(1)))), ((int)(((byte)(21)))), ((int)(((byte)(101)))));
+            this.tbxCleaningShared.Location = new System.Drawing.Point(710, 226);
+            this.tbxCleaningShared.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.tbxCleaningShared.Multiline = true;
+            this.tbxCleaningShared.Name = "tbxCleaningShared";
+            this.tbxCleaningShared.Size = new System.Drawing.Size(123, 23);
+            this.tbxCleaningShared.TabIndex = 11;
             // 
-            // textBox3
+            // tbxCleaningToilet
             // 
-            this.textBox3.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(1)))), ((int)(((byte)(21)))), ((int)(((byte)(101)))));
-            this.textBox3.Location = new System.Drawing.Point(615, 164);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox3.Multiline = true;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(183, 34);
-            this.textBox3.TabIndex = 9;
+            this.tbxCleaningToilet.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbxCleaningToilet.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(1)))), ((int)(((byte)(21)))), ((int)(((byte)(101)))));
+            this.tbxCleaningToilet.Location = new System.Drawing.Point(710, 179);
+            this.tbxCleaningToilet.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.tbxCleaningToilet.Multiline = true;
+            this.tbxCleaningToilet.Name = "tbxCleaningToilet";
+            this.tbxCleaningToilet.Size = new System.Drawing.Size(123, 23);
+            this.tbxCleaningToilet.TabIndex = 10;
             // 
-            // textBox2
+            // tbxCleaningBathroom
             // 
-            this.textBox2.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(1)))), ((int)(((byte)(21)))), ((int)(((byte)(101)))));
-            this.textBox2.Location = new System.Drawing.Point(615, 82);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(183, 33);
-            this.textBox2.TabIndex = 8;
+            this.tbxCleaningBathroom.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbxCleaningBathroom.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(1)))), ((int)(((byte)(21)))), ((int)(((byte)(101)))));
+            this.tbxCleaningBathroom.Location = new System.Drawing.Point(710, 133);
+            this.tbxCleaningBathroom.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.tbxCleaningBathroom.Multiline = true;
+            this.tbxCleaningBathroom.Name = "tbxCleaningBathroom";
+            this.tbxCleaningBathroom.Size = new System.Drawing.Size(123, 23);
+            this.tbxCleaningBathroom.TabIndex = 9;
             // 
-            // label8
+            // tbxCleaningKitchen
             // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(1)))), ((int)(((byte)(21)))), ((int)(((byte)(101)))));
-            this.label8.Location = new System.Drawing.Point(168, 308);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(184, 33);
-            this.label8.TabIndex = 7;
-            this.label8.Text = "Common space";
+            this.tbxCleaningKitchen.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbxCleaningKitchen.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(1)))), ((int)(((byte)(21)))), ((int)(((byte)(101)))));
+            this.tbxCleaningKitchen.Location = new System.Drawing.Point(710, 84);
+            this.tbxCleaningKitchen.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.tbxCleaningKitchen.Multiline = true;
+            this.tbxCleaningKitchen.Name = "tbxCleaningKitchen";
+            this.tbxCleaningKitchen.Size = new System.Drawing.Size(123, 23);
+            this.tbxCleaningKitchen.TabIndex = 8;
             // 
-            // label7
+            // lblCleaningShared
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(1)))), ((int)(((byte)(21)))), ((int)(((byte)(101)))));
-            this.label7.Location = new System.Drawing.Point(168, 235);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(79, 33);
-            this.label7.TabIndex = 6;
-            this.label7.Text = "Toilet";
+            this.lblCleaningShared.AutoSize = true;
+            this.lblCleaningShared.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCleaningShared.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(1)))), ((int)(((byte)(21)))), ((int)(((byte)(101)))));
+            this.lblCleaningShared.Location = new System.Drawing.Point(412, 226);
+            this.lblCleaningShared.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblCleaningShared.Name = "lblCleaningShared";
+            this.lblCleaningShared.Size = new System.Drawing.Size(128, 21);
+            this.lblCleaningShared.TabIndex = 7;
+            this.lblCleaningShared.Text = "Common space";
             // 
-            // label6
+            // lblCleaningToilet
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(1)))), ((int)(((byte)(21)))), ((int)(((byte)(101)))));
-            this.label6.Location = new System.Drawing.Point(168, 164);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(125, 33);
-            this.label6.TabIndex = 5;
-            this.label6.Text = "Bathroom";
+            this.lblCleaningToilet.AutoSize = true;
+            this.lblCleaningToilet.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCleaningToilet.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(1)))), ((int)(((byte)(21)))), ((int)(((byte)(101)))));
+            this.lblCleaningToilet.Location = new System.Drawing.Point(412, 179);
+            this.lblCleaningToilet.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblCleaningToilet.Name = "lblCleaningToilet";
+            this.lblCleaningToilet.Size = new System.Drawing.Size(52, 21);
+            this.lblCleaningToilet.TabIndex = 6;
+            this.lblCleaningToilet.Text = "Toilet";
             // 
-            // label5
+            // lblCleaningBathroom
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(1)))), ((int)(((byte)(21)))), ((int)(((byte)(101)))));
-            this.label5.Location = new System.Drawing.Point(168, 82);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(102, 33);
-            this.label5.TabIndex = 4;
-            this.label5.Text = "Kitchen";
+            this.lblCleaningBathroom.AutoSize = true;
+            this.lblCleaningBathroom.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCleaningBathroom.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(1)))), ((int)(((byte)(21)))), ((int)(((byte)(101)))));
+            this.lblCleaningBathroom.Location = new System.Drawing.Point(412, 133);
+            this.lblCleaningBathroom.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblCleaningBathroom.Name = "lblCleaningBathroom";
+            this.lblCleaningBathroom.Size = new System.Drawing.Size(84, 21);
+            this.lblCleaningBathroom.TabIndex = 5;
+            this.lblCleaningBathroom.Text = "Bathroom";
             // 
-            // checkBox5
+            // lblCleaningKitchen
             // 
-            this.checkBox5.AutoSize = true;
-            this.checkBox5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(1)))), ((int)(((byte)(21)))), ((int)(((byte)(101)))));
-            this.checkBox5.Location = new System.Drawing.Point(140, 320);
-            this.checkBox5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.checkBox5.Name = "checkBox5";
-            this.checkBox5.Size = new System.Drawing.Size(22, 21);
-            this.checkBox5.TabIndex = 3;
-            this.checkBox5.UseVisualStyleBackColor = true;
+            this.lblCleaningKitchen.AutoSize = true;
+            this.lblCleaningKitchen.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCleaningKitchen.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(1)))), ((int)(((byte)(21)))), ((int)(((byte)(101)))));
+            this.lblCleaningKitchen.Location = new System.Drawing.Point(412, 84);
+            this.lblCleaningKitchen.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblCleaningKitchen.Name = "lblCleaningKitchen";
+            this.lblCleaningKitchen.Size = new System.Drawing.Size(67, 21);
+            this.lblCleaningKitchen.TabIndex = 4;
+            this.lblCleaningKitchen.Text = "Kitchen";
             // 
-            // checkBox4
+            // cbxCleaningShared
             // 
-            this.checkBox4.AutoSize = true;
-            this.checkBox4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(1)))), ((int)(((byte)(21)))), ((int)(((byte)(101)))));
-            this.checkBox4.Location = new System.Drawing.Point(140, 242);
-            this.checkBox4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.checkBox4.Name = "checkBox4";
-            this.checkBox4.Size = new System.Drawing.Size(22, 21);
-            this.checkBox4.TabIndex = 2;
-            this.checkBox4.UseVisualStyleBackColor = true;
+            this.cbxCleaningShared.AutoSize = true;
+            this.cbxCleaningShared.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(1)))), ((int)(((byte)(21)))), ((int)(((byte)(101)))));
+            this.cbxCleaningShared.Location = new System.Drawing.Point(393, 230);
+            this.cbxCleaningShared.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.cbxCleaningShared.Name = "cbxCleaningShared";
+            this.cbxCleaningShared.Size = new System.Drawing.Size(15, 14);
+            this.cbxCleaningShared.TabIndex = 3;
+            this.cbxCleaningShared.UseVisualStyleBackColor = true;
             // 
-            // checkBox3
+            // cbxCleaningToilet
             // 
-            this.checkBox3.AutoSize = true;
-            this.checkBox3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(1)))), ((int)(((byte)(21)))), ((int)(((byte)(101)))));
-            this.checkBox3.Location = new System.Drawing.Point(140, 163);
-            this.checkBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(22, 21);
-            this.checkBox3.TabIndex = 1;
-            this.checkBox3.UseVisualStyleBackColor = true;
+            this.cbxCleaningToilet.AutoSize = true;
+            this.cbxCleaningToilet.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(1)))), ((int)(((byte)(21)))), ((int)(((byte)(101)))));
+            this.cbxCleaningToilet.Location = new System.Drawing.Point(393, 183);
+            this.cbxCleaningToilet.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.cbxCleaningToilet.Name = "cbxCleaningToilet";
+            this.cbxCleaningToilet.Size = new System.Drawing.Size(15, 14);
+            this.cbxCleaningToilet.TabIndex = 2;
+            this.cbxCleaningToilet.UseVisualStyleBackColor = true;
             // 
-            // checkBox2
+            // cbxCleaningBathroom
             // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(1)))), ((int)(((byte)(21)))), ((int)(((byte)(101)))));
-            this.checkBox2.Location = new System.Drawing.Point(140, 82);
-            this.checkBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(22, 21);
-            this.checkBox2.TabIndex = 0;
-            this.checkBox2.UseVisualStyleBackColor = true;
+            this.cbxCleaningBathroom.AutoSize = true;
+            this.cbxCleaningBathroom.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(1)))), ((int)(((byte)(21)))), ((int)(((byte)(101)))));
+            this.cbxCleaningBathroom.Location = new System.Drawing.Point(393, 137);
+            this.cbxCleaningBathroom.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.cbxCleaningBathroom.Name = "cbxCleaningBathroom";
+            this.cbxCleaningBathroom.Size = new System.Drawing.Size(15, 14);
+            this.cbxCleaningBathroom.TabIndex = 1;
+            this.cbxCleaningBathroom.UseVisualStyleBackColor = true;
+            // 
+            // cbxCleaningKitchen
+            // 
+            this.cbxCleaningKitchen.AutoSize = true;
+            this.cbxCleaningKitchen.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(1)))), ((int)(((byte)(21)))), ((int)(((byte)(101)))));
+            this.cbxCleaningKitchen.Location = new System.Drawing.Point(393, 88);
+            this.cbxCleaningKitchen.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.cbxCleaningKitchen.Name = "cbxCleaningKitchen";
+            this.cbxCleaningKitchen.Size = new System.Drawing.Size(15, 14);
+            this.cbxCleaningKitchen.TabIndex = 0;
+            this.cbxCleaningKitchen.UseVisualStyleBackColor = true;
             // 
             // tpExpenses
             // 
             this.tpExpenses.Controls.Add(this.panel2);
             this.tpExpenses.Controls.Add(this.panel1);
-            this.tpExpenses.Location = new System.Drawing.Point(4, 42);
-            this.tpExpenses.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tpExpenses.Location = new System.Drawing.Point(4, 30);
+            this.tpExpenses.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.tpExpenses.Name = "tpExpenses";
-            this.tpExpenses.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tpExpenses.Size = new System.Drawing.Size(1822, 804);
+            this.tpExpenses.Padding = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.tpExpenses.Size = new System.Drawing.Size(1212, 518);
             this.tpExpenses.TabIndex = 1;
             this.tpExpenses.Text = "EXPENSES";
             this.tpExpenses.UseVisualStyleBackColor = true;
@@ -514,21 +532,20 @@
             this.panel2.Controls.Add(this.txtBoxExpenseTitle);
             this.panel2.Controls.Add(this.label19);
             this.panel2.Controls.Add(this.label14);
-            this.panel2.Location = new System.Drawing.Point(904, 0);
-            this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel2.Location = new System.Drawing.Point(603, 0);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(909, 818);
+            this.panel2.Size = new System.Drawing.Size(606, 532);
             this.panel2.TabIndex = 1;
-            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // button7
             // 
             this.button7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(171)))), ((int)(((byte)(188)))));
             this.button7.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button7.Location = new System.Drawing.Point(397, 540);
-            this.button7.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button7.Location = new System.Drawing.Point(265, 351);
+            this.button7.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(320, 48);
+            this.button7.Size = new System.Drawing.Size(213, 42);
             this.button7.TabIndex = 68;
             this.button7.Text = "Pay";
             this.button7.UseVisualStyleBackColor = false;
@@ -537,21 +554,19 @@
             // 
             this.lbExpenses.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbExpenses.FormattingEnabled = true;
-            this.lbExpenses.ItemHeight = 33;
-            this.lbExpenses.Location = new System.Drawing.Point(397, 192);
-            this.lbExpenses.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.lbExpenses.ItemHeight = 21;
+            this.lbExpenses.Location = new System.Drawing.Point(265, 125);
             this.lbExpenses.Name = "lbExpenses";
-            this.lbExpenses.Size = new System.Drawing.Size(320, 334);
+            this.lbExpenses.Size = new System.Drawing.Size(215, 214);
             this.lbExpenses.TabIndex = 67;
             // 
             // label16
             // 
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(391, 154);
-            this.label16.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label16.Location = new System.Drawing.Point(261, 100);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(326, 33);
+            this.label16.Size = new System.Drawing.Size(218, 21);
             this.label16.TabIndex = 66;
             this.label16.Text = "Awaiting expense to be paid";
             // 
@@ -559,10 +574,10 @@
             // 
             this.button8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(171)))), ((int)(((byte)(188)))));
             this.button8.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button8.Location = new System.Drawing.Point(18, 540);
-            this.button8.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button8.Location = new System.Drawing.Point(12, 351);
+            this.button8.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(306, 48);
+            this.button8.Size = new System.Drawing.Size(204, 42);
             this.button8.TabIndex = 65;
             this.button8.Text = "Create expense\r\n";
             this.button8.UseVisualStyleBackColor = false;
@@ -571,10 +586,10 @@
             // 
             this.button10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(171)))), ((int)(((byte)(188)))));
             this.button10.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button10.Location = new System.Drawing.Point(18, 473);
-            this.button10.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button10.Location = new System.Drawing.Point(12, 307);
+            this.button10.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(306, 48);
+            this.button10.Size = new System.Drawing.Size(204, 42);
             this.button10.TabIndex = 63;
             this.button10.Text = "Add member";
             this.button10.UseVisualStyleBackColor = false;
@@ -583,10 +598,9 @@
             // 
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(12, 342);
-            this.label17.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label17.Location = new System.Drawing.Point(8, 222);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(118, 33);
+            this.label17.Size = new System.Drawing.Size(80, 21);
             this.label17.TabIndex = 61;
             this.label17.Text = "Members";
             // 
@@ -594,60 +608,57 @@
             // 
             this.cbExpenseMembers.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbExpenseMembers.FormattingEnabled = true;
-            this.cbExpenseMembers.Location = new System.Drawing.Point(16, 384);
-            this.cbExpenseMembers.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cbExpenseMembers.Location = new System.Drawing.Point(11, 250);
+            this.cbExpenseMembers.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.cbExpenseMembers.Name = "cbExpenseMembers";
-            this.cbExpenseMembers.Size = new System.Drawing.Size(306, 41);
+            this.cbExpenseMembers.Size = new System.Drawing.Size(205, 29);
             this.cbExpenseMembers.TabIndex = 60;
             // 
             // txtBoxTotal
             // 
             this.txtBoxTotal.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBoxTotal.Location = new System.Drawing.Point(16, 285);
-            this.txtBoxTotal.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtBoxTotal.Location = new System.Drawing.Point(11, 185);
             this.txtBoxTotal.Multiline = true;
             this.txtBoxTotal.Name = "txtBoxTotal";
-            this.txtBoxTotal.Size = new System.Drawing.Size(306, 40);
+            this.txtBoxTotal.Size = new System.Drawing.Size(205, 27);
             this.txtBoxTotal.TabIndex = 59;
             // 
             // label18
             // 
             this.label18.AutoSize = true;
             this.label18.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(12, 247);
-            this.label18.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label18.Location = new System.Drawing.Point(8, 161);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(188, 33);
+            this.label18.Size = new System.Drawing.Size(121, 21);
             this.label18.TabIndex = 58;
             this.label18.Text = "Bill Total (in €)";
             // 
             // txtBoxExpenseTitle
             // 
             this.txtBoxExpenseTitle.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBoxExpenseTitle.Location = new System.Drawing.Point(16, 192);
-            this.txtBoxExpenseTitle.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtBoxExpenseTitle.Location = new System.Drawing.Point(11, 125);
             this.txtBoxExpenseTitle.Multiline = true;
             this.txtBoxExpenseTitle.Name = "txtBoxExpenseTitle";
-            this.txtBoxExpenseTitle.Size = new System.Drawing.Size(306, 40);
+            this.txtBoxExpenseTitle.Size = new System.Drawing.Size(205, 27);
             this.txtBoxExpenseTitle.TabIndex = 57;
             // 
             // label19
             // 
             this.label19.AutoSize = true;
             this.label19.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.Location = new System.Drawing.Point(12, 148);
-            this.label19.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label19.Location = new System.Drawing.Point(8, 96);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(66, 33);
+            this.label19.Size = new System.Drawing.Size(42, 21);
             this.label19.TabIndex = 56;
             this.label19.Text = "Title";
             // 
             // label14
             // 
             this.label14.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label14.Location = new System.Drawing.Point(268, 4);
+            this.label14.Location = new System.Drawing.Point(179, 3);
+            this.label14.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(454, 62);
+            this.label14.Size = new System.Drawing.Size(303, 40);
             this.label14.TabIndex = 5;
             this.label14.Text = "Additional expenses\r\n";
             this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -655,88 +666,101 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Ivory;
-            this.panel1.Controls.Add(this.textBox10);
-            this.panel1.Controls.Add(this.textBox9);
-            this.panel1.Controls.Add(this.textBox8);
-            this.panel1.Controls.Add(this.textBox7);
-            this.panel1.Controls.Add(this.button5);
-            this.panel1.Controls.Add(this.button6);
+            this.panel1.Controls.Add(this.tbxSharedItemsKitchen);
+            this.panel1.Controls.Add(this.tbxSharedItemsSoap);
+            this.panel1.Controls.Add(this.tbxSharedItemsBath);
+            this.panel1.Controls.Add(this.tbxSharedItemsToilet);
+            this.panel1.Controls.Add(this.btn_BoughtReport);
+            this.panel1.Controls.Add(this.btn_Bought);
             this.panel1.Controls.Add(this.label10);
             this.panel1.Controls.Add(this.label11);
             this.panel1.Controls.Add(this.label12);
             this.panel1.Controls.Add(this.label13);
-            this.panel1.Controls.Add(this.checkBox7);
-            this.panel1.Controls.Add(this.checkBox8);
-            this.panel1.Controls.Add(this.checkBox9);
-            this.panel1.Controls.Add(this.checkBox10);
+            this.panel1.Controls.Add(this.cbxItemsKitchen);
+            this.panel1.Controls.Add(this.cbxItemsBathroom);
+            this.panel1.Controls.Add(this.cbxItemsToilet);
+            this.panel1.Controls.Add(this.cbxItemsSoap);
             this.panel1.Controls.Add(this.label9);
-            this.panel1.Location = new System.Drawing.Point(2, 4);
-            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel1.Location = new System.Drawing.Point(1, 3);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(900, 818);
+            this.panel1.Size = new System.Drawing.Size(600, 532);
             this.panel1.TabIndex = 0;
             // 
-            // textBox9
+            // tbxSharedItemsKitchen
             // 
-            this.textBox9.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox9.Location = new System.Drawing.Point(624, 188);
-            this.textBox9.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox9.Multiline = true;
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(193, 40);
-            this.textBox9.TabIndex = 27;
+            this.tbxSharedItemsKitchen.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbxSharedItemsKitchen.Location = new System.Drawing.Point(416, 305);
+            this.tbxSharedItemsKitchen.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.tbxSharedItemsKitchen.Multiline = true;
+            this.tbxSharedItemsKitchen.Name = "tbxSharedItemsKitchen";
+            this.tbxSharedItemsKitchen.Size = new System.Drawing.Size(130, 29);
+            this.tbxSharedItemsKitchen.TabIndex = 31;
             // 
-            // textBox8
+            // tbxSharedItemsSoap
             // 
-            this.textBox8.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox8.Location = new System.Drawing.Point(624, 379);
-            this.textBox8.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox8.Multiline = true;
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(193, 42);
-            this.textBox8.TabIndex = 30;
+            this.tbxSharedItemsSoap.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbxSharedItemsSoap.Location = new System.Drawing.Point(416, 122);
+            this.tbxSharedItemsSoap.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.tbxSharedItemsSoap.Multiline = true;
+            this.tbxSharedItemsSoap.Name = "tbxSharedItemsSoap";
+            this.tbxSharedItemsSoap.Size = new System.Drawing.Size(130, 27);
+            this.tbxSharedItemsSoap.TabIndex = 27;
             // 
-            // textBox7
+            // tbxSharedItemsBath
             // 
-            this.textBox7.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox7.Location = new System.Drawing.Point(624, 281);
-            this.textBox7.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox7.Multiline = true;
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(193, 40);
-            this.textBox7.TabIndex = 29;
+            this.tbxSharedItemsBath.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbxSharedItemsBath.Location = new System.Drawing.Point(416, 246);
+            this.tbxSharedItemsBath.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.tbxSharedItemsBath.Multiline = true;
+            this.tbxSharedItemsBath.Name = "tbxSharedItemsBath";
+            this.tbxSharedItemsBath.Size = new System.Drawing.Size(130, 29);
+            this.tbxSharedItemsBath.TabIndex = 30;
             // 
-            // button5
+            // tbxSharedItemsToilet
             // 
-            this.button5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(171)))), ((int)(((byte)(188)))));
-            this.button5.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.Location = new System.Drawing.Point(519, 536);
-            this.button5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(212, 48);
-            this.button5.TabIndex = 25;
-            this.button5.Text = " Report";
-            this.button5.UseVisualStyleBackColor = false;
+            this.tbxSharedItemsToilet.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbxSharedItemsToilet.Location = new System.Drawing.Point(416, 185);
+            this.tbxSharedItemsToilet.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.tbxSharedItemsToilet.Multiline = true;
+            this.tbxSharedItemsToilet.Name = "tbxSharedItemsToilet";
+            this.tbxSharedItemsToilet.Size = new System.Drawing.Size(130, 27);
+            this.tbxSharedItemsToilet.TabIndex = 29;
             // 
-            // button6
+            // btn_BoughtReport
             // 
-            this.button6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(171)))), ((int)(((byte)(188)))));
-            this.button6.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button6.Location = new System.Drawing.Point(149, 536);
-            this.button6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(212, 48);
-            this.button6.TabIndex = 24;
-            this.button6.Text = "Bought\r\n";
-            this.button6.UseVisualStyleBackColor = false;
+            this.btn_BoughtReport.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(171)))), ((int)(((byte)(188)))));
+            this.btn_BoughtReport.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_BoughtReport.Location = new System.Drawing.Point(346, 348);
+            this.btn_BoughtReport.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.btn_BoughtReport.Name = "btn_BoughtReport";
+            this.btn_BoughtReport.Size = new System.Drawing.Size(141, 42);
+            this.btn_BoughtReport.TabIndex = 25;
+            this.btn_BoughtReport.Text = " Report";
+            this.btn_BoughtReport.UseVisualStyleBackColor = false;
+            this.btn_BoughtReport.Click += new System.EventHandler(this.btn_BoughtReport_Click);
+            // 
+            // btn_Bought
+            // 
+            this.btn_Bought.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(171)))), ((int)(((byte)(188)))));
+            this.btn_Bought.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Bought.Location = new System.Drawing.Point(99, 348);
+            this.btn_Bought.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.btn_Bought.Name = "btn_Bought";
+            this.btn_Bought.Size = new System.Drawing.Size(141, 42);
+            this.btn_Bought.TabIndex = 24;
+            this.btn_Bought.Text = "Bought\r\n";
+            this.btn_Bought.UseVisualStyleBackColor = false;
+            this.btn_Bought.Click += new System.EventHandler(this.btn_Bought_Click);
             // 
             // label10
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(177, 469);
+            this.label10.Location = new System.Drawing.Point(118, 305);
+            this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(305, 33);
+            this.label10.Size = new System.Drawing.Size(204, 21);
             this.label10.TabIndex = 19;
             this.label10.Text = "Kitchen cleaning products";
             // 
@@ -744,9 +768,10 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(177, 388);
+            this.label11.Location = new System.Drawing.Point(118, 252);
+            this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(328, 33);
+            this.label11.Size = new System.Drawing.Size(221, 21);
             this.label11.TabIndex = 18;
             this.label11.Text = "Bathroom cleaning products";
             // 
@@ -754,9 +779,10 @@
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(177, 281);
+            this.label12.Location = new System.Drawing.Point(118, 186);
+            this.label12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(147, 33);
+            this.label12.Size = new System.Drawing.Size(99, 21);
             this.label12.TabIndex = 17;
             this.label12.Text = "Toilet paper";
             // 
@@ -764,132 +790,137 @@
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(177, 191);
+            this.label13.Location = new System.Drawing.Point(118, 124);
+            this.label13.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(126, 33);
+            this.label13.Size = new System.Drawing.Size(85, 21);
             this.label13.TabIndex = 16;
             this.label13.Text = "Dish soap";
             // 
-            // checkBox7
+            // cbxItemsKitchen
             // 
-            this.checkBox7.AutoSize = true;
-            this.checkBox7.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox7.Location = new System.Drawing.Point(149, 474);
-            this.checkBox7.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.checkBox7.Name = "checkBox7";
-            this.checkBox7.Size = new System.Drawing.Size(22, 21);
-            this.checkBox7.TabIndex = 15;
-            this.checkBox7.UseVisualStyleBackColor = true;
+            this.cbxItemsKitchen.AutoSize = true;
+            this.cbxItemsKitchen.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbxItemsKitchen.Location = new System.Drawing.Point(99, 308);
+            this.cbxItemsKitchen.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.cbxItemsKitchen.Name = "cbxItemsKitchen";
+            this.cbxItemsKitchen.Size = new System.Drawing.Size(15, 14);
+            this.cbxItemsKitchen.TabIndex = 15;
+            this.cbxItemsKitchen.UseVisualStyleBackColor = true;
             // 
-            // checkBox8
+            // cbxItemsBathroom
             // 
-            this.checkBox8.AutoSize = true;
-            this.checkBox8.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox8.Location = new System.Drawing.Point(149, 393);
-            this.checkBox8.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.checkBox8.Name = "checkBox8";
-            this.checkBox8.Size = new System.Drawing.Size(22, 21);
-            this.checkBox8.TabIndex = 14;
-            this.checkBox8.UseVisualStyleBackColor = true;
+            this.cbxItemsBathroom.AutoSize = true;
+            this.cbxItemsBathroom.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbxItemsBathroom.Location = new System.Drawing.Point(99, 255);
+            this.cbxItemsBathroom.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.cbxItemsBathroom.Name = "cbxItemsBathroom";
+            this.cbxItemsBathroom.Size = new System.Drawing.Size(15, 14);
+            this.cbxItemsBathroom.TabIndex = 14;
+            this.cbxItemsBathroom.UseVisualStyleBackColor = true;
             // 
-            // checkBox9
+            // cbxItemsToilet
             // 
-            this.checkBox9.AutoSize = true;
-            this.checkBox9.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox9.Location = new System.Drawing.Point(149, 286);
-            this.checkBox9.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.checkBox9.Name = "checkBox9";
-            this.checkBox9.Size = new System.Drawing.Size(22, 21);
-            this.checkBox9.TabIndex = 13;
-            this.checkBox9.UseVisualStyleBackColor = true;
+            this.cbxItemsToilet.AutoSize = true;
+            this.cbxItemsToilet.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbxItemsToilet.Location = new System.Drawing.Point(99, 189);
+            this.cbxItemsToilet.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.cbxItemsToilet.Name = "cbxItemsToilet";
+            this.cbxItemsToilet.Size = new System.Drawing.Size(15, 14);
+            this.cbxItemsToilet.TabIndex = 13;
+            this.cbxItemsToilet.UseVisualStyleBackColor = true;
             // 
-            // checkBox10
+            // cbxItemsSoap
             // 
-            this.checkBox10.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox10.Location = new System.Drawing.Point(149, 197);
-            this.checkBox10.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.checkBox10.Name = "checkBox10";
-            this.checkBox10.Size = new System.Drawing.Size(22, 21);
-            this.checkBox10.TabIndex = 12;
-            this.checkBox10.UseVisualStyleBackColor = true;
+            this.cbxItemsSoap.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbxItemsSoap.Location = new System.Drawing.Point(99, 128);
+            this.cbxItemsSoap.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.cbxItemsSoap.Name = "cbxItemsSoap";
+            this.cbxItemsSoap.Size = new System.Drawing.Size(15, 14);
+            this.cbxItemsSoap.TabIndex = 12;
+            this.cbxItemsSoap.UseVisualStyleBackColor = true;
             // 
             // label9
             // 
             this.label9.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label9.Location = new System.Drawing.Point(271, 0);
+            this.label9.Location = new System.Drawing.Point(181, 3);
+            this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(327, 62);
+            this.label9.Size = new System.Drawing.Size(218, 40);
             this.label9.TabIndex = 4;
             this.label9.Text = "Basic expenses\r\n";
             // 
             // tpTrash
             // 
             this.tpTrash.BackColor = System.Drawing.Color.Ivory;
-            this.tpTrash.Controls.Add(this.button2);
-            this.tpTrash.Controls.Add(this.button1);
-            this.tpTrash.Controls.Add(this.checkBox1);
-            this.tpTrash.Controls.Add(this.textBox1);
+            this.tpTrash.Controls.Add(this.btn_NotifyTrash);
+            this.tpTrash.Controls.Add(this.btn_TrashThrown);
+            this.tpTrash.Controls.Add(this.cbx_TrashForSomeoneElse);
+            this.tpTrash.Controls.Add(this.tbxUserTrash);
             this.tpTrash.Controls.Add(this.label4);
-            this.tpTrash.Location = new System.Drawing.Point(4, 42);
-            this.tpTrash.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tpTrash.Location = new System.Drawing.Point(4, 30);
+            this.tpTrash.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.tpTrash.Name = "tpTrash";
-            this.tpTrash.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tpTrash.Size = new System.Drawing.Size(1822, 804);
+            this.tpTrash.Padding = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.tpTrash.Size = new System.Drawing.Size(1212, 518);
             this.tpTrash.TabIndex = 2;
             this.tpTrash.Text = "TRASH";
             // 
-            // button2
+            // btn_NotifyTrash
             // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(171)))), ((int)(((byte)(188)))));
-            this.button2.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(980, 311);
-            this.button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(149, 54);
-            this.button2.TabIndex = 8;
-            this.button2.Text = "Notify";
-            this.button2.UseVisualStyleBackColor = false;
+            this.btn_NotifyTrash.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(171)))), ((int)(((byte)(188)))));
+            this.btn_NotifyTrash.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_NotifyTrash.Location = new System.Drawing.Point(653, 202);
+            this.btn_NotifyTrash.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.btn_NotifyTrash.Name = "btn_NotifyTrash";
+            this.btn_NotifyTrash.Size = new System.Drawing.Size(99, 35);
+            this.btn_NotifyTrash.TabIndex = 8;
+            this.btn_NotifyTrash.Text = "Notify";
+            this.btn_NotifyTrash.UseVisualStyleBackColor = false;
+            this.btn_NotifyTrash.Click += new System.EventHandler(this.btn_NotifyTrash_Click);
             // 
-            // button1
+            // btn_TrashThrown
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(171)))), ((int)(((byte)(188)))));
-            this.button1.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(601, 443);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(361, 55);
-            this.button1.TabIndex = 7;
-            this.button1.Text = "Trash thrown";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btn_TrashThrown.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(171)))), ((int)(((byte)(188)))));
+            this.btn_TrashThrown.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_TrashThrown.Location = new System.Drawing.Point(401, 288);
+            this.btn_TrashThrown.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.btn_TrashThrown.Name = "btn_TrashThrown";
+            this.btn_TrashThrown.Size = new System.Drawing.Size(241, 36);
+            this.btn_TrashThrown.TabIndex = 7;
+            this.btn_TrashThrown.Text = "Trash thrown";
+            this.btn_TrashThrown.UseVisualStyleBackColor = false;
+            this.btn_TrashThrown.Click += new System.EventHandler(this.btn_TrashThrown_Click);
             // 
-            // checkBox1
+            // cbx_TrashForSomeoneElse
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox1.Location = new System.Drawing.Point(601, 385);
-            this.checkBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(604, 45);
-            this.checkBox1.TabIndex = 6;
-            this.checkBox1.Text = "I\'m throwing the trash for someone else";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.cbx_TrashForSomeoneElse.AutoSize = true;
+            this.cbx_TrashForSomeoneElse.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbx_TrashForSomeoneElse.Location = new System.Drawing.Point(401, 250);
+            this.cbx_TrashForSomeoneElse.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.cbx_TrashForSomeoneElse.Name = "cbx_TrashForSomeoneElse";
+            this.cbx_TrashForSomeoneElse.Size = new System.Drawing.Size(409, 31);
+            this.cbx_TrashForSomeoneElse.TabIndex = 6;
+            this.cbx_TrashForSomeoneElse.Text = "I\'m throwing the trash for someone else";
+            this.cbx_TrashForSomeoneElse.UseVisualStyleBackColor = true;
             // 
-            // textBox1
+            // tbxUserTrash
             // 
-            this.textBox1.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(597, 311);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(361, 54);
-            this.textBox1.TabIndex = 5;
+            this.tbxUserTrash.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbxUserTrash.Location = new System.Drawing.Point(398, 202);
+            this.tbxUserTrash.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.tbxUserTrash.Multiline = true;
+            this.tbxUserTrash.Name = "tbxUserTrash";
+            this.tbxUserTrash.Size = new System.Drawing.Size(242, 36);
+            this.tbxUserTrash.TabIndex = 5;
             // 
             // label4
             // 
             this.label4.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label4.Location = new System.Drawing.Point(553, 46);
+            this.label4.Location = new System.Drawing.Point(369, 30);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(652, 62);
+            this.label4.Size = new System.Drawing.Size(435, 40);
             this.label4.TabIndex = 4;
             this.label4.Text = "Trash has to be thrown out by:";
             // 
@@ -908,11 +939,11 @@
             this.tpAgreements.Controls.Add(this.label21);
             this.tpAgreements.Controls.Add(this.dgvAgreementsStudent);
             this.tpAgreements.Font = new System.Drawing.Font("Times New Roman", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tpAgreements.Location = new System.Drawing.Point(80, 4);
-            this.tpAgreements.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tpAgreements.Location = new System.Drawing.Point(60, 4);
+            this.tpAgreements.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.tpAgreements.Name = "tpAgreements";
-            this.tpAgreements.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tpAgreements.Size = new System.Drawing.Size(1790, 860);
+            this.tpAgreements.Padding = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.tpAgreements.Size = new System.Drawing.Size(1185, 556);
             this.tpAgreements.TabIndex = 2;
             this.tpAgreements.Text = "AGREEMENTS";
             // 
@@ -923,10 +954,9 @@
             this.btn_AgreementDeleteSelected.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_AgreementDeleteSelected.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_AgreementDeleteSelected.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btn_AgreementDeleteSelected.Location = new System.Drawing.Point(666, 565);
-            this.btn_AgreementDeleteSelected.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btn_AgreementDeleteSelected.Location = new System.Drawing.Point(444, 367);
             this.btn_AgreementDeleteSelected.Name = "btn_AgreementDeleteSelected";
-            this.btn_AgreementDeleteSelected.Size = new System.Drawing.Size(154, 53);
+            this.btn_AgreementDeleteSelected.Size = new System.Drawing.Size(103, 34);
             this.btn_AgreementDeleteSelected.TabIndex = 37;
             this.btn_AgreementDeleteSelected.Text = "Delete Selected";
             this.btn_AgreementDeleteSelected.UseVisualStyleBackColor = false;
@@ -938,10 +968,9 @@
             this.btn_AgreementEditSelected.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_AgreementEditSelected.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_AgreementEditSelected.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btn_AgreementEditSelected.Location = new System.Drawing.Point(445, 565);
-            this.btn_AgreementEditSelected.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btn_AgreementEditSelected.Location = new System.Drawing.Point(297, 367);
             this.btn_AgreementEditSelected.Name = "btn_AgreementEditSelected";
-            this.btn_AgreementEditSelected.Size = new System.Drawing.Size(164, 53);
+            this.btn_AgreementEditSelected.Size = new System.Drawing.Size(109, 34);
             this.btn_AgreementEditSelected.TabIndex = 36;
             this.btn_AgreementEditSelected.Text = "Edit Selected";
             this.btn_AgreementEditSelected.UseVisualStyleBackColor = false;
@@ -953,10 +982,9 @@
             this.btn_AgreementRejectSelected.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_AgreementRejectSelected.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_AgreementRejectSelected.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btn_AgreementRejectSelected.Location = new System.Drawing.Point(241, 565);
-            this.btn_AgreementRejectSelected.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btn_AgreementRejectSelected.Location = new System.Drawing.Point(161, 367);
             this.btn_AgreementRejectSelected.Name = "btn_AgreementRejectSelected";
-            this.btn_AgreementRejectSelected.Size = new System.Drawing.Size(157, 53);
+            this.btn_AgreementRejectSelected.Size = new System.Drawing.Size(105, 34);
             this.btn_AgreementRejectSelected.TabIndex = 35;
             this.btn_AgreementRejectSelected.Text = "Reject Selected";
             this.btn_AgreementRejectSelected.UseVisualStyleBackColor = false;
@@ -968,10 +996,9 @@
             this.btn_AgreementAcceptSelected.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_AgreementAcceptSelected.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_AgreementAcceptSelected.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btn_AgreementAcceptSelected.Location = new System.Drawing.Point(22, 565);
-            this.btn_AgreementAcceptSelected.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btn_AgreementAcceptSelected.Location = new System.Drawing.Point(15, 367);
             this.btn_AgreementAcceptSelected.Name = "btn_AgreementAcceptSelected";
-            this.btn_AgreementAcceptSelected.Size = new System.Drawing.Size(158, 53);
+            this.btn_AgreementAcceptSelected.Size = new System.Drawing.Size(105, 34);
             this.btn_AgreementAcceptSelected.TabIndex = 34;
             this.btn_AgreementAcceptSelected.Text = "Accept Selected";
             this.btn_AgreementAcceptSelected.UseVisualStyleBackColor = false;
@@ -983,10 +1010,10 @@
             this.btnAgreementSubmit.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnAgreementSubmit.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAgreementSubmit.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnAgreementSubmit.Location = new System.Drawing.Point(666, 713);
-            this.btnAgreementSubmit.Margin = new System.Windows.Forms.Padding(6);
+            this.btnAgreementSubmit.Location = new System.Drawing.Point(444, 463);
+            this.btnAgreementSubmit.Margin = new System.Windows.Forms.Padding(4);
             this.btnAgreementSubmit.Name = "btnAgreementSubmit";
-            this.btnAgreementSubmit.Size = new System.Drawing.Size(154, 49);
+            this.btnAgreementSubmit.Size = new System.Drawing.Size(103, 32);
             this.btnAgreementSubmit.TabIndex = 33;
             this.btnAgreementSubmit.Text = "Post";
             this.btnAgreementSubmit.UseVisualStyleBackColor = false;
@@ -995,11 +1022,10 @@
             // 
             this.cbAgreement.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbAgreement.FormattingEnabled = true;
-            this.cbAgreement.ItemHeight = 41;
-            this.cbAgreement.Location = new System.Drawing.Point(445, 717);
-            this.cbAgreement.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.cbAgreement.ItemHeight = 27;
+            this.cbAgreement.Location = new System.Drawing.Point(297, 466);
             this.cbAgreement.Name = "cbAgreement";
-            this.cbAgreement.Size = new System.Drawing.Size(164, 49);
+            this.cbAgreement.Size = new System.Drawing.Size(111, 35);
             this.cbAgreement.TabIndex = 32;
             this.cbAgreement.SelectedIndexChanged += new System.EventHandler(this.cbAgreement_SelectedIndexChanged);
             // 
@@ -1007,20 +1033,19 @@
             // 
             this.label15.BackColor = System.Drawing.Color.Ivory;
             this.label15.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(15, 717);
-            this.label15.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label15.Location = new System.Drawing.Point(10, 466);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(429, 49);
+            this.label15.Size = new System.Drawing.Size(286, 32);
             this.label15.TabIndex = 31;
             this.label15.Text = "Agreement between you and:";
             // 
             // tbNewAgreementDescription
             // 
-            this.tbNewAgreementDescription.Location = new System.Drawing.Point(218, 651);
-            this.tbNewAgreementDescription.Margin = new System.Windows.Forms.Padding(6);
+            this.tbNewAgreementDescription.Location = new System.Drawing.Point(145, 423);
+            this.tbNewAgreementDescription.Margin = new System.Windows.Forms.Padding(4);
             this.tbNewAgreementDescription.Multiline = true;
             this.tbNewAgreementDescription.Name = "tbNewAgreementDescription";
-            this.tbNewAgreementDescription.Size = new System.Drawing.Size(602, 41);
+            this.tbNewAgreementDescription.Size = new System.Drawing.Size(403, 28);
             this.tbNewAgreementDescription.TabIndex = 30;
             // 
             // label20
@@ -1028,10 +1053,9 @@
             this.label20.AutoSize = true;
             this.label20.BackColor = System.Drawing.Color.Ivory;
             this.label20.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.Location = new System.Drawing.Point(15, 651);
-            this.label20.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label20.Location = new System.Drawing.Point(10, 423);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(191, 41);
+            this.label20.Size = new System.Drawing.Size(129, 27);
             this.label20.TabIndex = 29;
             this.label20.Text = "Description:";
             // 
@@ -1040,10 +1064,10 @@
             this.label21.AutoSize = true;
             this.label21.BackColor = System.Drawing.Color.Ivory;
             this.label21.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.Location = new System.Drawing.Point(693, 15);
-            this.label21.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.label21.Location = new System.Drawing.Point(462, 10);
+            this.label21.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(449, 55);
+            this.label21.Size = new System.Drawing.Size(299, 36);
             this.label21.TabIndex = 28;
             this.label21.Text = "Create an agreement";
             // 
@@ -1062,15 +1086,14 @@
             this.Description,
             this.Status});
             this.dgvAgreementsStudent.GridColor = System.Drawing.SystemColors.ActiveCaption;
-            this.dgvAgreementsStudent.Location = new System.Drawing.Point(22, 131);
-            this.dgvAgreementsStudent.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.dgvAgreementsStudent.Location = new System.Drawing.Point(15, 85);
             this.dgvAgreementsStudent.Name = "dgvAgreementsStudent";
             this.dgvAgreementsStudent.ReadOnly = true;
             this.dgvAgreementsStudent.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dgvAgreementsStudent.RowHeadersVisible = false;
             this.dgvAgreementsStudent.RowHeadersWidth = 51;
             this.dgvAgreementsStudent.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvAgreementsStudent.Size = new System.Drawing.Size(798, 415);
+            this.dgvAgreementsStudent.Size = new System.Drawing.Size(532, 270);
             this.dgvAgreementsStudent.TabIndex = 27;
             // 
             // ID
@@ -1123,14 +1146,22 @@
             this.tpComplaint.Controls.Add(this.label22);
             this.tpComplaint.Controls.Add(this.label23);
             this.tpComplaint.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tpComplaint.Location = new System.Drawing.Point(80, 4);
-            this.tpComplaint.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tpComplaint.Location = new System.Drawing.Point(60, 4);
+            this.tpComplaint.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.tpComplaint.Name = "tpComplaint";
-            this.tpComplaint.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tpComplaint.Size = new System.Drawing.Size(1790, 860);
+            this.tpComplaint.Padding = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.tpComplaint.Size = new System.Drawing.Size(1185, 556);
             this.tpComplaint.TabIndex = 3;
             this.tpComplaint.Text = "COMPLAINTS";
-            this.tpComplaint.Click += new System.EventHandler(this.tpComplaint_Click);
+            // 
+            // richTextBox1
+            // 
+            this.richTextBox1.Location = new System.Drawing.Point(150, 165);
+            this.richTextBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.Size = new System.Drawing.Size(361, 198);
+            this.richTextBox1.TabIndex = 40;
+            this.richTextBox1.Text = "";
             // 
             // button9
             // 
@@ -1139,10 +1170,10 @@
             this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button9.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button9.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button9.Location = new System.Drawing.Point(599, 576);
-            this.button9.Margin = new System.Windows.Forms.Padding(6);
+            this.button9.Location = new System.Drawing.Point(399, 374);
+            this.button9.Margin = new System.Windows.Forms.Padding(4);
             this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(165, 49);
+            this.button9.Size = new System.Drawing.Size(110, 32);
             this.button9.TabIndex = 39;
             this.button9.Text = "Post";
             this.button9.UseVisualStyleBackColor = false;
@@ -1151,21 +1182,19 @@
             // 
             this.comboBox1.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.ItemHeight = 41;
-            this.comboBox1.Location = new System.Drawing.Point(382, 576);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.comboBox1.ItemHeight = 27;
+            this.comboBox1.Location = new System.Drawing.Point(255, 374);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(207, 49);
+            this.comboBox1.Size = new System.Drawing.Size(139, 35);
             this.comboBox1.TabIndex = 38;
             // 
             // label1
             // 
             this.label1.BackColor = System.Drawing.Color.Ivory;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(27, 576);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(18, 374);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(300, 49);
+            this.label1.Size = new System.Drawing.Size(200, 32);
             this.label1.TabIndex = 37;
             this.label1.Text = "Complaint towards:\r\n";
             // 
@@ -1174,10 +1203,9 @@
             this.label22.AutoSize = true;
             this.label22.BackColor = System.Drawing.Color.Ivory;
             this.label22.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label22.Location = new System.Drawing.Point(27, 254);
-            this.label22.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label22.Location = new System.Drawing.Point(18, 165);
             this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(191, 41);
+            this.label22.Size = new System.Drawing.Size(129, 27);
             this.label22.TabIndex = 35;
             this.label22.Text = "Description:";
             // 
@@ -1186,10 +1214,10 @@
             this.label23.AutoSize = true;
             this.label23.BackColor = System.Drawing.Color.Ivory;
             this.label23.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label23.Location = new System.Drawing.Point(689, 31);
-            this.label23.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.label23.Location = new System.Drawing.Point(459, 20);
+            this.label23.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(434, 55);
+            this.label23.Size = new System.Drawing.Size(290, 36);
             this.label23.TabIndex = 34;
             this.label23.Text = "Suggest a complaint";
             // 
@@ -1211,61 +1239,32 @@
             this.tpEvents.Controls.Add(this.lblPartyPlanMonth);
             this.tpEvents.Controls.Add(this.lblPartyPlanDay);
             this.tpEvents.Controls.Add(this.lblPlanParty);
-            this.tpEvents.Location = new System.Drawing.Point(80, 4);
-            this.tpEvents.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tpEvents.Location = new System.Drawing.Point(60, 4);
+            this.tpEvents.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.tpEvents.Name = "tpEvents";
-            this.tpEvents.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tpEvents.Size = new System.Drawing.Size(1790, 860);
+            this.tpEvents.Padding = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.tpEvents.Size = new System.Drawing.Size(1185, 556);
             this.tpEvents.TabIndex = 4;
             this.tpEvents.Text = "EVENTS";
             // 
-            // tpTechnical
+            // richTextBox2
             // 
-            this.tpTechnical.Location = new System.Drawing.Point(80, 4);
-            this.tpTechnical.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tpTechnical.Name = "tpTechnical";
-            this.tpTechnical.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tpTechnical.Size = new System.Drawing.Size(1790, 860);
-            this.tpTechnical.TabIndex = 5;
-            this.tpTechnical.Text = "TECHNICAL ISSUE";
-            this.tpTechnical.UseVisualStyleBackColor = true;
+            this.richTextBox2.Location = new System.Drawing.Point(30, 396);
+            this.richTextBox2.Margin = new System.Windows.Forms.Padding(2);
+            this.richTextBox2.Name = "richTextBox2";
+            this.richTextBox2.Size = new System.Drawing.Size(373, 105);
+            this.richTextBox2.TabIndex = 33;
+            this.richTextBox2.Text = "";
             // 
-            // pbNotification
+            // label25
             // 
-            this.pbNotification.Image = ((System.Drawing.Image)(resources.GetObject("pbNotification.Image")));
-            this.pbNotification.Location = new System.Drawing.Point(1593, 42);
-            this.pbNotification.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pbNotification.Name = "pbNotification";
-            this.pbNotification.Size = new System.Drawing.Size(102, 96);
-            this.pbNotification.TabIndex = 6;
-            this.pbNotification.TabStop = false;
-            // 
-            // textBox10
-            // 
-            this.textBox10.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox10.Location = new System.Drawing.Point(624, 469);
-            this.textBox10.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox10.Multiline = true;
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(193, 42);
-            this.textBox10.TabIndex = 31;
-            // 
-            // richTextBox1
-            // 
-            this.richTextBox1.Location = new System.Drawing.Point(225, 254);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(539, 303);
-            this.richTextBox1.TabIndex = 40;
-            this.richTextBox1.Text = "";
-            // 
-            // label24
-            // 
-            this.label24.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label24.Location = new System.Drawing.Point(810, 2);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(209, 63);
-            this.label24.TabIndex = 15;
-            this.label24.Text = "Cleaning";
+            this.label25.Font = new System.Drawing.Font("Times New Roman", 22F, System.Drawing.FontStyle.Bold);
+            this.label25.Location = new System.Drawing.Point(24, 351);
+            this.label25.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(235, 33);
+            this.label25.TabIndex = 32;
+            this.label25.Text = "Event description";
             // 
             // dudPartyYear
             // 
@@ -1274,12 +1273,11 @@
             this.dudPartyYear.Items.Add("2022");
             this.dudPartyYear.Items.Add("2023");
             this.dudPartyYear.Items.Add("2024");
-            this.dudPartyYear.Location = new System.Drawing.Point(45, 433);
-            this.dudPartyYear.Margin = new System.Windows.Forms.Padding(4);
+            this.dudPartyYear.Location = new System.Drawing.Point(30, 281);
             this.dudPartyYear.Name = "dudPartyYear";
             this.dudPartyYear.ReadOnly = true;
             this.dudPartyYear.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.dudPartyYear.Size = new System.Drawing.Size(337, 53);
+            this.dudPartyYear.Size = new System.Drawing.Size(225, 38);
             this.dudPartyYear.TabIndex = 30;
             this.dudPartyYear.Text = "2022";
             this.dudPartyYear.Wrap = true;
@@ -1300,12 +1298,11 @@
             this.dudPartyMonth.Items.Add("10");
             this.dudPartyMonth.Items.Add("11");
             this.dudPartyMonth.Items.Add("12");
-            this.dudPartyMonth.Location = new System.Drawing.Point(46, 282);
-            this.dudPartyMonth.Margin = new System.Windows.Forms.Padding(4);
+            this.dudPartyMonth.Location = new System.Drawing.Point(31, 183);
             this.dudPartyMonth.Name = "dudPartyMonth";
             this.dudPartyMonth.ReadOnly = true;
             this.dudPartyMonth.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.dudPartyMonth.Size = new System.Drawing.Size(338, 53);
+            this.dudPartyMonth.Size = new System.Drawing.Size(225, 38);
             this.dudPartyMonth.TabIndex = 29;
             this.dudPartyMonth.Text = "1";
             this.dudPartyMonth.Wrap = true;
@@ -1345,12 +1342,11 @@
             this.dudPartyDay.Items.Add("29");
             this.dudPartyDay.Items.Add("30");
             this.dudPartyDay.Items.Add("31");
-            this.dudPartyDay.Location = new System.Drawing.Point(45, 140);
-            this.dudPartyDay.Margin = new System.Windows.Forms.Padding(4);
+            this.dudPartyDay.Location = new System.Drawing.Point(30, 91);
             this.dudPartyDay.Name = "dudPartyDay";
             this.dudPartyDay.ReadOnly = true;
             this.dudPartyDay.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.dudPartyDay.Size = new System.Drawing.Size(337, 53);
+            this.dudPartyDay.Size = new System.Drawing.Size(225, 38);
             this.dudPartyDay.TabIndex = 28;
             this.dudPartyDay.Text = "1";
             this.dudPartyDay.Wrap = true;
@@ -1360,10 +1356,10 @@
             this.btnRemoveParty.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(171)))), ((int)(((byte)(188)))));
             this.btnRemoveParty.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnRemoveParty.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnRemoveParty.Location = new System.Drawing.Point(732, 309);
-            this.btnRemoveParty.Margin = new System.Windows.Forms.Padding(2);
+            this.btnRemoveParty.Location = new System.Drawing.Point(488, 201);
+            this.btnRemoveParty.Margin = new System.Windows.Forms.Padding(1);
             this.btnRemoveParty.Name = "btnRemoveParty";
-            this.btnRemoveParty.Size = new System.Drawing.Size(262, 82);
+            this.btnRemoveParty.Size = new System.Drawing.Size(175, 53);
             this.btnRemoveParty.TabIndex = 27;
             this.btnRemoveParty.Text = "Remove event";
             this.btnRemoveParty.UseVisualStyleBackColor = false;
@@ -1375,12 +1371,12 @@
             this.lbxShowUpcomingParties.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(29)))), ((int)(((byte)(44)))));
             this.lbxShowUpcomingParties.FormattingEnabled = true;
             this.lbxShowUpcomingParties.HorizontalScrollbar = true;
-            this.lbxShowUpcomingParties.ItemHeight = 51;
-            this.lbxShowUpcomingParties.Location = new System.Drawing.Point(1028, 4);
-            this.lbxShowUpcomingParties.Margin = new System.Windows.Forms.Padding(2);
+            this.lbxShowUpcomingParties.ItemHeight = 33;
+            this.lbxShowUpcomingParties.Location = new System.Drawing.Point(685, 3);
+            this.lbxShowUpcomingParties.Margin = new System.Windows.Forms.Padding(1);
             this.lbxShowUpcomingParties.Name = "lbxShowUpcomingParties";
             this.lbxShowUpcomingParties.ScrollAlwaysVisible = true;
-            this.lbxShowUpcomingParties.Size = new System.Drawing.Size(757, 820);
+            this.lbxShowUpcomingParties.Size = new System.Drawing.Size(506, 532);
             this.lbxShowUpcomingParties.TabIndex = 26;
             // 
             // cbNoPartyThisWeek
@@ -1388,10 +1384,10 @@
             this.cbNoPartyThisWeek.AutoSize = true;
             this.cbNoPartyThisWeek.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cbNoPartyThisWeek.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbNoPartyThisWeek.Location = new System.Drawing.Point(45, 772);
-            this.cbNoPartyThisWeek.Margin = new System.Windows.Forms.Padding(2);
+            this.cbNoPartyThisWeek.Location = new System.Drawing.Point(30, 502);
+            this.cbNoPartyThisWeek.Margin = new System.Windows.Forms.Padding(1);
             this.cbNoPartyThisWeek.Name = "cbNoPartyThisWeek";
-            this.cbNoPartyThisWeek.Size = new System.Drawing.Size(478, 45);
+            this.cbNoPartyThisWeek.Size = new System.Drawing.Size(330, 31);
             this.cbNoPartyThisWeek.TabIndex = 25;
             this.cbNoPartyThisWeek.Text = "I don\'t want an event this week";
             this.cbNoPartyThisWeek.UseVisualStyleBackColor = true;
@@ -1401,10 +1397,10 @@
             this.btnTodayParty.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(171)))), ((int)(((byte)(188)))));
             this.btnTodayParty.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnTodayParty.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnTodayParty.Location = new System.Drawing.Point(732, 555);
-            this.btnTodayParty.Margin = new System.Windows.Forms.Padding(2);
+            this.btnTodayParty.Location = new System.Drawing.Point(488, 361);
+            this.btnTodayParty.Margin = new System.Windows.Forms.Padding(1);
             this.btnTodayParty.Name = "btnTodayParty";
-            this.btnTodayParty.Size = new System.Drawing.Size(262, 79);
+            this.btnTodayParty.Size = new System.Drawing.Size(175, 51);
             this.btnTodayParty.TabIndex = 24;
             this.btnTodayParty.Text = "Plan event today";
             this.btnTodayParty.UseVisualStyleBackColor = false;
@@ -1414,10 +1410,10 @@
             this.btnNoPartyThisWeek.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(171)))), ((int)(((byte)(188)))));
             this.btnNoPartyThisWeek.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnNoPartyThisWeek.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnNoPartyThisWeek.Location = new System.Drawing.Point(732, 743);
-            this.btnNoPartyThisWeek.Margin = new System.Windows.Forms.Padding(2);
+            this.btnNoPartyThisWeek.Location = new System.Drawing.Point(488, 483);
+            this.btnNoPartyThisWeek.Margin = new System.Windows.Forms.Padding(1);
             this.btnNoPartyThisWeek.Name = "btnNoPartyThisWeek";
-            this.btnNoPartyThisWeek.Size = new System.Drawing.Size(262, 84);
+            this.btnNoPartyThisWeek.Size = new System.Drawing.Size(175, 55);
             this.btnNoPartyThisWeek.TabIndex = 23;
             this.btnNoPartyThisWeek.Text = "No events this week";
             this.btnNoPartyThisWeek.UseVisualStyleBackColor = false;
@@ -1427,10 +1423,10 @@
             this.btnPlanTheParty.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(171)))), ((int)(((byte)(188)))));
             this.btnPlanTheParty.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnPlanTheParty.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnPlanTheParty.Location = new System.Drawing.Point(732, 84);
-            this.btnPlanTheParty.Margin = new System.Windows.Forms.Padding(2);
+            this.btnPlanTheParty.Location = new System.Drawing.Point(488, 55);
+            this.btnPlanTheParty.Margin = new System.Windows.Forms.Padding(1);
             this.btnPlanTheParty.Name = "btnPlanTheParty";
-            this.btnPlanTheParty.Size = new System.Drawing.Size(262, 82);
+            this.btnPlanTheParty.Size = new System.Drawing.Size(175, 53);
             this.btnPlanTheParty.TabIndex = 22;
             this.btnPlanTheParty.Text = "Plan event";
             this.btnPlanTheParty.UseVisualStyleBackColor = false;
@@ -1439,10 +1435,10 @@
             // 
             this.lblPartyPlanYear.Font = new System.Drawing.Font("Times New Roman", 22F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPartyPlanYear.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(29)))), ((int)(((byte)(44)))));
-            this.lblPartyPlanYear.Location = new System.Drawing.Point(36, 357);
-            this.lblPartyPlanYear.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblPartyPlanYear.Location = new System.Drawing.Point(24, 232);
+            this.lblPartyPlanYear.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.lblPartyPlanYear.Name = "lblPartyPlanYear";
-            this.lblPartyPlanYear.Size = new System.Drawing.Size(337, 61);
+            this.lblPartyPlanYear.Size = new System.Drawing.Size(225, 40);
             this.lblPartyPlanYear.TabIndex = 21;
             this.lblPartyPlanYear.Text = "Select an year:";
             // 
@@ -1450,22 +1446,21 @@
             // 
             this.lblPartyPlanMonth.Font = new System.Drawing.Font("Times New Roman", 22F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPartyPlanMonth.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(29)))), ((int)(((byte)(44)))));
-            this.lblPartyPlanMonth.Location = new System.Drawing.Point(36, 217);
-            this.lblPartyPlanMonth.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblPartyPlanMonth.Location = new System.Drawing.Point(24, 141);
+            this.lblPartyPlanMonth.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.lblPartyPlanMonth.Name = "lblPartyPlanMonth";
-            this.lblPartyPlanMonth.Size = new System.Drawing.Size(348, 61);
+            this.lblPartyPlanMonth.Size = new System.Drawing.Size(232, 40);
             this.lblPartyPlanMonth.TabIndex = 20;
             this.lblPartyPlanMonth.Text = "Select a month:";
-            this.lblPartyPlanMonth.Click += new System.EventHandler(this.lblPartyPlanMonth_Click);
             // 
             // lblPartyPlanDay
             // 
             this.lblPartyPlanDay.Font = new System.Drawing.Font("Times New Roman", 22F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPartyPlanDay.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(29)))), ((int)(((byte)(44)))));
-            this.lblPartyPlanDay.Location = new System.Drawing.Point(36, 75);
-            this.lblPartyPlanDay.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblPartyPlanDay.Location = new System.Drawing.Point(24, 49);
+            this.lblPartyPlanDay.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.lblPartyPlanDay.Name = "lblPartyPlanDay";
-            this.lblPartyPlanDay.Size = new System.Drawing.Size(337, 61);
+            this.lblPartyPlanDay.Size = new System.Drawing.Size(225, 40);
             this.lblPartyPlanDay.TabIndex = 19;
             this.lblPartyPlanDay.Text = "Select the day:";
             // 
@@ -1473,48 +1468,52 @@
             // 
             this.lblPlanParty.Font = new System.Drawing.Font("Times New Roman", 22F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPlanParty.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(29)))), ((int)(((byte)(44)))));
-            this.lblPlanParty.Location = new System.Drawing.Point(266, 6);
-            this.lblPlanParty.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblPlanParty.Location = new System.Drawing.Point(177, 4);
+            this.lblPlanParty.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.lblPlanParty.Name = "lblPlanParty";
-            this.lblPlanParty.Size = new System.Drawing.Size(337, 61);
+            this.lblPlanParty.Size = new System.Drawing.Size(225, 40);
             this.lblPlanParty.TabIndex = 18;
             this.lblPlanParty.Text = "Plan an event:";
-            this.lblPlanParty.Click += new System.EventHandler(this.lblPlanParty_Click);
             // 
-            // label25
+            // tpTechnical
             // 
-            this.label25.Font = new System.Drawing.Font("Times New Roman", 22F, System.Drawing.FontStyle.Bold);
-            this.label25.Location = new System.Drawing.Point(36, 540);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(353, 51);
-            this.label25.TabIndex = 32;
-            this.label25.Text = "Event description";
+            this.tpTechnical.Location = new System.Drawing.Point(60, 4);
+            this.tpTechnical.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.tpTechnical.Name = "tpTechnical";
+            this.tpTechnical.Padding = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.tpTechnical.Size = new System.Drawing.Size(1185, 556);
+            this.tpTechnical.TabIndex = 5;
+            this.tpTechnical.Text = "TECHNICAL ISSUE";
+            this.tpTechnical.UseVisualStyleBackColor = true;
             // 
-            // richTextBox2
+            // pbNotification
             // 
-            this.richTextBox2.Location = new System.Drawing.Point(45, 610);
-            this.richTextBox2.Name = "richTextBox2";
-            this.richTextBox2.Size = new System.Drawing.Size(558, 160);
-            this.richTextBox2.TabIndex = 33;
-            this.richTextBox2.Text = "";
+            this.pbNotification.Image = ((System.Drawing.Image)(resources.GetObject("pbNotification.Image")));
+            this.pbNotification.Location = new System.Drawing.Point(1062, 27);
+            this.pbNotification.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.pbNotification.Name = "pbNotification";
+            this.pbNotification.Size = new System.Drawing.Size(68, 62);
+            this.pbNotification.TabIndex = 6;
+            this.pbNotification.TabStop = false;
             // 
             // STUDENT
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Ivory;
-            this.ClientSize = new System.Drawing.Size(1898, 1024);
+            this.ClientSize = new System.Drawing.Size(1265, 666);
             this.Controls.Add(this.pbNotification);
             this.Controls.Add(this.tcStudent);
             this.Controls.Add(this.pbLogOut);
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.pbProfile);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.Name = "STUDENT";
             this.StartPosition = System.Windows.Forms.FormStartPosition.WindowsDefaultBounds;
             this.Text = "STUDENT";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.STUDENT_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pbProfile)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogOut)).EndInit();
             this.tcStudent.ResumeLayout(false);
@@ -1561,29 +1560,29 @@
         private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.TabControl tpStudent;
         private System.Windows.Forms.TabPage tpCleaning;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.CheckBox checkBox6;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.CheckBox checkBox5;
-        private System.Windows.Forms.CheckBox checkBox4;
-        private System.Windows.Forms.CheckBox checkBox3;
-        private System.Windows.Forms.CheckBox checkBox2;
+        private System.Windows.Forms.Button btnTaskPending;
+        private System.Windows.Forms.Button btnTaskComplete;
+        private System.Windows.Forms.CheckBox cbxCleaningForSmnElse;
+        private System.Windows.Forms.TextBox tbxCleaningShared;
+        private System.Windows.Forms.TextBox tbxCleaningToilet;
+        private System.Windows.Forms.TextBox tbxCleaningBathroom;
+        private System.Windows.Forms.TextBox tbxCleaningKitchen;
+        private System.Windows.Forms.Label lblCleaningShared;
+        private System.Windows.Forms.Label lblCleaningToilet;
+        private System.Windows.Forms.Label lblCleaningBathroom;
+        private System.Windows.Forms.Label lblCleaningKitchen;
+        private System.Windows.Forms.CheckBox cbxCleaningShared;
+        private System.Windows.Forms.CheckBox cbxCleaningToilet;
+        private System.Windows.Forms.CheckBox cbxCleaningBathroom;
+        private System.Windows.Forms.CheckBox cbxCleaningKitchen;
         private System.Windows.Forms.TabPage tpExpenses;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TabPage tpTrash;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button btn_NotifyTrash;
+        private System.Windows.Forms.Button btn_TrashThrown;
+        private System.Windows.Forms.CheckBox cbx_TrashForSomeoneElse;
+        private System.Windows.Forms.TextBox tbxUserTrash;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.ListBox lbExpenses;
@@ -1597,16 +1596,16 @@
         private System.Windows.Forms.TextBox txtBoxExpenseTitle;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button btn_BoughtReport;
+        private System.Windows.Forms.Button btn_Bought;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.CheckBox checkBox7;
-        private System.Windows.Forms.CheckBox checkBox8;
-        private System.Windows.Forms.CheckBox checkBox9;
-        private System.Windows.Forms.CheckBox checkBox10;
+        private System.Windows.Forms.CheckBox cbxItemsKitchen;
+        private System.Windows.Forms.CheckBox cbxItemsBathroom;
+        private System.Windows.Forms.CheckBox cbxItemsToilet;
+        private System.Windows.Forms.CheckBox cbxItemsSoap;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button btn_AgreementDeleteSelected;
         private System.Windows.Forms.Button btn_AgreementEditSelected;
@@ -1624,15 +1623,15 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Between;
         private System.Windows.Forms.DataGridViewTextBoxColumn Description;
         private System.Windows.Forms.DataGridViewTextBoxColumn Status;
-        private System.Windows.Forms.TextBox textBox9;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox tbxSharedItemsSoap;
+        private System.Windows.Forms.TextBox tbxSharedItemsBath;
+        private System.Windows.Forms.TextBox tbxSharedItemsToilet;
         private System.Windows.Forms.Button button9;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Label label23;
-        private System.Windows.Forms.TextBox textBox10;
+        private System.Windows.Forms.TextBox tbxSharedItemsKitchen;
         private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.DomainUpDown dudPartyYear;
