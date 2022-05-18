@@ -16,6 +16,7 @@ namespace Student_housing
         private User currentUser;
         ManageAgreements studentAgreement = ManageAgreements.Instance;
         Trash trash = new Trash();
+        UserManager userMannager;
 
         //initialization for indexes for cleaning
         int indexUserKitchen = 0;
@@ -29,10 +30,19 @@ namespace Student_housing
         int indexSharedToiletPaper = 0;
         int indexSharedDishSoap = 0;
 
+        public STUDENT()
+        {
+            InitializeComponent();
+            this.currentUser = userMannager.getCurrentStudent();
+            UpdateUI();
+        }
+
         public STUDENT(UserManager userManager, User currentUser)
         {
             InitializeComponent();
             this.currentUser = currentUser;
+            this.userMannager = userManager;
+            UpdateUI();
         }
 
         private void STUDENT_Load(object sender, EventArgs e)
@@ -135,15 +145,19 @@ namespace Student_housing
         {
             cbAgreement.Items.Clear();
 
-            foreach (String userName in studentAgreement.getNames())
+            foreach (User user in UserManager.users)
             {
-                cbAgreement.Items.Add(userName);
+                if (user.Username != currentUser.Username)
+                {
+                    cbAgreement.Items.Add(user.Username);
+                }
+
             }
 
             cbAgreement.Items.Add("Everyone");
         }
 
-        private void btn_AgreementRejectSelected_Click(object sender, EventArgs e)
+        private void btn_AgreementRejectSelected_Click1(object sender, EventArgs e)
         {
             if (dgvAgreementsStudent.SelectedCells.Count <= 0)
             {
@@ -195,7 +209,7 @@ namespace Student_housing
             }
         }
 
-        private void btn_AgreementEditSelected_Click(object sender, EventArgs e)
+        private void btn_AgreementEditSelected_Click1(object sender, EventArgs e)
         {
             if (dgvAgreementsStudent.SelectedCells.Count <= 0)
             {
@@ -232,7 +246,7 @@ namespace Student_housing
             }
         }
 
-        private void btn_AgreementDeleteSelected_Click(object sender, EventArgs e)
+        private void btn_AgreementDeleteSelected_Click1(object sender, EventArgs e)
         {
             if (dgvAgreementsStudent.SelectedCells.Count <= 0)
             {
@@ -314,7 +328,18 @@ namespace Student_housing
                     MessageBox.Show("You can't make an agreement with yourself."); // might delete.
                 }
             }
+
         }
+        private void dgvAgreementsStudent_CurrentCellChanged1(object sender, EventArgs e)
+        {
+            try
+            {
+                string description = dgvAgreementsStudent.CurrentRow.Cells[3].Value.ToString();
+                tbNewAgreementDescription.Text = description;
+            }
+            catch (Exception ex) { }
+        }
+
 
         private void cbAgreement_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -515,6 +540,9 @@ namespace Student_housing
         {
             //notification to be added
         }
+
         #endregion <Normal Expenses>
+
+
     }
 }

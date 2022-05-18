@@ -9,9 +9,7 @@ namespace Student_housing
     public class ManageAgreements
     {
         private List<Agreement> agreements = new List<Agreement>();
-        private List<User> users = new List<User>();
         private Agreement agreement;
-        private User student;
         private static ManageAgreements instance = null;
 
         public static ManageAgreements Instance
@@ -41,7 +39,7 @@ namespace Student_housing
             return agreements;
         }
 
-    
+
         // Remove agreement
         public void RemoveAgreementById(int id)
         {
@@ -146,15 +144,6 @@ namespace Student_housing
                     agreements[i].UpdateDescription(newDescription);
                 }
             }
-        }
-        public List<string> getNames()
-        {
-            List<string> usernames = new List<string>();
-            foreach (User user in users)
-            {
-                usernames.Add(user.GetUsername());
-            }
-            return usernames;
         }
     }
 }

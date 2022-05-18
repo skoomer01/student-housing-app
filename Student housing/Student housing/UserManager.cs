@@ -10,6 +10,7 @@ namespace Student_housing
     {
         static public List<User> users = new List<User>();
         static public List<Admin> admins = new List<Admin>();
+        private User currentStudent;
 
         //methods
 
@@ -36,6 +37,11 @@ namespace Student_housing
 
             return null;
         }
+        public User getCurrentStudent()
+        {
+            return this.currentStudent;
+        }
+
 
         public void addAdmin(Admin admin)
         {

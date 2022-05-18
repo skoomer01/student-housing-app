@@ -1017,6 +1017,7 @@
             this.btnAgreementSubmit.TabIndex = 33;
             this.btnAgreementSubmit.Text = "Post";
             this.btnAgreementSubmit.UseVisualStyleBackColor = false;
+            this.btnAgreementSubmit.Click += new System.EventHandler(this.btnAgreementSubmit_Click);
             // 
             // cbAgreement
             // 
