@@ -296,5 +296,30 @@ namespace Student_housing
         {
 
         }
+
+        private void tpCleaning_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void tpComplaint_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblPlanParty_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblPartyPlanMonth_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
