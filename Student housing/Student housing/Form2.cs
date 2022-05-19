@@ -53,6 +53,12 @@ namespace Student_housing
             tbxCleaningKitchen.Text = Cleaning.AddUsers(0);
             tbxCleaningShared.Text = Cleaning.AddUsers(0);
             tbxCleaningToilet.Text = Cleaning.AddUsers(0);
+
+            cbxItemsSoap.Text = NormalExpenses.AddTenants(0);
+            cbxItemsToilet.Text = NormalExpenses.AddTenants(0);
+            cbxItemsBathroom.Text = NormalExpenses.AddTenants(0);
+            cbxItemsKitchen.Text = NormalExpenses.AddTenants(0);
+
         }
 
         public void UpdateUI()
@@ -64,6 +70,7 @@ namespace Student_housing
 
         }
 
+        #region <Agreements>
         private void UpdateAgreementsDgv()
         {
             List<Agreement> agreements = studentAgreement.GetAgreementsList();
@@ -345,9 +352,9 @@ namespace Student_housing
         {
 
         }
+        #endregion <Agreements>
 
-
-        # region <Trash task>
+        #region <Trash task>
         //All the buttons for the trash task
         private void btn_TrashThrown_Click(object sender, EventArgs e)
         {
@@ -519,17 +526,17 @@ namespace Student_housing
                 indexSharedDishSoap++;
                 tbxSharedItemsSoap.Text = NormalExpenses.AddTenants(indexSharedDishSoap);
             }
-            else if (cbxItemsToilet.Checked == true)
+            if (cbxItemsToilet.Checked == true)
             {
                 indexSharedToiletPaper++;
                 tbxSharedItemsToilet.Text = NormalExpenses.AddTenants(indexSharedToiletPaper);
             }
-            else if (cbxItemsBathroom.Checked == true)
+            if (cbxItemsBathroom.Checked == true)
             {
                 indexSharedBathroomItems++;
                 tbxSharedItemsBath.Text = NormalExpenses.AddTenants(indexSharedBathroomItems);
             }
-            else if (cbxItemsKitchen.Checked == true)
+            if (cbxItemsKitchen.Checked == true)
             {
                 indexSharedKitchenItems++;
                 tbxSharedItemsKitchen.Text = NormalExpenses.AddTenants(indexSharedKitchenItems);

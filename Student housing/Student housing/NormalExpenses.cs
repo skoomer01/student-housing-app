@@ -13,10 +13,10 @@ namespace Student_housing
             if (index >= UserManager.users.Count)
             {
                 index = index % UserManager.users.Count;
-                if (index == 0)
-                {
-                    index = 1;
-                }
+                //if (index == 0)
+                //{
+                //    index = 1;
+                //}
             }
             return UserManager.users[index].Username;
         }
