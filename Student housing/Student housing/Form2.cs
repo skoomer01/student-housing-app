@@ -59,6 +59,8 @@ namespace Student_housing
             cbxItemsBathroom.Text = NormalExpenses.AddTenants(0);
             cbxItemsKitchen.Text = NormalExpenses.AddTenants(0);
 
+            lblTitle.Text = "Welcome " + currentUser.Username;
+
         }
 
         public void UpdateUI()
