@@ -17,6 +17,7 @@ namespace Student_housing
         ManageAgreements studentAgreement = ManageAgreements.Instance;
         Trash trash = new Trash();
         UserManager userMannager;
+        EventManager eventManager = new EventManager();
 
         //initialization for indexes for cleaning
         int indexUserKitchen = 0;
@@ -550,8 +551,97 @@ namespace Student_housing
             //notification to be added
         }
 
+
         #endregion <Normal Expenses>
 
+        #region <Events>
+        private void ShowEvents()
+        {
+            lbxShowUpcomingEvents.Items.Clear();
+            foreach (Events newEvent in eventManager.GetEvents())
+            {
+                lbxShowUpcomingEvents.Items.Add(newEvent.GetEventInfo());
+            }
+        }
 
+        private void AddEvent()
+        {
+            foreach (Events newEvent in eventManager.GetEvents())
+            {
+                lbxShowUpcomingEvents.Items.Add(newEvent.GetEventInfo());
+            }
+        }
+
+        private void btnPlanTheParty_Click(object sender, EventArgs e)
+        {
+            int day = Convert.ToInt32(dudPartyDay.Text);
+            int month = Convert.ToInt32(dudPartyMonth.Text);
+            int year = Convert.ToInt32(dudPartyYear.Text);
+            string description = Convert.ToString(rtxDescription.Text);
+
+            if (month == 2 && day > 28)
+            {
+                MessageBox.Show("Please select a valid date");
+            }
+            else if ((month == 4 || month == 6 || month == 9 || month == 11) && day > 30)
+            {
+                MessageBox.Show("Please select a valid date");
+            }
+            else
+            {
+                DateTime date = new DateTime(year, month, day);
+                //string newDate = date.ToString();
+                //newDate.Remove(newDate,9);
+                Events newEvent;
+                if(description == "")
+                {
+                    newEvent = new Events(date, currentUser);
+                }
+                else
+                {
+                    newEvent = new Events(date, currentUser, description);
+                }
+                eventManager.AddEvent(newEvent);
+            }
+            ShowEvents();
+        }
+
+        private void btnTodayEvent_Click(object sender, EventArgs e)
+        {
+            DateTime date = DateTime.Today;
+            Events newEvent;
+            string description = Convert.ToString(rtxDescription.Text);
+
+            if (description == "")
+            {
+                newEvent = new Events(date, currentUser);
+            }
+            else
+            {
+                newEvent = new Events(date, currentUser, description);
+            }
+            eventManager.AddEvent(newEvent);
+            ShowEvents();
+        }
+
+        private void btnRemoveParty_Click(object sender, EventArgs e)
+        {
+            int selectedIndex = lbxShowUpcomingEvents.SelectedIndex;
+            if (selectedIndex > -1)
+            {
+                eventManager.RemoveEvent(selectedIndex);
+            }
+            else
+            {
+                MessageBox.Show("Please select the party you want removed");
+            }
+            ShowEvents();
+        }
+
+        private void btnNoEventThisWeek_Click(object sender, EventArgs e)
+        {
+            
+        }
     }
+    #endregion <Events>
 }

@@ -49,6 +49,8 @@
     <Compile Include="Admin.cs" />
     <Compile Include="Agreement.cs" />
     <Compile Include="Cleaning.cs" />
+    <Compile Include="EventManager.cs" />
+    <Compile Include="Events.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
