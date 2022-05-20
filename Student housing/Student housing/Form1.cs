@@ -13,11 +13,19 @@ namespace Student_housing
     public partial class LOGIN : Form
     {
         public UserManager userManager = new UserManager();
+        private UserManager users;
 
         public LOGIN()
         {
             InitializeComponent();
             AddInitialData();
+        }
+
+        public LOGIN(User curentuser, UserManager users)
+        {
+            InitializeComponent();
+           
+            this.users = users;
         }
 
         public void AddInitialData()

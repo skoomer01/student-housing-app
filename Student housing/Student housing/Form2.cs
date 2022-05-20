@@ -167,7 +167,7 @@ namespace Student_housing
             cbAgreement.Items.Add("Everyone");
         }
 
-        private void btn_AgreementRejectSelected_Click1(object sender, EventArgs e)
+        private void btn_AgreementRejectSelected_Click(object sender, EventArgs e)
         {
             if (dgvAgreementsStudent.SelectedCells.Count <= 0)
             {
@@ -219,7 +219,7 @@ namespace Student_housing
             }
         }
 
-        private void btn_AgreementEditSelected_Click1(object sender, EventArgs e)
+        private void btn_AgreementEditSelected_Click(object sender, EventArgs e)
         {
             if (dgvAgreementsStudent.SelectedCells.Count <= 0)
             {
@@ -256,7 +256,7 @@ namespace Student_housing
             }
         }
 
-        private void btn_AgreementDeleteSelected_Click1(object sender, EventArgs e)
+        private void btn_AgreementDeleteSelected_Click(object sender, EventArgs e)
         {
             if (dgvAgreementsStudent.SelectedCells.Count <= 0)
             {
@@ -351,10 +351,7 @@ namespace Student_housing
         }
 
 
-        private void cbAgreement_SelectedIndexChanged(object sender, EventArgs e)
-        {
 
-        }
         #endregion <Agreements>
 
         #region <Trash task>
@@ -641,6 +638,13 @@ namespace Student_housing
         private void btnNoEventThisWeek_Click(object sender, EventArgs e)
         {
             
+        }
+
+        private void pbLogOut_Click(object sender, EventArgs e)
+        {
+            LOGIN loginform = new LOGIN(currentUser, userMannager);
+            loginform.Show();
+            this.Close();
         }
     }
     #endregion <Events>
