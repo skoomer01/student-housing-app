@@ -6,10 +6,11 @@ using System.Threading.Tasks;
 
 namespace Student_housing
 {
+    [Serializable]
     public class UserManager
     {
-        static public List<User> users = new List<User>();
-        static public List<Admin> admins = new List<Admin>();
+        private  List<User> users = new List<User>();
+        private  List<Admin> admins = new List<Admin>();
         private User currentStudent;
 
         //methods
@@ -33,6 +34,44 @@ namespace Student_housing
                 {
                     return foundUser;
                 } 
+            }
+
+            return null;
+        }
+
+        public User getUserByIndex(int index)
+        {
+            User foundUser;
+            for(int i = 0; i<= users.Count; i++)
+            {
+                if (index == i)
+                {
+                    foundUser = users[i];
+                    return foundUser;
+                }
+            }
+            return null;
+        }
+
+        public User[] GetUsers()
+        {
+            return this.users.ToArray();
+        }
+
+        public Admin[] GetAdmins()
+        {
+            return this.admins.ToArray();
+        }
+
+        public Admin getAdmin(string username, string password)
+        {
+            Admin foundAdmin = new Admin(username, password);
+            foreach (Admin admin in admins)
+            {
+                if (admin.Username == username && admin.Password == password)
+                {
+                    return foundAdmin;
+                }
             }
 
             return null;
@@ -70,7 +109,7 @@ namespace Student_housing
             return s;
         }
 
-        public static bool CheckUser(string username, string password)
+        public bool CheckUser(string username, string password)
         {
             if (users.Count != 0)
             {
@@ -86,9 +125,9 @@ namespace Student_housing
         }
 
 
-        public static bool CheckUserAdmin(string username, string password)
+        public bool CheckUserAdmin(string username, string password)
         {
-            if (users.Count != 0)
+            if (admins.Count != 0)
             {
                 foreach (Admin admin in admins)
                 {

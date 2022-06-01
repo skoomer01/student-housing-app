@@ -8,14 +8,20 @@ namespace Student_housing
 {
     public class Cleaning
     {
-        //methods
-        public static string AddUsers(int index)
+        private UserManager userManager;
+
+        public Cleaning(UserManager userManager)
         {
-            if (index >= UserManager.users.Count)
+            this.userManager = userManager;
+        }
+        //methods
+        public string AddUsers(int index)
+        {
+            if (index >= userManager.GetUsers().Length)
             {
-                index = index % UserManager.users.Count;
+                index = index % userManager.GetUsers().Length;
             }
-            return UserManager.users[index].Username;
+            return userManager.getUserByIndex(index).Username;
         }
     }
 }

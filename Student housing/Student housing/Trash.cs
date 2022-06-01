@@ -6,10 +6,17 @@ using System.Threading.Tasks;
 
 namespace Student_housing
 {
+    
     public class Trash
     {
+        UserManager userManager;
         private int index = 0;
         private int turn = 0;
+
+        public Trash(UserManager userManager)
+        {
+            this.userManager = userManager;
+        }
 
         //methods
 
@@ -19,9 +26,9 @@ namespace Student_housing
             if (turn == 1)
             {
                 turn = 0;
-                index = (index + 1) % UserManager.users.Count;
+                index = (index + 1) % userManager.GetUsers().Length;
             }
-            return UserManager.users[index].Username;
+            return userManager.getUserByIndex(index).Username;
         }
     }
 }

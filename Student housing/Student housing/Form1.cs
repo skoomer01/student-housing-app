@@ -7,46 +7,68 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
+using System.Runtime.Serialization.Formatters.Binary;
+using System.Runtime.Serialization;
 
 namespace Student_housing
 {
     public partial class LOGIN : Form
     {
-        public UserManager userManager = new UserManager();
-        private UserManager users;
+        private UserManager userManager;
+        User currentUser;
+        Admin currentAdmin;
 
+        //Constructor(s)
         public LOGIN()
         {
+            userManager = new UserManager(); 
             InitializeComponent();
-            AddInitialData();
+            DeSerializeObject();
         }
 
-        public LOGIN(User curentuser, UserManager users)
+        public LOGIN(User currentUser, UserManager userManager)
         {
             InitializeComponent();
-           
-            this.users = users;
+            this.currentUser = currentUser;
+            this.userManager = userManager;
+            DeSerializeObject();
+        }
+        public LOGIN(Admin currentAdmin, UserManager userManager)
+        {
+            InitializeComponent();
+            this.currentAdmin = currentAdmin;
+            this.userManager = userManager;
+            DeSerializeObject();
         }
 
-        public void AddInitialData()
+        #region <Seerialization>
+        public void DeSerializeObject()
         {
-            Admin admin = new Admin("Admin", "1234");
-            userManager.addAdmin(admin);
-            User user1 = new User("Radu", "0000");
-            userManager.addUser(user1);
-            User user2 = new User("Andrei", "1111");
-            userManager.addUser(user2);
-            User user3 = new User("Bogdan", "2222");
-            userManager.addUser(user3);
+            FileStream fs = null;
+            BinaryFormatter bf = null;
+            try
+            {
+                fs = new FileStream("SaveData", FileMode.Open, FileAccess.Read);
+                bf = new BinaryFormatter();
+                this.userManager = (UserManager)bf.Deserialize(fs);
+
+            }
+            catch (Exception ex)
+            { MessageBox.Show(ex.Message); }
+            finally
+            { if (fs != null) fs.Close(); }
         }
-    
+        #endregion <Serialization>
+
+
         private void btLogIn_Click(object sender, EventArgs e)
         {
             string username = Convert.ToString(tbxUsername.Text);
             string password = Convert.ToString(tbxPassword.Text);
 
             
-            if (UserManager.CheckUser(username, password) == true)
+            if (userManager.CheckUser(username, password) == true)
             {
                 User currentUser = userManager.getUser(username, password);
                 STUDENT studentForm = new STUDENT(userManager, currentUser);
@@ -54,9 +76,12 @@ namespace Student_housing
                 Hide();
                 
             }
-            else if (UserManager.CheckUserAdmin(username, password) == true)
+            else if (userManager.CheckUserAdmin(username, password) == true)
             {
-                MessageBox.Show("You are logged in as admin");
+                Admin currentAdmin = userManager.getAdmin(username, password);
+                ADMIN adminForm = new ADMIN( userManager, currentAdmin);
+                adminForm.Show();
+                Hide();
             }
             else
                 MessageBox.Show("Incorrect password or username");

@@ -14,9 +14,12 @@ namespace Student_housing
     {
         //attributes that are objects
         private User currentUser;
+        UserManager userManager;
         ManageAgreements studentAgreement = ManageAgreements.Instance;
-        Trash trash = new Trash();
-        UserManager userMannager;
+        Trash trash ;
+        Cleaning cleaning ;
+        NormalExpenses normalExpenses;
+        
         EventManager eventManager = new EventManager();
 
         //initialization for indexes for cleaning
@@ -31,10 +34,12 @@ namespace Student_housing
         int indexSharedToiletPaper = 0;
         int indexSharedDishSoap = 0;
 
+
+        //Constructor(s)
         public STUDENT()
         {
             InitializeComponent();
-            this.currentUser = userMannager.getCurrentStudent();
+            this.currentUser = userManager.getCurrentStudent();
             UpdateUI();
         }
 
@@ -42,7 +47,10 @@ namespace Student_housing
         {
             InitializeComponent();
             this.currentUser = currentUser;
-            this.userMannager = userManager;
+            this.userManager = userManager;
+            trash = new Trash(userManager);
+            cleaning = new Cleaning(userManager);
+            normalExpenses = new NormalExpenses(userManager);
             UpdateUI();
         }
 
@@ -50,15 +58,15 @@ namespace Student_housing
         {
             tbxUserTrash.Text = trash.GetUser();
 
-            tbxCleaningBathroom.Text = Cleaning.AddUsers(0);
-            tbxCleaningKitchen.Text = Cleaning.AddUsers(0);
-            tbxCleaningShared.Text = Cleaning.AddUsers(0);
-            tbxCleaningToilet.Text = Cleaning.AddUsers(0);
+            tbxCleaningBathroom.Text = cleaning.AddUsers(0);
+            tbxCleaningKitchen.Text = cleaning.AddUsers(0);
+            tbxCleaningShared.Text = cleaning.AddUsers(0);
+            tbxCleaningToilet.Text = cleaning.AddUsers(0);
 
-            cbxItemsSoap.Text = NormalExpenses.AddTenants(0);
-            cbxItemsToilet.Text = NormalExpenses.AddTenants(0);
-            cbxItemsBathroom.Text = NormalExpenses.AddTenants(0);
-            cbxItemsKitchen.Text = NormalExpenses.AddTenants(0);
+            cbxItemsSoap.Text = normalExpenses.AddTenants(0);
+            cbxItemsToilet.Text = normalExpenses.AddTenants(0);
+            cbxItemsBathroom.Text = normalExpenses.AddTenants(0);
+            cbxItemsKitchen.Text = normalExpenses.AddTenants(0);
 
             lblTitle.Text = "Welcome " + currentUser.Username;
 
@@ -155,7 +163,7 @@ namespace Student_housing
         {
             cbAgreement.Items.Clear();
 
-            foreach (User user in UserManager.users)
+            foreach (User user in userManager.GetUsers())
             {
                 if (user.Username != currentUser.Username)
                 {
@@ -394,7 +402,7 @@ namespace Student_housing
                     cbxCleaningForSmnElse.Checked = false;
                     cbxCleaningBathroom.Checked = false;
                     indexUserBathroom++;
-                    tbxCleaningBathroom.Text = Cleaning.AddUsers(indexUserBathroom);
+                    tbxCleaningBathroom.Text = cleaning.AddUsers(indexUserBathroom);
                     lblCleaningBathroom.Text = "Bathroom";
                 }
             }
@@ -406,7 +414,7 @@ namespace Student_housing
                     cbxCleaningForSmnElse.Checked = false;
                     cbxCleaningKitchen.Checked = false;
                     indexUserKitchen++;
-                    tbxCleaningKitchen.Text = Cleaning.AddUsers(indexUserKitchen);
+                    tbxCleaningKitchen.Text = cleaning.AddUsers(indexUserKitchen);
                     lblCleaningKitchen.Text = "Kitchen";
                 }
             }
@@ -418,7 +426,7 @@ namespace Student_housing
                     cbxCleaningForSmnElse.Checked = false;
                     cbxCleaningToilet.Checked = false;
                     indexUserToilet++;
-                    tbxCleaningToilet.Text = Cleaning.AddUsers(indexUserToilet);
+                    tbxCleaningToilet.Text = cleaning.AddUsers(indexUserToilet);
                     lblCleaningToilet.Text = "Toilet";
                 }
             }
@@ -430,7 +438,7 @@ namespace Student_housing
                     cbxCleaningForSmnElse.Checked = false;
                     cbxCleaningShared.Checked = false;
                     indexUserSharedSpace++;
-                    tbxCleaningShared.Text = Cleaning.AddUsers(indexUserSharedSpace);
+                    tbxCleaningShared.Text = cleaning.AddUsers(indexUserSharedSpace);
                     lblCleaningShared.Text = "Shared space";
                 }
             }
@@ -524,22 +532,22 @@ namespace Student_housing
             if (cbxItemsSoap.Checked == true)
             {
                 indexSharedDishSoap++;
-                tbxSharedItemsSoap.Text = NormalExpenses.AddTenants(indexSharedDishSoap);
+                tbxSharedItemsSoap.Text = normalExpenses.AddTenants(indexSharedDishSoap);
             }
             if (cbxItemsToilet.Checked == true)
             {
                 indexSharedToiletPaper++;
-                tbxSharedItemsToilet.Text = NormalExpenses.AddTenants(indexSharedToiletPaper);
+                tbxSharedItemsToilet.Text = normalExpenses.AddTenants(indexSharedToiletPaper);
             }
             if (cbxItemsBathroom.Checked == true)
             {
                 indexSharedBathroomItems++;
-                tbxSharedItemsBath.Text = NormalExpenses.AddTenants(indexSharedBathroomItems);
+                tbxSharedItemsBath.Text = normalExpenses.AddTenants(indexSharedBathroomItems);
             }
             if (cbxItemsKitchen.Checked == true)
             {
                 indexSharedKitchenItems++;
-                tbxSharedItemsKitchen.Text = NormalExpenses.AddTenants(indexSharedKitchenItems);
+                tbxSharedItemsKitchen.Text = normalExpenses.AddTenants(indexSharedKitchenItems);
             }
         }
 
@@ -642,7 +650,7 @@ namespace Student_housing
 
         private void pbLogOut_Click(object sender, EventArgs e)
         {
-            LOGIN loginform = new LOGIN(currentUser, userMannager);
+            LOGIN loginform = new LOGIN(currentUser, userManager);
             loginform.Show();
             this.Close();
         }

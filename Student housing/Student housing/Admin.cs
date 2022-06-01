@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Student_housing
 {
+    [Serializable]
     public class Admin
     {
         //atributes

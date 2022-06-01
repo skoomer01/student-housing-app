@@ -8,17 +8,23 @@ namespace Student_housing
 {
     public class NormalExpenses
     {
-        public static string AddTenants(int index)
+        UserManager userManager;
+
+        public NormalExpenses(UserManager userManager)
         {
-            if (index >= UserManager.users.Count)
+            this.userManager = userManager;
+        }
+        public string AddTenants(int index)
+        {
+            if (index >= userManager.GetUsers().Length)
             {
-                index = index % UserManager.users.Count;
+                index = index % userManager.GetUsers().Length;
                 //if (index == 0)
                 //{
                 //    index = 1;
                 //}
             }
-            return UserManager.users[index].Username;
+            return userManager.getUserByIndex(index).Username;
         }
     }
 }
