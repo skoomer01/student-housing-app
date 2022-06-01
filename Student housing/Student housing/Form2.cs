@@ -595,8 +595,6 @@ namespace Student_housing
             else
             {
                 DateTime date = new DateTime(year, month, day);
-                //string newDate = date.ToString();
-                //newDate.Remove(newDate,9);
                 Events newEvent;
                 if(description == "")
                 {
@@ -643,9 +641,25 @@ namespace Student_housing
             ShowEvents();
         }
 
+        async void DisableButtons(int seconds)
+        {   
+            btnPlanTheParty.Enabled = false;
+            btnRemoveParty.Enabled = false;
+            btnTodayEvent.Enabled = false;
+            btnNoEventThisWeek.Enabled = false;
+            await Task.Delay(1000*seconds);
+            btnPlanTheParty.Enabled = true;
+            btnRemoveParty.Enabled = true;
+            btnTodayEvent.Enabled = true;
+            btnNoEventThisWeek.Enabled = true;
+        }
+
         private void btnNoEventThisWeek_Click(object sender, EventArgs e)
         {
-            
+            Events noEvent = new Events("No event today");
+            eventManager.AddEvent(noEvent);
+            ShowEvents();
+            DisableButtons(100);
         }
 
         private void pbLogOut_Click(object sender, EventArgs e)

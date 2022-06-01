@@ -12,6 +12,13 @@ namespace Student_housing
         private DateTime date;
         private User user;
         private string description;
+
+        public Events(string description)
+        {
+            this.description = description;
+            this.user = null;
+        }
+
         public Events(DateTime date, User user)
         {
             this.date = date;
