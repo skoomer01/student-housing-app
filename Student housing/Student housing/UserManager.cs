@@ -39,6 +39,20 @@ namespace Student_housing
             return null;
         }
 
+        public User getUser(string username)
+        {
+            User foundUser = new User(username,"");
+            foreach (User user in users)
+            {
+                if (user.Username == username)
+                {
+                    return foundUser;
+                }
+            }
+
+            return null;
+        }
+
         public User getUserByIndex(int index)
         {
             User foundUser;

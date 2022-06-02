@@ -42,7 +42,7 @@ namespace Student_housing
             DeSerializeObject();
         }
 
-        #region <Seerialization>
+        #region <Serialization>
         public void DeSerializeObject()
         {
             FileStream fs = null;

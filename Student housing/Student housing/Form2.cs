@@ -15,11 +15,12 @@ namespace Student_housing
         //attributes that are objects
         private User currentUser;
         UserManager userManager;
+        ExpenseManager expenseManager;
         ManageAgreements studentAgreement = ManageAgreements.Instance;
         Trash trash ;
         Cleaning cleaning ;
-        NormalExpenses normalExpenses;
-        
+        NormalExpense normalExpenses;
+        private List<User> expenseMembers;
         EventManager eventManager = new EventManager();
 
         //initialization for indexes for cleaning
@@ -50,7 +51,8 @@ namespace Student_housing
             this.userManager = userManager;
             trash = new Trash(userManager);
             cleaning = new Cleaning(userManager);
-            normalExpenses = new NormalExpenses(userManager);
+            normalExpenses = new NormalExpense(userManager);
+            expenseManager = new ExpenseManager();
             UpdateUI();
         }
 
@@ -67,6 +69,11 @@ namespace Student_housing
             cbxItemsToilet.Text = normalExpenses.AddTenants(0);
             cbxItemsBathroom.Text = normalExpenses.AddTenants(0);
             cbxItemsKitchen.Text = normalExpenses.AddTenants(0);
+
+            foreach (User u in userManager.GetUsers())
+            {
+                cbExpenseMembers.Items.Add(u.Username);
+            }
 
             lblTitle.Text = "Welcome " + currentUser.Username;
 
@@ -355,7 +362,7 @@ namespace Student_housing
                 string description = dgvAgreementsStudent.CurrentRow.Cells[3].Value.ToString();
                 tbNewAgreementDescription.Text = description;
             }
-            catch (Exception ex) { }
+            catch (Exception ex) { MessageBox.Show(ex.Message);}
         }
 
 
@@ -526,6 +533,32 @@ namespace Student_housing
         #endregion <Cleaning task>
 
         #region <Normal Expenses>
+        //Methods
+
+        private void UpdateListBox()
+        {
+            lbExpenses.Items.Clear();
+            foreach (User u in expenseMembers)
+            {
+                lbExpenseMembers.Items.Add(u.Username);
+            }
+            foreach (NormalExpense e in expenseManager.GetExpenses())
+            {
+                if (e.Members.Contains(currentUser) && !e.MembersWhoPaid.Contains(currentUser))
+                {
+                    lbExpenses.Items.Add($"{e.Title}, Total: {e.Total}, You owe: {e.AmountToBePaidPerMember}");
+                }
+            }
+            var expenses = expenseManager.GetExpenses();
+        }
+        private void ClearExpenseInputs()
+        {
+            txtBoxExpenseTitle.Clear();
+            txtBoxTotal.Clear();
+            lbExpenseMembers.Items.Clear();
+            expenseMembers.Clear();
+        }
+
         //All the buttons for the normal expenses
         private void btn_Bought_Click(object sender, EventArgs e)
         {
@@ -551,11 +584,55 @@ namespace Student_housing
             }
         }
 
+        private void btnAddMember_Click(object sender, EventArgs e)
+        {
+            expenseMembers = new List<User>();
+            User[] users = userManager.GetUsers();
+            string username = cbExpenseMembers.SelectedItem.ToString();
+            User foundUser = userManager.getUser(username);
+            if (!expenseMembers.Contains(foundUser))
+                expenseMembers.Add(foundUser);
+            UpdateListBox();
+        }
+
         private void btn_BoughtReport_Click(object sender, EventArgs e)
         {
             //notification to be added
         }
 
+        private void btnRemoveMember_Click(object sender, EventArgs e)
+        {
+            expenseMembers = new List<User>();
+            User[] users = userManager.GetUsers();
+            string username = cbExpenseMembers.Text;
+            User foundUser = userManager.getUser(username);
+            if (!expenseMembers.Contains(foundUser))
+                expenseMembers.Remove(foundUser);
+            lbExpenseMembers.Items.Clear();
+            UpdateListBox();
+        }
+        private void btnCreateExpense_Click(object sender, EventArgs e)
+        {
+            var total = double.Parse(txtBoxTotal.Text);
+            var title = txtBoxExpenseTitle.Text;
+
+            expenseMembers.Add(currentUser);
+            var expense = new NormalExpense(expenseManager.GetExpenses().Count, total, currentUser, title, new List<User>(expenseMembers));
+            expenseManager.AddExpense(expense);
+            lbExpenseMembers.Items.Clear();
+            ClearExpenseInputs();
+            UpdateListBox();
+        }
+
+        private void btnPay_Click(object sender, EventArgs e)
+        {
+            NormalExpense expense = expenseManager.GetExpenses()[lbExpenses.SelectedIndex];
+            expense.Pay(currentUser);
+            var index = expenseManager.GetExpenses().FindIndex(exp => exp.expenseID == expense.expenseID);
+            expenseManager.GetExpenses()[index] = expense;
+            expenseManager.SetExpenses(expenseManager.GetExpenses());
+            MessageBox.Show("Success!");
+        }
 
         #endregion <Normal Expenses>
 

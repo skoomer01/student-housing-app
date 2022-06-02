@@ -60,11 +60,13 @@
             this.cbxCleaningKitchen = new System.Windows.Forms.CheckBox();
             this.tpExpenses = new System.Windows.Forms.TabPage();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.button7 = new System.Windows.Forms.Button();
+            this.btnRemoveMember = new System.Windows.Forms.Button();
+            this.lbExpenseMembers = new System.Windows.Forms.ListBox();
+            this.btnPay = new System.Windows.Forms.Button();
             this.lbExpenses = new System.Windows.Forms.ListBox();
             this.label16 = new System.Windows.Forms.Label();
-            this.button8 = new System.Windows.Forms.Button();
-            this.button10 = new System.Windows.Forms.Button();
+            this.btnCreateExpense = new System.Windows.Forms.Button();
+            this.btnAddMember = new System.Windows.Forms.Button();
             this.label17 = new System.Windows.Forms.Label();
             this.cbExpenseMembers = new System.Windows.Forms.ComboBox();
             this.txtBoxTotal = new System.Windows.Forms.TextBox();
@@ -249,7 +251,7 @@
             this.listBox2.Location = new System.Drawing.Point(1094, 128);
             this.listBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.listBox2.Name = "listBox2";
-            this.listBox2.Size = new System.Drawing.Size(560, 565);
+            this.listBox2.Size = new System.Drawing.Size(560, 631);
             this.listBox2.TabIndex = 1;
             // 
             // listBox1
@@ -261,7 +263,7 @@
             this.listBox1.Location = new System.Drawing.Point(190, 128);
             this.listBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(560, 565);
+            this.listBox1.Size = new System.Drawing.Size(560, 631);
             this.listBox1.TabIndex = 0;
             // 
             // tpTasks
@@ -514,11 +516,13 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.Ivory;
-            this.panel2.Controls.Add(this.button7);
+            this.panel2.Controls.Add(this.btnRemoveMember);
+            this.panel2.Controls.Add(this.lbExpenseMembers);
+            this.panel2.Controls.Add(this.btnPay);
             this.panel2.Controls.Add(this.lbExpenses);
             this.panel2.Controls.Add(this.label16);
-            this.panel2.Controls.Add(this.button8);
-            this.panel2.Controls.Add(this.button10);
+            this.panel2.Controls.Add(this.btnCreateExpense);
+            this.panel2.Controls.Add(this.btnAddMember);
             this.panel2.Controls.Add(this.label17);
             this.panel2.Controls.Add(this.cbExpenseMembers);
             this.panel2.Controls.Add(this.txtBoxTotal);
@@ -526,69 +530,95 @@
             this.panel2.Controls.Add(this.txtBoxExpenseTitle);
             this.panel2.Controls.Add(this.label19);
             this.panel2.Controls.Add(this.label14);
-            this.panel2.Location = new System.Drawing.Point(904, 0);
+            this.panel2.Location = new System.Drawing.Point(843, 0);
             this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(909, 818);
+            this.panel2.Size = new System.Drawing.Size(970, 821);
             this.panel2.TabIndex = 1;
             // 
-            // button7
+            // btnRemoveMember
             // 
-            this.button7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(171)))), ((int)(((byte)(188)))));
-            this.button7.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button7.Location = new System.Drawing.Point(398, 540);
-            this.button7.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(320, 65);
-            this.button7.TabIndex = 68;
-            this.button7.Text = "Pay";
-            this.button7.UseVisualStyleBackColor = false;
+            this.btnRemoveMember.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(171)))), ((int)(((byte)(188)))));
+            this.btnRemoveMember.Font = new System.Drawing.Font("Times New Roman", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRemoveMember.Location = new System.Drawing.Point(260, 591);
+            this.btnRemoveMember.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnRemoveMember.Name = "btnRemoveMember";
+            this.btnRemoveMember.Size = new System.Drawing.Size(238, 65);
+            this.btnRemoveMember.TabIndex = 70;
+            this.btnRemoveMember.Text = "Remove member";
+            this.btnRemoveMember.UseVisualStyleBackColor = false;
+            this.btnRemoveMember.Click += new System.EventHandler(this.btnRemoveMember_Click);
+            // 
+            // lbExpenseMembers
+            // 
+            this.lbExpenseMembers.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbExpenseMembers.FormattingEnabled = true;
+            this.lbExpenseMembers.ItemHeight = 27;
+            this.lbExpenseMembers.Location = new System.Drawing.Point(16, 451);
+            this.lbExpenseMembers.Name = "lbExpenseMembers";
+            this.lbExpenseMembers.Size = new System.Drawing.Size(482, 112);
+            this.lbExpenseMembers.TabIndex = 69;
+            // 
+            // btnPay
+            // 
+            this.btnPay.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(171)))), ((int)(((byte)(188)))));
+            this.btnPay.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPay.Location = new System.Drawing.Point(534, 644);
+            this.btnPay.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnPay.Name = "btnPay";
+            this.btnPay.Size = new System.Drawing.Size(384, 65);
+            this.btnPay.TabIndex = 68;
+            this.btnPay.Text = "Pay";
+            this.btnPay.UseVisualStyleBackColor = false;
+            this.btnPay.Click += new System.EventHandler(this.btnPay_Click);
             // 
             // lbExpenses
             // 
             this.lbExpenses.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbExpenses.FormattingEnabled = true;
             this.lbExpenses.ItemHeight = 33;
-            this.lbExpenses.Location = new System.Drawing.Point(398, 192);
+            this.lbExpenses.Location = new System.Drawing.Point(534, 192);
             this.lbExpenses.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.lbExpenses.Name = "lbExpenses";
-            this.lbExpenses.Size = new System.Drawing.Size(320, 268);
+            this.lbExpenses.Size = new System.Drawing.Size(384, 433);
             this.lbExpenses.TabIndex = 67;
             // 
             // label16
             // 
-            this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(392, 154);
+            this.label16.Location = new System.Drawing.Point(534, 148);
             this.label16.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(326, 33);
+            this.label16.Size = new System.Drawing.Size(384, 33);
             this.label16.TabIndex = 66;
             this.label16.Text = "Awaiting expense to be paid";
+            this.label16.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // button8
+            // btnCreateExpense
             // 
-            this.button8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(171)))), ((int)(((byte)(188)))));
-            this.button8.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button8.Location = new System.Drawing.Point(18, 540);
-            this.button8.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(306, 65);
-            this.button8.TabIndex = 65;
-            this.button8.Text = "Create expense\r\n";
-            this.button8.UseVisualStyleBackColor = false;
+            this.btnCreateExpense.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(171)))), ((int)(((byte)(188)))));
+            this.btnCreateExpense.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCreateExpense.Location = new System.Drawing.Point(18, 707);
+            this.btnCreateExpense.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnCreateExpense.Name = "btnCreateExpense";
+            this.btnCreateExpense.Size = new System.Drawing.Size(480, 65);
+            this.btnCreateExpense.TabIndex = 65;
+            this.btnCreateExpense.Text = "Create expense\r\n";
+            this.btnCreateExpense.UseVisualStyleBackColor = false;
+            this.btnCreateExpense.Click += new System.EventHandler(this.btnCreateExpense_Click);
             // 
-            // button10
+            // btnAddMember
             // 
-            this.button10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(171)))), ((int)(((byte)(188)))));
-            this.button10.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button10.Location = new System.Drawing.Point(18, 472);
-            this.button10.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(306, 65);
-            this.button10.TabIndex = 63;
-            this.button10.Text = "Add member";
-            this.button10.UseVisualStyleBackColor = false;
+            this.btnAddMember.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(171)))), ((int)(((byte)(188)))));
+            this.btnAddMember.Font = new System.Drawing.Font("Times New Roman", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddMember.Location = new System.Drawing.Point(16, 591);
+            this.btnAddMember.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnAddMember.Name = "btnAddMember";
+            this.btnAddMember.Size = new System.Drawing.Size(238, 65);
+            this.btnAddMember.TabIndex = 63;
+            this.btnAddMember.Text = "Add member";
+            this.btnAddMember.UseVisualStyleBackColor = false;
+            this.btnAddMember.Click += new System.EventHandler(this.btnAddMember_Click);
             // 
             // label17
             // 
@@ -608,7 +638,7 @@
             this.cbExpenseMembers.Location = new System.Drawing.Point(16, 385);
             this.cbExpenseMembers.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbExpenseMembers.Name = "cbExpenseMembers";
-            this.cbExpenseMembers.Size = new System.Drawing.Size(306, 41);
+            this.cbExpenseMembers.Size = new System.Drawing.Size(482, 41);
             this.cbExpenseMembers.TabIndex = 60;
             // 
             // txtBoxTotal
@@ -618,7 +648,7 @@
             this.txtBoxTotal.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtBoxTotal.Multiline = true;
             this.txtBoxTotal.Name = "txtBoxTotal";
-            this.txtBoxTotal.Size = new System.Drawing.Size(306, 39);
+            this.txtBoxTotal.Size = new System.Drawing.Size(482, 39);
             this.txtBoxTotal.TabIndex = 59;
             // 
             // label18
@@ -639,14 +669,14 @@
             this.txtBoxExpenseTitle.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtBoxExpenseTitle.Multiline = true;
             this.txtBoxExpenseTitle.Name = "txtBoxExpenseTitle";
-            this.txtBoxExpenseTitle.Size = new System.Drawing.Size(306, 39);
+            this.txtBoxExpenseTitle.Size = new System.Drawing.Size(482, 39);
             this.txtBoxExpenseTitle.TabIndex = 57;
             // 
             // label19
             // 
             this.label19.AutoSize = true;
             this.label19.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.Location = new System.Drawing.Point(12, 148);
+            this.label19.Location = new System.Drawing.Point(10, 148);
             this.label19.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(66, 33);
@@ -681,16 +711,16 @@
             this.panel1.Controls.Add(this.cbxItemsToilet);
             this.panel1.Controls.Add(this.cbxItemsSoap);
             this.panel1.Controls.Add(this.label9);
-            this.panel1.Location = new System.Drawing.Point(2, 5);
+            this.panel1.Location = new System.Drawing.Point(1, 2);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(900, 818);
+            this.panel1.Size = new System.Drawing.Size(851, 814);
             this.panel1.TabIndex = 0;
             // 
             // tbxSharedItemsKitchen
             // 
             this.tbxSharedItemsKitchen.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbxSharedItemsKitchen.Location = new System.Drawing.Point(624, 469);
+            this.tbxSharedItemsKitchen.Location = new System.Drawing.Point(520, 471);
             this.tbxSharedItemsKitchen.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbxSharedItemsKitchen.Multiline = true;
             this.tbxSharedItemsKitchen.Name = "tbxSharedItemsKitchen";
@@ -700,7 +730,7 @@
             // tbxSharedItemsSoap
             // 
             this.tbxSharedItemsSoap.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbxSharedItemsSoap.Location = new System.Drawing.Point(624, 188);
+            this.tbxSharedItemsSoap.Location = new System.Drawing.Point(520, 190);
             this.tbxSharedItemsSoap.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbxSharedItemsSoap.Multiline = true;
             this.tbxSharedItemsSoap.Name = "tbxSharedItemsSoap";
@@ -710,7 +740,7 @@
             // tbxSharedItemsBath
             // 
             this.tbxSharedItemsBath.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbxSharedItemsBath.Location = new System.Drawing.Point(624, 378);
+            this.tbxSharedItemsBath.Location = new System.Drawing.Point(520, 380);
             this.tbxSharedItemsBath.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbxSharedItemsBath.Multiline = true;
             this.tbxSharedItemsBath.Name = "tbxSharedItemsBath";
@@ -720,7 +750,7 @@
             // tbxSharedItemsToilet
             // 
             this.tbxSharedItemsToilet.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbxSharedItemsToilet.Location = new System.Drawing.Point(624, 285);
+            this.tbxSharedItemsToilet.Location = new System.Drawing.Point(520, 287);
             this.tbxSharedItemsToilet.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbxSharedItemsToilet.Multiline = true;
             this.tbxSharedItemsToilet.Name = "tbxSharedItemsToilet";
@@ -731,10 +761,10 @@
             // 
             this.btn_BoughtReport.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(171)))), ((int)(((byte)(188)))));
             this.btn_BoughtReport.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_BoughtReport.Location = new System.Drawing.Point(519, 535);
+            this.btn_BoughtReport.Location = new System.Drawing.Point(409, 568);
             this.btn_BoughtReport.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_BoughtReport.Name = "btn_BoughtReport";
-            this.btn_BoughtReport.Size = new System.Drawing.Size(212, 65);
+            this.btn_BoughtReport.Size = new System.Drawing.Size(190, 65);
             this.btn_BoughtReport.TabIndex = 25;
             this.btn_BoughtReport.Text = " Report";
             this.btn_BoughtReport.UseVisualStyleBackColor = false;
@@ -744,10 +774,10 @@
             // 
             this.btn_Bought.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(171)))), ((int)(((byte)(188)))));
             this.btn_Bought.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Bought.Location = new System.Drawing.Point(148, 535);
+            this.btn_Bought.Location = new System.Drawing.Point(79, 568);
             this.btn_Bought.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_Bought.Name = "btn_Bought";
-            this.btn_Bought.Size = new System.Drawing.Size(212, 65);
+            this.btn_Bought.Size = new System.Drawing.Size(161, 65);
             this.btn_Bought.TabIndex = 24;
             this.btn_Bought.Text = "Bought\r\n";
             this.btn_Bought.UseVisualStyleBackColor = false;
@@ -757,7 +787,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(177, 469);
+            this.label10.Location = new System.Drawing.Point(73, 471);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(305, 33);
             this.label10.TabIndex = 19;
@@ -767,7 +797,7 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(177, 388);
+            this.label11.Location = new System.Drawing.Point(73, 390);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(328, 33);
             this.label11.TabIndex = 18;
@@ -777,7 +807,7 @@
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(177, 286);
+            this.label12.Location = new System.Drawing.Point(73, 288);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(147, 33);
             this.label12.TabIndex = 17;
@@ -787,7 +817,7 @@
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(177, 191);
+            this.label13.Location = new System.Drawing.Point(73, 193);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(126, 33);
             this.label13.TabIndex = 16;
@@ -797,7 +827,7 @@
             // 
             this.cbxItemsKitchen.AutoSize = true;
             this.cbxItemsKitchen.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbxItemsKitchen.Location = new System.Drawing.Point(148, 474);
+            this.cbxItemsKitchen.Location = new System.Drawing.Point(44, 476);
             this.cbxItemsKitchen.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbxItemsKitchen.Name = "cbxItemsKitchen";
             this.cbxItemsKitchen.Size = new System.Drawing.Size(22, 21);
@@ -808,7 +838,7 @@
             // 
             this.cbxItemsBathroom.AutoSize = true;
             this.cbxItemsBathroom.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbxItemsBathroom.Location = new System.Drawing.Point(148, 392);
+            this.cbxItemsBathroom.Location = new System.Drawing.Point(44, 394);
             this.cbxItemsBathroom.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbxItemsBathroom.Name = "cbxItemsBathroom";
             this.cbxItemsBathroom.Size = new System.Drawing.Size(22, 21);
@@ -819,7 +849,7 @@
             // 
             this.cbxItemsToilet.AutoSize = true;
             this.cbxItemsToilet.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbxItemsToilet.Location = new System.Drawing.Point(148, 291);
+            this.cbxItemsToilet.Location = new System.Drawing.Point(44, 293);
             this.cbxItemsToilet.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbxItemsToilet.Name = "cbxItemsToilet";
             this.cbxItemsToilet.Size = new System.Drawing.Size(22, 21);
@@ -829,7 +859,7 @@
             // cbxItemsSoap
             // 
             this.cbxItemsSoap.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbxItemsSoap.Location = new System.Drawing.Point(148, 198);
+            this.cbxItemsSoap.Location = new System.Drawing.Point(44, 200);
             this.cbxItemsSoap.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbxItemsSoap.Name = "cbxItemsSoap";
             this.cbxItemsSoap.Size = new System.Drawing.Size(22, 22);
@@ -1013,7 +1043,7 @@
             this.btnAgreementSubmit.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAgreementSubmit.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnAgreementSubmit.Location = new System.Drawing.Point(666, 712);
-            this.btnAgreementSubmit.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btnAgreementSubmit.Margin = new System.Windows.Forms.Padding(6);
             this.btnAgreementSubmit.Name = "btnAgreementSubmit";
             this.btnAgreementSubmit.Size = new System.Drawing.Size(154, 49);
             this.btnAgreementSubmit.TabIndex = 33;
@@ -1046,7 +1076,7 @@
             // tbNewAgreementDescription
             // 
             this.tbNewAgreementDescription.Location = new System.Drawing.Point(218, 651);
-            this.tbNewAgreementDescription.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.tbNewAgreementDescription.Margin = new System.Windows.Forms.Padding(6);
             this.tbNewAgreementDescription.Multiline = true;
             this.tbNewAgreementDescription.Name = "tbNewAgreementDescription";
             this.tbNewAgreementDescription.Size = new System.Drawing.Size(602, 42);
@@ -1177,7 +1207,7 @@
             this.button9.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button9.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.button9.Location = new System.Drawing.Point(598, 575);
-            this.button9.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.button9.Margin = new System.Windows.Forms.Padding(6);
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(165, 49);
             this.button9.TabIndex = 39;
@@ -1584,11 +1614,11 @@
         private System.Windows.Forms.CheckBox cbx_TrashForSomeoneElse;
         private System.Windows.Forms.TextBox tbxUserTrash;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Button btnPay;
         private System.Windows.Forms.ListBox lbExpenses;
         private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.Button button10;
+        private System.Windows.Forms.Button btnCreateExpense;
+        private System.Windows.Forms.Button btnAddMember;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.ComboBox cbExpenseMembers;
         private System.Windows.Forms.TextBox txtBoxTotal;
@@ -1649,5 +1679,7 @@
         private System.Windows.Forms.RichTextBox rtxDescription;
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Button btnRemoveMember;
+        private System.Windows.Forms.ListBox lbExpenseMembers;
     }
 }
