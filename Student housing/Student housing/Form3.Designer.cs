@@ -35,6 +35,8 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.tpAdminComplaints = new System.Windows.Forms.TabPage();
+            this.tpAdminTechnical = new System.Windows.Forms.TabPage();
+            this.tpAdminRules = new System.Windows.Forms.TabPage();
             this.pbProfile = new System.Windows.Forms.PictureBox();
             this.lblTitle = new System.Windows.Forms.Label();
             this.pbLogOut = new System.Windows.Forms.PictureBox();
@@ -44,11 +46,15 @@
             this.btnComplaintsAdminTab = new System.Windows.Forms.Button();
             this.btnUsersAdminTab = new System.Windows.Forms.Button();
             this.buttonPannelAdmin = new System.Windows.Forms.Panel();
-            this.tpAdminTechnical = new System.Windows.Forms.TabPage();
-            this.tpAdminRules = new System.Windows.Forms.TabPage();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnSave = new System.Windows.Forms.Button();
+            this.rtbRules = new System.Windows.Forms.RichTextBox();
+            this.rtbGuidelines = new System.Windows.Forms.RichTextBox();
+            this.lblRules = new System.Windows.Forms.Label();
+            this.lblGuidelines = new System.Windows.Forms.Label();
             this.tcAdmin.SuspendLayout();
             this.tpAdminUsers.SuspendLayout();
+            this.tpAdminRules.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbProfile)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogOut)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbNotification)).BeginInit();
@@ -75,10 +81,10 @@
             this.tpAdminUsers.Controls.Add(this.textBox2);
             this.tpAdminUsers.Controls.Add(this.textBox1);
             this.tpAdminUsers.Controls.Add(this.button1);
-            this.tpAdminUsers.Location = new System.Drawing.Point(4, 24);
+            this.tpAdminUsers.Location = new System.Drawing.Point(4, 31);
             this.tpAdminUsers.Name = "tpAdminUsers";
             this.tpAdminUsers.Padding = new System.Windows.Forms.Padding(3);
-            this.tpAdminUsers.Size = new System.Drawing.Size(1242, 528);
+            this.tpAdminUsers.Size = new System.Drawing.Size(1242, 521);
             this.tpAdminUsers.TabIndex = 0;
             this.tpAdminUsers.Text = "Users";
             // 
@@ -86,14 +92,14 @@
             // 
             this.textBox2.Location = new System.Drawing.Point(170, 153);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 23);
+            this.textBox2.Size = new System.Drawing.Size(100, 30);
             this.textBox2.TabIndex = 2;
             // 
             // textBox1
             // 
             this.textBox1.Location = new System.Drawing.Point(170, 115);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 23);
+            this.textBox1.Size = new System.Drawing.Size(100, 30);
             this.textBox1.TabIndex = 1;
             // 
             // button1
@@ -104,17 +110,40 @@
             this.button1.TabIndex = 0;
             this.button1.Text = "button1";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button1.Click += new System.EventHandler(this.btnAddUser_Click);
             // 
             // tpAdminComplaints
             // 
             this.tpAdminComplaints.BackColor = System.Drawing.Color.Ivory;
-            this.tpAdminComplaints.Location = new System.Drawing.Point(4, 24);
+            this.tpAdminComplaints.Location = new System.Drawing.Point(4, 31);
             this.tpAdminComplaints.Name = "tpAdminComplaints";
             this.tpAdminComplaints.Padding = new System.Windows.Forms.Padding(3);
-            this.tpAdminComplaints.Size = new System.Drawing.Size(1242, 528);
+            this.tpAdminComplaints.Size = new System.Drawing.Size(1242, 521);
             this.tpAdminComplaints.TabIndex = 1;
             this.tpAdminComplaints.Text = "Complaints";
+            // 
+            // tpAdminTechnical
+            // 
+            this.tpAdminTechnical.BackColor = System.Drawing.Color.Ivory;
+            this.tpAdminTechnical.Location = new System.Drawing.Point(4, 31);
+            this.tpAdminTechnical.Name = "tpAdminTechnical";
+            this.tpAdminTechnical.Size = new System.Drawing.Size(1242, 521);
+            this.tpAdminTechnical.TabIndex = 2;
+            this.tpAdminTechnical.Text = "Technical Visits";
+            // 
+            // tpAdminRules
+            // 
+            this.tpAdminRules.BackColor = System.Drawing.Color.Ivory;
+            this.tpAdminRules.Controls.Add(this.lblGuidelines);
+            this.tpAdminRules.Controls.Add(this.lblRules);
+            this.tpAdminRules.Controls.Add(this.rtbGuidelines);
+            this.tpAdminRules.Controls.Add(this.btnSave);
+            this.tpAdminRules.Controls.Add(this.rtbRules);
+            this.tpAdminRules.Location = new System.Drawing.Point(4, 31);
+            this.tpAdminRules.Name = "tpAdminRules";
+            this.tpAdminRules.Size = new System.Drawing.Size(1242, 521);
+            this.tpAdminRules.TabIndex = 3;
+            this.tpAdminRules.Text = "Rules & Guidelines";
             // 
             // pbProfile
             // 
@@ -219,24 +248,6 @@
             this.buttonPannelAdmin.Size = new System.Drawing.Size(13, 69);
             this.buttonPannelAdmin.TabIndex = 7;
             // 
-            // tpAdminTechnical
-            // 
-            this.tpAdminTechnical.BackColor = System.Drawing.Color.Ivory;
-            this.tpAdminTechnical.Location = new System.Drawing.Point(4, 24);
-            this.tpAdminTechnical.Name = "tpAdminTechnical";
-            this.tpAdminTechnical.Size = new System.Drawing.Size(1242, 528);
-            this.tpAdminTechnical.TabIndex = 2;
-            this.tpAdminTechnical.Text = "Technical Visits";
-            // 
-            // tpAdminRules
-            // 
-            this.tpAdminRules.BackColor = System.Drawing.Color.Ivory;
-            this.tpAdminRules.Location = new System.Drawing.Point(4, 24);
-            this.tpAdminRules.Name = "tpAdminRules";
-            this.tpAdminRules.Size = new System.Drawing.Size(1242, 528);
-            this.tpAdminRules.TabIndex = 3;
-            this.tpAdminRules.Text = "Rules & Guidelines";
-            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
@@ -248,9 +259,56 @@
             this.pictureBox1.TabIndex = 15;
             this.pictureBox1.TabStop = false;
             // 
+            // btnSave
+            // 
+            this.btnSave.Font = new System.Drawing.Font("Times New Roman", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSave.Location = new System.Drawing.Point(398, 457);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(467, 53);
+            this.btnSave.TabIndex = 3;
+            this.btnSave.Text = "SAVE TO FILE";
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            // 
+            // rtbRules
+            // 
+            this.rtbRules.Location = new System.Drawing.Point(30, 38);
+            this.rtbRules.Name = "rtbRules";
+            this.rtbRules.Size = new System.Drawing.Size(521, 387);
+            this.rtbRules.TabIndex = 2;
+            this.rtbRules.Text = "";
+            // 
+            // rtbGuidelines
+            // 
+            this.rtbGuidelines.Location = new System.Drawing.Point(708, 36);
+            this.rtbGuidelines.Name = "rtbGuidelines";
+            this.rtbGuidelines.Size = new System.Drawing.Size(521, 387);
+            this.rtbGuidelines.TabIndex = 4;
+            this.rtbGuidelines.Text = "";
+            // 
+            // lblRules
+            // 
+            this.lblRules.AutoSize = true;
+            this.lblRules.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRules.Location = new System.Drawing.Point(254, 3);
+            this.lblRules.Name = "lblRules";
+            this.lblRules.Size = new System.Drawing.Size(79, 33);
+            this.lblRules.TabIndex = 6;
+            this.lblRules.Text = "Rules";
+            // 
+            // lblGuidelines
+            // 
+            this.lblGuidelines.AutoSize = true;
+            this.lblGuidelines.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGuidelines.Location = new System.Drawing.Point(901, 2);
+            this.lblGuidelines.Name = "lblGuidelines";
+            this.lblGuidelines.Size = new System.Drawing.Size(135, 33);
+            this.lblGuidelines.TabIndex = 7;
+            this.lblGuidelines.Text = "Guidelines";
+            // 
             // ADMIN
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Ivory;
             this.ClientSize = new System.Drawing.Size(1412, 711);
@@ -274,6 +332,8 @@
             this.tcAdmin.ResumeLayout(false);
             this.tpAdminUsers.ResumeLayout(false);
             this.tpAdminUsers.PerformLayout();
+            this.tpAdminRules.ResumeLayout(false);
+            this.tpAdminRules.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbProfile)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogOut)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbNotification)).EndInit();
@@ -302,5 +362,10 @@
         private System.Windows.Forms.TabPage tpAdminTechnical;
         private System.Windows.Forms.TabPage tpAdminRules;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label lblGuidelines;
+        private System.Windows.Forms.Label lblRules;
+        private System.Windows.Forms.RichTextBox rtbGuidelines;
+        private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.RichTextBox rtbRules;
     }
 }

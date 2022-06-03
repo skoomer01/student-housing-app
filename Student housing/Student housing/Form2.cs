@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -41,6 +42,7 @@ namespace Student_housing
         {
             InitializeComponent();
             this.currentUser = userManager.getCurrentStudent();
+            
             UpdateUI();
         }
 
@@ -86,16 +88,58 @@ namespace Student_housing
 
             lblTitle.Text = "Welcome back, " + currentUser.Username + "!";
 
+            LoadFromFile("Rules");
+            LoadFromFile("Guidelines");
         }
 
-        public void UpdateUI()
+        public void UpdateUI()//mai eficient sa le apelezi fara sa creezi metoda update ui?
         {
             // Show agreements
-
             UpdateAgreementsDgv();
             RefreshComboboxNames();
-
         }
+
+        #region <Rules and guidelines>
+
+        public void LoadFromFile(string filename)
+        {
+            FileStream fs = null;
+            StreamReader sr = null;
+
+            try
+            {
+                fs = new FileStream(filename, FileMode.Open, FileAccess.Read);
+                fs.Seek(0, SeekOrigin.Begin);
+                sr = new StreamReader(fs);
+                string text;
+                while (sr.EndOfStream != true)
+                {
+                    if (filename == "Rules")
+                    {
+                        text = sr.ReadLine();
+                        rtbStudentRules.Text = rtbStudentRules.Text + text;
+                    }
+                    else
+                    {
+                        text = sr.ReadLine();
+                        rtbStudentGuidelines.Text = rtbStudentGuidelines.Text + text;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                if (sr != null)
+                {
+                    sr.Close();
+                }
+            }
+        }
+
+        #endregion
 
         #region <Agreements>
         private void UpdateAgreementsDgv()

@@ -35,6 +35,46 @@ namespace Student_housing
             buttonPannelAdmin.Top = btnUsersAdminTab.Top;
 
             lblTitle.Text = "Welcome back, " + admin.Username + "!";
+            LoadFromFile("Rules");
+            LoadFromFile("Guidelines");
+        }
+
+        public void LoadFromFile(string filename)
+        {
+            FileStream fs = null;
+            StreamReader sr = null;
+
+            try
+            {
+                fs = new FileStream(filename, FileMode.Open, FileAccess.Read);
+                fs.Seek(0, SeekOrigin.Begin);
+                sr = new StreamReader(fs);
+                string text;
+                while (sr.EndOfStream != true)
+                {
+                    if(filename == "Rules")
+                    {
+                        text = sr.ReadLine();
+                        rtbRules.Text = rtbRules.Text + text;
+                    }
+                    else
+                    {
+                        text = sr.ReadLine();
+                        rtbGuidelines.Text = rtbGuidelines.Text + text;
+                    }
+                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                if (sr != null)
+                {
+                    sr.Close();
+                }
+            }
         }
 
         public void SerializeObject()
@@ -53,7 +93,7 @@ namespace Student_housing
             { if (fs != null) fs.Close(); }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnAddUser_Click(object sender, EventArgs e)
         {
             string username = textBox1.Text.ToString();
             string password = textBox2.Text.ToString();
@@ -68,6 +108,8 @@ namespace Student_housing
             loginform.Show();
             this.Close();
         }
+
+        #region <Tab control design>
 
         private void btnUsersAdminTab_Click(object sender, EventArgs e)
         {
@@ -96,5 +138,42 @@ namespace Student_housing
             buttonPannelAdmin.Height = btnRulesAdminTab.Height;
             buttonPannelAdmin.Top = btnRulesAdminTab.Top;
         }
+        #endregion
+
+        #region <Rules and guidelines>
+
+        public void WriteToFile(string filename, string text)
+        {
+            FileStream fs = null;
+            StreamWriter sw = null;
+
+            try
+            {
+                fs = new FileStream(filename, FileMode.OpenOrCreate, FileAccess.Write);
+                sw = new StreamWriter(fs);
+                sw.WriteLine(text);
+            }
+            catch (IOException exception)
+            {
+                MessageBox.Show(exception.Message);
+            }
+            finally
+            {
+                if (sw != null)
+                {
+                    sw.Close();
+                }
+            }
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            string rules = rtbRules.Text.ToString();
+            string guidelines = rtbGuidelines.Text.ToString();
+            WriteToFile("Rules", rules);
+            WriteToFile("Guidelines", guidelines);
+        }
+
+        #endregion
     }
 }
