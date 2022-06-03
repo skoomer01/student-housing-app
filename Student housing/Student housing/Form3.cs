@@ -25,7 +25,17 @@ namespace Student_housing
             this.admin = admin;
             this.userManager = userManager;
         }
+        private void ADMIN_Load(object sender, EventArgs e)
+        {
+            //Design code
+            tcAdmin.Appearance = TabAppearance.FlatButtons;
+            tcAdmin.ItemSize = new Size(0, 1);
+            tcAdmin.SizeMode = TabSizeMode.Fixed;
+            buttonPannelAdmin.Height = btnUsersAdminTab.Height;
+            buttonPannelAdmin.Top = btnUsersAdminTab.Top;
 
+            lblTitle.Text = "Welcome back, " + admin.Username + "!";
+        }
 
         public void SerializeObject()
         {
@@ -57,6 +67,34 @@ namespace Student_housing
             LOGIN loginform = new LOGIN(admin, userManager);
             loginform.Show();
             this.Close();
+        }
+
+        private void btnUsersAdminTab_Click(object sender, EventArgs e)
+        {
+            tcAdmin.SelectedTab = tpAdminUsers;
+            buttonPannelAdmin.Height = btnUsersAdminTab.Height;
+            buttonPannelAdmin.Top = btnUsersAdminTab.Top;
+        }
+
+        private void btnComplaintsAdminTab_Click(object sender, EventArgs e)
+        {
+            tcAdmin.SelectedTab = tpAdminComplaints;
+            buttonPannelAdmin.Height = btnComplaintsAdminTab.Height;
+            buttonPannelAdmin.Top = btnComplaintsAdminTab.Top;
+        }
+
+        private void btnTechnicalAdminTab_Click(object sender, EventArgs e)
+        {
+            tcAdmin.SelectedTab = tpAdminTechnical;
+            buttonPannelAdmin.Height = btnTechnicalAdminTab.Height;
+            buttonPannelAdmin.Top = btnTechnicalAdminTab.Top;
+        }
+
+        private void btnRuesAdminTab_Click(object sender, EventArgs e)
+        {
+            tcAdmin.SelectedTab = tpAdminRules;
+            buttonPannelAdmin.Height = btnRulesAdminTab.Height;
+            buttonPannelAdmin.Top = btnRulesAdminTab.Top;
         }
     }
 }

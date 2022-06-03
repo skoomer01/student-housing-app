@@ -17,8 +17,8 @@ namespace Student_housing
         UserManager userManager;
         ExpenseManager expenseManager;
         ManageAgreements studentAgreement = ManageAgreements.Instance;
-        Trash trash ;
-        Cleaning cleaning ;
+        Trash trash;
+        Cleaning cleaning;
         NormalExpense normalExpenses;
         private List<User> expenseMembers;
         EventManager eventManager = new EventManager();
@@ -58,6 +58,15 @@ namespace Student_housing
 
         private void STUDENT_Load(object sender, EventArgs e)
         {
+            //Design code
+            tcStudent.Appearance = TabAppearance.FlatButtons;
+            tcStudent.ItemSize = new Size(0, 1);
+            tcStudent.SizeMode = TabSizeMode.Fixed;
+            buttonPannel.Height = btnRulesTab.Height;
+            buttonPannel.Top = btnRulesTab.Top;
+
+
+            //Initialize the turn based lists 
             tbxUserTrash.Text = trash.GetUser();
 
             tbxCleaningBathroom.Text = cleaning.AddUsers(0);
@@ -75,7 +84,7 @@ namespace Student_housing
                 cbExpenseMembers.Items.Add(u.Username);
             }
 
-            lblTitle.Text = "Welcome " + currentUser.Username;
+            lblTitle.Text = "Welcome back, " + currentUser.Username + "!";
 
         }
 
@@ -362,7 +371,7 @@ namespace Student_housing
                 string description = dgvAgreementsStudent.CurrentRow.Cells[3].Value.ToString();
                 tbNewAgreementDescription.Text = description;
             }
-            catch (Exception ex) { MessageBox.Show(ex.Message);}
+            catch (Exception ex) { MessageBox.Show(ex.Message); }
         }
 
 
@@ -673,7 +682,7 @@ namespace Student_housing
             {
                 DateTime date = new DateTime(year, month, day);
                 Events newEvent;
-                if(description == "")
+                if (description == "")
                 {
                     newEvent = new Events(date, currentUser);
                 }
@@ -719,12 +728,12 @@ namespace Student_housing
         }
 
         async void DisableButtons(int seconds)
-        {   
+        {
             btnPlanTheParty.Enabled = false;
             btnRemoveParty.Enabled = false;
             btnTodayEvent.Enabled = false;
             btnNoEventThisWeek.Enabled = false;
-            await Task.Delay(1000*seconds);
+            await Task.Delay(1000 * seconds);
             btnPlanTheParty.Enabled = true;
             btnRemoveParty.Enabled = true;
             btnTodayEvent.Enabled = true;
@@ -745,6 +754,51 @@ namespace Student_housing
             loginform.Show();
             this.Close();
         }
+
+        #endregion <Events>
+
+        #region <TabControl Design>
+        private void btnRulesTab_Click(object sender, EventArgs e)
+        {
+            tcStudent.SelectedTab = tpRules;
+            buttonPannel.Height = btnRulesTab.Height;
+            buttonPannel.Top = btnRulesTab.Top;
+        }
+
+        private void btnTasksTab_Click(object sender, EventArgs e)
+        {
+            tcStudent.SelectedTab = tpTasks;
+            buttonPannel.Height = btnTasksTab.Height;
+            buttonPannel.Top = btnTasksTab.Top;
+        }
+
+        private void btnAgreementsTab_Click(object sender, EventArgs e)
+        {
+            tcStudent.SelectedTab = tpAgreements;
+            buttonPannel.Height = btnAgreementsTab.Height;
+            buttonPannel.Top = btnAgreementsTab.Top;
+        }
+
+        private void btnComplaintsTab_Click(object sender, EventArgs e)
+        {
+            tcStudent.SelectedTab = tpComplaint;
+            buttonPannel.Height = btnComplaintsTab.Height;
+            buttonPannel.Top = btnComplaintsTab.Top;
+        }
+
+        private void btnEventsTab_Click(object sender, EventArgs e)
+        {
+            tcStudent.SelectedTab = tpEvents;
+            buttonPannel.Height = btnEventsTab.Height;
+            buttonPannel.Top = btnEventsTab.Top;
+        }
+
+        private void btnTechnicalTab_Click(object sender, EventArgs e)
+        {
+            tcStudent.SelectedTab = tpTechnical;
+            buttonPannel.Height = btnTechnicalTab.Height;
+            buttonPannel.Top = btnTechnicalTab.Top;
+        }
+        #endregion <TabControl Design>
     }
-    #endregion <Events>
 }
