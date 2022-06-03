@@ -37,8 +37,6 @@
             this.tpRules = new System.Windows.Forms.TabPage();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.listBox2 = new System.Windows.Forms.ListBox();
-            this.listBox1 = new System.Windows.Forms.ListBox();
             this.tpTasks = new System.Windows.Forms.TabPage();
             this.tpStudent = new System.Windows.Forms.TabControl();
             this.tpCleaning = new System.Windows.Forms.TabPage();
@@ -136,6 +134,12 @@
             this.lblPartyPlanDay = new System.Windows.Forms.Label();
             this.lblPlanParty = new System.Windows.Forms.Label();
             this.tpTechnical = new System.Windows.Forms.TabPage();
+            this.label7 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
+            this.richTextBox3 = new System.Windows.Forms.RichTextBox();
+            this.richTextBox2 = new System.Windows.Forms.RichTextBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.pbNotification = new System.Windows.Forms.PictureBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.btnRulesTab = new System.Windows.Forms.Button();
@@ -145,12 +149,8 @@
             this.btnEventsTab = new System.Windows.Forms.Button();
             this.btnTechnicalTab = new System.Windows.Forms.Button();
             this.buttonPannel = new System.Windows.Forms.Panel();
-            this.richTextBox2 = new System.Windows.Forms.RichTextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.richTextBox3 = new System.Windows.Forms.RichTextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.label7 = new System.Windows.Forms.Label();
+            this.richTextBox4 = new System.Windows.Forms.RichTextBox();
+            this.richTextBox5 = new System.Windows.Forms.RichTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pbProfile)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogOut)).BeginInit();
             this.tcStudent.SuspendLayout();
@@ -226,10 +226,10 @@
             // tpRules
             // 
             this.tpRules.BackColor = System.Drawing.Color.Ivory;
+            this.tpRules.Controls.Add(this.richTextBox5);
+            this.tpRules.Controls.Add(this.richTextBox4);
             this.tpRules.Controls.Add(this.label3);
             this.tpRules.Controls.Add(this.label2);
-            this.tpRules.Controls.Add(this.listBox2);
-            this.tpRules.Controls.Add(this.listBox1);
             this.tpRules.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tpRules.Location = new System.Drawing.Point(4, 33);
             this.tpRules.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
@@ -260,30 +260,6 @@
             this.label2.Size = new System.Drawing.Size(123, 34);
             this.label2.TabIndex = 4;
             this.label2.Text = "RULES";
-            // 
-            // listBox2
-            // 
-            this.listBox2.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.listBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(1)))), ((int)(((byte)(21)))), ((int)(((byte)(101)))));
-            this.listBox2.FormattingEnabled = true;
-            this.listBox2.ItemHeight = 21;
-            this.listBox2.Location = new System.Drawing.Point(729, 83);
-            this.listBox2.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
-            this.listBox2.Name = "listBox2";
-            this.listBox2.Size = new System.Drawing.Size(375, 403);
-            this.listBox2.TabIndex = 1;
-            // 
-            // listBox1
-            // 
-            this.listBox1.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.listBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(1)))), ((int)(((byte)(21)))), ((int)(((byte)(101)))));
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 21;
-            this.listBox1.Location = new System.Drawing.Point(127, 83);
-            this.listBox1.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(375, 403);
-            this.listBox1.TabIndex = 0;
             // 
             // tpTasks
             // 
@@ -585,7 +561,7 @@
             this.lbExpenseMembers.FormattingEnabled = true;
             this.lbExpenseMembers.ItemHeight = 19;
             this.lbExpenseMembers.Location = new System.Drawing.Point(11, 293);
-            this.lbExpenseMembers.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.lbExpenseMembers.Margin = new System.Windows.Forms.Padding(2);
             this.lbExpenseMembers.Name = "lbExpenseMembers";
             this.lbExpenseMembers.Size = new System.Drawing.Size(340, 80);
             this.lbExpenseMembers.TabIndex = 69;
@@ -1087,7 +1063,7 @@
             this.btnAgreementSubmit.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAgreementSubmit.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnAgreementSubmit.Location = new System.Drawing.Point(769, 473);
-            this.btnAgreementSubmit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAgreementSubmit.Margin = new System.Windows.Forms.Padding(4);
             this.btnAgreementSubmit.Name = "btnAgreementSubmit";
             this.btnAgreementSubmit.Size = new System.Drawing.Size(103, 36);
             this.btnAgreementSubmit.TabIndex = 33;
@@ -1118,7 +1094,7 @@
             // tbNewAgreementDescription
             // 
             this.tbNewAgreementDescription.Location = new System.Drawing.Point(470, 433);
-            this.tbNewAgreementDescription.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbNewAgreementDescription.Margin = new System.Windows.Forms.Padding(4);
             this.tbNewAgreementDescription.Multiline = true;
             this.tbNewAgreementDescription.Name = "tbNewAgreementDescription";
             this.tbNewAgreementDescription.Size = new System.Drawing.Size(403, 29);
@@ -1248,7 +1224,7 @@
             this.button9.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button9.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.button9.Location = new System.Drawing.Point(399, 374);
-            this.button9.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button9.Margin = new System.Windows.Forms.Padding(4);
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(110, 35);
             this.button9.TabIndex = 39;
@@ -1435,7 +1411,7 @@
             this.btnRemoveParty.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnRemoveParty.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnRemoveParty.Location = new System.Drawing.Point(189, 256);
-            this.btnRemoveParty.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.btnRemoveParty.Margin = new System.Windows.Forms.Padding(1);
             this.btnRemoveParty.Name = "btnRemoveParty";
             this.btnRemoveParty.Size = new System.Drawing.Size(175, 53);
             this.btnRemoveParty.TabIndex = 27;
@@ -1452,7 +1428,7 @@
             this.lbxShowUpcomingEvents.HorizontalScrollbar = true;
             this.lbxShowUpcomingEvents.ItemHeight = 21;
             this.lbxShowUpcomingEvents.Location = new System.Drawing.Point(593, 14);
-            this.lbxShowUpcomingEvents.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.lbxShowUpcomingEvents.Margin = new System.Windows.Forms.Padding(1);
             this.lbxShowUpcomingEvents.Name = "lbxShowUpcomingEvents";
             this.lbxShowUpcomingEvents.ScrollAlwaysVisible = true;
             this.lbxShowUpcomingEvents.Size = new System.Drawing.Size(596, 487);
@@ -1465,7 +1441,7 @@
             this.btnTodayEvent.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnTodayEvent.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnTodayEvent.Location = new System.Drawing.Point(397, 118);
-            this.btnTodayEvent.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.btnTodayEvent.Margin = new System.Windows.Forms.Padding(1);
             this.btnTodayEvent.Name = "btnTodayEvent";
             this.btnTodayEvent.Size = new System.Drawing.Size(175, 53);
             this.btnTodayEvent.TabIndex = 24;
@@ -1480,7 +1456,7 @@
             this.btnNoEventThisWeek.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnNoEventThisWeek.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnNoEventThisWeek.Location = new System.Drawing.Point(397, 256);
-            this.btnNoEventThisWeek.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.btnNoEventThisWeek.Margin = new System.Windows.Forms.Padding(1);
             this.btnNoEventThisWeek.Name = "btnNoEventThisWeek";
             this.btnNoEventThisWeek.Size = new System.Drawing.Size(175, 53);
             this.btnNoEventThisWeek.TabIndex = 23;
@@ -1495,7 +1471,7 @@
             this.btnPlanTheParty.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnPlanTheParty.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnPlanTheParty.Location = new System.Drawing.Point(189, 118);
-            this.btnPlanTheParty.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.btnPlanTheParty.Margin = new System.Windows.Forms.Padding(1);
             this.btnPlanTheParty.Name = "btnPlanTheParty";
             this.btnPlanTheParty.Size = new System.Drawing.Size(175, 53);
             this.btnPlanTheParty.TabIndex = 22;
@@ -1563,6 +1539,72 @@
             this.tpTechnical.Size = new System.Drawing.Size(1245, 540);
             this.tpTechnical.TabIndex = 5;
             this.tpTechnical.Text = "TECHNICAL ISSUE";
+            // 
+            // label7
+            // 
+            this.label7.Font = new System.Drawing.Font("Times New Roman", 22F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(1)))), ((int)(((byte)(21)))), ((int)(((byte)(101)))));
+            this.label7.Location = new System.Drawing.Point(436, 20);
+            this.label7.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(345, 40);
+            this.label7.TabIndex = 46;
+            this.label7.Text = "Technical issues and visits";
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(171)))), ((int)(((byte)(188)))));
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button1.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.button1.Location = new System.Drawing.Point(764, 437);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(361, 35);
+            this.button1.TabIndex = 45;
+            this.button1.Text = "Send";
+            this.button1.UseVisualStyleBackColor = false;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.Ivory;
+            this.label6.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(759, 105);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(168, 27);
+            this.label6.TabIndex = 44;
+            this.label6.Text = "Send your issue:";
+            // 
+            // richTextBox3
+            // 
+            this.richTextBox3.Location = new System.Drawing.Point(764, 138);
+            this.richTextBox3.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.richTextBox3.Name = "richTextBox3";
+            this.richTextBox3.Size = new System.Drawing.Size(361, 294);
+            this.richTextBox3.TabIndex = 43;
+            this.richTextBox3.Text = "";
+            // 
+            // richTextBox2
+            // 
+            this.richTextBox2.Location = new System.Drawing.Point(103, 138);
+            this.richTextBox2.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.richTextBox2.Name = "richTextBox2";
+            this.richTextBox2.Size = new System.Drawing.Size(361, 294);
+            this.richTextBox2.TabIndex = 42;
+            this.richTextBox2.Text = "";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Ivory;
+            this.label5.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(104, 105);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(263, 27);
+            this.label5.TabIndex = 41;
+            this.label5.Text = "Next techinical issue visit:";
             // 
             // pbNotification
             // 
@@ -1668,71 +1710,23 @@
             this.buttonPannel.Size = new System.Drawing.Size(13, 69);
             this.buttonPannel.TabIndex = 6;
             // 
-            // richTextBox2
+            // richTextBox4
             // 
-            this.richTextBox2.Location = new System.Drawing.Point(103, 138);
-            this.richTextBox2.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
-            this.richTextBox2.Name = "richTextBox2";
-            this.richTextBox2.Size = new System.Drawing.Size(361, 294);
-            this.richTextBox2.TabIndex = 42;
-            this.richTextBox2.Text = "";
+            this.richTextBox4.Location = new System.Drawing.Point(103, 83);
+            this.richTextBox4.Name = "richTextBox4";
+            this.richTextBox4.ReadOnly = true;
+            this.richTextBox4.Size = new System.Drawing.Size(375, 403);
+            this.richTextBox4.TabIndex = 6;
+            this.richTextBox4.Text = "";
             // 
-            // label5
+            // richTextBox5
             // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.Ivory;
-            this.label5.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(104, 105);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(263, 27);
-            this.label5.TabIndex = 41;
-            this.label5.Text = "Next techinical issue visit:";
-            // 
-            // richTextBox3
-            // 
-            this.richTextBox3.Location = new System.Drawing.Point(764, 138);
-            this.richTextBox3.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
-            this.richTextBox3.Name = "richTextBox3";
-            this.richTextBox3.Size = new System.Drawing.Size(361, 294);
-            this.richTextBox3.TabIndex = 43;
-            this.richTextBox3.Text = "";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.Color.Ivory;
-            this.label6.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(759, 105);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(168, 27);
-            this.label6.TabIndex = 44;
-            this.label6.Text = "Send your issue:";
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(171)))), ((int)(((byte)(188)))));
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button1.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button1.Location = new System.Drawing.Point(764, 437);
-            this.button1.Margin = new System.Windows.Forms.Padding(4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(361, 35);
-            this.button1.TabIndex = 45;
-            this.button1.Text = "Send";
-            this.button1.UseVisualStyleBackColor = false;
-            // 
-            // label7
-            // 
-            this.label7.Font = new System.Drawing.Font("Times New Roman", 22F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(1)))), ((int)(((byte)(21)))), ((int)(((byte)(101)))));
-            this.label7.Location = new System.Drawing.Point(436, 20);
-            this.label7.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(345, 40);
-            this.label7.TabIndex = 46;
-            this.label7.Text = "Technical issues and visits";
+            this.richTextBox5.Location = new System.Drawing.Point(734, 83);
+            this.richTextBox5.Name = "richTextBox5";
+            this.richTextBox5.ReadOnly = true;
+            this.richTextBox5.Size = new System.Drawing.Size(375, 403);
+            this.richTextBox5.TabIndex = 7;
+            this.richTextBox5.Text = "";
             // 
             // STUDENT
             // 
@@ -1801,8 +1795,6 @@
         private System.Windows.Forms.TabPage tpTechnical;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ListBox listBox2;
-        private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.TabControl tpStudent;
         private System.Windows.Forms.TabPage tpCleaning;
         private System.Windows.Forms.Button btnTaskPending;
@@ -1909,5 +1901,7 @@
         private System.Windows.Forms.RichTextBox richTextBox3;
         private System.Windows.Forms.RichTextBox richTextBox2;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.RichTextBox richTextBox5;
+        private System.Windows.Forms.RichTextBox richTextBox4;
     }
 }
