@@ -49,6 +49,8 @@
     <Compile Include="Admin.cs" />
     <Compile Include="Agreement.cs" />
     <Compile Include="Cleaning.cs" />
+    <Compile Include="Complaint.cs" />
+    <Compile Include="ComplaintManager.cs" />
     <Compile Include="EventManager.cs" />
     <Compile Include="Events.cs" />
     <Compile Include="ExpenseManager.cs" />

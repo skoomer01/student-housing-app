@@ -18,6 +18,13 @@ namespace Student_housing
         private UserManager userManager;
         User currentUser;
         Admin currentAdmin;
+        ComplaintManager complaintManager;
+        EventManager eventManager;
+        Cleaning cleaning;
+        Trash trash;
+        ExpenseManager expenseManager;
+        NormalExpense normalExpense;
+
 
         //Constructor(s)
         public LOGIN()
@@ -27,11 +34,17 @@ namespace Student_housing
             DeSerializeObject();
         }
 
-        public LOGIN(User currentUser, UserManager userManager)
+        public LOGIN(User currentUser, UserManager userManager, ComplaintManager complaintManager, EventManager eventManager, Cleaning cleaning, Trash trash, ExpenseManager expenseManager, NormalExpense normalExpense)
         {
             InitializeComponent();
             this.currentUser = currentUser;
             this.userManager = userManager;
+            this.complaintManager = complaintManager;
+            this.eventManager = eventManager;
+            this.cleaning = cleaning;
+            this.trash = trash;
+            this.expenseManager = expenseManager;
+            this.normalExpense = normalExpense;
             DeSerializeObject();
         }
         public LOGIN(Admin currentAdmin, UserManager userManager)
@@ -49,7 +62,7 @@ namespace Student_housing
             BinaryFormatter bf = null;
             try
             {
-                fs = new FileStream("SaveData", FileMode.Open, FileAccess.Read);
+                fs = new FileStream("../../../DataFiles/SaveData", FileMode.Open, FileAccess.Read);
                 bf = new BinaryFormatter();
                 this.userManager = (UserManager)bf.Deserialize(fs);
 
@@ -71,7 +84,7 @@ namespace Student_housing
             if (userManager.CheckUser(username, password) == true)
             {
                 User currentUser = userManager.getUser(username, password);
-                STUDENT studentForm = new STUDENT(userManager, currentUser);
+                STUDENT studentForm = new STUDENT(userManager, currentUser, expenseManager, trash, cleaning, normalExpense, eventManager, complaintManager);
                 studentForm.Show();
                 Hide();
                 
@@ -79,7 +92,7 @@ namespace Student_housing
             else if (userManager.CheckUserAdmin(username, password) == true)
             {
                 Admin currentAdmin = userManager.getAdmin(username, password);
-                ADMIN adminForm = new ADMIN( userManager, currentAdmin);
+                ADMIN adminForm = new ADMIN( userManager, currentAdmin, complaintManager);
                 adminForm.Show();
                 Hide();
             }

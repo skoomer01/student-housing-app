@@ -17,13 +17,15 @@ namespace Student_housing
     {
         UserManager userManager;
         Admin admin;
+        ComplaintManager complaintManager;
 
         //Constructor(s)
-        public ADMIN(UserManager userManager, Admin admin)
+        public ADMIN(UserManager userManager, Admin admin, ComplaintManager complaintManager)
         {
             InitializeComponent();
             this.admin = admin;
             this.userManager = userManager;
+            this.complaintManager = complaintManager;
         }
         private void ADMIN_Load(object sender, EventArgs e)
         {
@@ -37,6 +39,8 @@ namespace Student_housing
             lblTitle.Text = "Welcome back, " + admin.Username + "!";
             LoadFromFile("Rules");
             LoadFromFile("Guidelines");
+            FillComplaintLbx();
+            FillComplaintCbx();
         }
 
         public void LoadFromFile(string filename)
@@ -175,5 +179,64 @@ namespace Student_housing
         }
 
         #endregion
+
+        #region <Complaints>
+
+        public void FillComplaintLbx()
+        {
+            foreach(Complaint complaint in complaintManager.Complaints)
+            {
+                lbxAllComplaints.Items.Add(complaint.GetInfo());
+            }
+        }
+
+        public void FillComplaintCbx()
+        {
+            foreach (User user in userManager.GetUsers())
+            {
+                cbxComplaintUser.Items.Add(user.Username);
+            }
+        }
+
+        private void btnRemoveComplaint_Click(object sender, EventArgs e)
+        {
+            int selectedIndex = lbxAllComplaints.SelectedIndex;
+            if(selectedIndex != -1)
+            {
+                for (int i = 0; i <= lbxAllComplaints.Items.Count; i++)
+                {
+                    if (selectedIndex == i)
+                    {
+                        lbxAllComplaints.Items.RemoveAt(i);
+                    }
+                }
+            }
+            else
+                MessageBox.Show("Please select a complaint!");
+        }
+
+        private void btnSendWarning_Click(object sender, EventArgs e)
+        {
+            string complaintUser = cbxComplaintUser.SelectedItem.ToString();
+            string warningText = rtxCreateWarning.Text.ToString();
+
+            if(rtxCreateWarning.Text == "")
+            {
+                MessageBox.Show("No complaint written");
+            }
+            else if(cbxComplaintUser.SelectedIndex == -1)
+            {
+                MessageBox.Show("No user selected");
+            }
+            else
+            {
+                Complaint revisedComplaint = new Complaint(userManager.getUser(complaintUser), warningText, userManager);
+                complaintManager.AddRevisedComplaint(revisedComplaint);
+                MessageBox.Show("Warning sent to " + complaintUser);
+                rtxCreateWarning.Clear();
+
+            }
+        }
+        #endregion <Complaints>
     }
 }

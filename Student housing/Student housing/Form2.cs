@@ -20,9 +20,10 @@ namespace Student_housing
         ManageAgreements studentAgreement = ManageAgreements.Instance;
         Trash trash;
         Cleaning cleaning;
-        NormalExpense normalExpenses;
+        NormalExpense normalExpenses; 
         private List<User> expenseMembers;
         EventManager eventManager = new EventManager();
+        ComplaintManager complaintManager;
 
         //initialization for indexes for cleaning
         int indexUserKitchen = 0;
@@ -46,15 +47,16 @@ namespace Student_housing
             UpdateUI();
         }
 
-        public STUDENT(UserManager userManager, User currentUser)
+        public STUDENT(UserManager userManager, User currentUser, ExpenseManager expenseManager, Trash trash, Cleaning cleaning, NormalExpense normalExpense, EventManager eventManager, ComplaintManager compla)
         {
             InitializeComponent();
             this.currentUser = currentUser;
             this.userManager = userManager;
-            trash = new Trash(userManager);
-            cleaning = new Cleaning(userManager);
-            normalExpenses = new NormalExpense(userManager);
-            expenseManager = new ExpenseManager();
+            this.trash = new Trash(userManager);
+            this.cleaning = new Cleaning(userManager);
+            this.normalExpenses = new NormalExpense(userManager);
+            this.expenseManager = new ExpenseManager();
+            this.complaintManager = new ComplaintManager();
             UpdateUI();
         }
 
@@ -97,6 +99,7 @@ namespace Student_housing
             // Show agreements
             UpdateAgreementsDgv();
             RefreshComboboxNames();
+            FillComplaintCbx();
         }
 
         #region <Rules and guidelines>
@@ -791,14 +794,6 @@ namespace Student_housing
             ShowEvents();
             DisableButtons(100);
         }
-
-        private void pbLogOut_Click(object sender, EventArgs e)
-        {
-            LOGIN loginform = new LOGIN(currentUser, userManager);
-            loginform.Show();
-            this.Close();
-        }
-
         #endregion <Events>
 
         #region <TabControl Design>
@@ -843,6 +838,45 @@ namespace Student_housing
             buttonPannel.Height = btnTechnicalTab.Height;
             buttonPannel.Top = btnTechnicalTab.Top;
         }
+
         #endregion <TabControl Design>
+
+        #region <Complaints>
+        private void btnPostComplaint_Click(object sender, EventArgs e)
+        {
+            string complaintText = rtxComplaintText.Text.ToString();
+            if(complaintText == "" )
+            {
+                MessageBox.Show("You can't send an empty complaint");
+            }
+            else
+            {
+                User complaintUser = userManager.getUser(cbxComplaintUser.Text.ToString());
+                Complaint newComplaint = new Complaint(complaintUser, complaintText,currentUser, userManager);
+                complaintManager.AddNewComplaint(newComplaint);
+                MessageBox.Show("Complaint sent to Administrator");
+            }
+            rtxComplaintText.Clear();
+
+        }
+
+        public void FillComplaintCbx()
+        {
+            foreach(User user in userManager.GetUsers())
+            {
+                if(user.Username != currentUser.Username)
+                {
+                    cbxComplaintUser.Items.Add(user.Username);
+                }
+            }
+        }
+        #endregion <Complaints>
+        private void pbLogOut_Click(object sender, EventArgs e)
+        {
+            LOGIN loginform = new LOGIN(currentUser, userManager, complaintManager, eventManager, cleaning, trash, expenseManager, normalExpenses);
+            loginform.Show();
+            this.Close();
+        }
+
     }
 }

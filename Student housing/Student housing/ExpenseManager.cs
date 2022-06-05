@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Student_housing
 {
-    internal class ExpenseManager
+    public class ExpenseManager
     {
         List<NormalExpense> expenses;
 
