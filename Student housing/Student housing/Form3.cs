@@ -17,15 +17,15 @@ namespace Student_housing
     {
         UserManager userManager;
         Admin admin;
-        ComplaintManager complaintManager;
+        ClassesManager classesManager;
 
         //Constructor(s)
-        public ADMIN(UserManager userManager, Admin admin, ComplaintManager complaintManager)
+        public ADMIN(UserManager userManager, Admin admin, ClassesManager classesManager)
         {
             InitializeComponent();
             this.admin = admin;
             this.userManager = userManager;
-            this.complaintManager = complaintManager;
+            this.classesManager = classesManager;
         }
         private void ADMIN_Load(object sender, EventArgs e)
         {
@@ -106,13 +106,6 @@ namespace Student_housing
             SerializeObject();
         }
 
-        private void pbLogOut_Click(object sender, EventArgs e)
-        {
-            LOGIN loginform = new LOGIN(admin, userManager);
-            loginform.Show();
-            this.Close();
-        }
-
         #region <Tab control design>
 
         private void btnUsersAdminTab_Click(object sender, EventArgs e)
@@ -189,9 +182,9 @@ namespace Student_housing
 
         public void FillComplaintLbx()
         {
-            if(complaintManager != null)
+            if(classesManager.ComplaintManager != null)
             {
-                foreach (Complaint complaint in complaintManager.Complaints)
+                foreach (Complaint complaint in classesManager.ComplaintManager.Complaints)
                 {
                     lbxAllComplaints.Items.Add(complaint.GetInfo());
                 }
@@ -240,12 +233,20 @@ namespace Student_housing
             else
             {
                 Complaint revisedComplaint = new Complaint(userManager.getUser(complaintUser), warningText, userManager);
-                complaintManager.AddRevisedComplaint(revisedComplaint);
+                classesManager.ComplaintManager.AddRevisedComplaint(revisedComplaint);
                 MessageBox.Show("Warning sent to " + complaintUser);
                 rtxCreateWarning.Clear();
 
             }
         }
+
         #endregion <Complaints>
+
+        private void pbxLogOut_Click(object sender, EventArgs e)
+        {
+            LOGIN loginform = new LOGIN(admin, userManager, classesManager);
+            loginform.Show();
+            this.Close();
+        }
     }
 }

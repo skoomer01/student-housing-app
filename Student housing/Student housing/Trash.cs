@@ -11,7 +11,6 @@ namespace Student_housing
     {
         UserManager userManager;
         private int index = 0;
-        private int turn = 0;
 
         public Trash(UserManager userManager)
         {
@@ -22,13 +21,16 @@ namespace Student_housing
 
         public string GetUser()
         {
-            turn++;
-            if (turn == 1)
-            {
-                turn = 0;
-                index = (index + 1) % userManager.GetUsers().Length;
-            }
             return userManager.getUserByIndex(index).Username;
+        }
+
+        public void NextUser()
+        {
+            index++;
+            if (index == userManager.GetUsers().Length)
+            {
+                index = 0;
+            }
         }
     }
 }

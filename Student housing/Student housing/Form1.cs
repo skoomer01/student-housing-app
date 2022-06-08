@@ -15,64 +15,31 @@ namespace Student_housing
 {
     public partial class LOGIN : Form
     {
-        private UserManager userManager;
         User currentUser;
         Admin currentAdmin;
-        ComplaintManager complaintManager;
-        EventManager eventManager;
-        Cleaning cleaning;
-        Trash trash;
-        ExpenseManager expenseManager;
-        NormalExpense normalExpense;
+        ClassesManager classesManager;
 
 
         //Constructor(s)
         public LOGIN()
         {
-            userManager = new UserManager(); 
+            classesManager = new ClassesManager();
+            
             InitializeComponent();
-            DeSerializeObject();
         }
 
-        public LOGIN(User currentUser, UserManager userManager, ComplaintManager complaintManager, EventManager eventManager, Cleaning cleaning, Trash trash, ExpenseManager expenseManager, NormalExpense normalExpense)
+        public LOGIN(User currentUser, UserManager userManager, ClassesManager classesManager)
         {
             InitializeComponent();
             this.currentUser = currentUser;
-            this.userManager = userManager;
-            this.complaintManager = complaintManager;
-            this.eventManager = eventManager;
-            this.cleaning = cleaning;
-            this.trash = trash;
-            this.expenseManager = expenseManager;
-            this.normalExpense = normalExpense;
-            DeSerializeObject();
+            this.classesManager = classesManager;
         }
-        public LOGIN(Admin currentAdmin, UserManager userManager)
+        public LOGIN(Admin currentAdmin, UserManager userManager, ClassesManager classesManager)
         {
             InitializeComponent();
             this.currentAdmin = currentAdmin;
-            this.userManager = userManager;
-            DeSerializeObject();
+            this.classesManager = classesManager;
         }
-
-        #region <Serialization>
-        public void DeSerializeObject()
-        {
-            FileStream fs = null;
-            BinaryFormatter bf = null;
-            try
-            {
-                fs = new FileStream("../../../DataFiles/SaveData", FileMode.Open, FileAccess.Read);
-                bf = new BinaryFormatter();
-                this.userManager = (UserManager)bf.Deserialize(fs);
-
-            }
-            catch (Exception ex)
-            { MessageBox.Show(ex.Message); }
-            finally
-            { if (fs != null) fs.Close(); }
-        }
-        #endregion <Serialization>
 
 
         private void btLogIn_Click(object sender, EventArgs e)
@@ -81,18 +48,18 @@ namespace Student_housing
             string password = Convert.ToString(tbxPassword.Text);
 
             
-            if (userManager.CheckUser(username, password) == true)
+            if (classesManager.UserManager.CheckUser(username, password) == true)
             {
-                User currentUser = userManager.getUser(username, password);
-                STUDENT studentForm = new STUDENT(userManager, currentUser, expenseManager, trash, cleaning, normalExpense, eventManager, complaintManager);
+                User currentUser = classesManager.UserManager.getUser(username, password);
+                STUDENT studentForm = new STUDENT(classesManager.UserManager, currentUser, classesManager);
                 studentForm.Show();
                 Hide();
                 
             }
-            else if (userManager.CheckUserAdmin(username, password) == true)
+            else if (classesManager.UserManager.CheckUserAdmin(username, password) == true)
             {
-                Admin currentAdmin = userManager.getAdmin(username, password);
-                ADMIN adminForm = new ADMIN( userManager, currentAdmin, complaintManager);
+                Admin currentAdmin = classesManager.UserManager.getAdmin(username, password);
+                ADMIN adminForm = new ADMIN(classesManager.UserManager, currentAdmin, classesManager);
                 adminForm.Show();
                 Hide();
             }

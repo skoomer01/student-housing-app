@@ -35,6 +35,15 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.tpAdminComplaints = new System.Windows.Forms.TabPage();
+            this.btnSendWarning = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.cbxComplaintUser = new System.Windows.Forms.ComboBox();
+            this.btnRemoveComplaint = new System.Windows.Forms.Button();
+            this.lblPartyPlanDay = new System.Windows.Forms.Label();
+            this.lbxAllComplaints = new System.Windows.Forms.ListBox();
+            this.lblPlanParty = new System.Windows.Forms.Label();
+            this.rtxCreateWarning = new System.Windows.Forms.RichTextBox();
             this.tpAdminTechnical = new System.Windows.Forms.TabPage();
             this.tpAdminRules = new System.Windows.Forms.TabPage();
             this.lblGuidelines = new System.Windows.Forms.Label();
@@ -44,31 +53,18 @@
             this.rtbRules = new System.Windows.Forms.RichTextBox();
             this.pbProfile = new System.Windows.Forms.PictureBox();
             this.lblTitle = new System.Windows.Forms.Label();
-            this.pbLogOut = new System.Windows.Forms.PictureBox();
-            this.pbNotification = new System.Windows.Forms.PictureBox();
             this.btnRulesAdminTab = new System.Windows.Forms.Button();
             this.btnTechnicalAdminTab = new System.Windows.Forms.Button();
             this.btnComplaintsAdminTab = new System.Windows.Forms.Button();
             this.btnUsersAdminTab = new System.Windows.Forms.Button();
             this.buttonPannelAdmin = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.rtxCreateWarning = new System.Windows.Forms.RichTextBox();
-            this.lblPlanParty = new System.Windows.Forms.Label();
-            this.lbxAllComplaints = new System.Windows.Forms.ListBox();
-            this.lblPartyPlanDay = new System.Windows.Forms.Label();
-            this.btnRemoveComplaint = new System.Windows.Forms.Button();
-            this.cbxComplaintUser = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.btnSendWarning = new System.Windows.Forms.Button();
+            this.pbxLogOut = new System.Windows.Forms.PictureBox();
             this.tcAdmin.SuspendLayout();
             this.tpAdminUsers.SuspendLayout();
             this.tpAdminComplaints.SuspendLayout();
             this.tpAdminRules.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbProfile)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbLogOut)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbNotification)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxLogOut)).BeginInit();
             this.SuspendLayout();
             // 
             // tcAdmin
@@ -140,6 +136,114 @@
             this.tpAdminComplaints.Size = new System.Drawing.Size(1242, 528);
             this.tpAdminComplaints.TabIndex = 1;
             this.tpAdminComplaints.Text = "Complaints";
+            // 
+            // btnSendWarning
+            // 
+            this.btnSendWarning.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(171)))), ((int)(((byte)(188)))));
+            this.btnSendWarning.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnSendWarning.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSendWarning.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnSendWarning.Location = new System.Drawing.Point(925, 455);
+            this.btnSendWarning.Margin = new System.Windows.Forms.Padding(1);
+            this.btnSendWarning.Name = "btnSendWarning";
+            this.btnSendWarning.Size = new System.Drawing.Size(175, 53);
+            this.btnSendWarning.TabIndex = 42;
+            this.btnSendWarning.Text = "Sent a warning to the user";
+            this.btnSendWarning.UseVisualStyleBackColor = false;
+            this.btnSendWarning.Click += new System.EventHandler(this.btnSendWarning_Click);
+            // 
+            // label2
+            // 
+            this.label2.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(29)))), ((int)(((byte)(44)))));
+            this.label2.Location = new System.Drawing.Point(794, 122);
+            this.label2.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(152, 26);
+            this.label2.TabIndex = 41;
+            this.label2.Text = "Write a complaint:";
+            // 
+            // label1
+            // 
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(29)))), ((int)(((byte)(44)))));
+            this.label1.Location = new System.Drawing.Point(794, 55);
+            this.label1.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(126, 26);
+            this.label1.TabIndex = 40;
+            this.label1.Text = "Select a user:";
+            // 
+            // cbxComplaintUser
+            // 
+            this.cbxComplaintUser.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbxComplaintUser.FormattingEnabled = true;
+            this.cbxComplaintUser.ItemHeight = 27;
+            this.cbxComplaintUser.Location = new System.Drawing.Point(798, 84);
+            this.cbxComplaintUser.Name = "cbxComplaintUser";
+            this.cbxComplaintUser.Size = new System.Drawing.Size(224, 35);
+            this.cbxComplaintUser.TabIndex = 39;
+            // 
+            // btnRemoveComplaint
+            // 
+            this.btnRemoveComplaint.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(171)))), ((int)(((byte)(188)))));
+            this.btnRemoveComplaint.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnRemoveComplaint.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnRemoveComplaint.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnRemoveComplaint.Location = new System.Drawing.Point(166, 455);
+            this.btnRemoveComplaint.Margin = new System.Windows.Forms.Padding(1);
+            this.btnRemoveComplaint.Name = "btnRemoveComplaint";
+            this.btnRemoveComplaint.Size = new System.Drawing.Size(175, 53);
+            this.btnRemoveComplaint.TabIndex = 38;
+            this.btnRemoveComplaint.Text = "Remove complaint";
+            this.btnRemoveComplaint.UseVisualStyleBackColor = false;
+            this.btnRemoveComplaint.Click += new System.EventHandler(this.btnRemoveComplaint_Click);
+            // 
+            // lblPartyPlanDay
+            // 
+            this.lblPartyPlanDay.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPartyPlanDay.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(29)))), ((int)(((byte)(44)))));
+            this.lblPartyPlanDay.Location = new System.Drawing.Point(30, 53);
+            this.lblPartyPlanDay.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
+            this.lblPartyPlanDay.Name = "lblPartyPlanDay";
+            this.lblPartyPlanDay.Size = new System.Drawing.Size(209, 26);
+            this.lblPartyPlanDay.TabIndex = 37;
+            this.lblPartyPlanDay.Text = "All the complaints sent:";
+            // 
+            // lbxAllComplaints
+            // 
+            this.lbxAllComplaints.ColumnWidth = 748;
+            this.lbxAllComplaints.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbxAllComplaints.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(29)))), ((int)(((byte)(44)))));
+            this.lbxAllComplaints.FormattingEnabled = true;
+            this.lbxAllComplaints.HorizontalScrollbar = true;
+            this.lbxAllComplaints.ItemHeight = 21;
+            this.lbxAllComplaints.Location = new System.Drawing.Point(34, 80);
+            this.lbxAllComplaints.Margin = new System.Windows.Forms.Padding(1);
+            this.lbxAllComplaints.Name = "lbxAllComplaints";
+            this.lbxAllComplaints.ScrollAlwaysVisible = true;
+            this.lbxAllComplaints.Size = new System.Drawing.Size(461, 361);
+            this.lbxAllComplaints.TabIndex = 36;
+            // 
+            // lblPlanParty
+            // 
+            this.lblPlanParty.Font = new System.Drawing.Font("Times New Roman", 22F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPlanParty.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(1)))), ((int)(((byte)(21)))), ((int)(((byte)(101)))));
+            this.lblPlanParty.Location = new System.Drawing.Point(4, 9);
+            this.lblPlanParty.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
+            this.lblPlanParty.Name = "lblPlanParty";
+            this.lblPlanParty.Size = new System.Drawing.Size(397, 40);
+            this.lblPlanParty.TabIndex = 35;
+            this.lblPlanParty.Text = "Create and review complaints";
+            // 
+            // rtxCreateWarning
+            // 
+            this.rtxCreateWarning.Location = new System.Drawing.Point(798, 155);
+            this.rtxCreateWarning.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.rtxCreateWarning.Name = "rtxCreateWarning";
+            this.rtxCreateWarning.Size = new System.Drawing.Size(404, 286);
+            this.rtxCreateWarning.TabIndex = 34;
+            this.rtxCreateWarning.Text = "";
             // 
             // tpAdminTechnical
             // 
@@ -230,25 +334,6 @@
             this.lblTitle.TabIndex = 4;
             this.lblTitle.Text = "Welcome back, <name>";
             // 
-            // pbLogOut
-            // 
-            this.pbLogOut.Image = ((System.Drawing.Image)(resources.GetObject("pbLogOut.Image")));
-            this.pbLogOut.Location = new System.Drawing.Point(1787, 46);
-            this.pbLogOut.Name = "pbLogOut";
-            this.pbLogOut.Size = new System.Drawing.Size(95, 91);
-            this.pbLogOut.TabIndex = 5;
-            this.pbLogOut.TabStop = false;
-            this.pbLogOut.Click += new System.EventHandler(this.pbLogOut_Click);
-            // 
-            // pbNotification
-            // 
-            this.pbNotification.Image = ((System.Drawing.Image)(resources.GetObject("pbNotification.Image")));
-            this.pbNotification.Location = new System.Drawing.Point(1576, 46);
-            this.pbNotification.Name = "pbNotification";
-            this.pbNotification.Size = new System.Drawing.Size(102, 91);
-            this.pbNotification.TabIndex = 7;
-            this.pbNotification.TabStop = false;
-            // 
             // btnRulesAdminTab
             // 
             this.btnRulesAdminTab.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
@@ -314,124 +399,17 @@
             this.buttonPannelAdmin.Size = new System.Drawing.Size(13, 69);
             this.buttonPannelAdmin.TabIndex = 7;
             // 
-            // pictureBox1
+            // pbxLogOut
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(1333, 54);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(63, 62);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 15;
-            this.pictureBox1.TabStop = false;
-            // 
-            // rtxCreateWarning
-            // 
-            this.rtxCreateWarning.Location = new System.Drawing.Point(798, 155);
-            this.rtxCreateWarning.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
-            this.rtxCreateWarning.Name = "rtxCreateWarning";
-            this.rtxCreateWarning.Size = new System.Drawing.Size(404, 286);
-            this.rtxCreateWarning.TabIndex = 34;
-            this.rtxCreateWarning.Text = "";
-            // 
-            // lblPlanParty
-            // 
-            this.lblPlanParty.Font = new System.Drawing.Font("Times New Roman", 22F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPlanParty.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(1)))), ((int)(((byte)(21)))), ((int)(((byte)(101)))));
-            this.lblPlanParty.Location = new System.Drawing.Point(4, 9);
-            this.lblPlanParty.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
-            this.lblPlanParty.Name = "lblPlanParty";
-            this.lblPlanParty.Size = new System.Drawing.Size(397, 40);
-            this.lblPlanParty.TabIndex = 35;
-            this.lblPlanParty.Text = "Create and review complaints";
-            // 
-            // lbxAllComplaints
-            // 
-            this.lbxAllComplaints.ColumnWidth = 748;
-            this.lbxAllComplaints.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbxAllComplaints.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(29)))), ((int)(((byte)(44)))));
-            this.lbxAllComplaints.FormattingEnabled = true;
-            this.lbxAllComplaints.HorizontalScrollbar = true;
-            this.lbxAllComplaints.ItemHeight = 21;
-            this.lbxAllComplaints.Location = new System.Drawing.Point(34, 80);
-            this.lbxAllComplaints.Margin = new System.Windows.Forms.Padding(1);
-            this.lbxAllComplaints.Name = "lbxAllComplaints";
-            this.lbxAllComplaints.ScrollAlwaysVisible = true;
-            this.lbxAllComplaints.Size = new System.Drawing.Size(461, 361);
-            this.lbxAllComplaints.TabIndex = 36;
-            // 
-            // lblPartyPlanDay
-            // 
-            this.lblPartyPlanDay.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPartyPlanDay.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(29)))), ((int)(((byte)(44)))));
-            this.lblPartyPlanDay.Location = new System.Drawing.Point(30, 53);
-            this.lblPartyPlanDay.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
-            this.lblPartyPlanDay.Name = "lblPartyPlanDay";
-            this.lblPartyPlanDay.Size = new System.Drawing.Size(209, 26);
-            this.lblPartyPlanDay.TabIndex = 37;
-            this.lblPartyPlanDay.Text = "All the complaints sent:";
-            // 
-            // btnRemoveComplaint
-            // 
-            this.btnRemoveComplaint.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(171)))), ((int)(((byte)(188)))));
-            this.btnRemoveComplaint.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnRemoveComplaint.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnRemoveComplaint.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnRemoveComplaint.Location = new System.Drawing.Point(166, 455);
-            this.btnRemoveComplaint.Margin = new System.Windows.Forms.Padding(1);
-            this.btnRemoveComplaint.Name = "btnRemoveComplaint";
-            this.btnRemoveComplaint.Size = new System.Drawing.Size(175, 53);
-            this.btnRemoveComplaint.TabIndex = 38;
-            this.btnRemoveComplaint.Text = "Remove complaint";
-            this.btnRemoveComplaint.UseVisualStyleBackColor = false;
-            this.btnRemoveComplaint.Click += new System.EventHandler(this.btnRemoveComplaint_Click);
-            // 
-            // cbxComplaintUser
-            // 
-            this.cbxComplaintUser.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbxComplaintUser.FormattingEnabled = true;
-            this.cbxComplaintUser.ItemHeight = 27;
-            this.cbxComplaintUser.Location = new System.Drawing.Point(798, 84);
-            this.cbxComplaintUser.Name = "cbxComplaintUser";
-            this.cbxComplaintUser.Size = new System.Drawing.Size(224, 35);
-            this.cbxComplaintUser.TabIndex = 39;
-            // 
-            // label1
-            // 
-            this.label1.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(29)))), ((int)(((byte)(44)))));
-            this.label1.Location = new System.Drawing.Point(794, 55);
-            this.label1.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(126, 26);
-            this.label1.TabIndex = 40;
-            this.label1.Text = "Select a user:";
-            // 
-            // label2
-            // 
-            this.label2.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(29)))), ((int)(((byte)(44)))));
-            this.label2.Location = new System.Drawing.Point(794, 122);
-            this.label2.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(152, 26);
-            this.label2.TabIndex = 41;
-            this.label2.Text = "Write a complaint:";
-            // 
-            // btnSendWarning
-            // 
-            this.btnSendWarning.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(171)))), ((int)(((byte)(188)))));
-            this.btnSendWarning.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnSendWarning.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSendWarning.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnSendWarning.Location = new System.Drawing.Point(925, 455);
-            this.btnSendWarning.Margin = new System.Windows.Forms.Padding(1);
-            this.btnSendWarning.Name = "btnSendWarning";
-            this.btnSendWarning.Size = new System.Drawing.Size(175, 53);
-            this.btnSendWarning.TabIndex = 42;
-            this.btnSendWarning.Text = "Sent a warning to the user";
-            this.btnSendWarning.UseVisualStyleBackColor = false;
-            this.btnSendWarning.Click += new System.EventHandler(this.btnSendWarning_Click);
+            this.pbxLogOut.Image = ((System.Drawing.Image)(resources.GetObject("pbxLogOut.Image")));
+            this.pbxLogOut.Location = new System.Drawing.Point(1333, 54);
+            this.pbxLogOut.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.pbxLogOut.Name = "pbxLogOut";
+            this.pbxLogOut.Size = new System.Drawing.Size(63, 62);
+            this.pbxLogOut.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbxLogOut.TabIndex = 15;
+            this.pbxLogOut.TabStop = false;
+            this.pbxLogOut.Click += new System.EventHandler(this.pbxLogOut_Click);
             // 
             // ADMIN
             // 
@@ -439,14 +417,12 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Ivory;
             this.ClientSize = new System.Drawing.Size(1412, 711);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.pbxLogOut);
             this.Controls.Add(this.buttonPannelAdmin);
             this.Controls.Add(this.btnRulesAdminTab);
             this.Controls.Add(this.btnTechnicalAdminTab);
             this.Controls.Add(this.btnComplaintsAdminTab);
             this.Controls.Add(this.btnUsersAdminTab);
-            this.Controls.Add(this.pbNotification);
-            this.Controls.Add(this.pbLogOut);
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.pbProfile);
             this.Controls.Add(this.tcAdmin);
@@ -463,9 +439,7 @@
             this.tpAdminRules.ResumeLayout(false);
             this.tpAdminRules.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbProfile)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbLogOut)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbNotification)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxLogOut)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -477,8 +451,6 @@
         private System.Windows.Forms.TabPage tpAdminComplaints;
         private System.Windows.Forms.PictureBox pbProfile;
         private System.Windows.Forms.Label lblTitle;
-        private System.Windows.Forms.PictureBox pbLogOut;
-        private System.Windows.Forms.PictureBox pbNotification;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button button1;
@@ -489,7 +461,7 @@
         private System.Windows.Forms.Panel buttonPannelAdmin;
         private System.Windows.Forms.TabPage tpAdminTechnical;
         private System.Windows.Forms.TabPage tpAdminRules;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pbxLogOut;
         private System.Windows.Forms.Label lblGuidelines;
         private System.Windows.Forms.Label lblRules;
         private System.Windows.Forms.RichTextBox rtbGuidelines;

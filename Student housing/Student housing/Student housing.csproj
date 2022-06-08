@@ -48,6 +48,7 @@
   <ItemGroup>
     <Compile Include="Admin.cs" />
     <Compile Include="Agreement.cs" />
+    <Compile Include="ClassesManager.cs" />
     <Compile Include="Cleaning.cs" />
     <Compile Include="Complaint.cs" />
     <Compile Include="ComplaintManager.cs" />

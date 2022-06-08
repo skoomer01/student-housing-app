@@ -16,14 +16,9 @@ namespace Student_housing
         //attributes that are objects
         private User currentUser;
         UserManager userManager;
-        ExpenseManager expenseManager;
         ManageAgreements studentAgreement = ManageAgreements.Instance;
-        Trash trash;
-        Cleaning cleaning;
-        NormalExpense normalExpenses; 
+        ClassesManager classesManager;
         private List<User> expenseMembers;
-        EventManager eventManager = new EventManager();
-        ComplaintManager complaintManager;
 
         //initialization for indexes for cleaning
         int indexUserKitchen = 0;
@@ -47,16 +42,12 @@ namespace Student_housing
             UpdateUI();
         }
 
-        public STUDENT(UserManager userManager, User currentUser, ExpenseManager expenseManager, Trash trash, Cleaning cleaning, NormalExpense normalExpense, EventManager eventManager, ComplaintManager compla)
+        public STUDENT(UserManager userManager, User currentUser, ClassesManager classesManager)
         {
             InitializeComponent();
             this.currentUser = currentUser;
             this.userManager = userManager;
-            this.trash = new Trash(userManager);
-            this.cleaning = new Cleaning(userManager);
-            this.normalExpenses = new NormalExpense(userManager);
-            this.expenseManager = new ExpenseManager();
-            this.complaintManager = new ComplaintManager();
+            this.classesManager = classesManager;
             UpdateUI();
         }
 
@@ -71,17 +62,20 @@ namespace Student_housing
 
 
             //Initialize the turn based lists 
-            tbxUserTrash.Text = trash.GetUser();
+            tbxUserTrash.Text = classesManager.Trash.GetUser();
 
-            tbxCleaningBathroom.Text = cleaning.AddUsers(0);
-            tbxCleaningKitchen.Text = cleaning.AddUsers(0);
-            tbxCleaningShared.Text = cleaning.AddUsers(0);
-            tbxCleaningToilet.Text = cleaning.AddUsers(0);
+            tbxCleaningBathroom.Text = classesManager.Cleaning.AddUsers(0);
+            tbxCleaningKitchen.Text = classesManager.Cleaning.AddUsers(0);
+            tbxCleaningShared.Text = classesManager.Cleaning.AddUsers(0);
+            tbxCleaningToilet.Text = classesManager.Cleaning.AddUsers(0);
 
-            cbxItemsSoap.Text = normalExpenses.AddTenants(0);
-            cbxItemsToilet.Text = normalExpenses.AddTenants(0);
-            cbxItemsBathroom.Text = normalExpenses.AddTenants(0);
-            cbxItemsKitchen.Text = normalExpenses.AddTenants(0);
+            cbxItemsSoap.Text = classesManager.NormalExpense.AddTenants(0);
+            cbxItemsToilet.Text = classesManager.NormalExpense.AddTenants(0);
+            cbxItemsBathroom.Text = classesManager.NormalExpense.AddTenants(0);
+            cbxItemsKitchen.Text = classesManager.NormalExpense.AddTenants(0);
+
+            ShowEvents();
+            UpdateListBox();
 
             foreach (User u in userManager.GetUsers())
             {
@@ -425,13 +419,15 @@ namespace Student_housing
         {
             if (currentUser.Username == tbxUserTrash.Text)
             {
-                tbxUserTrash.Text = trash.GetUser();
+                classesManager.Trash.NextUser();
+                tbxUserTrash.Text = classesManager.Trash.GetUser();
             }
             else
             {
                 if (cbx_TrashForSomeoneElse.Checked)
                 {
-                    tbxUserTrash.Text = trash.GetUser();
+                    classesManager.Trash.NextUser();
+                    tbxUserTrash.Text = classesManager.Trash.GetUser();
                     cbx_TrashForSomeoneElse.Checked = false;
                 }
                 else
@@ -459,7 +455,7 @@ namespace Student_housing
                     cbxCleaningForSmnElse.Checked = false;
                     cbxCleaningBathroom.Checked = false;
                     indexUserBathroom++;
-                    tbxCleaningBathroom.Text = cleaning.AddUsers(indexUserBathroom);
+                    tbxCleaningBathroom.Text = classesManager.Cleaning.AddUsers(indexUserBathroom);
                     lblCleaningBathroom.Text = "Bathroom";
                 }
             }
@@ -471,7 +467,7 @@ namespace Student_housing
                     cbxCleaningForSmnElse.Checked = false;
                     cbxCleaningKitchen.Checked = false;
                     indexUserKitchen++;
-                    tbxCleaningKitchen.Text = cleaning.AddUsers(indexUserKitchen);
+                    tbxCleaningKitchen.Text = classesManager.Cleaning.AddUsers(indexUserKitchen);
                     lblCleaningKitchen.Text = "Kitchen";
                 }
             }
@@ -483,7 +479,7 @@ namespace Student_housing
                     cbxCleaningForSmnElse.Checked = false;
                     cbxCleaningToilet.Checked = false;
                     indexUserToilet++;
-                    tbxCleaningToilet.Text = cleaning.AddUsers(indexUserToilet);
+                    tbxCleaningToilet.Text = classesManager.Cleaning.AddUsers(indexUserToilet);
                     lblCleaningToilet.Text = "Toilet";
                 }
             }
@@ -495,7 +491,7 @@ namespace Student_housing
                     cbxCleaningForSmnElse.Checked = false;
                     cbxCleaningShared.Checked = false;
                     indexUserSharedSpace++;
-                    tbxCleaningShared.Text = cleaning.AddUsers(indexUserSharedSpace);
+                    tbxCleaningShared.Text = classesManager.Cleaning.AddUsers(indexUserSharedSpace);
                     lblCleaningShared.Text = "Shared space";
                 }
             }
@@ -588,18 +584,22 @@ namespace Student_housing
         private void UpdateListBox()
         {
             lbExpenses.Items.Clear();
-            foreach (User u in expenseMembers)
+            if(expenseMembers != null)
             {
-                lbExpenseMembers.Items.Add(u.Username);
-            }
-            foreach (NormalExpense e in expenseManager.GetExpenses())
-            {
-                if (e.Members.Contains(currentUser) && !e.MembersWhoPaid.Contains(currentUser))
+                foreach (User u in expenseMembers)
                 {
-                    lbExpenses.Items.Add($"{e.Title}, Total: {e.Total}, You owe: {e.AmountToBePaidPerMember}");
+                    lbExpenseMembers.Items.Add(u.Username);
                 }
+                foreach (NormalExpense e in classesManager.ExpenseManager.GetExpenses())
+                {
+                    if (e.Members.Contains(currentUser) && !e.MembersWhoPaid.Contains(currentUser))
+                    {
+                        lbExpenses.Items.Add($"{e.Title}, Total: {e.Total}, You owe: {e.AmountToBePaidPerMember}");
+                    }
+                }
+                var expenses = classesManager.ExpenseManager.GetExpenses();
             }
-            var expenses = expenseManager.GetExpenses();
+            
         }
         private void ClearExpenseInputs()
         {
@@ -615,22 +615,22 @@ namespace Student_housing
             if (cbxItemsSoap.Checked == true)
             {
                 indexSharedDishSoap++;
-                tbxSharedItemsSoap.Text = normalExpenses.AddTenants(indexSharedDishSoap);
+                tbxSharedItemsSoap.Text = classesManager.NormalExpense.AddTenants(indexSharedDishSoap);
             }
             if (cbxItemsToilet.Checked == true)
             {
                 indexSharedToiletPaper++;
-                tbxSharedItemsToilet.Text = normalExpenses.AddTenants(indexSharedToiletPaper);
+                tbxSharedItemsToilet.Text = classesManager.NormalExpense.AddTenants(indexSharedToiletPaper);
             }
             if (cbxItemsBathroom.Checked == true)
             {
                 indexSharedBathroomItems++;
-                tbxSharedItemsBath.Text = normalExpenses.AddTenants(indexSharedBathroomItems);
+                tbxSharedItemsBath.Text = classesManager.NormalExpense.AddTenants(indexSharedBathroomItems);
             }
             if (cbxItemsKitchen.Checked == true)
             {
                 indexSharedKitchenItems++;
-                tbxSharedItemsKitchen.Text = normalExpenses.AddTenants(indexSharedKitchenItems);
+                tbxSharedItemsKitchen.Text = classesManager.NormalExpense.AddTenants(indexSharedKitchenItems);
             }
         }
 
@@ -667,8 +667,8 @@ namespace Student_housing
             var title = txtBoxExpenseTitle.Text;
 
             expenseMembers.Add(currentUser);
-            var expense = new NormalExpense(expenseManager.GetExpenses().Count, total, currentUser, title, new List<User>(expenseMembers));
-            expenseManager.AddExpense(expense);
+            var expense = new NormalExpense(classesManager.ExpenseManager.GetExpenses().Count, total, currentUser, title, new List<User>(expenseMembers));
+            classesManager.ExpenseManager.AddExpense(expense);
             lbExpenseMembers.Items.Clear();
             ClearExpenseInputs();
             UpdateListBox();
@@ -676,11 +676,11 @@ namespace Student_housing
 
         private void btnPay_Click(object sender, EventArgs e)
         {
-            NormalExpense expense = expenseManager.GetExpenses()[lbExpenses.SelectedIndex];
+            NormalExpense expense = classesManager.ExpenseManager.GetExpenses()[lbExpenses.SelectedIndex];
             expense.Pay(currentUser);
-            var index = expenseManager.GetExpenses().FindIndex(exp => exp.expenseID == expense.expenseID);
-            expenseManager.GetExpenses()[index] = expense;
-            expenseManager.SetExpenses(expenseManager.GetExpenses());
+            var index = classesManager.ExpenseManager.GetExpenses().FindIndex(exp => exp.expenseID == expense.expenseID);
+            classesManager.ExpenseManager.GetExpenses()[index] = expense;
+            classesManager.ExpenseManager.SetExpenses(classesManager.ExpenseManager.GetExpenses());
             MessageBox.Show("Success!");
         }
 
@@ -690,7 +690,7 @@ namespace Student_housing
         private void ShowEvents()
         {
             lbxShowUpcomingEvents.Items.Clear();
-            foreach (Events newEvent in eventManager.GetEvents())
+            foreach (Events newEvent in classesManager.EventManager.GetEvents())
             {
                 lbxShowUpcomingEvents.Items.Add(newEvent.GetEventInfo());
             }
@@ -698,7 +698,7 @@ namespace Student_housing
 
         private void AddEvent()
         {
-            foreach (Events newEvent in eventManager.GetEvents())
+            foreach (Events newEvent in classesManager.EventManager.GetEvents())
             {
                 lbxShowUpcomingEvents.Items.Add(newEvent.GetEventInfo());
             }
@@ -731,7 +731,7 @@ namespace Student_housing
                 {
                     newEvent = new Events(date, currentUser, description);
                 }
-                eventManager.AddEvent(newEvent);
+                classesManager.EventManager.AddEvent(newEvent);
             }
             ShowEvents();
         }
@@ -750,7 +750,7 @@ namespace Student_housing
             {
                 newEvent = new Events(date, currentUser, description);
             }
-            eventManager.AddEvent(newEvent);
+            classesManager.EventManager.AddEvent(newEvent);
             ShowEvents();
         }
 
@@ -759,7 +759,7 @@ namespace Student_housing
             int selectedIndex = lbxShowUpcomingEvents.SelectedIndex;
             if (selectedIndex > -1)
             {
-                eventManager.RemoveEvent(selectedIndex);
+                classesManager.EventManager.RemoveEvent(selectedIndex);
             }
             else
             {
@@ -784,7 +784,7 @@ namespace Student_housing
         private void btnNoEventThisWeek_Click(object sender, EventArgs e)
         {
             Events noEvent = new Events("No event today");
-            eventManager.AddEvent(noEvent);
+            classesManager.EventManager.AddEvent(noEvent);
             ShowEvents();
             DisableButtons(100);
         }
@@ -847,7 +847,7 @@ namespace Student_housing
             {
                 User complaintUser = userManager.getUser(cbxComplaintUser.Text.ToString());
                 Complaint newComplaint = new Complaint(complaintUser, complaintText,currentUser, userManager);
-                complaintManager.AddNewComplaint(newComplaint);
+                classesManager.ComplaintManager.AddNewComplaint(newComplaint);
                 MessageBox.Show("Complaint sent to Administrator");
             }
             rtxComplaintText.Clear();
@@ -865,9 +865,10 @@ namespace Student_housing
             }
         }
         #endregion <Complaints>
+
         private void pbLogOut_Click(object sender, EventArgs e)
         {
-            LOGIN loginform = new LOGIN(currentUser, userManager, complaintManager, eventManager, cleaning, trash, expenseManager, normalExpenses);
+            LOGIN loginform = new LOGIN(currentUser, userManager,classesManager);
             loginform.Show();
             this.Close();
         }
