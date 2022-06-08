@@ -43,6 +43,48 @@ namespace Student_housing
             FillComplaintCbx();
         }
 
+
+        private void btnAddUser_Click(object sender, EventArgs e)
+        {
+            string username = textBox1.Text.ToString();
+            string password = textBox2.Text.ToString();
+            User newUser = new User(username, password);
+            userManager.addUser(newUser);
+            classesManager.SerializeObject();
+        }
+
+        #region <Tab control design>
+
+        private void btnUsersAdminTab_Click(object sender, EventArgs e)
+        {
+            tcAdmin.SelectedTab = tpAdminUsers;
+            buttonPannelAdmin.Height = btnUsersAdminTab.Height;
+            buttonPannelAdmin.Top = btnUsersAdminTab.Top;
+        }
+
+        private void btnComplaintsAdminTab_Click(object sender, EventArgs e)
+        {
+            tcAdmin.SelectedTab = tpAdminComplaints;
+            buttonPannelAdmin.Height = btnComplaintsAdminTab.Height;
+            buttonPannelAdmin.Top = btnComplaintsAdminTab.Top;
+        }
+
+        private void btnTechnicalAdminTab_Click(object sender, EventArgs e)
+        {
+            tcAdmin.SelectedTab = tpAdminTechnical;
+            buttonPannelAdmin.Height = btnTechnicalAdminTab.Height;
+            buttonPannelAdmin.Top = btnTechnicalAdminTab.Top;
+        }
+
+        private void btnRuesAdminTab_Click(object sender, EventArgs e)
+        {
+            tcAdmin.SelectedTab = tpAdminRules;
+            buttonPannelAdmin.Height = btnRulesAdminTab.Height;
+            buttonPannelAdmin.Top = btnRulesAdminTab.Top;
+        }
+        #endregion
+
+        #region <Rules and guidelines>
         public void LoadFromFile(string filename)
         {
             FileStream fs = null;
@@ -80,64 +122,6 @@ namespace Student_housing
                 }
             }
         }
-
-        public void SerializeObject()
-        {
-            FileStream fs = null;
-            BinaryFormatter bf = null;
-            try
-            {
-                fs = new FileStream("SaveData", FileMode.OpenOrCreate, FileAccess.Write);
-                bf = new BinaryFormatter();
-                bf.Serialize(fs, this.userManager);
-            }
-            catch (Exception ex)
-            { MessageBox.Show(ex.Message); }
-            finally
-            { if (fs != null) fs.Close(); }
-        }
-
-        private void btnAddUser_Click(object sender, EventArgs e)
-        {
-            string username = textBox1.Text.ToString();
-            string password = textBox2.Text.ToString();
-            User newUser = new User(username, password);
-            userManager.addUser(newUser);
-            SerializeObject();
-        }
-
-        #region <Tab control design>
-
-        private void btnUsersAdminTab_Click(object sender, EventArgs e)
-        {
-            tcAdmin.SelectedTab = tpAdminUsers;
-            buttonPannelAdmin.Height = btnUsersAdminTab.Height;
-            buttonPannelAdmin.Top = btnUsersAdminTab.Top;
-        }
-
-        private void btnComplaintsAdminTab_Click(object sender, EventArgs e)
-        {
-            tcAdmin.SelectedTab = tpAdminComplaints;
-            buttonPannelAdmin.Height = btnComplaintsAdminTab.Height;
-            buttonPannelAdmin.Top = btnComplaintsAdminTab.Top;
-        }
-
-        private void btnTechnicalAdminTab_Click(object sender, EventArgs e)
-        {
-            tcAdmin.SelectedTab = tpAdminTechnical;
-            buttonPannelAdmin.Height = btnTechnicalAdminTab.Height;
-            buttonPannelAdmin.Top = btnTechnicalAdminTab.Top;
-        }
-
-        private void btnRuesAdminTab_Click(object sender, EventArgs e)
-        {
-            tcAdmin.SelectedTab = tpAdminRules;
-            buttonPannelAdmin.Height = btnRulesAdminTab.Height;
-            buttonPannelAdmin.Top = btnRulesAdminTab.Top;
-        }
-        #endregion
-
-        #region <Rules and guidelines>
 
         public void WriteToFile(string filename, string text)
         {

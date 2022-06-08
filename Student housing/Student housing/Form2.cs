@@ -20,19 +20,6 @@ namespace Student_housing
         ClassesManager classesManager;
         private List<User> expenseMembers;
 
-        //initialization for indexes for cleaning
-        int indexUserKitchen = 0;
-        int indexUserBathroom = 0;
-        int indexUserToilet = 0;
-        int indexUserSharedSpace = 0;
-
-        //initialization for indexes for expenses
-        int indexSharedKitchenItems = 0;
-        int indexSharedBathroomItems = 0;
-        int indexSharedToiletPaper = 0;
-        int indexSharedDishSoap = 0;
-
-
         //Constructor(s)
         public STUDENT()
         {
@@ -61,18 +48,18 @@ namespace Student_housing
             buttonPannel.Top = btnRulesTab.Top;
 
 
-            //Initialize the turn based lists 
+            //Initialize the turn based indexes 
             tbxUserTrash.Text = classesManager.Trash.GetUser();
 
-            tbxCleaningBathroom.Text = classesManager.Cleaning.AddUsers(0);
-            tbxCleaningKitchen.Text = classesManager.Cleaning.AddUsers(0);
-            tbxCleaningShared.Text = classesManager.Cleaning.AddUsers(0);
-            tbxCleaningToilet.Text = classesManager.Cleaning.AddUsers(0);
+            tbxCleaningBathroom.Text = classesManager.Cleaning.AddUsers(classesManager.Cleaning.BathIndex);
+            tbxCleaningKitchen.Text = classesManager.Cleaning.AddUsers(classesManager.Cleaning.KitchenIndex);
+            tbxCleaningShared.Text = classesManager.Cleaning.AddUsers(classesManager.Cleaning.SharedIndex);
+            tbxCleaningToilet.Text = classesManager.Cleaning.AddUsers(classesManager.Cleaning.ToiletIndex);
 
-            cbxItemsSoap.Text = classesManager.NormalExpense.AddTenants(0);
-            cbxItemsToilet.Text = classesManager.NormalExpense.AddTenants(0);
-            cbxItemsBathroom.Text = classesManager.NormalExpense.AddTenants(0);
-            cbxItemsKitchen.Text = classesManager.NormalExpense.AddTenants(0);
+            tbxSharedItemsSoap.Text = classesManager.NormalExpense.AddTenants(classesManager.NormalExpense.SoapIndex);
+            tbxSharedItemsToilet.Text = classesManager.NormalExpense.AddTenants(classesManager.NormalExpense.PaperIndex);
+            tbxSharedItemsBath.Text = classesManager.NormalExpense.AddTenants(classesManager.NormalExpense.BathIndex);
+            tbxSharedItemsKitchen.Text = classesManager.NormalExpense.AddTenants(classesManager.NormalExpense.KitchenIndex);
 
             ShowEvents();
             UpdateListBox();
@@ -452,10 +439,8 @@ namespace Student_housing
             {
                 if ((currentUser.Username == tbxCleaningBathroom.Text) || (cbxCleaningForSmnElse.Checked == true))
                 {
-                    cbxCleaningForSmnElse.Checked = false;
-                    cbxCleaningBathroom.Checked = false;
-                    indexUserBathroom++;
-                    tbxCleaningBathroom.Text = classesManager.Cleaning.AddUsers(indexUserBathroom);
+                    classesManager.Cleaning.BathIndex++;
+                    tbxCleaningBathroom.Text = classesManager.Cleaning.AddUsers(classesManager.Cleaning.BathIndex);
                     lblCleaningBathroom.Text = "Bathroom";
                 }
             }
@@ -464,10 +449,8 @@ namespace Student_housing
             {
                 if ((currentUser.Username == tbxCleaningKitchen.Text) || (cbxCleaningForSmnElse.Checked == true))
                 {
-                    cbxCleaningForSmnElse.Checked = false;
-                    cbxCleaningKitchen.Checked = false;
-                    indexUserKitchen++;
-                    tbxCleaningKitchen.Text = classesManager.Cleaning.AddUsers(indexUserKitchen);
+                    classesManager.Cleaning.KitchenIndex++;
+                    tbxCleaningKitchen.Text = classesManager.Cleaning.AddUsers(classesManager.Cleaning.KitchenIndex);
                     lblCleaningKitchen.Text = "Kitchen";
                 }
             }
@@ -476,10 +459,8 @@ namespace Student_housing
             {
                 if ((currentUser.Username == tbxCleaningToilet.Text) || (cbxCleaningForSmnElse.Checked == true))
                 {
-                    cbxCleaningForSmnElse.Checked = false;
-                    cbxCleaningToilet.Checked = false;
-                    indexUserToilet++;
-                    tbxCleaningToilet.Text = classesManager.Cleaning.AddUsers(indexUserToilet);
+                    classesManager.Cleaning.ToiletIndex++;
+                    tbxCleaningToilet.Text = classesManager.Cleaning.AddUsers(classesManager.Cleaning.ToiletIndex);
                     lblCleaningToilet.Text = "Toilet";
                 }
             }
@@ -488,13 +469,16 @@ namespace Student_housing
             {
                 if ((currentUser.Username == tbxCleaningShared.Text) || (cbxCleaningForSmnElse.Checked == true))
                 {
-                    cbxCleaningForSmnElse.Checked = false;
-                    cbxCleaningShared.Checked = false;
-                    indexUserSharedSpace++;
-                    tbxCleaningShared.Text = classesManager.Cleaning.AddUsers(indexUserSharedSpace);
+                    classesManager.Cleaning.SharedIndex++;
+                    tbxCleaningShared.Text = classesManager.Cleaning.AddUsers(classesManager.Cleaning.SharedIndex);
                     lblCleaningShared.Text = "Shared space";
                 }
             }
+            cbxCleaningKitchen.Checked = false;
+            cbxCleaningBathroom.Checked = false;
+            cbxCleaningToilet.Checked = false;
+            cbxCleaningShared.Checked = false;
+            cbxCleaningForSmnElse.Checked = false;
         }
 
         private void btnTaskPending_Click(object sender, EventArgs e)
@@ -612,25 +596,25 @@ namespace Student_housing
         //All the buttons for the normal expenses
         private void btn_Bought_Click(object sender, EventArgs e)
         {
-            if (cbxItemsSoap.Checked == true)
+            if (cbxItemsSoap.Checked == true && currentUser.Username == tbxSharedItemsSoap.Text)
             {
-                indexSharedDishSoap++;
-                tbxSharedItemsSoap.Text = classesManager.NormalExpense.AddTenants(indexSharedDishSoap);
+                classesManager.NormalExpense.SoapIndex++;
+                tbxSharedItemsSoap.Text = classesManager.NormalExpense.AddTenants(classesManager.NormalExpense.SoapIndex);
             }
-            if (cbxItemsToilet.Checked == true)
+            if (cbxItemsToilet.Checked == true && currentUser.Username == tbxSharedItemsToilet.Text)
             {
-                indexSharedToiletPaper++;
-                tbxSharedItemsToilet.Text = classesManager.NormalExpense.AddTenants(indexSharedToiletPaper);
+                classesManager.NormalExpense.PaperIndex++;
+                tbxSharedItemsToilet.Text = classesManager.NormalExpense.AddTenants(classesManager.NormalExpense.PaperIndex);
             }
-            if (cbxItemsBathroom.Checked == true)
+            if (cbxItemsBathroom.Checked == true && currentUser.Username == tbxSharedItemsBath.Text)
             {
-                indexSharedBathroomItems++;
-                tbxSharedItemsBath.Text = classesManager.NormalExpense.AddTenants(indexSharedBathroomItems);
+                classesManager.NormalExpense.BathIndex++;
+                tbxSharedItemsBath.Text = classesManager.NormalExpense.AddTenants(classesManager.NormalExpense.BathIndex);
             }
-            if (cbxItemsKitchen.Checked == true)
+            if (cbxItemsKitchen.Checked == true && currentUser.Username == tbxSharedItemsKitchen.Text)
             {
-                indexSharedKitchenItems++;
-                tbxSharedItemsKitchen.Text = classesManager.NormalExpense.AddTenants(indexSharedKitchenItems);
+                classesManager.NormalExpense.KitchenIndex++;
+                tbxSharedItemsKitchen.Text = classesManager.NormalExpense.AddTenants(classesManager.NormalExpense.KitchenIndex);
             }
         }
 
@@ -656,9 +640,8 @@ namespace Student_housing
             User[] users = userManager.GetUsers();
             string username = cbExpenseMembers.Text;
             User foundUser = userManager.getUser(username);
-            if (!expenseMembers.Contains(foundUser))
+            if (expenseMembers.Contains(foundUser))
                 expenseMembers.Remove(foundUser);
-            lbExpenseMembers.Items.Clear();
             UpdateListBox();
         }
         private void btnCreateExpense_Click(object sender, EventArgs e)

@@ -74,22 +74,6 @@
             this.txtBoxExpenseTitle = new System.Windows.Forms.TextBox();
             this.label19 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.tbxSharedItemsKitchen = new System.Windows.Forms.TextBox();
-            this.tbxSharedItemsSoap = new System.Windows.Forms.TextBox();
-            this.tbxSharedItemsBath = new System.Windows.Forms.TextBox();
-            this.tbxSharedItemsToilet = new System.Windows.Forms.TextBox();
-            this.btn_BoughtReport = new System.Windows.Forms.Button();
-            this.btn_Bought = new System.Windows.Forms.Button();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.cbxItemsKitchen = new System.Windows.Forms.CheckBox();
-            this.cbxItemsBathroom = new System.Windows.Forms.CheckBox();
-            this.cbxItemsToilet = new System.Windows.Forms.CheckBox();
-            this.cbxItemsSoap = new System.Windows.Forms.CheckBox();
-            this.label9 = new System.Windows.Forms.Label();
             this.tpTrash = new System.Windows.Forms.TabPage();
             this.btn_NotifyTrash = new System.Windows.Forms.Button();
             this.btn_TrashThrown = new System.Windows.Forms.Button();
@@ -151,6 +135,22 @@
             this.btnTechnicalTab = new System.Windows.Forms.Button();
             this.buttonPannel = new System.Windows.Forms.Panel();
             this.pbNotification = new System.Windows.Forms.PictureBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.btn_Bought = new System.Windows.Forms.Button();
+            this.btn_BoughtReport = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.cbxItemsSoap = new System.Windows.Forms.CheckBox();
+            this.cbxItemsToilet = new System.Windows.Forms.CheckBox();
+            this.cbxItemsBathroom = new System.Windows.Forms.CheckBox();
+            this.cbxItemsKitchen = new System.Windows.Forms.CheckBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.tbxSharedItemsToilet = new System.Windows.Forms.TextBox();
+            this.tbxSharedItemsBath = new System.Windows.Forms.TextBox();
+            this.tbxSharedItemsSoap = new System.Windows.Forms.TextBox();
+            this.tbxSharedItemsKitchen = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pbProfile)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogOut)).BeginInit();
             this.tcStudent.SuspendLayout();
@@ -160,7 +160,6 @@
             this.tpCleaning.SuspendLayout();
             this.tpExpenses.SuspendLayout();
             this.panel2.SuspendLayout();
-            this.panel1.SuspendLayout();
             this.tpTrash.SuspendLayout();
             this.tpAgreements.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAgreementsStudent)).BeginInit();
@@ -168,6 +167,7 @@
             this.tpEvents.SuspendLayout();
             this.tpTechnical.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbNotification)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // pbProfile
@@ -719,198 +719,6 @@
             this.label14.Text = "Additional expenses\r\n";
             this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.Ivory;
-            this.panel1.Controls.Add(this.tbxSharedItemsKitchen);
-            this.panel1.Controls.Add(this.tbxSharedItemsSoap);
-            this.panel1.Controls.Add(this.tbxSharedItemsBath);
-            this.panel1.Controls.Add(this.tbxSharedItemsToilet);
-            this.panel1.Controls.Add(this.btn_BoughtReport);
-            this.panel1.Controls.Add(this.btn_Bought);
-            this.panel1.Controls.Add(this.label10);
-            this.panel1.Controls.Add(this.label11);
-            this.panel1.Controls.Add(this.label12);
-            this.panel1.Controls.Add(this.label13);
-            this.panel1.Controls.Add(this.cbxItemsKitchen);
-            this.panel1.Controls.Add(this.cbxItemsBathroom);
-            this.panel1.Controls.Add(this.cbxItemsToilet);
-            this.panel1.Controls.Add(this.cbxItemsSoap);
-            this.panel1.Controls.Add(this.label9);
-            this.panel1.Location = new System.Drawing.Point(1, 1);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(567, 529);
-            this.panel1.TabIndex = 0;
-            // 
-            // tbxSharedItemsKitchen
-            // 
-            this.tbxSharedItemsKitchen.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbxSharedItemsKitchen.Location = new System.Drawing.Point(347, 306);
-            this.tbxSharedItemsKitchen.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
-            this.tbxSharedItemsKitchen.Multiline = true;
-            this.tbxSharedItemsKitchen.Name = "tbxSharedItemsKitchen";
-            this.tbxSharedItemsKitchen.Size = new System.Drawing.Size(130, 29);
-            this.tbxSharedItemsKitchen.TabIndex = 31;
-            // 
-            // tbxSharedItemsSoap
-            // 
-            this.tbxSharedItemsSoap.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbxSharedItemsSoap.Location = new System.Drawing.Point(347, 123);
-            this.tbxSharedItemsSoap.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
-            this.tbxSharedItemsSoap.Multiline = true;
-            this.tbxSharedItemsSoap.Name = "tbxSharedItemsSoap";
-            this.tbxSharedItemsSoap.Size = new System.Drawing.Size(130, 27);
-            this.tbxSharedItemsSoap.TabIndex = 27;
-            // 
-            // tbxSharedItemsBath
-            // 
-            this.tbxSharedItemsBath.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbxSharedItemsBath.Location = new System.Drawing.Point(347, 247);
-            this.tbxSharedItemsBath.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
-            this.tbxSharedItemsBath.Multiline = true;
-            this.tbxSharedItemsBath.Name = "tbxSharedItemsBath";
-            this.tbxSharedItemsBath.Size = new System.Drawing.Size(130, 29);
-            this.tbxSharedItemsBath.TabIndex = 30;
-            // 
-            // tbxSharedItemsToilet
-            // 
-            this.tbxSharedItemsToilet.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbxSharedItemsToilet.Location = new System.Drawing.Point(347, 187);
-            this.tbxSharedItemsToilet.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
-            this.tbxSharedItemsToilet.Multiline = true;
-            this.tbxSharedItemsToilet.Name = "tbxSharedItemsToilet";
-            this.tbxSharedItemsToilet.Size = new System.Drawing.Size(130, 27);
-            this.tbxSharedItemsToilet.TabIndex = 29;
-            // 
-            // btn_BoughtReport
-            // 
-            this.btn_BoughtReport.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(171)))), ((int)(((byte)(188)))));
-            this.btn_BoughtReport.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btn_BoughtReport.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_BoughtReport.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btn_BoughtReport.Location = new System.Drawing.Point(273, 369);
-            this.btn_BoughtReport.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
-            this.btn_BoughtReport.Name = "btn_BoughtReport";
-            this.btn_BoughtReport.Size = new System.Drawing.Size(127, 42);
-            this.btn_BoughtReport.TabIndex = 25;
-            this.btn_BoughtReport.Text = " Report";
-            this.btn_BoughtReport.UseVisualStyleBackColor = false;
-            this.btn_BoughtReport.Click += new System.EventHandler(this.btn_BoughtReport_Click);
-            // 
-            // btn_Bought
-            // 
-            this.btn_Bought.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(171)))), ((int)(((byte)(188)))));
-            this.btn_Bought.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btn_Bought.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Bought.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btn_Bought.Location = new System.Drawing.Point(53, 369);
-            this.btn_Bought.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
-            this.btn_Bought.Name = "btn_Bought";
-            this.btn_Bought.Size = new System.Drawing.Size(107, 42);
-            this.btn_Bought.TabIndex = 24;
-            this.btn_Bought.Text = "Bought\r\n";
-            this.btn_Bought.UseVisualStyleBackColor = false;
-            this.btn_Bought.Click += new System.EventHandler(this.btn_Bought_Click);
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(49, 306);
-            this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(204, 21);
-            this.label10.TabIndex = 19;
-            this.label10.Text = "Kitchen cleaning products";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(49, 253);
-            this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(221, 21);
-            this.label11.TabIndex = 18;
-            this.label11.Text = "Bathroom cleaning products";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(49, 187);
-            this.label12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(99, 21);
-            this.label12.TabIndex = 17;
-            this.label12.Text = "Toilet paper";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(49, 125);
-            this.label13.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(85, 21);
-            this.label13.TabIndex = 16;
-            this.label13.Text = "Dish soap";
-            // 
-            // cbxItemsKitchen
-            // 
-            this.cbxItemsKitchen.AutoSize = true;
-            this.cbxItemsKitchen.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbxItemsKitchen.Location = new System.Drawing.Point(29, 309);
-            this.cbxItemsKitchen.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
-            this.cbxItemsKitchen.Name = "cbxItemsKitchen";
-            this.cbxItemsKitchen.Size = new System.Drawing.Size(15, 14);
-            this.cbxItemsKitchen.TabIndex = 15;
-            this.cbxItemsKitchen.UseVisualStyleBackColor = true;
-            // 
-            // cbxItemsBathroom
-            // 
-            this.cbxItemsBathroom.AutoSize = true;
-            this.cbxItemsBathroom.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbxItemsBathroom.Location = new System.Drawing.Point(29, 256);
-            this.cbxItemsBathroom.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
-            this.cbxItemsBathroom.Name = "cbxItemsBathroom";
-            this.cbxItemsBathroom.Size = new System.Drawing.Size(15, 14);
-            this.cbxItemsBathroom.TabIndex = 14;
-            this.cbxItemsBathroom.UseVisualStyleBackColor = true;
-            // 
-            // cbxItemsToilet
-            // 
-            this.cbxItemsToilet.AutoSize = true;
-            this.cbxItemsToilet.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbxItemsToilet.Location = new System.Drawing.Point(29, 190);
-            this.cbxItemsToilet.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
-            this.cbxItemsToilet.Name = "cbxItemsToilet";
-            this.cbxItemsToilet.Size = new System.Drawing.Size(15, 14);
-            this.cbxItemsToilet.TabIndex = 13;
-            this.cbxItemsToilet.UseVisualStyleBackColor = true;
-            // 
-            // cbxItemsSoap
-            // 
-            this.cbxItemsSoap.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbxItemsSoap.Location = new System.Drawing.Point(29, 130);
-            this.cbxItemsSoap.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
-            this.cbxItemsSoap.Name = "cbxItemsSoap";
-            this.cbxItemsSoap.Size = new System.Drawing.Size(15, 14);
-            this.cbxItemsSoap.TabIndex = 12;
-            this.cbxItemsSoap.UseVisualStyleBackColor = true;
-            // 
-            // label9
-            // 
-            this.label9.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(1)))), ((int)(((byte)(21)))), ((int)(((byte)(101)))));
-            this.label9.Location = new System.Drawing.Point(181, 3);
-            this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(218, 40);
-            this.label9.TabIndex = 4;
-            this.label9.Text = "Basic expenses\r\n";
-            // 
             // tpTrash
             // 
             this.tpTrash.BackColor = System.Drawing.Color.Ivory;
@@ -961,6 +769,7 @@
             // 
             this.cbx_TrashForSomeoneElse.AutoSize = true;
             this.cbx_TrashForSomeoneElse.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbx_TrashForSomeoneElse.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(1)))), ((int)(((byte)(21)))), ((int)(((byte)(101)))));
             this.cbx_TrashForSomeoneElse.Location = new System.Drawing.Point(401, 250);
             this.cbx_TrashForSomeoneElse.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.cbx_TrashForSomeoneElse.Name = "cbx_TrashForSomeoneElse";
@@ -1729,6 +1538,198 @@
             this.pbNotification.TabIndex = 6;
             this.pbNotification.TabStop = false;
             // 
+            // label9
+            // 
+            this.label9.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(1)))), ((int)(((byte)(21)))), ((int)(((byte)(101)))));
+            this.label9.Location = new System.Drawing.Point(181, 3);
+            this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(218, 40);
+            this.label9.TabIndex = 4;
+            this.label9.Text = "Basic expenses\r\n";
+            // 
+            // btn_Bought
+            // 
+            this.btn_Bought.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(171)))), ((int)(((byte)(188)))));
+            this.btn_Bought.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_Bought.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Bought.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btn_Bought.Location = new System.Drawing.Point(53, 369);
+            this.btn_Bought.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.btn_Bought.Name = "btn_Bought";
+            this.btn_Bought.Size = new System.Drawing.Size(107, 42);
+            this.btn_Bought.TabIndex = 24;
+            this.btn_Bought.Text = "Bought\r\n";
+            this.btn_Bought.UseVisualStyleBackColor = false;
+            this.btn_Bought.Click += new System.EventHandler(this.btn_Bought_Click);
+            // 
+            // btn_BoughtReport
+            // 
+            this.btn_BoughtReport.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(171)))), ((int)(((byte)(188)))));
+            this.btn_BoughtReport.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_BoughtReport.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_BoughtReport.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btn_BoughtReport.Location = new System.Drawing.Point(273, 369);
+            this.btn_BoughtReport.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.btn_BoughtReport.Name = "btn_BoughtReport";
+            this.btn_BoughtReport.Size = new System.Drawing.Size(127, 42);
+            this.btn_BoughtReport.TabIndex = 25;
+            this.btn_BoughtReport.Text = " Report";
+            this.btn_BoughtReport.UseVisualStyleBackColor = false;
+            this.btn_BoughtReport.Click += new System.EventHandler(this.btn_BoughtReport_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.Ivory;
+            this.panel1.Controls.Add(this.tbxSharedItemsKitchen);
+            this.panel1.Controls.Add(this.tbxSharedItemsSoap);
+            this.panel1.Controls.Add(this.tbxSharedItemsBath);
+            this.panel1.Controls.Add(this.tbxSharedItemsToilet);
+            this.panel1.Controls.Add(this.btn_BoughtReport);
+            this.panel1.Controls.Add(this.btn_Bought);
+            this.panel1.Controls.Add(this.label10);
+            this.panel1.Controls.Add(this.label11);
+            this.panel1.Controls.Add(this.label12);
+            this.panel1.Controls.Add(this.label13);
+            this.panel1.Controls.Add(this.cbxItemsKitchen);
+            this.panel1.Controls.Add(this.cbxItemsBathroom);
+            this.panel1.Controls.Add(this.cbxItemsToilet);
+            this.panel1.Controls.Add(this.cbxItemsSoap);
+            this.panel1.Controls.Add(this.label9);
+            this.panel1.Location = new System.Drawing.Point(1, 1);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(567, 529);
+            this.panel1.TabIndex = 0;
+            // 
+            // cbxItemsSoap
+            // 
+            this.cbxItemsSoap.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbxItemsSoap.Location = new System.Drawing.Point(29, 130);
+            this.cbxItemsSoap.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.cbxItemsSoap.Name = "cbxItemsSoap";
+            this.cbxItemsSoap.Size = new System.Drawing.Size(15, 14);
+            this.cbxItemsSoap.TabIndex = 12;
+            this.cbxItemsSoap.UseVisualStyleBackColor = true;
+            // 
+            // cbxItemsToilet
+            // 
+            this.cbxItemsToilet.AutoSize = true;
+            this.cbxItemsToilet.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbxItemsToilet.Location = new System.Drawing.Point(29, 190);
+            this.cbxItemsToilet.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.cbxItemsToilet.Name = "cbxItemsToilet";
+            this.cbxItemsToilet.Size = new System.Drawing.Size(15, 14);
+            this.cbxItemsToilet.TabIndex = 13;
+            this.cbxItemsToilet.UseVisualStyleBackColor = true;
+            // 
+            // cbxItemsBathroom
+            // 
+            this.cbxItemsBathroom.AutoSize = true;
+            this.cbxItemsBathroom.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbxItemsBathroom.Location = new System.Drawing.Point(29, 256);
+            this.cbxItemsBathroom.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.cbxItemsBathroom.Name = "cbxItemsBathroom";
+            this.cbxItemsBathroom.Size = new System.Drawing.Size(15, 14);
+            this.cbxItemsBathroom.TabIndex = 14;
+            this.cbxItemsBathroom.UseVisualStyleBackColor = true;
+            // 
+            // cbxItemsKitchen
+            // 
+            this.cbxItemsKitchen.AutoSize = true;
+            this.cbxItemsKitchen.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbxItemsKitchen.Location = new System.Drawing.Point(29, 309);
+            this.cbxItemsKitchen.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.cbxItemsKitchen.Name = "cbxItemsKitchen";
+            this.cbxItemsKitchen.Size = new System.Drawing.Size(15, 14);
+            this.cbxItemsKitchen.TabIndex = 15;
+            this.cbxItemsKitchen.UseVisualStyleBackColor = true;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(49, 126);
+            this.label13.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(85, 21);
+            this.label13.TabIndex = 16;
+            this.label13.Text = "Dish soap";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(49, 187);
+            this.label12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(99, 21);
+            this.label12.TabIndex = 17;
+            this.label12.Text = "Toilet paper";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(49, 253);
+            this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(221, 21);
+            this.label11.TabIndex = 18;
+            this.label11.Text = "Bathroom cleaning products";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(49, 306);
+            this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(204, 21);
+            this.label10.TabIndex = 19;
+            this.label10.Text = "Kitchen cleaning products";
+            // 
+            // tbxSharedItemsToilet
+            // 
+            this.tbxSharedItemsToilet.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbxSharedItemsToilet.Location = new System.Drawing.Point(347, 187);
+            this.tbxSharedItemsToilet.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.tbxSharedItemsToilet.Multiline = true;
+            this.tbxSharedItemsToilet.Name = "tbxSharedItemsToilet";
+            this.tbxSharedItemsToilet.Size = new System.Drawing.Size(130, 27);
+            this.tbxSharedItemsToilet.TabIndex = 29;
+            // 
+            // tbxSharedItemsBath
+            // 
+            this.tbxSharedItemsBath.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbxSharedItemsBath.Location = new System.Drawing.Point(347, 247);
+            this.tbxSharedItemsBath.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.tbxSharedItemsBath.Multiline = true;
+            this.tbxSharedItemsBath.Name = "tbxSharedItemsBath";
+            this.tbxSharedItemsBath.Size = new System.Drawing.Size(130, 29);
+            this.tbxSharedItemsBath.TabIndex = 30;
+            // 
+            // tbxSharedItemsSoap
+            // 
+            this.tbxSharedItemsSoap.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbxSharedItemsSoap.Location = new System.Drawing.Point(347, 123);
+            this.tbxSharedItemsSoap.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.tbxSharedItemsSoap.Multiline = true;
+            this.tbxSharedItemsSoap.Name = "tbxSharedItemsSoap";
+            this.tbxSharedItemsSoap.Size = new System.Drawing.Size(130, 27);
+            this.tbxSharedItemsSoap.TabIndex = 27;
+            // 
+            // tbxSharedItemsKitchen
+            // 
+            this.tbxSharedItemsKitchen.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbxSharedItemsKitchen.Location = new System.Drawing.Point(347, 306);
+            this.tbxSharedItemsKitchen.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.tbxSharedItemsKitchen.Multiline = true;
+            this.tbxSharedItemsKitchen.Name = "tbxSharedItemsKitchen";
+            this.tbxSharedItemsKitchen.Size = new System.Drawing.Size(130, 29);
+            this.tbxSharedItemsKitchen.TabIndex = 31;
+            // 
             // STUDENT
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1764,8 +1765,6 @@
             this.tpExpenses.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             this.tpTrash.ResumeLayout(false);
             this.tpTrash.PerformLayout();
             this.tpAgreements.ResumeLayout(false);
@@ -1777,6 +1776,8 @@
             this.tpTechnical.ResumeLayout(false);
             this.tpTechnical.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbNotification)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1814,7 +1815,6 @@
         private System.Windows.Forms.CheckBox cbxCleaningKitchen;
         private System.Windows.Forms.TabPage tpExpenses;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TabPage tpTrash;
         private System.Windows.Forms.Button btn_NotifyTrash;
         private System.Windows.Forms.Button btn_TrashThrown;
@@ -1833,17 +1833,6 @@
         private System.Windows.Forms.TextBox txtBoxExpenseTitle;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Button btn_BoughtReport;
-        private System.Windows.Forms.Button btn_Bought;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.CheckBox cbxItemsKitchen;
-        private System.Windows.Forms.CheckBox cbxItemsBathroom;
-        private System.Windows.Forms.CheckBox cbxItemsToilet;
-        private System.Windows.Forms.CheckBox cbxItemsSoap;
-        private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button btn_AgreementDeleteSelected;
         private System.Windows.Forms.Button btn_AgreementEditSelected;
         private System.Windows.Forms.Button btn_AgreementRejectSelected;
@@ -1860,15 +1849,11 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Between;
         private System.Windows.Forms.DataGridViewTextBoxColumn Description;
         private System.Windows.Forms.DataGridViewTextBoxColumn Status;
-        private System.Windows.Forms.TextBox tbxSharedItemsSoap;
-        private System.Windows.Forms.TextBox tbxSharedItemsBath;
-        private System.Windows.Forms.TextBox tbxSharedItemsToilet;
         private System.Windows.Forms.Button btnPostComplaint;
         private System.Windows.Forms.ComboBox cbxComplaintUser;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Label label23;
-        private System.Windows.Forms.TextBox tbxSharedItemsKitchen;
         private System.Windows.Forms.RichTextBox rtxComplaintText;
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.DomainUpDown dudPartyYear;
@@ -1904,5 +1889,21 @@
         private System.Windows.Forms.RichTextBox rtbStudentGuidelines;
         private System.Windows.Forms.RichTextBox rtbStudentRules;
         private System.Windows.Forms.PictureBox pbNotification;
+        private System.Windows.Forms.Button btn_BoughtReport;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Button btn_Bought;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.TextBox tbxSharedItemsKitchen;
+        private System.Windows.Forms.TextBox tbxSharedItemsSoap;
+        private System.Windows.Forms.TextBox tbxSharedItemsBath;
+        private System.Windows.Forms.TextBox tbxSharedItemsToilet;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.CheckBox cbxItemsKitchen;
+        private System.Windows.Forms.CheckBox cbxItemsBathroom;
+        private System.Windows.Forms.CheckBox cbxItemsToilet;
+        private System.Windows.Forms.CheckBox cbxItemsSoap;
     }
 }

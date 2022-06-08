@@ -31,6 +31,23 @@ namespace Student_housing
             
         }
 
+        #region <Serialization of Files>
+        public void SerializeObject()
+        {
+            FileStream fs = null;
+            BinaryFormatter bf = null;
+            try
+            {
+                fs = new FileStream("SaveData", FileMode.OpenOrCreate, FileAccess.Write);
+                bf = new BinaryFormatter();
+                bf.Serialize(fs, this.userManager);
+            }
+            catch (Exception ex)
+            { System.Windows.Forms.MessageBox.Show( ex.Message); }
+            finally
+            { if (fs != null) fs.Close(); }
+        }
+
         public void DeSerializeObject()
         {
             FileStream fs = null;
@@ -49,7 +66,9 @@ namespace Student_housing
             { if (fs != null) fs.Close(); }
         }
 
-        public  Cleaning Cleaning { get { return this.cleaning; } }
+        #endregion <Serialization of Files>
+
+        public Cleaning Cleaning { get { return this.cleaning; } }
         public ComplaintManager ComplaintManager { get { return this.complaintManager; } }
         public EventManager EventManager { get { return this.eventManager; } }
         public Trash Trash { get { return this.trash; } }

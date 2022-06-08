@@ -9,6 +9,10 @@ namespace Student_housing
     public class Cleaning
     {
         private UserManager userManager;
+        private int bathIndex = 0;
+        private int kitchenIndex = 0;
+        private int sharedIndex = 0;
+        private int toiletIndex = 0;
 
         public Cleaning(UserManager userManager)
         {
@@ -23,5 +27,12 @@ namespace Student_housing
             }
             return userManager.getUserByIndex(index).Username;
         }
+
+        //Properties
+        public int BathIndex { get { return this.bathIndex; } set { this.bathIndex = value; } }
+        public int KitchenIndex { get { return this.kitchenIndex; } set { this.kitchenIndex = value; } }
+        public int SharedIndex { get { return this.sharedIndex; } set { this.sharedIndex = value; } }
+        public int ToiletIndex { get { return this.toiletIndex; } set { this.toiletIndex = value; } }
+
     }
 }
