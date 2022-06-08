@@ -154,6 +154,7 @@ namespace Student_housing
             try
             {
                 fs = new FileStream(filename, FileMode.OpenOrCreate, FileAccess.Write);
+                fs.SetLength(0);
                 sw = new StreamWriter(fs);
                 sw.WriteLine(text);
             }
@@ -166,6 +167,10 @@ namespace Student_housing
                 if (sw != null)
                 {
                     sw.Close();
+                }
+                if (fs != null)
+                {
+                    fs.Close();
                 }
             }
         }
@@ -184,10 +189,14 @@ namespace Student_housing
 
         public void FillComplaintLbx()
         {
-            foreach(Complaint complaint in complaintManager.Complaints)
+            if(complaintManager != null)
             {
-                lbxAllComplaints.Items.Add(complaint.GetInfo());
+                foreach (Complaint complaint in complaintManager.Complaints)
+                {
+                    lbxAllComplaints.Items.Add(complaint.GetInfo());
+                }
             }
+            
         }
 
         public void FillComplaintCbx()
