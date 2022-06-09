@@ -59,6 +59,9 @@
             this.btnUsersAdminTab = new System.Windows.Forms.Button();
             this.buttonPannelAdmin = new System.Windows.Forms.Panel();
             this.pbxLogOut = new System.Windows.Forms.PictureBox();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
             this.tcAdmin.SuspendLayout();
             this.tpAdminUsers.SuspendLayout();
             this.tpAdminComplaints.SuspendLayout();
@@ -84,6 +87,9 @@
             // tpAdminUsers
             // 
             this.tpAdminUsers.BackColor = System.Drawing.Color.Ivory;
+            this.tpAdminUsers.Controls.Add(this.label9);
+            this.tpAdminUsers.Controls.Add(this.label3);
+            this.tpAdminUsers.Controls.Add(this.label19);
             this.tpAdminUsers.Controls.Add(this.textBox2);
             this.tpAdminUsers.Controls.Add(this.textBox1);
             this.tpAdminUsers.Controls.Add(this.button1);
@@ -96,26 +102,32 @@
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(170, 153);
+            this.textBox2.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox2.Location = new System.Drawing.Point(47, 147);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 23);
+            this.textBox2.Size = new System.Drawing.Size(158, 29);
             this.textBox2.TabIndex = 2;
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(170, 115);
+            this.textBox1.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Location = new System.Drawing.Point(47, 92);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 23);
+            this.textBox1.Size = new System.Drawing.Size(158, 29);
             this.textBox1.TabIndex = 1;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(170, 182);
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(171)))), ((int)(((byte)(188)))));
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button1.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.button1.Location = new System.Drawing.Point(47, 182);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.Size = new System.Drawing.Size(158, 42);
             this.button1.TabIndex = 0;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Text = "Create user";
+            this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.btnAddUser_Click);
             // 
             // tpAdminComplaints
@@ -143,12 +155,13 @@
             this.btnSendWarning.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnSendWarning.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSendWarning.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnSendWarning.Location = new System.Drawing.Point(925, 455);
+            this.btnSendWarning.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSendWarning.Location = new System.Drawing.Point(905, 455);
             this.btnSendWarning.Margin = new System.Windows.Forms.Padding(1);
             this.btnSendWarning.Name = "btnSendWarning";
-            this.btnSendWarning.Size = new System.Drawing.Size(175, 53);
+            this.btnSendWarning.Size = new System.Drawing.Size(219, 53);
             this.btnSendWarning.TabIndex = 42;
-            this.btnSendWarning.Text = "Sent a warning to the user";
+            this.btnSendWarning.Text = "Send a warning to the user";
             this.btnSendWarning.UseVisualStyleBackColor = false;
             this.btnSendWarning.Click += new System.EventHandler(this.btnSendWarning_Click);
             // 
@@ -190,10 +203,11 @@
             this.btnRemoveComplaint.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnRemoveComplaint.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnRemoveComplaint.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnRemoveComplaint.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRemoveComplaint.Location = new System.Drawing.Point(166, 455);
             this.btnRemoveComplaint.Margin = new System.Windows.Forms.Padding(1);
             this.btnRemoveComplaint.Name = "btnRemoveComplaint";
-            this.btnRemoveComplaint.Size = new System.Drawing.Size(175, 53);
+            this.btnRemoveComplaint.Size = new System.Drawing.Size(176, 53);
             this.btnRemoveComplaint.TabIndex = 38;
             this.btnRemoveComplaint.Text = "Remove complaint";
             this.btnRemoveComplaint.UseVisualStyleBackColor = false;
@@ -238,6 +252,7 @@
             // 
             // rtxCreateWarning
             // 
+            this.rtxCreateWarning.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rtxCreateWarning.Location = new System.Drawing.Point(798, 155);
             this.rtxCreateWarning.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.rtxCreateWarning.Name = "rtxCreateWarning";
@@ -262,6 +277,7 @@
             this.tpAdminRules.Controls.Add(this.rtbGuidelines);
             this.tpAdminRules.Controls.Add(this.btnSave);
             this.tpAdminRules.Controls.Add(this.rtbRules);
+            this.tpAdminRules.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.tpAdminRules.Location = new System.Drawing.Point(4, 24);
             this.tpAdminRules.Name = "tpAdminRules";
             this.tpAdminRules.Size = new System.Drawing.Size(1242, 528);
@@ -290,6 +306,7 @@
             // 
             // rtbGuidelines
             // 
+            this.rtbGuidelines.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rtbGuidelines.Location = new System.Drawing.Point(708, 36);
             this.rtbGuidelines.Name = "rtbGuidelines";
             this.rtbGuidelines.Size = new System.Drawing.Size(521, 387);
@@ -298,17 +315,20 @@
             // 
             // btnSave
             // 
+            this.btnSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(171)))), ((int)(((byte)(188)))));
+            this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnSave.Font = new System.Drawing.Font("Times New Roman", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSave.Location = new System.Drawing.Point(398, 457);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(467, 53);
             this.btnSave.TabIndex = 3;
             this.btnSave.Text = "SAVE TO FILE";
-            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.UseVisualStyleBackColor = false;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // rtbRules
             // 
+            this.rtbRules.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rtbRules.Location = new System.Drawing.Point(30, 38);
             this.rtbRules.Name = "rtbRules";
             this.rtbRules.Size = new System.Drawing.Size(521, 387);
@@ -411,6 +431,37 @@
             this.pbxLogOut.TabStop = false;
             this.pbxLogOut.Click += new System.EventHandler(this.pbxLogOut_Click);
             // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.Location = new System.Drawing.Point(43, 68);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(88, 21);
+            this.label19.TabIndex = 57;
+            this.label19.Text = "Username:";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(43, 124);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(88, 21);
+            this.label3.TabIndex = 58;
+            this.label3.Text = "Password:";
+            // 
+            // label9
+            // 
+            this.label9.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(1)))), ((int)(((byte)(21)))), ((int)(((byte)(101)))));
+            this.label9.Location = new System.Drawing.Point(41, 9);
+            this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(218, 40);
+            this.label9.TabIndex = 59;
+            this.label9.Text = "User manager";
+            // 
             // ADMIN
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
@@ -476,5 +527,8 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox cbxComplaintUser;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Label label9;
     }
 }

@@ -57,7 +57,7 @@
             // 
             this.label1.Font = new System.Drawing.Font("Times New Roman", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(1)))), ((int)(((byte)(21)))), ((int)(((byte)(101)))));
-            this.label1.Location = new System.Drawing.Point(53, 186);
+            this.label1.Location = new System.Drawing.Point(71, 187);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(416, 85);
             this.label1.TabIndex = 2;
@@ -68,9 +68,9 @@
             this.btLogIn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(171)))), ((int)(((byte)(188)))));
             this.btLogIn.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btLogIn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(1)))), ((int)(((byte)(21)))), ((int)(((byte)(101)))));
-            this.btLogIn.Location = new System.Drawing.Point(63, 469);
+            this.btLogIn.Location = new System.Drawing.Point(81, 448);
             this.btLogIn.Name = "btLogIn";
-            this.btLogIn.Size = new System.Drawing.Size(360, 88);
+            this.btLogIn.Size = new System.Drawing.Size(342, 77);
             this.btLogIn.TabIndex = 3;
             this.btLogIn.Text = "LOGIN";
             this.btLogIn.UseVisualStyleBackColor = false;
@@ -101,10 +101,10 @@
             // pbxUsernameLogin
             // 
             this.pbxUsernameLogin.Image = ((System.Drawing.Image)(resources.GetObject("pbxUsernameLogin.Image")));
-            this.pbxUsernameLogin.Location = new System.Drawing.Point(63, 312);
+            this.pbxUsernameLogin.Location = new System.Drawing.Point(81, 312);
             this.pbxUsernameLogin.Margin = new System.Windows.Forms.Padding(4);
             this.pbxUsernameLogin.Name = "pbxUsernameLogin";
-            this.pbxUsernameLogin.Size = new System.Drawing.Size(63, 53);
+            this.pbxUsernameLogin.Size = new System.Drawing.Size(45, 38);
             this.pbxUsernameLogin.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbxUsernameLogin.TabIndex = 18;
             this.pbxUsernameLogin.TabStop = false;
@@ -112,10 +112,10 @@
             // pbxPasswordLogin
             // 
             this.pbxPasswordLogin.Image = ((System.Drawing.Image)(resources.GetObject("pbxPasswordLogin.Image")));
-            this.pbxPasswordLogin.Location = new System.Drawing.Point(63, 390);
+            this.pbxPasswordLogin.Location = new System.Drawing.Point(81, 390);
             this.pbxPasswordLogin.Margin = new System.Windows.Forms.Padding(4);
             this.pbxPasswordLogin.Name = "pbxPasswordLogin";
-            this.pbxPasswordLogin.Size = new System.Drawing.Size(63, 53);
+            this.pbxPasswordLogin.Size = new System.Drawing.Size(45, 38);
             this.pbxPasswordLogin.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbxPasswordLogin.TabIndex = 19;
             this.pbxPasswordLogin.TabStop = false;
