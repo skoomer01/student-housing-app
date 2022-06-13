@@ -99,19 +99,13 @@ namespace Student_housing
                 fs = new FileStream(filename, FileMode.Open, FileAccess.Read);
                 fs.Seek(0, SeekOrigin.Begin);
                 sr = new StreamReader(fs);
-                string text;
-                while (sr.EndOfStream != true)
+                if(filename == "Rules")
                 {
-                    if(filename == "Rules")
-                    {
-                        text = sr.ReadLine();
-                        rtbRules.Text = rtbRules.Text + text;
-                    }
-                    else
-                    {
-                        text = sr.ReadLine();
-                        rtbGuidelines.Text = rtbGuidelines.Text + text;
-                    }
+                        rtbRules.Text = sr.ReadToEnd();
+                }
+                else
+                {
+                        rtbGuidelines.Text = sr.ReadToEnd();
                 }
             }
             catch(Exception ex)
