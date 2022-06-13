@@ -27,6 +27,10 @@ namespace Student_housing
             this.userManager = userManager;
             this.classesManager = classesManager;
         }
+        public ADMIN()
+        {
+
+        }
         private void ADMIN_Load(object sender, EventArgs e)
         {
             //Design code

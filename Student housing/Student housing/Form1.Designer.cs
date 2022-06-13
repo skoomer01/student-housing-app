@@ -34,10 +34,11 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btLogIn = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.tbxPassword = new System.Windows.Forms.MaskedTextBox();
             this.pbxUsernameLogin = new System.Windows.Forms.PictureBox();
             this.pbxPasswordLogin = new System.Windows.Forms.PictureBox();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.serialPort = new System.IO.Ports.SerialPort(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxUsernameLogin)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxPasswordLogin)).BeginInit();
@@ -50,7 +51,7 @@
             this.tbxUsername.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(1)))), ((int)(((byte)(21)))), ((int)(((byte)(101)))));
             this.tbxUsername.Location = new System.Drawing.Point(133, 312);
             this.tbxUsername.Name = "tbxUsername";
-            this.tbxUsername.Size = new System.Drawing.Size(290, 38);
+            this.tbxUsername.Size = new System.Drawing.Size(290, 46);
             this.tbxUsername.TabIndex = 0;
             // 
             // label1
@@ -94,7 +95,7 @@
             this.tbxPassword.Location = new System.Drawing.Point(133, 390);
             this.tbxPassword.Margin = new System.Windows.Forms.Padding(4);
             this.tbxPassword.Name = "tbxPassword";
-            this.tbxPassword.Size = new System.Drawing.Size(290, 38);
+            this.tbxPassword.Size = new System.Drawing.Size(290, 46);
             this.tbxPassword.TabIndex = 7;
             this.tbxPassword.UseSystemPasswordChar = true;
             // 
@@ -120,9 +121,19 @@
             this.pbxPasswordLogin.TabIndex = 19;
             this.pbxPasswordLogin.TabStop = false;
             // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Interval = 1000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // serialPort
+            // 
+            this.serialPort.PortName = "COM4";
+            // 
             // LOGIN
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Ivory;
             this.ClientSize = new System.Drawing.Size(1412, 711);
@@ -152,10 +163,11 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btLogIn;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.MaskedTextBox tbxPassword;
         private System.Windows.Forms.PictureBox pbxUsernameLogin;
         private System.Windows.Forms.PictureBox pbxPasswordLogin;
+        private System.Windows.Forms.Timer timer1;
+        private System.IO.Ports.SerialPort serialPort;
     }
 }
 

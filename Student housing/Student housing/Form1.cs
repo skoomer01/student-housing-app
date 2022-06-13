@@ -18,14 +18,18 @@ namespace Student_housing
         User currentUser;
         Admin currentAdmin;
         ClassesManager classesManager;
+        List<string> CardIDs = new List<string>();
+        bool isLoggedInAsAdmin = false;
 
 
         //Constructor(s)
         public LOGIN()
         {
             classesManager = new ClassesManager();
-            
+            CardIDs.Add("2458546972");
             InitializeComponent();
+            serialPort.Open();
+            timer1.Start();
         }
 
         public LOGIN(User currentUser, UserManager userManager, ClassesManager classesManager)
@@ -39,6 +43,11 @@ namespace Student_housing
             InitializeComponent();
             this.currentAdmin = currentAdmin;
             this.classesManager = classesManager;
+        }
+
+        private void Form1_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            serialPort.Close();
         }
 
 
@@ -56,9 +65,16 @@ namespace Student_housing
                 Hide();
                 
             }
-            else if (classesManager.UserManager.CheckUserAdmin(username, password) == true)
+            else if (classesManager.UserManager.CheckUserAdmin(username, password) == true )
             {
                 Admin currentAdmin = classesManager.UserManager.getAdmin(username, password);
+                ADMIN adminForm = new ADMIN(classesManager.UserManager, currentAdmin, classesManager);
+                adminForm.Show();
+                Hide();
+            }
+            else if (isLoggedInAsAdmin == true)
+            {
+                Admin currentAdmin = classesManager.UserManager.getAdmin("Admin", "1234");
                 ADMIN adminForm = new ADMIN(classesManager.UserManager, currentAdmin, classesManager);
                 adminForm.Show();
                 Hide();
@@ -67,6 +83,39 @@ namespace Student_housing
                 MessageBox.Show("Incorrect password or username");
 
 
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            if (serialPort.BytesToRead > 0)
+            {
+                string input = serialPort.ReadLine();
+                input = input.Trim();
+                for (int i = 0; i < CardIDs.Count; i++)
+                {
+                    if (input == CardIDs[i])
+                    {
+                        string message = "AccesGranted";
+                        isLoggedInAsAdmin = true;
+                        serialPort.WriteLine(message);
+                        MessageBox.Show($"{message}");
+                        if (isLoggedInAsAdmin == true)
+                        {
+                            Admin currentAdmin = classesManager.UserManager.getAdmin("Admin", "1234");
+                            ADMIN adminForm = new ADMIN(classesManager.UserManager, currentAdmin, classesManager);
+                            adminForm.Show();
+                            Hide();
+                        }
+                    }
+                    else
+                    {
+                        string message = "AccesDenied";
+                        isLoggedInAsAdmin = false;
+                        serialPort.WriteLine(message);
+                        MessageBox.Show($"{message}");
+                    }
+                }
+            }
         }
     }
 }
