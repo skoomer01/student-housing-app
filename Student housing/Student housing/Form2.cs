@@ -853,7 +853,7 @@ namespace Student_housing
         {
             LOGIN loginform = new LOGIN(currentUser, userManager,classesManager);
             loginform.Show();
-            this.Close();
+            this.Hide();
         }
 
     }

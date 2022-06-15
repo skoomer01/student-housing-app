@@ -228,7 +228,7 @@ namespace Student_housing
         {
             LOGIN loginform = new LOGIN(admin, userManager, classesManager);
             loginform.Show();
-            this.Close();
+            this.Hide();
         }
     }
 }

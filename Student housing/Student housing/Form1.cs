@@ -28,7 +28,15 @@ namespace Student_housing
             classesManager = new ClassesManager();
             CardIDs.Add("2458546972");
             InitializeComponent();
-            serialPort.Open();
+            if(serialPort.IsOpen == false)
+            {
+
+            }
+            else
+            {
+                serialPort.Open();
+            }
+            
             timer1.Start();
         }
 
@@ -49,6 +57,8 @@ namespace Student_housing
         {
             serialPort.Close();
         }
+
+
 
 
         private void btLogIn_Click(object sender, EventArgs e)
@@ -87,34 +97,42 @@ namespace Student_housing
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            if (serialPort.BytesToRead > 0)
+            if(serialPort.IsOpen == true)
             {
-                string input = serialPort.ReadLine();
-                input = input.Trim();
-                for (int i = 0; i < CardIDs.Count; i++)
+                if (serialPort.BytesToRead > 0)
                 {
-                    if (input == CardIDs[i])
+                    string input = serialPort.ReadLine();
+                    input = input.Trim();
+                    for (int i = 0; i < CardIDs.Count; i++)
                     {
-                        string message = "AccesGranted";
-                        isLoggedInAsAdmin = true;
-                        serialPort.WriteLine(message);
-                        MessageBox.Show($"{message}");
-                        if (isLoggedInAsAdmin == true)
+                        if (input == CardIDs[i])
                         {
-                            Admin currentAdmin = classesManager.UserManager.getAdmin("Admin", "1234");
-                            ADMIN adminForm = new ADMIN(classesManager.UserManager, currentAdmin, classesManager);
-                            adminForm.Show();
-                            Hide();
+                            string message = "AccesGranted";
+                            isLoggedInAsAdmin = true;
+                            serialPort.WriteLine(message);
+                            MessageBox.Show($"{message}");
+                            if (isLoggedInAsAdmin == true)
+                            {
+                                Admin currentAdmin = classesManager.UserManager.getAdmin("Admin", "1234");
+                                ADMIN adminForm = new ADMIN(classesManager.UserManager, currentAdmin, classesManager);
+                                adminForm.Show();
+                                Hide();
+                            }
+                        }
+                        else
+                        {
+                            string message = "AccesDenied";
+                            isLoggedInAsAdmin = false;
+                            serialPort.WriteLine(message);
+                            MessageBox.Show($"{message}");
                         }
                     }
-                    else
-                    {
-                        string message = "AccesDenied";
-                        isLoggedInAsAdmin = false;
-                        serialPort.WriteLine(message);
-                        MessageBox.Show($"{message}");
-                    }
                 }
+            }
+            else
+            {
+                serialPort.Close();
+                
             }
         }
     }
