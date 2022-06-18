@@ -117,12 +117,6 @@ namespace Student_housing
             user.Password = newPassword;
         }
 
-        public string displayUser(User user)
-        {
-            string s = user.Username + " " + user.Password + " ";
-            return s;
-        }
-
         public bool CheckUser(string username, string password)
         {
             if (users.Count != 0)
@@ -154,6 +148,10 @@ namespace Student_housing
             return false;
         }
 
+        public string GetUserInfo(User u)
+        {
+            return u.Username + " " + u.Password;
+        }
 
     }
 }

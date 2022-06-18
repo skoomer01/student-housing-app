@@ -47,6 +47,7 @@ namespace Student_housing
             FillComplaintCbx();
             ShowVisits();
             FillTechnicalLbx();
+            FillUserData();
         }
 
         #region <User Manager>
@@ -58,6 +59,60 @@ namespace Student_housing
             User newUser = new User(username, password);
             userManager.addUser(newUser);
             classesManager.SerializeObject();
+        }
+
+        public void FillUserData()
+        {
+            lbxAllUsers.Items.Clear();
+            foreach(User u in classesManager.UserManager.GetUsers())
+            {
+                lbxAllUsers.Items.Add(userManager.GetUserInfo(u));
+            }
+        }
+
+        private void btnRemoveUser_Click(object sender, EventArgs e)
+        {
+            int selectedIndex = lbxAllUsers.SelectedIndex;
+            for (int i = 0; i < lbxAllUsers.Items.Count; i++)
+            {
+                if (selectedIndex == i)
+                {
+                    lbxAllUsers.Items.RemoveAt(i);
+                    userManager.removeUser(userManager.getUserByIndex(i));
+                }
+            }
+            classesManager.SerializeObject();
+        }
+
+        private void lbxAllUsers_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int selectedIndex = lbxAllUsers.SelectedIndex;
+            int i = 0;
+            foreach (User user in userManager.GetUsers())
+            {
+                if (selectedIndex == i)
+                {
+                    tbModifyUsername.Text = user.Username;
+                    tbModifyPassword.Text = user.Password;
+                }
+                i++;
+            }
+
+        }
+        private void btnUpdateUser_Click(object sender, EventArgs e)
+        {
+            int selectedIndex = lbxAllUsers.SelectedIndex;
+            int i = 0;
+            foreach (User user in userManager.GetUsers())
+            {
+                if (selectedIndex == i)
+                {
+                    userManager.modifyUser(user, tbModifyUsername.Text, tbModifyPassword.Text);
+                }
+                i++;
+            }
+            classesManager.SerializeObject();
+            FillUserData();
         }
 
         #endregion <User Manager>

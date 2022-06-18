@@ -31,6 +31,18 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ADMIN));
             this.tcAdmin = new System.Windows.Forms.TabControl();
             this.tpAdminUsers = new System.Windows.Forms.TabPage();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.btnRemoveUser = new System.Windows.Forms.Button();
+            this.btnUpdateUser = new System.Windows.Forms.Button();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.tbModifyPassword = new System.Windows.Forms.TextBox();
+            this.tbModifyUsername = new System.Windows.Forms.TextBox();
+            this.lbxAllUsers = new System.Windows.Forms.ListBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
@@ -75,18 +87,6 @@
             this.btnUsersAdminTab = new System.Windows.Forms.Button();
             this.buttonPannelAdmin = new System.Windows.Forms.Panel();
             this.pbxLogOut = new System.Windows.Forms.PictureBox();
-            this.lbxAllUsers = new System.Windows.Forms.ListBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
             this.tcAdmin.SuspendLayout();
             this.tpAdminUsers.SuspendLayout();
             this.tpAdminComplaints.SuspendLayout();
@@ -115,15 +115,15 @@
             this.tpAdminUsers.BackColor = System.Drawing.Color.Ivory;
             this.tpAdminUsers.Controls.Add(this.label13);
             this.tpAdminUsers.Controls.Add(this.label15);
-            this.tpAdminUsers.Controls.Add(this.button3);
-            this.tpAdminUsers.Controls.Add(this.button2);
+            this.tpAdminUsers.Controls.Add(this.btnRemoveUser);
+            this.tpAdminUsers.Controls.Add(this.btnUpdateUser);
             this.tpAdminUsers.Controls.Add(this.label12);
             this.tpAdminUsers.Controls.Add(this.label7);
             this.tpAdminUsers.Controls.Add(this.label11);
             this.tpAdminUsers.Controls.Add(this.label10);
             this.tpAdminUsers.Controls.Add(this.label8);
-            this.tpAdminUsers.Controls.Add(this.textBox4);
-            this.tpAdminUsers.Controls.Add(this.textBox3);
+            this.tpAdminUsers.Controls.Add(this.tbModifyPassword);
+            this.tpAdminUsers.Controls.Add(this.tbModifyUsername);
             this.tpAdminUsers.Controls.Add(this.lbxAllUsers);
             this.tpAdminUsers.Controls.Add(this.label9);
             this.tpAdminUsers.Controls.Add(this.label3);
@@ -131,12 +131,144 @@
             this.tpAdminUsers.Controls.Add(this.textBox2);
             this.tpAdminUsers.Controls.Add(this.textBox1);
             this.tpAdminUsers.Controls.Add(this.button1);
-            this.tpAdminUsers.Location = new System.Drawing.Point(4, 24);
+            this.tpAdminUsers.Location = new System.Drawing.Point(4, 31);
             this.tpAdminUsers.Name = "tpAdminUsers";
             this.tpAdminUsers.Padding = new System.Windows.Forms.Padding(3);
-            this.tpAdminUsers.Size = new System.Drawing.Size(1242, 528);
+            this.tpAdminUsers.Size = new System.Drawing.Size(1242, 521);
             this.tpAdminUsers.TabIndex = 0;
             this.tpAdminUsers.Text = "Users";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(32, 116);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(375, 99);
+            this.label13.TabIndex = 76;
+            this.label13.Text = "Create a new user by adding the \r\nneccesary creitentials in \r\nthe text boxes:\r\n";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(308, 122);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(363, 66);
+            this.label15.TabIndex = 75;
+            this.label15.Text = "Select a user from the right box\r\n to change its creditentials:";
+            // 
+            // btnRemoveUser
+            // 
+            this.btnRemoveUser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(171)))), ((int)(((byte)(188)))));
+            this.btnRemoveUser.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnRemoveUser.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRemoveUser.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnRemoveUser.Location = new System.Drawing.Point(595, 463);
+            this.btnRemoveUser.Name = "btnRemoveUser";
+            this.btnRemoveUser.Size = new System.Drawing.Size(417, 42);
+            this.btnRemoveUser.TabIndex = 74;
+            this.btnRemoveUser.Text = "Remove the selected user";
+            this.btnRemoveUser.UseVisualStyleBackColor = false;
+            this.btnRemoveUser.Click += new System.EventHandler(this.btnRemoveUser_Click);
+            // 
+            // btnUpdateUser
+            // 
+            this.btnUpdateUser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(171)))), ((int)(((byte)(188)))));
+            this.btnUpdateUser.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnUpdateUser.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpdateUser.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnUpdateUser.Location = new System.Drawing.Point(312, 335);
+            this.btnUpdateUser.Name = "btnUpdateUser";
+            this.btnUpdateUser.Size = new System.Drawing.Size(158, 42);
+            this.btnUpdateUser.TabIndex = 73;
+            this.btnUpdateUser.Text = "Update a user";
+            this.btnUpdateUser.UseVisualStyleBackColor = false;
+            this.btnUpdateUser.Click += new System.EventHandler(this.btnUpdateUser_Click);
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(308, 263);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(129, 33);
+            this.label12.TabIndex = 70;
+            this.label12.Text = "Password:";
+            // 
+            // label7
+            // 
+            this.label7.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(1)))), ((int)(((byte)(21)))), ((int)(((byte)(101)))));
+            this.label7.Location = new System.Drawing.Point(589, 76);
+            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(218, 40);
+            this.label7.TabIndex = 69;
+            this.label7.Text = "View all users";
+            // 
+            // label11
+            // 
+            this.label11.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(1)))), ((int)(((byte)(21)))), ((int)(((byte)(101)))));
+            this.label11.Location = new System.Drawing.Point(306, 76);
+            this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(218, 40);
+            this.label11.TabIndex = 68;
+            this.label11.Text = "Update a user";
+            // 
+            // label10
+            // 
+            this.label10.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(1)))), ((int)(((byte)(21)))), ((int)(((byte)(101)))));
+            this.label10.Location = new System.Drawing.Point(21, 76);
+            this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(218, 40);
+            this.label10.TabIndex = 67;
+            this.label10.Text = "Create a user";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(308, 204);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(132, 33);
+            this.label8.TabIndex = 66;
+            this.label8.Text = "Username:";
+            // 
+            // tbModifyPassword
+            // 
+            this.tbModifyPassword.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbModifyPassword.Location = new System.Drawing.Point(312, 287);
+            this.tbModifyPassword.Name = "tbModifyPassword";
+            this.tbModifyPassword.Size = new System.Drawing.Size(158, 40);
+            this.tbModifyPassword.TabIndex = 63;
+            // 
+            // tbModifyUsername
+            // 
+            this.tbModifyUsername.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbModifyUsername.Location = new System.Drawing.Point(312, 231);
+            this.tbModifyUsername.Name = "tbModifyUsername";
+            this.tbModifyUsername.Size = new System.Drawing.Size(158, 40);
+            this.tbModifyUsername.TabIndex = 62;
+            // 
+            // lbxAllUsers
+            // 
+            this.lbxAllUsers.ColumnWidth = 748;
+            this.lbxAllUsers.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbxAllUsers.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(29)))), ((int)(((byte)(44)))));
+            this.lbxAllUsers.FormattingEnabled = true;
+            this.lbxAllUsers.HorizontalScrollbar = true;
+            this.lbxAllUsers.ItemHeight = 33;
+            this.lbxAllUsers.Location = new System.Drawing.Point(595, 119);
+            this.lbxAllUsers.Margin = new System.Windows.Forms.Padding(1);
+            this.lbxAllUsers.Name = "lbxAllUsers";
+            this.lbxAllUsers.Size = new System.Drawing.Size(417, 334);
+            this.lbxAllUsers.TabIndex = 60;
+            this.lbxAllUsers.SelectedIndexChanged += new System.EventHandler(this.lbxAllUsers_SelectedIndexChanged);
             // 
             // label9
             // 
@@ -155,7 +287,7 @@
             this.label3.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(32, 260);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(88, 21);
+            this.label3.Size = new System.Drawing.Size(129, 33);
             this.label3.TabIndex = 58;
             this.label3.Text = "Password:";
             // 
@@ -165,7 +297,7 @@
             this.label19.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label19.Location = new System.Drawing.Point(32, 204);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(88, 21);
+            this.label19.Size = new System.Drawing.Size(132, 33);
             this.label19.TabIndex = 57;
             this.label19.Text = "Username:";
             // 
@@ -174,7 +306,7 @@
             this.textBox2.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox2.Location = new System.Drawing.Point(36, 283);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(158, 29);
+            this.textBox2.Size = new System.Drawing.Size(158, 40);
             this.textBox2.TabIndex = 2;
             // 
             // textBox1
@@ -182,7 +314,7 @@
             this.textBox1.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox1.Location = new System.Drawing.Point(36, 228);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(158, 29);
+            this.textBox1.Size = new System.Drawing.Size(158, 40);
             this.textBox1.TabIndex = 1;
             // 
             // button1
@@ -211,10 +343,10 @@
             this.tpAdminComplaints.Controls.Add(this.lbxAllComplaints);
             this.tpAdminComplaints.Controls.Add(this.lblPlanParty);
             this.tpAdminComplaints.Controls.Add(this.rtxCreateWarning);
-            this.tpAdminComplaints.Location = new System.Drawing.Point(4, 24);
+            this.tpAdminComplaints.Location = new System.Drawing.Point(4, 31);
             this.tpAdminComplaints.Name = "tpAdminComplaints";
             this.tpAdminComplaints.Padding = new System.Windows.Forms.Padding(3);
-            this.tpAdminComplaints.Size = new System.Drawing.Size(1242, 528);
+            this.tpAdminComplaints.Size = new System.Drawing.Size(1242, 521);
             this.tpAdminComplaints.TabIndex = 1;
             this.tpAdminComplaints.Text = "Complaints";
             // 
@@ -260,10 +392,10 @@
             // 
             this.cbxComplaintUser.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbxComplaintUser.FormattingEnabled = true;
-            this.cbxComplaintUser.ItemHeight = 27;
+            this.cbxComplaintUser.ItemHeight = 41;
             this.cbxComplaintUser.Location = new System.Drawing.Point(798, 84);
             this.cbxComplaintUser.Name = "cbxComplaintUser";
-            this.cbxComplaintUser.Size = new System.Drawing.Size(224, 35);
+            this.cbxComplaintUser.Size = new System.Drawing.Size(224, 49);
             this.cbxComplaintUser.TabIndex = 39;
             // 
             // btnRemoveComplaint
@@ -300,12 +432,12 @@
             this.lbxAllComplaints.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(29)))), ((int)(((byte)(44)))));
             this.lbxAllComplaints.FormattingEnabled = true;
             this.lbxAllComplaints.HorizontalScrollbar = true;
-            this.lbxAllComplaints.ItemHeight = 21;
+            this.lbxAllComplaints.ItemHeight = 33;
             this.lbxAllComplaints.Location = new System.Drawing.Point(34, 80);
             this.lbxAllComplaints.Margin = new System.Windows.Forms.Padding(1);
             this.lbxAllComplaints.Name = "lbxAllComplaints";
             this.lbxAllComplaints.ScrollAlwaysVisible = true;
-            this.lbxAllComplaints.Size = new System.Drawing.Size(461, 361);
+            this.lbxAllComplaints.Size = new System.Drawing.Size(461, 334);
             this.lbxAllComplaints.TabIndex = 36;
             // 
             // lblPlanParty
@@ -345,9 +477,9 @@
             this.tpAdminTechnical.Controls.Add(this.label5);
             this.tpAdminTechnical.Controls.Add(this.label4);
             this.tpAdminTechnical.Controls.Add(this.lbxAllTechnicalIssues);
-            this.tpAdminTechnical.Location = new System.Drawing.Point(4, 24);
+            this.tpAdminTechnical.Location = new System.Drawing.Point(4, 31);
             this.tpAdminTechnical.Name = "tpAdminTechnical";
-            this.tpAdminTechnical.Size = new System.Drawing.Size(1242, 528);
+            this.tpAdminTechnical.Size = new System.Drawing.Size(1242, 521);
             this.tpAdminTechnical.TabIndex = 2;
             this.tpAdminTechnical.Text = "Technical Visits";
             // 
@@ -374,11 +506,11 @@
             this.lbxAllScheduledVisits.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(29)))), ((int)(((byte)(44)))));
             this.lbxAllScheduledVisits.FormattingEnabled = true;
             this.lbxAllScheduledVisits.HorizontalScrollbar = true;
-            this.lbxAllScheduledVisits.ItemHeight = 21;
+            this.lbxAllScheduledVisits.ItemHeight = 33;
             this.lbxAllScheduledVisits.Location = new System.Drawing.Point(805, 82);
             this.lbxAllScheduledVisits.Margin = new System.Windows.Forms.Padding(1);
             this.lbxAllScheduledVisits.Name = "lbxAllScheduledVisits";
-            this.lbxAllScheduledVisits.Size = new System.Drawing.Size(417, 361);
+            this.lbxAllScheduledVisits.Size = new System.Drawing.Size(417, 334);
             this.lbxAllScheduledVisits.TabIndex = 48;
             // 
             // btnScheduleVisit
@@ -408,7 +540,7 @@
             this.dudVisitYear.Name = "dudVisitYear";
             this.dudVisitYear.ReadOnly = true;
             this.dudVisitYear.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.dudVisitYear.Size = new System.Drawing.Size(176, 32);
+            this.dudVisitYear.Size = new System.Drawing.Size(176, 44);
             this.dudVisitYear.TabIndex = 46;
             this.dudVisitYear.Text = "2022";
             this.dudVisitYear.Wrap = true;
@@ -433,7 +565,7 @@
             this.dudVisitMonth.Name = "dudVisitMonth";
             this.dudVisitMonth.ReadOnly = true;
             this.dudVisitMonth.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.dudVisitMonth.Size = new System.Drawing.Size(175, 32);
+            this.dudVisitMonth.Size = new System.Drawing.Size(175, 44);
             this.dudVisitMonth.TabIndex = 45;
             this.dudVisitMonth.Text = "1";
             this.dudVisitMonth.Wrap = true;
@@ -477,7 +609,7 @@
             this.dudVisitDay.Name = "dudVisitDay";
             this.dudVisitDay.ReadOnly = true;
             this.dudVisitDay.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.dudVisitDay.Size = new System.Drawing.Size(176, 32);
+            this.dudVisitDay.Size = new System.Drawing.Size(176, 44);
             this.dudVisitDay.TabIndex = 44;
             this.dudVisitDay.Text = "1";
             this.dudVisitDay.Wrap = true;
@@ -560,11 +692,11 @@
             this.lbxAllTechnicalIssues.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(29)))), ((int)(((byte)(44)))));
             this.lbxAllTechnicalIssues.FormattingEnabled = true;
             this.lbxAllTechnicalIssues.HorizontalScrollbar = true;
-            this.lbxAllTechnicalIssues.ItemHeight = 21;
+            this.lbxAllTechnicalIssues.ItemHeight = 33;
             this.lbxAllTechnicalIssues.Location = new System.Drawing.Point(26, 82);
             this.lbxAllTechnicalIssues.Margin = new System.Windows.Forms.Padding(1);
             this.lbxAllTechnicalIssues.Name = "lbxAllTechnicalIssues";
-            this.lbxAllTechnicalIssues.Size = new System.Drawing.Size(417, 361);
+            this.lbxAllTechnicalIssues.Size = new System.Drawing.Size(417, 334);
             this.lbxAllTechnicalIssues.TabIndex = 37;
             // 
             // tpAdminRules
@@ -576,9 +708,9 @@
             this.tpAdminRules.Controls.Add(this.btnSave);
             this.tpAdminRules.Controls.Add(this.rtbRules);
             this.tpAdminRules.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.tpAdminRules.Location = new System.Drawing.Point(4, 24);
+            this.tpAdminRules.Location = new System.Drawing.Point(4, 31);
             this.tpAdminRules.Name = "tpAdminRules";
-            this.tpAdminRules.Size = new System.Drawing.Size(1242, 528);
+            this.tpAdminRules.Size = new System.Drawing.Size(1242, 521);
             this.tpAdminRules.TabIndex = 3;
             this.tpAdminRules.Text = "Rules & Guidelines";
             // 
@@ -588,7 +720,7 @@
             this.lblGuidelines.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblGuidelines.Location = new System.Drawing.Point(901, 2);
             this.lblGuidelines.Name = "lblGuidelines";
-            this.lblGuidelines.Size = new System.Drawing.Size(88, 21);
+            this.lblGuidelines.Size = new System.Drawing.Size(135, 33);
             this.lblGuidelines.TabIndex = 7;
             this.lblGuidelines.Text = "Guidelines";
             // 
@@ -598,7 +730,7 @@
             this.lblRules.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblRules.Location = new System.Drawing.Point(254, 3);
             this.lblRules.Name = "lblRules";
-            this.lblRules.Size = new System.Drawing.Size(52, 21);
+            this.lblRules.Size = new System.Drawing.Size(79, 33);
             this.lblRules.TabIndex = 6;
             this.lblRules.Text = "Rules";
             // 
@@ -729,138 +861,9 @@
             this.pbxLogOut.TabStop = false;
             this.pbxLogOut.Click += new System.EventHandler(this.pbxLogOut_Click);
             // 
-            // lbxAllUsers
-            // 
-            this.lbxAllUsers.ColumnWidth = 748;
-            this.lbxAllUsers.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbxAllUsers.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(29)))), ((int)(((byte)(44)))));
-            this.lbxAllUsers.FormattingEnabled = true;
-            this.lbxAllUsers.HorizontalScrollbar = true;
-            this.lbxAllUsers.ItemHeight = 21;
-            this.lbxAllUsers.Location = new System.Drawing.Point(595, 119);
-            this.lbxAllUsers.Margin = new System.Windows.Forms.Padding(1);
-            this.lbxAllUsers.Name = "lbxAllUsers";
-            this.lbxAllUsers.Size = new System.Drawing.Size(417, 340);
-            this.lbxAllUsers.TabIndex = 60;
-            // 
-            // textBox3
-            // 
-            this.textBox3.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(312, 231);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(158, 29);
-            this.textBox3.TabIndex = 62;
-            // 
-            // textBox4
-            // 
-            this.textBox4.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(312, 287);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(158, 29);
-            this.textBox4.TabIndex = 63;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(308, 204);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(88, 21);
-            this.label8.TabIndex = 66;
-            this.label8.Text = "Username:";
-            // 
-            // label10
-            // 
-            this.label10.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(1)))), ((int)(((byte)(21)))), ((int)(((byte)(101)))));
-            this.label10.Location = new System.Drawing.Point(21, 76);
-            this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(218, 40);
-            this.label10.TabIndex = 67;
-            this.label10.Text = "Create a user";
-            // 
-            // label11
-            // 
-            this.label11.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(1)))), ((int)(((byte)(21)))), ((int)(((byte)(101)))));
-            this.label11.Location = new System.Drawing.Point(306, 76);
-            this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(218, 40);
-            this.label11.TabIndex = 68;
-            this.label11.Text = "Update a user";
-            // 
-            // label7
-            // 
-            this.label7.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(1)))), ((int)(((byte)(21)))), ((int)(((byte)(101)))));
-            this.label7.Location = new System.Drawing.Point(589, 76);
-            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(218, 40);
-            this.label7.TabIndex = 69;
-            this.label7.Text = "View all users";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(308, 263);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(88, 21);
-            this.label12.TabIndex = 70;
-            this.label12.Text = "Password:";
-            // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(171)))), ((int)(((byte)(188)))));
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button2.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button2.Location = new System.Drawing.Point(312, 335);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(158, 42);
-            this.button2.TabIndex = 73;
-            this.button2.Text = "Update a user";
-            this.button2.UseVisualStyleBackColor = false;
-            // 
-            // button3
-            // 
-            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(171)))), ((int)(((byte)(188)))));
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button3.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button3.Location = new System.Drawing.Point(595, 463);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(417, 42);
-            this.button3.TabIndex = 74;
-            this.button3.Text = "Remove the selected user";
-            this.button3.UseVisualStyleBackColor = false;
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(308, 122);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(244, 42);
-            this.label15.TabIndex = 75;
-            this.label15.Text = "Select a user from the right box\r\n to change its creditentials:";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(32, 116);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(253, 63);
-            this.label13.TabIndex = 76;
-            this.label13.Text = "Create a new user by adding the \r\nneccesary creitentials in \r\nthe text boxes:\r\n";
-            // 
             // ADMIN
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Ivory;
             this.ClientSize = new System.Drawing.Size(1412, 711);
@@ -943,14 +946,14 @@
         private System.Windows.Forms.ListBox lbxAllUsers;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnRemoveUser;
+        private System.Windows.Forms.Button btnUpdateUser;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox tbModifyPassword;
+        private System.Windows.Forms.TextBox tbModifyUsername;
     }
 }

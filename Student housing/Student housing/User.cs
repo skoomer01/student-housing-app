@@ -12,16 +12,12 @@ namespace Student_housing
         //instance variables
         private string username;
         private string password;
-        private string firstName;
-        private string lastName;
 
         //constructor
         public User(String username, String password)
         {
             this.username = username;
             this.password = password;
-            this.firstName = "";
-            this.lastName = "";
         }
 
 
@@ -36,18 +32,6 @@ namespace Student_housing
         {
             get { return this.password; }
             set { this.password = value; }
-        }
-
-        public string FirstName
-        {
-            get { return this.firstName; }
-            set { this.firstName = value; }
-        }
-
-        public string LastName
-        {
-            get { return this.lastName; }
-            set { this.lastName = value; }
         }
     }
 }

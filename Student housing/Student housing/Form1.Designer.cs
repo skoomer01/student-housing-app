@@ -51,7 +51,7 @@
             this.tbxUsername.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(1)))), ((int)(((byte)(21)))), ((int)(((byte)(101)))));
             this.tbxUsername.Location = new System.Drawing.Point(133, 312);
             this.tbxUsername.Name = "tbxUsername";
-            this.tbxUsername.Size = new System.Drawing.Size(290, 46);
+            this.tbxUsername.Size = new System.Drawing.Size(290, 53);
             this.tbxUsername.TabIndex = 0;
             // 
             // label1
@@ -95,7 +95,7 @@
             this.tbxPassword.Location = new System.Drawing.Point(133, 390);
             this.tbxPassword.Margin = new System.Windows.Forms.Padding(4);
             this.tbxPassword.Name = "tbxPassword";
-            this.tbxPassword.Size = new System.Drawing.Size(290, 46);
+            this.tbxPassword.Size = new System.Drawing.Size(290, 53);
             this.tbxPassword.TabIndex = 7;
             this.tbxPassword.UseSystemPasswordChar = true;
             // 
@@ -133,7 +133,7 @@
             // 
             // LOGIN
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Ivory;
             this.ClientSize = new System.Drawing.Size(1412, 711);

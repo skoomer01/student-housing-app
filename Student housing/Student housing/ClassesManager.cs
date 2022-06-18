@@ -40,7 +40,7 @@ namespace Student_housing
             BinaryFormatter bf = null;
             try
             {
-                fs = new FileStream("SaveData", FileMode.OpenOrCreate, FileAccess.Write);
+                fs = new FileStream("../../../DataFiles/SaveData", FileMode.OpenOrCreate, FileAccess.Write);
                 bf = new BinaryFormatter();
                 bf.Serialize(fs, this.userManager);
             }

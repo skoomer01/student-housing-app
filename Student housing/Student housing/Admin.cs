@@ -19,10 +19,8 @@ namespace Student_housing
             this.username = username;
             this.password = password;
         }
-        public Admin(string username = "Admin", string password = "1234", bool isLoggedIn = false)
-        {
 
-        }
+
         //properties
         public String Username
         {
