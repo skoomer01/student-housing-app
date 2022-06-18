@@ -49,6 +49,7 @@ namespace Student_housing
             FillTechnicalLbx();
         }
 
+        #region <User Manager>
 
         private void btnAddUser_Click(object sender, EventArgs e)
         {
@@ -58,6 +59,8 @@ namespace Student_housing
             userManager.addUser(newUser);
             classesManager.SerializeObject();
         }
+
+        #endregion <User Manager>
 
         #region <Tab control design>
 
@@ -337,7 +340,5 @@ namespace Student_housing
             loginform.Show();
             this.Hide();
         }
-
-
     }
 }

@@ -20,6 +20,8 @@ namespace Student_housing
         {
             this.username = username;
             this.password = password;
+            this.firstName = "";
+            this.lastName = "";
         }
 
 
@@ -36,20 +38,16 @@ namespace Student_housing
             set { this.password = value; }
         }
 
-        //methods
-        public string GetFirstName()
+        public string FirstName
         {
-            return this.firstName;
-        }
-        public string GetLastName()
-        {
-            return this.lastName;
-
-        }
-        public string GetUsername()
-        {
-            return this.username;
+            get { return this.firstName; }
+            set { this.firstName = value; }
         }
 
+        public string LastName
+        {
+            get { return this.lastName; }
+            set { this.lastName = value; }
+        }
     }
 }

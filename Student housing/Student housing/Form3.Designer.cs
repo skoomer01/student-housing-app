@@ -75,6 +75,18 @@
             this.btnUsersAdminTab = new System.Windows.Forms.Button();
             this.buttonPannelAdmin = new System.Windows.Forms.Panel();
             this.pbxLogOut = new System.Windows.Forms.PictureBox();
+            this.lbxAllUsers = new System.Windows.Forms.ListBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
             this.tcAdmin.SuspendLayout();
             this.tpAdminUsers.SuspendLayout();
             this.tpAdminComplaints.SuspendLayout();
@@ -101,6 +113,18 @@
             // tpAdminUsers
             // 
             this.tpAdminUsers.BackColor = System.Drawing.Color.Ivory;
+            this.tpAdminUsers.Controls.Add(this.label13);
+            this.tpAdminUsers.Controls.Add(this.label15);
+            this.tpAdminUsers.Controls.Add(this.button3);
+            this.tpAdminUsers.Controls.Add(this.button2);
+            this.tpAdminUsers.Controls.Add(this.label12);
+            this.tpAdminUsers.Controls.Add(this.label7);
+            this.tpAdminUsers.Controls.Add(this.label11);
+            this.tpAdminUsers.Controls.Add(this.label10);
+            this.tpAdminUsers.Controls.Add(this.label8);
+            this.tpAdminUsers.Controls.Add(this.textBox4);
+            this.tpAdminUsers.Controls.Add(this.textBox3);
+            this.tpAdminUsers.Controls.Add(this.lbxAllUsers);
             this.tpAdminUsers.Controls.Add(this.label9);
             this.tpAdminUsers.Controls.Add(this.label3);
             this.tpAdminUsers.Controls.Add(this.label19);
@@ -118,7 +142,7 @@
             // 
             this.label9.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(1)))), ((int)(((byte)(21)))), ((int)(((byte)(101)))));
-            this.label9.Location = new System.Drawing.Point(41, 9);
+            this.label9.Location = new System.Drawing.Point(5, 3);
             this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(218, 40);
@@ -129,7 +153,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(43, 124);
+            this.label3.Location = new System.Drawing.Point(32, 260);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(88, 21);
             this.label3.TabIndex = 58;
@@ -139,7 +163,7 @@
             // 
             this.label19.AutoSize = true;
             this.label19.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.Location = new System.Drawing.Point(43, 68);
+            this.label19.Location = new System.Drawing.Point(32, 204);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(88, 21);
             this.label19.TabIndex = 57;
@@ -148,7 +172,7 @@
             // textBox2
             // 
             this.textBox2.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(47, 147);
+            this.textBox2.Location = new System.Drawing.Point(36, 283);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(158, 29);
             this.textBox2.TabIndex = 2;
@@ -156,7 +180,7 @@
             // textBox1
             // 
             this.textBox1.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(47, 92);
+            this.textBox1.Location = new System.Drawing.Point(36, 228);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(158, 29);
             this.textBox1.TabIndex = 1;
@@ -167,7 +191,7 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button1.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button1.Location = new System.Drawing.Point(47, 182);
+            this.button1.Location = new System.Drawing.Point(36, 335);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(158, 42);
             this.button1.TabIndex = 0;
@@ -705,6 +729,135 @@
             this.pbxLogOut.TabStop = false;
             this.pbxLogOut.Click += new System.EventHandler(this.pbxLogOut_Click);
             // 
+            // lbxAllUsers
+            // 
+            this.lbxAllUsers.ColumnWidth = 748;
+            this.lbxAllUsers.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbxAllUsers.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(29)))), ((int)(((byte)(44)))));
+            this.lbxAllUsers.FormattingEnabled = true;
+            this.lbxAllUsers.HorizontalScrollbar = true;
+            this.lbxAllUsers.ItemHeight = 21;
+            this.lbxAllUsers.Location = new System.Drawing.Point(595, 119);
+            this.lbxAllUsers.Margin = new System.Windows.Forms.Padding(1);
+            this.lbxAllUsers.Name = "lbxAllUsers";
+            this.lbxAllUsers.Size = new System.Drawing.Size(417, 340);
+            this.lbxAllUsers.TabIndex = 60;
+            // 
+            // textBox3
+            // 
+            this.textBox3.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox3.Location = new System.Drawing.Point(312, 231);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(158, 29);
+            this.textBox3.TabIndex = 62;
+            // 
+            // textBox4
+            // 
+            this.textBox4.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox4.Location = new System.Drawing.Point(312, 287);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(158, 29);
+            this.textBox4.TabIndex = 63;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(308, 204);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(88, 21);
+            this.label8.TabIndex = 66;
+            this.label8.Text = "Username:";
+            // 
+            // label10
+            // 
+            this.label10.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(1)))), ((int)(((byte)(21)))), ((int)(((byte)(101)))));
+            this.label10.Location = new System.Drawing.Point(21, 76);
+            this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(218, 40);
+            this.label10.TabIndex = 67;
+            this.label10.Text = "Create a user";
+            // 
+            // label11
+            // 
+            this.label11.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(1)))), ((int)(((byte)(21)))), ((int)(((byte)(101)))));
+            this.label11.Location = new System.Drawing.Point(306, 76);
+            this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(218, 40);
+            this.label11.TabIndex = 68;
+            this.label11.Text = "Update a user";
+            // 
+            // label7
+            // 
+            this.label7.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(1)))), ((int)(((byte)(21)))), ((int)(((byte)(101)))));
+            this.label7.Location = new System.Drawing.Point(589, 76);
+            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(218, 40);
+            this.label7.TabIndex = 69;
+            this.label7.Text = "View all users";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(308, 263);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(88, 21);
+            this.label12.TabIndex = 70;
+            this.label12.Text = "Password:";
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(171)))), ((int)(((byte)(188)))));
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button2.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.button2.Location = new System.Drawing.Point(312, 335);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(158, 42);
+            this.button2.TabIndex = 73;
+            this.button2.Text = "Update a user";
+            this.button2.UseVisualStyleBackColor = false;
+            // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(171)))), ((int)(((byte)(188)))));
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button3.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.button3.Location = new System.Drawing.Point(595, 463);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(417, 42);
+            this.button3.TabIndex = 74;
+            this.button3.Text = "Remove the selected user";
+            this.button3.UseVisualStyleBackColor = false;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(308, 122);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(244, 42);
+            this.label15.TabIndex = 75;
+            this.label15.Text = "Select a user from the right box\r\n to change its creditentials:";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(32, 116);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(253, 63);
+            this.label13.TabIndex = 76;
+            this.label13.Text = "Create a new user by adding the \r\nneccesary creitentials in \r\nthe text boxes:\r\n";
+            // 
             // ADMIN
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
@@ -787,5 +940,17 @@
         private System.Windows.Forms.Label lblPartyPlanYear;
         private System.Windows.Forms.Label lblPartyPlanMonth;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.ListBox lbxAllUsers;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox textBox3;
     }
 }

@@ -591,7 +591,6 @@ namespace Student_housing
             txtBoxExpenseTitle.Clear();
             txtBoxTotal.Clear();
             lbExpenseMembers.Items.Clear();
-            expenseMembers.Clear();
         }
 
         //All the buttons for the normal expenses
