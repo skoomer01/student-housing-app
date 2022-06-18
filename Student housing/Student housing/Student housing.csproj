@@ -77,6 +77,8 @@
     <Compile Include="NormalExpenses.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Technical.cs" />
+    <Compile Include="TechnicalManager.cs" />
     <Compile Include="Trash.cs" />
     <Compile Include="User.cs" />
     <Compile Include="UserManager.cs" />

@@ -18,6 +18,7 @@ namespace Student_housing
         ExpenseManager expenseManager;
         NormalExpense normalExpense;
         UserManager userManager;
+        TechnicalManager technicalManager;
 
         public ClassesManager()
         {
@@ -28,6 +29,7 @@ namespace Student_housing
             this.trash = new Trash(userManager);
             this.expenseManager = new ExpenseManager();
             this.normalExpense = new NormalExpense(userManager);
+            this.technicalManager = new TechnicalManager();
             
         }
 
@@ -75,5 +77,6 @@ namespace Student_housing
         public ExpenseManager ExpenseManager { get { return this.expenseManager; } }
         public NormalExpense NormalExpense { get { return this.normalExpense; } }
         public UserManager UserManager { get { return this.userManager; } }
+        public TechnicalManager TechnicalManager { get { return this.technicalManager; } }
     }
 }

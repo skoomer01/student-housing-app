@@ -31,6 +31,9 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ADMIN));
             this.tcAdmin = new System.Windows.Forms.TabControl();
             this.tpAdminUsers = new System.Windows.Forms.TabPage();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
@@ -45,6 +48,19 @@
             this.lblPlanParty = new System.Windows.Forms.Label();
             this.rtxCreateWarning = new System.Windows.Forms.RichTextBox();
             this.tpAdminTechnical = new System.Windows.Forms.TabPage();
+            this.btnRemoveVisit = new System.Windows.Forms.Button();
+            this.lbxAllScheduledVisits = new System.Windows.Forms.ListBox();
+            this.btnScheduleVisit = new System.Windows.Forms.Button();
+            this.dudVisitYear = new System.Windows.Forms.DomainUpDown();
+            this.dudVisitMonth = new System.Windows.Forms.DomainUpDown();
+            this.dudVisitDay = new System.Windows.Forms.DomainUpDown();
+            this.lblPartyPlanYear = new System.Windows.Forms.Label();
+            this.lblPartyPlanMonth = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.btnRemoveIssue = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.lbxAllTechnicalIssues = new System.Windows.Forms.ListBox();
             this.tpAdminRules = new System.Windows.Forms.TabPage();
             this.lblGuidelines = new System.Windows.Forms.Label();
             this.lblRules = new System.Windows.Forms.Label();
@@ -59,12 +75,10 @@
             this.btnUsersAdminTab = new System.Windows.Forms.Button();
             this.buttonPannelAdmin = new System.Windows.Forms.Panel();
             this.pbxLogOut = new System.Windows.Forms.PictureBox();
-            this.label19 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
             this.tcAdmin.SuspendLayout();
             this.tpAdminUsers.SuspendLayout();
             this.tpAdminComplaints.SuspendLayout();
+            this.tpAdminTechnical.SuspendLayout();
             this.tpAdminRules.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbProfile)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxLogOut)).BeginInit();
@@ -99,6 +113,37 @@
             this.tpAdminUsers.Size = new System.Drawing.Size(1242, 528);
             this.tpAdminUsers.TabIndex = 0;
             this.tpAdminUsers.Text = "Users";
+            // 
+            // label9
+            // 
+            this.label9.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(1)))), ((int)(((byte)(21)))), ((int)(((byte)(101)))));
+            this.label9.Location = new System.Drawing.Point(41, 9);
+            this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(218, 40);
+            this.label9.TabIndex = 59;
+            this.label9.Text = "User manager";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(43, 124);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(88, 21);
+            this.label3.TabIndex = 58;
+            this.label3.Text = "Password:";
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.Location = new System.Drawing.Point(43, 68);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(88, 21);
+            this.label19.TabIndex = 57;
+            this.label19.Text = "Username:";
             // 
             // textBox2
             // 
@@ -263,11 +308,240 @@
             // tpAdminTechnical
             // 
             this.tpAdminTechnical.BackColor = System.Drawing.Color.Ivory;
+            this.tpAdminTechnical.Controls.Add(this.btnRemoveVisit);
+            this.tpAdminTechnical.Controls.Add(this.lbxAllScheduledVisits);
+            this.tpAdminTechnical.Controls.Add(this.btnScheduleVisit);
+            this.tpAdminTechnical.Controls.Add(this.dudVisitYear);
+            this.tpAdminTechnical.Controls.Add(this.dudVisitMonth);
+            this.tpAdminTechnical.Controls.Add(this.dudVisitDay);
+            this.tpAdminTechnical.Controls.Add(this.lblPartyPlanYear);
+            this.tpAdminTechnical.Controls.Add(this.lblPartyPlanMonth);
+            this.tpAdminTechnical.Controls.Add(this.label6);
+            this.tpAdminTechnical.Controls.Add(this.btnRemoveIssue);
+            this.tpAdminTechnical.Controls.Add(this.label5);
+            this.tpAdminTechnical.Controls.Add(this.label4);
+            this.tpAdminTechnical.Controls.Add(this.lbxAllTechnicalIssues);
             this.tpAdminTechnical.Location = new System.Drawing.Point(4, 24);
             this.tpAdminTechnical.Name = "tpAdminTechnical";
             this.tpAdminTechnical.Size = new System.Drawing.Size(1242, 528);
             this.tpAdminTechnical.TabIndex = 2;
             this.tpAdminTechnical.Text = "Technical Visits";
+            // 
+            // btnRemoveVisit
+            // 
+            this.btnRemoveVisit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(171)))), ((int)(((byte)(188)))));
+            this.btnRemoveVisit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnRemoveVisit.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnRemoveVisit.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnRemoveVisit.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRemoveVisit.Location = new System.Drawing.Point(932, 460);
+            this.btnRemoveVisit.Margin = new System.Windows.Forms.Padding(1);
+            this.btnRemoveVisit.Name = "btnRemoveVisit";
+            this.btnRemoveVisit.Size = new System.Drawing.Size(176, 53);
+            this.btnRemoveVisit.TabIndex = 49;
+            this.btnRemoveVisit.Text = "Remove a vist";
+            this.btnRemoveVisit.UseVisualStyleBackColor = false;
+            this.btnRemoveVisit.Click += new System.EventHandler(this.btnRemoveVisit_Click);
+            // 
+            // lbxAllScheduledVisits
+            // 
+            this.lbxAllScheduledVisits.ColumnWidth = 748;
+            this.lbxAllScheduledVisits.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbxAllScheduledVisits.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(29)))), ((int)(((byte)(44)))));
+            this.lbxAllScheduledVisits.FormattingEnabled = true;
+            this.lbxAllScheduledVisits.HorizontalScrollbar = true;
+            this.lbxAllScheduledVisits.ItemHeight = 21;
+            this.lbxAllScheduledVisits.Location = new System.Drawing.Point(805, 82);
+            this.lbxAllScheduledVisits.Margin = new System.Windows.Forms.Padding(1);
+            this.lbxAllScheduledVisits.Name = "lbxAllScheduledVisits";
+            this.lbxAllScheduledVisits.Size = new System.Drawing.Size(417, 361);
+            this.lbxAllScheduledVisits.TabIndex = 48;
+            // 
+            // btnScheduleVisit
+            // 
+            this.btnScheduleVisit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(171)))), ((int)(((byte)(188)))));
+            this.btnScheduleVisit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnScheduleVisit.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnScheduleVisit.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnScheduleVisit.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnScheduleVisit.Location = new System.Drawing.Point(542, 460);
+            this.btnScheduleVisit.Margin = new System.Windows.Forms.Padding(1);
+            this.btnScheduleVisit.Name = "btnScheduleVisit";
+            this.btnScheduleVisit.Size = new System.Drawing.Size(176, 53);
+            this.btnScheduleVisit.TabIndex = 47;
+            this.btnScheduleVisit.Text = "Schedule a visit";
+            this.btnScheduleVisit.UseVisualStyleBackColor = false;
+            this.btnScheduleVisit.Click += new System.EventHandler(this.btnScheduleVisit_Click);
+            // 
+            // dudVisitYear
+            // 
+            this.dudVisitYear.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.dudVisitYear.Font = new System.Drawing.Font("Times New Roman", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dudVisitYear.Items.Add("2022");
+            this.dudVisitYear.Items.Add("2023");
+            this.dudVisitYear.Items.Add("2024");
+            this.dudVisitYear.Location = new System.Drawing.Point(542, 308);
+            this.dudVisitYear.Name = "dudVisitYear";
+            this.dudVisitYear.ReadOnly = true;
+            this.dudVisitYear.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.dudVisitYear.Size = new System.Drawing.Size(176, 32);
+            this.dudVisitYear.TabIndex = 46;
+            this.dudVisitYear.Text = "2022";
+            this.dudVisitYear.Wrap = true;
+            // 
+            // dudVisitMonth
+            // 
+            this.dudVisitMonth.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.dudVisitMonth.Font = new System.Drawing.Font("Times New Roman", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dudVisitMonth.Items.Add("1");
+            this.dudVisitMonth.Items.Add("2");
+            this.dudVisitMonth.Items.Add("3");
+            this.dudVisitMonth.Items.Add("4");
+            this.dudVisitMonth.Items.Add("5");
+            this.dudVisitMonth.Items.Add("6");
+            this.dudVisitMonth.Items.Add("7");
+            this.dudVisitMonth.Items.Add("8");
+            this.dudVisitMonth.Items.Add("9");
+            this.dudVisitMonth.Items.Add("10");
+            this.dudVisitMonth.Items.Add("11");
+            this.dudVisitMonth.Items.Add("12");
+            this.dudVisitMonth.Location = new System.Drawing.Point(543, 210);
+            this.dudVisitMonth.Name = "dudVisitMonth";
+            this.dudVisitMonth.ReadOnly = true;
+            this.dudVisitMonth.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.dudVisitMonth.Size = new System.Drawing.Size(175, 32);
+            this.dudVisitMonth.TabIndex = 45;
+            this.dudVisitMonth.Text = "1";
+            this.dudVisitMonth.Wrap = true;
+            // 
+            // dudVisitDay
+            // 
+            this.dudVisitDay.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.dudVisitDay.Font = new System.Drawing.Font("Times New Roman", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dudVisitDay.Items.Add("1");
+            this.dudVisitDay.Items.Add("2");
+            this.dudVisitDay.Items.Add("3");
+            this.dudVisitDay.Items.Add("4");
+            this.dudVisitDay.Items.Add("5");
+            this.dudVisitDay.Items.Add("6");
+            this.dudVisitDay.Items.Add("7");
+            this.dudVisitDay.Items.Add("8");
+            this.dudVisitDay.Items.Add("9");
+            this.dudVisitDay.Items.Add("10");
+            this.dudVisitDay.Items.Add("11");
+            this.dudVisitDay.Items.Add("12");
+            this.dudVisitDay.Items.Add("13");
+            this.dudVisitDay.Items.Add("14");
+            this.dudVisitDay.Items.Add("15");
+            this.dudVisitDay.Items.Add("16");
+            this.dudVisitDay.Items.Add("17");
+            this.dudVisitDay.Items.Add("18");
+            this.dudVisitDay.Items.Add("19");
+            this.dudVisitDay.Items.Add("20");
+            this.dudVisitDay.Items.Add("21");
+            this.dudVisitDay.Items.Add("22");
+            this.dudVisitDay.Items.Add("23");
+            this.dudVisitDay.Items.Add("24");
+            this.dudVisitDay.Items.Add("25");
+            this.dudVisitDay.Items.Add("26");
+            this.dudVisitDay.Items.Add("27");
+            this.dudVisitDay.Items.Add("28");
+            this.dudVisitDay.Items.Add("29");
+            this.dudVisitDay.Items.Add("30");
+            this.dudVisitDay.Items.Add("31");
+            this.dudVisitDay.Location = new System.Drawing.Point(542, 118);
+            this.dudVisitDay.Name = "dudVisitDay";
+            this.dudVisitDay.ReadOnly = true;
+            this.dudVisitDay.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.dudVisitDay.Size = new System.Drawing.Size(176, 32);
+            this.dudVisitDay.TabIndex = 44;
+            this.dudVisitDay.Text = "1";
+            this.dudVisitDay.Wrap = true;
+            // 
+            // lblPartyPlanYear
+            // 
+            this.lblPartyPlanYear.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPartyPlanYear.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(29)))), ((int)(((byte)(44)))));
+            this.lblPartyPlanYear.Location = new System.Drawing.Point(536, 273);
+            this.lblPartyPlanYear.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
+            this.lblPartyPlanYear.Name = "lblPartyPlanYear";
+            this.lblPartyPlanYear.Size = new System.Drawing.Size(125, 26);
+            this.lblPartyPlanYear.TabIndex = 43;
+            this.lblPartyPlanYear.Text = "Select an year:";
+            // 
+            // lblPartyPlanMonth
+            // 
+            this.lblPartyPlanMonth.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPartyPlanMonth.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(29)))), ((int)(((byte)(44)))));
+            this.lblPartyPlanMonth.Location = new System.Drawing.Point(538, 173);
+            this.lblPartyPlanMonth.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
+            this.lblPartyPlanMonth.Name = "lblPartyPlanMonth";
+            this.lblPartyPlanMonth.Size = new System.Drawing.Size(125, 26);
+            this.lblPartyPlanMonth.TabIndex = 42;
+            this.lblPartyPlanMonth.Text = "Select a month:";
+            // 
+            // label6
+            // 
+            this.label6.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(29)))), ((int)(((byte)(44)))));
+            this.label6.Location = new System.Drawing.Point(536, 82);
+            this.label6.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(127, 26);
+            this.label6.TabIndex = 41;
+            this.label6.Text = "Select the day:";
+            // 
+            // btnRemoveIssue
+            // 
+            this.btnRemoveIssue.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(171)))), ((int)(((byte)(188)))));
+            this.btnRemoveIssue.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnRemoveIssue.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnRemoveIssue.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnRemoveIssue.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRemoveIssue.Location = new System.Drawing.Point(140, 460);
+            this.btnRemoveIssue.Margin = new System.Windows.Forms.Padding(1);
+            this.btnRemoveIssue.Name = "btnRemoveIssue";
+            this.btnRemoveIssue.Size = new System.Drawing.Size(176, 53);
+            this.btnRemoveIssue.TabIndex = 40;
+            this.btnRemoveIssue.Text = "Remove issue";
+            this.btnRemoveIssue.UseVisualStyleBackColor = false;
+            this.btnRemoveIssue.Click += new System.EventHandler(this.btnRemoveIssue_Click);
+            // 
+            // label5
+            // 
+            this.label5.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(29)))), ((int)(((byte)(44)))));
+            this.label5.Location = new System.Drawing.Point(22, 55);
+            this.label5.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(209, 26);
+            this.label5.TabIndex = 39;
+            this.label5.Text = "All the isseues sent:";
+            // 
+            // label4
+            // 
+            this.label4.Font = new System.Drawing.Font("Times New Roman", 22F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(1)))), ((int)(((byte)(21)))), ((int)(((byte)(101)))));
+            this.label4.Location = new System.Drawing.Point(1, 9);
+            this.label4.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(442, 40);
+            this.label4.TabIndex = 38;
+            this.label4.Text = "View and schedule technical visits";
+            // 
+            // lbxAllTechnicalIssues
+            // 
+            this.lbxAllTechnicalIssues.ColumnWidth = 748;
+            this.lbxAllTechnicalIssues.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbxAllTechnicalIssues.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(29)))), ((int)(((byte)(44)))));
+            this.lbxAllTechnicalIssues.FormattingEnabled = true;
+            this.lbxAllTechnicalIssues.HorizontalScrollbar = true;
+            this.lbxAllTechnicalIssues.ItemHeight = 21;
+            this.lbxAllTechnicalIssues.Location = new System.Drawing.Point(26, 82);
+            this.lbxAllTechnicalIssues.Margin = new System.Windows.Forms.Padding(1);
+            this.lbxAllTechnicalIssues.Name = "lbxAllTechnicalIssues";
+            this.lbxAllTechnicalIssues.Size = new System.Drawing.Size(417, 361);
+            this.lbxAllTechnicalIssues.TabIndex = 37;
             // 
             // tpAdminRules
             // 
@@ -431,37 +705,6 @@
             this.pbxLogOut.TabStop = false;
             this.pbxLogOut.Click += new System.EventHandler(this.pbxLogOut_Click);
             // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.Location = new System.Drawing.Point(43, 68);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(88, 21);
-            this.label19.TabIndex = 57;
-            this.label19.Text = "Username:";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(43, 124);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(88, 21);
-            this.label3.TabIndex = 58;
-            this.label3.Text = "Password:";
-            // 
-            // label9
-            // 
-            this.label9.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(1)))), ((int)(((byte)(21)))), ((int)(((byte)(101)))));
-            this.label9.Location = new System.Drawing.Point(41, 9);
-            this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(218, 40);
-            this.label9.TabIndex = 59;
-            this.label9.Text = "User manager";
-            // 
             // ADMIN
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
@@ -487,6 +730,7 @@
             this.tpAdminUsers.ResumeLayout(false);
             this.tpAdminUsers.PerformLayout();
             this.tpAdminComplaints.ResumeLayout(false);
+            this.tpAdminTechnical.ResumeLayout(false);
             this.tpAdminRules.ResumeLayout(false);
             this.tpAdminRules.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbProfile)).EndInit();
@@ -530,5 +774,18 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Button btnRemoveIssue;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ListBox lbxAllTechnicalIssues;
+        private System.Windows.Forms.Button btnRemoveVisit;
+        private System.Windows.Forms.ListBox lbxAllScheduledVisits;
+        private System.Windows.Forms.Button btnScheduleVisit;
+        private System.Windows.Forms.DomainUpDown dudVisitYear;
+        private System.Windows.Forms.DomainUpDown dudVisitMonth;
+        private System.Windows.Forms.DomainUpDown dudVisitDay;
+        private System.Windows.Forms.Label lblPartyPlanYear;
+        private System.Windows.Forms.Label lblPartyPlanMonth;
+        private System.Windows.Forms.Label label6;
     }
 }

@@ -45,6 +45,8 @@ namespace Student_housing
             LoadFromFile("Guidelines");
             FillComplaintLbx();
             FillComplaintCbx();
+            ShowVisits();
+            FillTechnicalLbx();
         }
 
 
@@ -192,6 +194,15 @@ namespace Student_housing
                     if (selectedIndex == i)
                     {
                         lbxAllComplaints.Items.RemoveAt(i);
+                        int index = 0;
+                        foreach(Complaint complaint in classesManager.ComplaintManager.Complaints)
+                        {
+                            if(index == i)
+                            {
+                                classesManager.ComplaintManager.RemoveComplaint(complaint);
+                            }
+                            index++;
+                        }
                     }
                 }
             }
@@ -224,11 +235,109 @@ namespace Student_housing
 
         #endregion <Complaints>
 
+        #region <Technical Issues>
+
+        public void FillTechnicalLbx()
+        {
+            if (classesManager.TechnicalManager != null)
+            {
+                foreach (Technical technical in classesManager.TechnicalManager.GetTechnical())
+                {
+                    lbxAllTechnicalIssues.Items.Add(technical.GetTechnicalInfo());
+                }
+            }
+
+        }
+
+        private void btnRemoveIssue_Click(object sender, EventArgs e)
+        {
+            int selectedIndex = lbxAllTechnicalIssues.SelectedIndex;
+            if (selectedIndex != -1)
+            {
+                for (int i = 0; i <= lbxAllTechnicalIssues.Items.Count; i++)
+                {
+                    if (selectedIndex == i)
+                    {
+                        lbxAllTechnicalIssues.Items.RemoveAt(i);
+                        for(int index = 0; index < classesManager.TechnicalManager.GetTechnical().Length;)
+                        {
+                            if (index == i)
+                            {
+                                classesManager.TechnicalManager.RemoveTechnical(index);
+                            }
+                        }
+                    }
+                }
+            }
+            else
+                MessageBox.Show("Please select an issue!");
+        }
+        private void btnScheduleVisit_Click(object sender, EventArgs e)
+        {
+            int day = Convert.ToInt32(dudVisitDay.Text);
+            int month = Convert.ToInt32(dudVisitMonth.Text);
+            int year = Convert.ToInt32(dudVisitYear.Text);
+
+            if (month == 2 && day > 28)
+            {
+                MessageBox.Show("Please select a valid date");
+            }
+            else if ((month == 4 || month == 6 || month == 9 || month == 11) && day > 30)
+            {
+                MessageBox.Show("Please select a valid date");
+            }
+            else
+            {
+                DateTime date = new DateTime(year, month, day);
+                Technical newVisit;
+                newVisit = new Technical(date);
+                classesManager.TechnicalManager.AddTechnicalVisit(newVisit);
+            }
+            ShowVisits();
+        }
+
+        private void ShowVisits()
+        {
+            lbxAllScheduledVisits.Items.Clear();
+            foreach (Technical visit in classesManager.TechnicalManager.GetTechnicalVisits())
+            {
+                lbxAllScheduledVisits.Items.Add(visit.GetReturningTechnicalInfo());
+            }
+        }
+
+        private void btnRemoveVisit_Click(object sender, EventArgs e)
+        {
+            int selectedIndex = lbxAllScheduledVisits.SelectedIndex;
+            if (selectedIndex != -1)
+            {
+                for (int i = 0; i <= lbxAllScheduledVisits.Items.Count; i++)
+                {
+                    if (selectedIndex == i)
+                    {
+                        lbxAllScheduledVisits.Items.RemoveAt(i);
+                        for (int index = 0; index < classesManager.TechnicalManager.GetTechnicalVisits().Length;)
+                        {
+                            if (index == i)
+                            {
+                                classesManager.TechnicalManager.RemoveTechnicalVisit(index);
+                            }
+                        }
+                    }
+                }
+            }
+            else
+                MessageBox.Show("Please select a vist!");
+        }
+
+        #endregion <Technical Issues>
+
         private void pbxLogOut_Click(object sender, EventArgs e)
         {
             LOGIN loginform = new LOGIN(admin, userManager, classesManager);
             loginform.Show();
             this.Hide();
         }
+
+
     }
 }

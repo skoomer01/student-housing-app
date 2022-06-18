@@ -81,6 +81,7 @@ namespace Student_housing
             UpdateAgreementsDgv();
             RefreshComboboxNames();
             FillComplaintCbx();
+            FillVisitsLbx();
         }
 
         #region <Rules and guidelines>
@@ -849,12 +850,37 @@ namespace Student_housing
         }
         #endregion <Complaints>
 
+        #region <Technical Issues>
+        private void btnSendTechnical_Click(object sender, EventArgs e)
+        {
+            string technicalText = rtxTechnicaltext.Text;
+            if (technicalText != "")
+            {
+                Technical technical = new Technical(technicalText, currentUser);
+                classesManager.TechnicalManager.AddTechnical(technical);
+
+                rtxTechnicaltext.Text = "";
+                MessageBox.Show("Issue sent to Administration");
+            }
+        }
+
+        public void FillVisitsLbx()
+        {
+            lbxNextTechnicalVisit.Items.Clear();
+            foreach(Technical visit in classesManager.TechnicalManager.GetTechnicalVisits())
+            {
+                lbxNextTechnicalVisit.Items.Add(visit.GetReturningTechnicalInfo());
+            }
+        }
+
+        #endregion <Technical Issues>
+
+
         private void pbLogOut_Click(object sender, EventArgs e)
         {
             LOGIN loginform = new LOGIN(currentUser, userManager,classesManager);
             loginform.Show();
             this.Hide();
-        }
-
+        } 
     }
 }

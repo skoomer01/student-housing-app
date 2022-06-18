@@ -30,7 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(STUDENT));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pbProfile = new System.Windows.Forms.PictureBox();
             this.lblTitle = new System.Windows.Forms.Label();
             this.pbLogOut = new System.Windows.Forms.PictureBox();
@@ -122,6 +121,7 @@
             this.label22 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
             this.tpEvents = new System.Windows.Forms.TabPage();
+            this.label8 = new System.Windows.Forms.Label();
             this.rtxDescription = new System.Windows.Forms.RichTextBox();
             this.label25 = new System.Windows.Forms.Label();
             this.dudPartyYear = new System.Windows.Forms.DomainUpDown();
@@ -137,11 +137,11 @@
             this.lblPartyPlanDay = new System.Windows.Forms.Label();
             this.lblPlanParty = new System.Windows.Forms.Label();
             this.tpTechnical = new System.Windows.Forms.TabPage();
+            this.lbxNextTechnicalVisit = new System.Windows.Forms.ListBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnSendTechnical = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
-            this.richTextBox3 = new System.Windows.Forms.RichTextBox();
-            this.richTextBox2 = new System.Windows.Forms.RichTextBox();
+            this.rtxTechnicaltext = new System.Windows.Forms.RichTextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.btnRulesTab = new System.Windows.Forms.Button();
@@ -152,7 +152,6 @@
             this.btnTechnicalTab = new System.Windows.Forms.Button();
             this.buttonPannel = new System.Windows.Forms.Panel();
             this.pbNotification = new System.Windows.Forms.PictureBox();
-            this.label8 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pbProfile)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogOut)).BeginInit();
             this.tcStudent.SuspendLayout();
@@ -976,7 +975,7 @@
             // 
             // tbxUserTrash
             // 
-            this.tbxUserTrash.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbxUserTrash.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbxUserTrash.Location = new System.Drawing.Point(398, 202);
             this.tbxUserTrash.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.tbxUserTrash.Multiline = true;
@@ -1116,6 +1115,7 @@
             // 
             // tbNewAgreementDescription
             // 
+            this.tbNewAgreementDescription.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbNewAgreementDescription.Location = new System.Drawing.Point(482, 433);
             this.tbNewAgreementDescription.Margin = new System.Windows.Forms.Padding(4);
             this.tbNewAgreementDescription.Multiline = true;
@@ -1153,14 +1153,6 @@
             this.dgvAgreementsStudent.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(224)))), ((int)(((byte)(226)))));
             this.dgvAgreementsStudent.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgvAgreementsStudent.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvAgreementsStudent.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvAgreementsStudent.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvAgreementsStudent.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ID,
@@ -1332,6 +1324,17 @@
             this.tpEvents.Size = new System.Drawing.Size(1242, 519);
             this.tpEvents.TabIndex = 4;
             this.tpEvents.Text = "EVENTS";
+            // 
+            // label8
+            // 
+            this.label8.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(29)))), ((int)(((byte)(44)))));
+            this.label8.Location = new System.Drawing.Point(590, 18);
+            this.label8.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(185, 26);
+            this.label8.TabIndex = 34;
+            this.label8.Text = "All upcoming events:";
             // 
             // rtxDescription
             // 
@@ -1559,11 +1562,11 @@
             // tpTechnical
             // 
             this.tpTechnical.BackColor = System.Drawing.Color.Ivory;
+            this.tpTechnical.Controls.Add(this.lbxNextTechnicalVisit);
             this.tpTechnical.Controls.Add(this.label7);
-            this.tpTechnical.Controls.Add(this.button1);
+            this.tpTechnical.Controls.Add(this.btnSendTechnical);
             this.tpTechnical.Controls.Add(this.label6);
-            this.tpTechnical.Controls.Add(this.richTextBox3);
-            this.tpTechnical.Controls.Add(this.richTextBox2);
+            this.tpTechnical.Controls.Add(this.rtxTechnicaltext);
             this.tpTechnical.Controls.Add(this.label5);
             this.tpTechnical.Location = new System.Drawing.Point(4, 33);
             this.tpTechnical.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
@@ -1572,6 +1575,20 @@
             this.tpTechnical.Size = new System.Drawing.Size(1242, 519);
             this.tpTechnical.TabIndex = 5;
             this.tpTechnical.Text = "TECHNICAL ISSUE";
+            // 
+            // lbxNextTechnicalVisit
+            // 
+            this.lbxNextTechnicalVisit.ColumnWidth = 748;
+            this.lbxNextTechnicalVisit.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbxNextTechnicalVisit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(29)))), ((int)(((byte)(44)))));
+            this.lbxNextTechnicalVisit.FormattingEnabled = true;
+            this.lbxNextTechnicalVisit.HorizontalScrollbar = true;
+            this.lbxNextTechnicalVisit.ItemHeight = 21;
+            this.lbxNextTechnicalVisit.Location = new System.Drawing.Point(109, 134);
+            this.lbxNextTechnicalVisit.Margin = new System.Windows.Forms.Padding(1);
+            this.lbxNextTechnicalVisit.Name = "lbxNextTechnicalVisit";
+            this.lbxNextTechnicalVisit.Size = new System.Drawing.Size(361, 298);
+            this.lbxNextTechnicalVisit.TabIndex = 47;
             // 
             // label7
             // 
@@ -1584,20 +1601,21 @@
             this.label7.TabIndex = 46;
             this.label7.Text = "Technical issues and visits";
             // 
-            // button1
+            // btnSendTechnical
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(171)))), ((int)(((byte)(188)))));
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button1.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button1.Location = new System.Drawing.Point(764, 437);
-            this.button1.Margin = new System.Windows.Forms.Padding(4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(361, 35);
-            this.button1.TabIndex = 45;
-            this.button1.Text = "Send";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnSendTechnical.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(171)))), ((int)(((byte)(188)))));
+            this.btnSendTechnical.FlatAppearance.BorderSize = 0;
+            this.btnSendTechnical.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnSendTechnical.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSendTechnical.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnSendTechnical.Location = new System.Drawing.Point(764, 437);
+            this.btnSendTechnical.Margin = new System.Windows.Forms.Padding(4);
+            this.btnSendTechnical.Name = "btnSendTechnical";
+            this.btnSendTechnical.Size = new System.Drawing.Size(361, 35);
+            this.btnSendTechnical.TabIndex = 45;
+            this.btnSendTechnical.Text = "Send";
+            this.btnSendTechnical.UseVisualStyleBackColor = false;
+            this.btnSendTechnical.Click += new System.EventHandler(this.btnSendTechnical_Click);
             // 
             // label6
             // 
@@ -1610,23 +1628,14 @@
             this.label6.TabIndex = 44;
             this.label6.Text = "Send your issue:";
             // 
-            // richTextBox3
+            // rtxTechnicaltext
             // 
-            this.richTextBox3.Location = new System.Drawing.Point(764, 138);
-            this.richTextBox3.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
-            this.richTextBox3.Name = "richTextBox3";
-            this.richTextBox3.Size = new System.Drawing.Size(361, 294);
-            this.richTextBox3.TabIndex = 43;
-            this.richTextBox3.Text = "";
-            // 
-            // richTextBox2
-            // 
-            this.richTextBox2.Location = new System.Drawing.Point(103, 138);
-            this.richTextBox2.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
-            this.richTextBox2.Name = "richTextBox2";
-            this.richTextBox2.Size = new System.Drawing.Size(361, 294);
-            this.richTextBox2.TabIndex = 42;
-            this.richTextBox2.Text = "";
+            this.rtxTechnicaltext.Location = new System.Drawing.Point(764, 134);
+            this.rtxTechnicaltext.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.rtxTechnicaltext.Name = "rtxTechnicaltext";
+            this.rtxTechnicaltext.Size = new System.Drawing.Size(361, 298);
+            this.rtxTechnicaltext.TabIndex = 43;
+            this.rtxTechnicaltext.Text = "";
             // 
             // label5
             // 
@@ -1742,17 +1751,6 @@
             this.pbNotification.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbNotification.TabIndex = 6;
             this.pbNotification.TabStop = false;
-            // 
-            // label8
-            // 
-            this.label8.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(29)))), ((int)(((byte)(44)))));
-            this.label8.Location = new System.Drawing.Point(590, 18);
-            this.label8.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(185, 26);
-            this.label8.TabIndex = 34;
-            this.label8.Text = "All upcoming events:";
             // 
             // STUDENT
             // 
@@ -1905,10 +1903,9 @@
         private System.Windows.Forms.Button btnTechnicalTab;
         private System.Windows.Forms.Panel buttonPannel;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnSendTechnical;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.RichTextBox richTextBox3;
-        private System.Windows.Forms.RichTextBox richTextBox2;
+        private System.Windows.Forms.RichTextBox rtxTechnicaltext;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.RichTextBox rtbStudentGuidelines;
         private System.Windows.Forms.RichTextBox rtbStudentRules;
@@ -1930,5 +1927,6 @@
         private System.Windows.Forms.CheckBox cbxItemsToilet;
         private System.Windows.Forms.CheckBox cbxItemsSoap;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.ListBox lbxNextTechnicalVisit;
     }
 }
