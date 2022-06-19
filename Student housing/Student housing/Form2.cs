@@ -19,13 +19,17 @@ namespace Student_housing
         ManageAgreements studentAgreement = ManageAgreements.Instance;
         ClassesManager classesManager;
         private List<User> expenseMembers;
+        bool notificationShowSwitch = false;
+
 
         //Constructor(s)
         public STUDENT()
         {
             InitializeComponent();
             this.currentUser = userManager.getCurrentStudent();
-            
+            lbNotifications.Visible = false;
+            this.Controls.Add(lbNotifications);
+
             UpdateUI();
         }
 
@@ -35,6 +39,10 @@ namespace Student_housing
             this.currentUser = currentUser;
             this.userManager = userManager;
             this.classesManager = classesManager;
+            notificationShowSwitch = false;
+            lbNotifications.Visible = notificationShowSwitch;
+            this.Controls.Add(lbNotifications);
+            UpdateNotificationsListBox();
             UpdateUI();
         }
 
@@ -75,7 +83,8 @@ namespace Student_housing
             LoadFromFile("Guidelines");
         }
 
-        public void UpdateUI()//mai eficient sa le apelezi fara sa creezi metoda update ui?
+        public void UpdateUI()//mai eficient sa le apelezi fara sa creezi metoda update ui?(Bogdan: eficienta castigata e f mica
+                              //dar avantajul cu metoda asta e ca e logica la un loc si poate fi apelata de 2 ori fara sa se repete codu )
         {
             // Show agreements
             UpdateAgreementsDgv();
@@ -409,6 +418,8 @@ namespace Student_housing
             {
                 classesManager.Trash.NextUser();
                 tbxUserTrash.Text = classesManager.Trash.GetUser();
+                classesManager.NotificationManager.AddNotification((currentUser.Username + " has thrown the thrash"));
+                UpdateNotificationsListBox();
             }
             else
             {
@@ -417,18 +428,20 @@ namespace Student_housing
                     classesManager.Trash.NextUser();
                     tbxUserTrash.Text = classesManager.Trash.GetUser();
                     cbx_TrashForSomeoneElse.Checked = false;
+                    classesManager.NotificationManager.AddNotification((currentUser.Username + " has thrown the thrash"));
+                    UpdateNotificationsListBox();
                 }
                 else
                 {
-
+                    //??????????????????????????????????????????????????????????????????????????????????????????????????????????????????????
                 }
             }
         }
 
         private void btn_NotifyTrash_Click(object sender, EventArgs e)
         {
-            User user = new User(Convert.ToString(tbxUserTrash.Text), "");
-            //creates an object for the notification
+            classesManager.NotificationManager.AddNotification(("Hey "+ tbxUserTrash.Text + " you didnt thrown the trash !!!"));
+            UpdateNotificationsListBox();
         }
         #endregion <Trash task>
 
@@ -440,16 +453,21 @@ namespace Student_housing
             {
                 if ((currentUser.Username == tbxCleaningBathroom.Text) || (cbxCleaningForSmnElse.Checked == true))
                 {
+                    classesManager.NotificationManager.AddNotification((currentUser.Username + " has cleaned the bathroom"));
+                    UpdateNotificationsListBox();
                     classesManager.Cleaning.BathIndex++;
                     tbxCleaningBathroom.Text = classesManager.Cleaning.AddUsers(classesManager.Cleaning.BathIndex);
                     lblCleaningBathroom.Text = "Bathroom";
                 }
+                
             }
 
             if (cbxCleaningKitchen.Checked == true)
             {
                 if ((currentUser.Username == tbxCleaningKitchen.Text) || (cbxCleaningForSmnElse.Checked == true))
                 {
+                    classesManager.NotificationManager.AddNotification((currentUser.Username + " has cleaned the kitchen"));
+                    UpdateNotificationsListBox();
                     classesManager.Cleaning.KitchenIndex++;
                     tbxCleaningKitchen.Text = classesManager.Cleaning.AddUsers(classesManager.Cleaning.KitchenIndex);
                     lblCleaningKitchen.Text = "Kitchen";
@@ -458,6 +476,8 @@ namespace Student_housing
 
             if (cbxCleaningToilet.Checked == true)
             {
+                classesManager.NotificationManager.AddNotification((currentUser.Username + " has cleaned the toilet"));
+                UpdateNotificationsListBox();
                 if ((currentUser.Username == tbxCleaningToilet.Text) || (cbxCleaningForSmnElse.Checked == true))
                 {
                     classesManager.Cleaning.ToiletIndex++;
@@ -468,6 +488,8 @@ namespace Student_housing
 
             if (cbxCleaningShared.Checked == true)
             {
+                classesManager.NotificationManager.AddNotification((currentUser.Username + " has cleaned the shared space"));
+                UpdateNotificationsListBox();
                 if ((currentUser.Username == tbxCleaningShared.Text) || (cbxCleaningForSmnElse.Checked == true))
                 {
                     classesManager.Cleaning.SharedIndex++;
@@ -488,15 +510,9 @@ namespace Student_housing
             {
                 if ((currentUser.Username == tbxCleaningBathroom.Text) || (cbxCleaningForSmnElse.Checked == true))
                 {
-                    if (cbxCleaningForSmnElse.Checked == true)
-                    {
-                        //notification to be added
-                    }
-                    else
-                    {
-                        User user = new User(Convert.ToString(tbxCleaningBathroom.Text), "");
-                        //notification to be added
-                    }
+
+                    classesManager.NotificationManager.AddNotification((currentUser.Username + " has started cleaning the bathroom"));
+                    UpdateNotificationsListBox();
 
                     lblCleaningBathroom.Text = "Bathroom (pending)";
 
@@ -507,15 +523,8 @@ namespace Student_housing
             {
                 if ((currentUser.Username == tbxCleaningKitchen.Text) || (cbxCleaningForSmnElse.Checked == true))
                 {
-                    if (cbxCleaningKitchen.Checked == true)
-                    {
-                        //notification to be added
-                    }
-                    else
-                    {
-                        User user = new User(Convert.ToString(tbxCleaningKitchen.Text), "");
-                        //notification to be added
-                    }
+                    classesManager.NotificationManager.AddNotification((currentUser.Username + " has started cleaning the kitchen "));
+                    UpdateNotificationsListBox();
 
                     lblCleaningKitchen.Text = "Kitchen (pending)";
 
@@ -526,15 +535,8 @@ namespace Student_housing
             {
                 if ((currentUser.Username == tbxCleaningToilet.Text) || (cbxCleaningForSmnElse.Checked == true))
                 {
-                    if (cbxCleaningToilet.Checked == true)
-                    {
-                        //notification to be added
-                    }
-                    else
-                    {
-                        User user = new User(Convert.ToString(tbxCleaningToilet.Text), "");
-                        //notification to be added
-                    }
+                    classesManager.NotificationManager.AddNotification((currentUser.Username + " has started cleaning the toilet"));
+                    UpdateNotificationsListBox();
 
                     lblCleaningToilet.Text = "Toilet (pending)";
 
@@ -545,16 +547,8 @@ namespace Student_housing
             {
                 if ((currentUser.Username == tbxCleaningShared.Text) || (cbxCleaningForSmnElse.Checked == true))
                 {
-                    if (cbxCleaningShared.Checked == true)
-                    {
-                        //notification to be added
-                    }
-                    else
-                    {
-                        User user = new User(Convert.ToString(tbxCleaningShared.Text), "");
-                        //notification to be added
-
-                    }
+                    classesManager.NotificationManager.AddNotification((currentUser.Username + " has started cleaning the shared space"));
+                    UpdateNotificationsListBox();
 
                     lblCleaningShared.Text = "Shared Space (pending)";
 
@@ -600,21 +594,29 @@ namespace Student_housing
             {
                 classesManager.NormalExpense.SoapIndex++;
                 tbxSharedItemsSoap.Text = classesManager.NormalExpense.AddTenants(classesManager.NormalExpense.SoapIndex);
+                classesManager.NotificationManager.AddNotification((currentUser.Username + " has bought soap for this week"));
+                UpdateNotificationsListBox();
             }
             if (cbxItemsToilet.Checked == true && currentUser.Username == tbxSharedItemsToilet.Text)
             {
                 classesManager.NormalExpense.PaperIndex++;
                 tbxSharedItemsToilet.Text = classesManager.NormalExpense.AddTenants(classesManager.NormalExpense.PaperIndex);
+                classesManager.NotificationManager.AddNotification((currentUser.Username + " has bought toilet paper for this week"));
+                UpdateNotificationsListBox();
             }
             if (cbxItemsBathroom.Checked == true && currentUser.Username == tbxSharedItemsBath.Text)
             {
                 classesManager.NormalExpense.BathIndex++;
                 tbxSharedItemsBath.Text = classesManager.NormalExpense.AddTenants(classesManager.NormalExpense.BathIndex);
+                classesManager.NotificationManager.AddNotification((currentUser.Username + " has bought bathroom cleaning products for this week"));
+                UpdateNotificationsListBox();
             }
             if (cbxItemsKitchen.Checked == true && currentUser.Username == tbxSharedItemsKitchen.Text)
             {
                 classesManager.NormalExpense.KitchenIndex++;
                 tbxSharedItemsKitchen.Text = classesManager.NormalExpense.AddTenants(classesManager.NormalExpense.KitchenIndex);
+                classesManager.NotificationManager.AddNotification((currentUser.Username + " has bought kitchen cleaning products for this week"));
+                UpdateNotificationsListBox();
             }
         }
 
@@ -632,6 +634,12 @@ namespace Student_housing
         private void btn_BoughtReport_Click(object sender, EventArgs e)
         {
             //notification to be added
+            string value = "";
+            if (InputBox("Report", "Write down what you want to report:", ref value) == DialogResult.OK)
+            {
+                classesManager.NotificationManager.AddNotification((value));
+                UpdateNotificationsListBox();
+            }
         }
 
         private void btnRemoveMember_Click(object sender, EventArgs e)
@@ -880,6 +888,66 @@ namespace Student_housing
             LOGIN loginform = new LOGIN(currentUser, userManager,classesManager);
             loginform.Show();
             this.Hide();
-        } 
+        }
+
+        private void pbNotification_Click(object sender, EventArgs e)
+        {
+            notificationShowSwitch = !notificationShowSwitch;
+            lbNotifications.Visible = notificationShowSwitch;
+            this.Controls.Add(lbNotifications);
+            
+        }
+
+        public void UpdateNotificationsListBox()
+        {
+            lbNotifications.Items.Clear();
+
+            foreach (var notification in classesManager.NotificationManager.GetNotificationList())
+            {
+                lbNotifications.Items.Add(notification);
+            }
+        }
+
+        public static DialogResult InputBox(string title, string promptText, ref string value)
+        {
+            Form form = new Form();
+            Label label = new Label();
+            TextBox textBox = new TextBox();
+            Button buttonOk = new Button();
+            Button buttonCancel = new Button();
+
+            form.Text = title;
+            label.Text = promptText;
+            textBox.Text = value;
+
+            buttonOk.Text = "OK";
+            buttonCancel.Text = "Cancel";
+            buttonOk.DialogResult = DialogResult.OK;
+            buttonCancel.DialogResult = DialogResult.Cancel;
+
+            label.SetBounds(9, 20, 372, 13);
+            textBox.SetBounds(12, 36, 372, 20);
+            buttonOk.SetBounds(228, 72, 75, 23);
+            buttonCancel.SetBounds(309, 72, 75, 23);
+
+            label.AutoSize = true;
+            textBox.Anchor = textBox.Anchor | AnchorStyles.Right;
+            buttonOk.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            buttonCancel.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+
+            form.ClientSize = new Size(396, 107);
+            form.Controls.AddRange(new Control[] { label, textBox, buttonOk, buttonCancel });
+            form.ClientSize = new Size(Math.Max(300, label.Right + 10), form.ClientSize.Height);
+            form.FormBorderStyle = FormBorderStyle.FixedDialog;
+            form.StartPosition = FormStartPosition.CenterScreen;
+            form.MinimizeBox = false;
+            form.MaximizeBox = false;
+            form.AcceptButton = buttonOk;
+            form.CancelButton = buttonCancel;
+
+            DialogResult dialogResult = form.ShowDialog();
+            value = textBox.Text;
+            return dialogResult;
+        }
     }
 }

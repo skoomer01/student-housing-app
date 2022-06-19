@@ -75,6 +75,7 @@
     </Compile>
     <Compile Include="ManageAgreements.cs" />
     <Compile Include="NormalExpenses.cs" />
+    <Compile Include="NotificationManager.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Technical.cs" />

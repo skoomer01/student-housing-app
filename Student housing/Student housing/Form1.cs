@@ -28,11 +28,8 @@ namespace Student_housing
             classesManager = new ClassesManager();
             CardIDs.Add("2458546972");
             InitializeComponent();
-            if(serialPort.IsOpen == false)
-            {
 
-            }
-            else
+            if (serialPort.IsOpen)
             {
                 serialPort.Open();
             }
