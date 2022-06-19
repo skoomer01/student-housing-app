@@ -6,19 +6,22 @@ using System.Threading.Tasks;
 
 namespace Student_housing
 {
-    public class ManageAgreements
+    public class AgreementsManager
     {
         private List<Agreement> agreements = new List<Agreement>();
         private Agreement agreement;
-        private static ManageAgreements instance = null;
+        private static AgreementsManager instance = null;
 
-        public static ManageAgreements Instance
+        private AgreementsManager() { }
+
+        //singleton
+        public static AgreementsManager Instance
         {
             get
             {
                 if (instance == null)
                 {
-                    instance = new ManageAgreements();
+                    instance = new AgreementsManager();
                 }
                 return instance;
             }

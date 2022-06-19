@@ -20,6 +20,7 @@ namespace Student_housing
         UserManager userManager;
         TechnicalManager technicalManager;
         NotificationManager notificationManager;
+        AgreementsManager agreementsManager;
 
         public ClassesManager()
         {
@@ -32,6 +33,7 @@ namespace Student_housing
             this.normalExpense = new NormalExpense(userManager);
             this.technicalManager = new TechnicalManager();
             this.notificationManager = new NotificationManager();
+            this.agreementsManager = AgreementsManager.Instance;
             
         }
 
@@ -81,6 +83,7 @@ namespace Student_housing
         public UserManager UserManager { get { return this.userManager; } }
         public TechnicalManager TechnicalManager { get { return this.technicalManager; } }
         public NotificationManager NotificationManager { get { return this.notificationManager; } }
+        public AgreementsManager AgreementsManager { get { return this.agreementsManager; } }
     }   
 
 }

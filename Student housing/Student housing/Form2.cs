@@ -16,8 +16,9 @@ namespace Student_housing
         //attributes that are objects
         private User currentUser;
         UserManager userManager;
-        ManageAgreements studentAgreement = ManageAgreements.Instance;
+
         ClassesManager classesManager;
+       
         private List<User> expenseMembers;
         bool notificationShowSwitch = false;
 
@@ -132,7 +133,7 @@ namespace Student_housing
         #region <Agreements>
         private void UpdateAgreementsDgv()
         {
-            List<Agreement> agreements = studentAgreement.GetAgreementsList();
+            List<Agreement> agreements = classesManager.AgreementsManager.GetAgreementsList();
             dgvAgreementsStudent.Rows.Clear();
 
             foreach (var agreement in agreements)
@@ -171,15 +172,15 @@ namespace Student_housing
 
                     if (involvedStudents.Contains("& " + currentUser.Username))
                     {
-                        studentAgreement.SendAcceptToPrivateAgreement(selectedAgreementId);
+                        classesManager.AgreementsManager.SendAcceptToPrivateAgreement(selectedAgreementId);
                         UpdateAgreementsDgv();
                         MessageBox.Show("Successfully agreed to the agreement request.");
                     }
                     if (involvedStudents.Contains("& Everyone"))
                     {
-                        int oldVoterAmount = studentAgreement.GetAgreementVoters(selectedAgreementId);
-                        studentAgreement.SendAcceptToPublicAgreement(selectedAgreementId, currentUser.Username);
-                        int newVoterAmount = studentAgreement.GetAgreementVoters(selectedAgreementId);
+                        int oldVoterAmount = classesManager.AgreementsManager.GetAgreementVoters(selectedAgreementId);
+                        classesManager.AgreementsManager.SendAcceptToPublicAgreement(selectedAgreementId, currentUser.Username);
+                        int newVoterAmount = classesManager.AgreementsManager.GetAgreementVoters(selectedAgreementId);
 
                         if (oldVoterAmount < newVoterAmount)
                         {
@@ -239,15 +240,15 @@ namespace Student_housing
 
                     if (involvedStudents.Contains("& " + currentUser.Username))
                     {
-                        studentAgreement.SendRejectToPrivateAgreement(selectedAgreementId);
+                        classesManager.AgreementsManager.SendRejectToPrivateAgreement(selectedAgreementId);
                         UpdateAgreementsDgv();
                         MessageBox.Show("Successfully rejected the agreement request.");
                     }
                     if (involvedStudents.Contains("& Everyone"))
                     {
-                        int oldVoterAmount = studentAgreement.GetAgreementVoters(selectedAgreementId);
-                        studentAgreement.SendRejectToPublicAgreement(selectedAgreementId, currentUser.Username);
-                        int newVoterAmount = studentAgreement.GetAgreementVoters(selectedAgreementId);
+                        int oldVoterAmount = classesManager.AgreementsManager.GetAgreementVoters(selectedAgreementId);
+                        classesManager.AgreementsManager.SendRejectToPublicAgreement(selectedAgreementId, currentUser.Username);
+                        int newVoterAmount = classesManager.AgreementsManager.GetAgreementVoters(selectedAgreementId);
 
                         if (oldVoterAmount < newVoterAmount)
                         {
@@ -286,13 +287,13 @@ namespace Student_housing
                 string status = dgvAgreementsStudent.CurrentRow.Cells[4].Value.ToString();
                 string involvedStudents = dgvAgreementsStudent.CurrentRow.Cells[2].Value.ToString();
                 int selectedAgreementId = Convert.ToInt32(dgvAgreementsStudent.CurrentRow.Cells[0].Value);
-                int voterAmount = studentAgreement.GetAgreementVoters(selectedAgreementId);
+                int voterAmount = classesManager.AgreementsManager.GetAgreementVoters(selectedAgreementId);
 
                 if (status == "Pending" || status == "Rejected" || status.Contains("voters"))
                 {
                     if (involvedStudents.Contains(currentUser.Username + " &") && voterAmount == 0)
                     {
-                        studentAgreement.EditAgreementDescription(selectedAgreementId, tbNewAgreementDescription.Text);
+                        classesManager.AgreementsManager.EditAgreementDescription(selectedAgreementId, tbNewAgreementDescription.Text);
                         MessageBox.Show("Your agreement was successfully edited.");
                         UpdateAgreementsDgv();
                     }
@@ -328,7 +329,7 @@ namespace Student_housing
                 {
                     if (involvedStudents.Contains(currentUser.Username + " &"))
                     {
-                        studentAgreement.RemoveAgreementById(selectedAgreementId);
+                        classesManager.AgreementsManager.RemoveAgreementById(selectedAgreementId);
                         MessageBox.Show("Your agreement was successfully removed.");
                         UpdateAgreementsDgv();
                     }
@@ -339,7 +340,7 @@ namespace Student_housing
                 }
                 if (status.Contains("voters"))
                 {
-                    int percentageAgreed = studentAgreement.GetAgreementVotesPercentage(selectedAgreementId);
+                    int percentageAgreed = classesManager.AgreementsManager.GetAgreementVotesPercentage(selectedAgreementId);
                     if (involvedStudents.Contains(currentUser.Username + " &") && percentageAgreed >= 50)
                     {
                         MessageBox.Show("You can't remove an agreement that has over 50% of the votes.");
@@ -350,7 +351,7 @@ namespace Student_housing
                     }
                     if (involvedStudents.Contains(currentUser.Username + " &") && percentageAgreed <= 49)
                     {
-                        studentAgreement.RemoveAgreementById(selectedAgreementId);
+                        classesManager.AgreementsManager.RemoveAgreementById(selectedAgreementId);
                         MessageBox.Show("Your agreement was successfully removed.");
                         UpdateAgreementsDgv();
                     }
@@ -385,7 +386,7 @@ namespace Student_housing
             {
                 if (otherStudent != currentUser.Username)
                 {
-                    studentAgreement.CreateAgreement(date, involvedStudents, agreementDescription);
+                    classesManager.AgreementsManager.CreateAgreement(date, involvedStudents, agreementDescription);
                     UpdateAgreementsDgv();
                     MessageBox.Show("Successfully added new pending agreement.");
                 }
