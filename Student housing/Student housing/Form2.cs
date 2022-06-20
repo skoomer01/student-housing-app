@@ -748,9 +748,16 @@ namespace Student_housing
 
         private void btnNoEventThisWeek_Click(object sender, EventArgs e)
         {
+            string text = "No events this week!!! Reason:";
+            string value = "";
             Events noEvent = new Events("No event today");
             classesManager.EventManager.AddEvent(noEvent);
-            ShowEvents();
+            
+            if (InputBox("No event this week", "Write down why it should not be an event this week:", ref value) == DialogResult.OK)
+            {
+                classesManager.NotificationManager.AddNotification((text+value));
+                UpdateNotificationsListBox();
+            }
             DisableButtons(100);
         }
         #endregion <Events>

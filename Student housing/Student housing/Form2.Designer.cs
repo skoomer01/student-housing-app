@@ -114,6 +114,8 @@
             this.Description = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tpComplaint = new System.Windows.Forms.TabPage();
+            this.label26 = new System.Windows.Forms.Label();
+            this.lbxYourComplaints = new System.Windows.Forms.ListBox();
             this.rtxComplaintText = new System.Windows.Forms.RichTextBox();
             this.btnPostComplaint = new System.Windows.Forms.Button();
             this.cbxComplaintUser = new System.Windows.Forms.ComboBox();
@@ -153,8 +155,6 @@
             this.buttonPannel = new System.Windows.Forms.Panel();
             this.pbNotification = new System.Windows.Forms.PictureBox();
             this.lbNotifications = new System.Windows.Forms.ListBox();
-            this.lbxYourComplaints = new System.Windows.Forms.ListBox();
-            this.label26 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pbProfile)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogOut)).BeginInit();
             this.tcStudent.SuspendLayout();
@@ -1088,7 +1088,7 @@
             this.btnAgreementSubmit.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAgreementSubmit.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnAgreementSubmit.Location = new System.Drawing.Point(781, 473);
-            this.btnAgreementSubmit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAgreementSubmit.Margin = new System.Windows.Forms.Padding(4);
             this.btnAgreementSubmit.Name = "btnAgreementSubmit";
             this.btnAgreementSubmit.Size = new System.Drawing.Size(103, 36);
             this.btnAgreementSubmit.TabIndex = 33;
@@ -1120,7 +1120,7 @@
             // 
             this.tbNewAgreementDescription.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbNewAgreementDescription.Location = new System.Drawing.Point(482, 433);
-            this.tbNewAgreementDescription.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbNewAgreementDescription.Margin = new System.Windows.Forms.Padding(4);
             this.tbNewAgreementDescription.Multiline = true;
             this.tbNewAgreementDescription.Name = "tbNewAgreementDescription";
             this.tbNewAgreementDescription.Size = new System.Drawing.Size(403, 29);
@@ -1234,6 +1234,30 @@
             this.tpComplaint.TabIndex = 3;
             this.tpComplaint.Text = "COMPLAINTS";
             // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.BackColor = System.Drawing.Color.Ivory;
+            this.label26.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label26.Location = new System.Drawing.Point(674, 168);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(175, 27);
+            this.label26.TabIndex = 42;
+            this.label26.Text = "Your complaints:";
+            // 
+            // lbxYourComplaints
+            // 
+            this.lbxYourComplaints.ColumnWidth = 748;
+            this.lbxYourComplaints.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbxYourComplaints.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(29)))), ((int)(((byte)(44)))));
+            this.lbxYourComplaints.FormattingEnabled = true;
+            this.lbxYourComplaints.ItemHeight = 21;
+            this.lbxYourComplaints.Location = new System.Drawing.Point(853, 168);
+            this.lbxYourComplaints.Margin = new System.Windows.Forms.Padding(1);
+            this.lbxYourComplaints.Name = "lbxYourComplaints";
+            this.lbxYourComplaints.Size = new System.Drawing.Size(313, 235);
+            this.lbxYourComplaints.TabIndex = 41;
+            // 
             // rtxComplaintText
             // 
             this.rtxComplaintText.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1252,7 +1276,7 @@
             this.btnPostComplaint.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPostComplaint.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnPostComplaint.Location = new System.Drawing.Point(399, 374);
-            this.btnPostComplaint.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnPostComplaint.Margin = new System.Windows.Forms.Padding(4);
             this.btnPostComplaint.Name = "btnPostComplaint";
             this.btnPostComplaint.Size = new System.Drawing.Size(110, 35);
             this.btnPostComplaint.TabIndex = 39;
@@ -1481,7 +1505,7 @@
             this.btnTodayEvent.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnTodayEvent.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnTodayEvent.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnTodayEvent.Location = new System.Drawing.Point(397, 118);
+            this.btnTodayEvent.Location = new System.Drawing.Point(397, 117);
             this.btnTodayEvent.Margin = new System.Windows.Forms.Padding(1);
             this.btnTodayEvent.Name = "btnTodayEvent";
             this.btnTodayEvent.Size = new System.Drawing.Size(175, 53);
@@ -1614,7 +1638,7 @@
             this.btnSendTechnical.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSendTechnical.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnSendTechnical.Location = new System.Drawing.Point(764, 437);
-            this.btnSendTechnical.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSendTechnical.Margin = new System.Windows.Forms.Padding(4);
             this.btnSendTechnical.Name = "btnSendTechnical";
             this.btnSendTechnical.Size = new System.Drawing.Size(361, 35);
             this.btnSendTechnical.TabIndex = 45;
@@ -1767,30 +1791,6 @@
             this.lbNotifications.Name = "lbNotifications";
             this.lbNotifications.Size = new System.Drawing.Size(192, 95);
             this.lbNotifications.TabIndex = 13;
-            // 
-            // lbxYourComplaints
-            // 
-            this.lbxYourComplaints.ColumnWidth = 748;
-            this.lbxYourComplaints.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbxYourComplaints.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(29)))), ((int)(((byte)(44)))));
-            this.lbxYourComplaints.FormattingEnabled = true;
-            this.lbxYourComplaints.ItemHeight = 21;
-            this.lbxYourComplaints.Location = new System.Drawing.Point(853, 168);
-            this.lbxYourComplaints.Margin = new System.Windows.Forms.Padding(1);
-            this.lbxYourComplaints.Name = "lbxYourComplaints";
-            this.lbxYourComplaints.Size = new System.Drawing.Size(313, 235);
-            this.lbxYourComplaints.TabIndex = 41;
-            // 
-            // label26
-            // 
-            this.label26.AutoSize = true;
-            this.label26.BackColor = System.Drawing.Color.Ivory;
-            this.label26.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label26.Location = new System.Drawing.Point(674, 168);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(175, 27);
-            this.label26.TabIndex = 42;
-            this.label26.Text = "Your complaints:";
             // 
             // STUDENT
             // 
