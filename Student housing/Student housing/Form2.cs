@@ -81,6 +81,7 @@ namespace Student_housing
             RefreshComboboxNames();
             FillComplaintCbx();
             FillVisitsLbx();
+            FillComplaintsLbx();
         }
 
         #region <Rules and guidelines>
@@ -825,6 +826,18 @@ namespace Student_housing
                 if(user.Username != currentUser.Username)
                 {
                     cbxComplaintUser.Items.Add(user.Username);
+                }
+            }
+        }
+
+        public void FillComplaintsLbx()
+        {
+            List<Complaint> revisedComplaints = classesManager.ComplaintManager.RevisedComplaints;
+            foreach (Complaint complaint in revisedComplaints)
+            {
+                if (currentUser.Username == complaint.ComplaintUser.Username)
+                {
+                    lbxYourComplaints.Items.Add(complaint.GetRevisedInfo());
                 }
             }
         }

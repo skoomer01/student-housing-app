@@ -9,12 +9,12 @@ namespace Student_housing
     public class Complaint
     {
         UserManager userManager;
-        //attributes
+        //Attributes
         private string complaintTxt;
         private User complaintUser;
         private User whosentUser;
 
-        //constructor
+        //Constructor
         public Complaint(User suggestedUser, string complaintTxt, UserManager userManager): this(suggestedUser,complaintTxt,null,userManager)
         {
 
@@ -28,7 +28,11 @@ namespace Student_housing
             this.whosentUser = whosentUser;
         }
 
-        //methods
+        //Properties
+        public User ComplaintUser { get { return this.complaintUser; } }
+
+
+        //Methods
 
         public string GetInfo()
         {

@@ -51,6 +51,5 @@ namespace Student_housing
                 }
             }
         }
-
     }
 }
