@@ -9,11 +9,11 @@ namespace Student_housing
     [Serializable]
     public class Admin
     {
-        //atributes
+        //Atributes
         private string username;
         private string password;
 
-        //constructor
+        //Constructor
         public Admin(string username, string password)
         {
             this.username = username;
@@ -21,7 +21,7 @@ namespace Student_housing
         }
 
 
-        //properties
+        //Properties
         public String Username
         {
             get { return this.username; }

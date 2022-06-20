@@ -55,9 +55,6 @@ namespace Student_housing
             serialPort.Close();
         }
 
-
-
-
         private void btLogIn_Click(object sender, EventArgs e)
         {
             string username = Convert.ToString(tbxUsername.Text);

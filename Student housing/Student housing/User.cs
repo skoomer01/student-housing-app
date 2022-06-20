@@ -9,11 +9,11 @@ namespace Student_housing
     [Serializable]
     public class User
     {
-        //instance variables
+        //Attributes
         private string username;
         private string password;
 
-        //constructor
+        //Constructor
         public User(String username, String password)
         {
             this.username = username;
@@ -21,7 +21,7 @@ namespace Student_housing
         }
 
 
-        //property
+        //Properties
         public string Username
         {
             get { return this.username; }

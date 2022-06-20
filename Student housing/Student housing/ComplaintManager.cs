@@ -8,18 +8,18 @@ namespace Student_housing
 {
     public class ComplaintManager
     {
-        //attributes
+        //Attributes
         private List<Complaint> complaints;
         private List<Complaint> revisedComplaints;
 
-        //constructor
+        //Constructor
         public ComplaintManager()
         {
             this.complaints = new List<Complaint>();
             this.revisedComplaints = new List<Complaint>();
         }
 
-        //properties
+        //Properties
         public List<Complaint> Complaints
         {
             get { return this.complaints; }
@@ -30,7 +30,7 @@ namespace Student_housing
             get { return this.revisedComplaints; }
         }
 
-        //methods
+        //Methods
         public void AddNewComplaint(Complaint complaint)
         {
             complaints.Add(complaint);

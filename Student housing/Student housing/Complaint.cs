@@ -28,19 +28,6 @@ namespace Student_housing
             this.whosentUser = whosentUser;
         }
 
-        
-
-        //properties
-        public string CompalaintTxt
-        {
-            get { return this.complaintTxt; }
-        }
-
-        public User ComplaintUser
-        {
-            get { return this.complaintUser; }
-        }
-
         //methods
 
         public string GetInfo()

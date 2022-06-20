@@ -8,8 +8,10 @@ namespace Student_housing
 {
     public class EventManager
     {
+        //Attribute
         private List<Events> events = new List<Events>();
 
+        //Methods
         public void AddEvent(Events newEvent)
         {
             events.Add(newEvent);

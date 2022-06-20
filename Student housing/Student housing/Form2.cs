@@ -24,15 +24,6 @@ namespace Student_housing
 
 
         //Constructor(s)
-        public STUDENT()
-        {
-            InitializeComponent();
-            this.currentUser = userManager.getCurrentStudent();
-            lbNotifications.Visible = false;
-            this.Controls.Add(lbNotifications);
-
-            UpdateUI();
-        }
 
         public STUDENT(UserManager userManager, User currentUser, ClassesManager classesManager)
         {
@@ -84,10 +75,8 @@ namespace Student_housing
             LoadFromFile("Guidelines");
         }
 
-        public void UpdateUI()//mai eficient sa le apelezi fara sa creezi metoda update ui?(Bogdan: eficienta castigata e f mica
-                              //dar avantajul cu metoda asta e ca e logica la un loc si poate fi apelata de 2 ori fara sa se repete codu )
+        public void UpdateUI()
         {
-            // Show agreements
             UpdateAgreementsDgv();
             RefreshComboboxNames();
             FillComplaintCbx();
@@ -412,7 +401,6 @@ namespace Student_housing
         #endregion <Agreements>
 
         #region <Trash task>
-        //All the buttons for the trash task
         private void btn_TrashThrown_Click(object sender, EventArgs e)
         {
             if (currentUser.Username == tbxUserTrash.Text)
@@ -432,10 +420,6 @@ namespace Student_housing
                     classesManager.NotificationManager.AddNotification((currentUser.Username + " has thrown the thrash"));
                     UpdateNotificationsListBox();
                 }
-                else
-                {
-                    //??????????????????????????????????????????????????????????????????????????????????????????????????????????????????????
-                }
             }
         }
 
@@ -447,7 +431,6 @@ namespace Student_housing
         #endregion <Trash task>
 
         #region <Cleaning task>
-        //All the buttons for the cleaning task
         private void btnTaskComplete_Click(object sender, EventArgs e)
         {
             if (cbxCleaningBathroom.Checked == true)
@@ -559,7 +542,6 @@ namespace Student_housing
         #endregion <Cleaning task>
 
         #region <Normal Expenses>
-        //Methods
 
         private void UpdateListBox()
         {
@@ -588,7 +570,6 @@ namespace Student_housing
             lbExpenseMembers.Items.Clear();
         }
 
-        //All the buttons for the normal expenses
         private void btn_Bought_Click(object sender, EventArgs e)
         {
             if (cbxItemsSoap.Checked == true && currentUser.Username == tbxSharedItemsSoap.Text)
@@ -634,7 +615,6 @@ namespace Student_housing
 
         private void btn_BoughtReport_Click(object sender, EventArgs e)
         {
-            //notification to be added
             string value = "";
             if (InputBox("Report", "Write down what you want to report:", ref value) == DialogResult.OK)
             {
@@ -682,14 +662,6 @@ namespace Student_housing
         private void ShowEvents()
         {
             lbxShowUpcomingEvents.Items.Clear();
-            foreach (Events newEvent in classesManager.EventManager.GetEvents())
-            {
-                lbxShowUpcomingEvents.Items.Add(newEvent.GetEventInfo());
-            }
-        }
-
-        private void AddEvent()
-        {
             foreach (Events newEvent in classesManager.EventManager.GetEvents())
             {
                 lbxShowUpcomingEvents.Items.Add(newEvent.GetEventInfo());
@@ -883,13 +855,8 @@ namespace Student_housing
 
         #endregion <Technical Issues>
 
-
-        private void pbLogOut_Click(object sender, EventArgs e)
-        {
-            LOGIN loginform = new LOGIN(currentUser, userManager,classesManager);
-            loginform.Show();
-            this.Hide();
-        }
+        #region <Notifications>
+        
 
         private void pbNotification_Click(object sender, EventArgs e)
         {
@@ -949,6 +916,14 @@ namespace Student_housing
             DialogResult dialogResult = form.ShowDialog();
             value = textBox.Text;
             return dialogResult;
+        }
+        #endregion
+
+        private void pbLogOut_Click(object sender, EventArgs e)
+        {
+            LOGIN loginform = new LOGIN(currentUser, userManager,classesManager);
+            loginform.Show();
+            this.Hide();
         }
     }
 }

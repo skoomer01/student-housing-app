@@ -9,22 +9,11 @@ namespace Student_housing
     [Serializable]
     public class UserManager
     {
+        //Attributes
         private  List<User> users = new List<User>();
         private  List<Admin> admins = new List<Admin>();
-        private User currentStudent;
 
-        //methods
-
-        public void createUser(string username, string password)
-        {
-            User user = new User(username, password);
-        }
-
-        public void createAdmin(string username, string password)
-        {
-            Admin admin = new Admin(username, password);
-        }
-
+        //Methods
         public User getUser(string username, string password)
         {
             User foundUser = new User(username, password);
@@ -72,11 +61,6 @@ namespace Student_housing
             return this.users.ToArray();
         }
 
-        public Admin[] GetAdmins()
-        {
-            return this.admins.ToArray();
-        }
-
         public Admin getAdmin(string username, string password)
         {
             Admin foundAdmin = new Admin(username, password);
@@ -89,16 +73,6 @@ namespace Student_housing
             }
 
             return null;
-        }
-        public User getCurrentStudent()
-        {
-            return this.currentStudent;
-        }
-
-
-        public void addAdmin(Admin admin)
-        {
-            admins.Add(admin);
         }
 
         public void addUser(User user)

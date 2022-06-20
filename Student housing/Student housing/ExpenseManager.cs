@@ -8,13 +8,17 @@ namespace Student_housing
 {
     public class ExpenseManager
     {
+        //Attribute
         List<NormalExpense> expenses;
 
+
+        //Constructor
         public ExpenseManager()
         {
             expenses = new List<NormalExpense>();
         }
 
+        //Methods
         public void AddExpense(NormalExpense e)
         {
             this.expenses.Add(e);

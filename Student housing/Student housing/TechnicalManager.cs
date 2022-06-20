@@ -8,9 +8,11 @@ namespace Student_housing
 {
     public class TechnicalManager
     {
+        //Attributes
         private List<Technical> technicalIssues = new List<Technical>();
         private List<Technical> technicalVisits = new List<Technical>();
 
+        //Methods
         public void AddTechnical(Technical technical)
         {
             technicalIssues.Add(technical);

@@ -8,11 +8,12 @@ namespace Student_housing
 {
     public class Events
     {
-
+        //Attributes
         private DateTime date;
         private User user;
         private string description;
 
+        //Constructors
         public Events(string description)
         {
             this.description = description;
@@ -33,6 +34,7 @@ namespace Student_housing
             this.description = description;
         }
 
+        //Method
         public string GetEventInfo()
         {
             string message = "Event on: " + this.date.Date.Day +"/"+ this.date.Date.Month +"/" + this.date.Date.Year + " created by: " + this.user.Username + " " + this.description;

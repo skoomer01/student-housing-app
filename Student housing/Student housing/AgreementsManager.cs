@@ -8,13 +8,15 @@ namespace Student_housing
 {
     public class AgreementsManager
     {
+        //Attributes
         private List<Agreement> agreements = new List<Agreement>();
         private Agreement agreement;
         private static AgreementsManager instance = null;
 
+        //Constructor
         private AgreementsManager() { }
 
-        //singleton
+        //Singleton
         public static AgreementsManager Instance
         {
             get
@@ -26,6 +28,8 @@ namespace Student_housing
                 return instance;
             }
         }
+
+        //Methods
         public void CreateAgreement(DateTime currentDate, string involvedStudents, string agreementDesc)
         {
             agreement = new Agreement(currentDate, involvedStudents, agreementDesc);
@@ -42,8 +46,6 @@ namespace Student_housing
             return agreements;
         }
 
-
-        // Remove agreement
         public void RemoveAgreementById(int id)
         {
             for (int i = 0; i < agreements.Count; i++)
@@ -55,8 +57,7 @@ namespace Student_housing
             }
         }
 
-        // Accepting / Rejecting agreements
-        public void SendAcceptToPrivateAgreement(int id) // where involved is currentuser only.
+        public void SendAcceptToPrivateAgreement(int id)
         {
             for (int i = 0; i < agreements.Count; i++)
             {
@@ -67,7 +68,7 @@ namespace Student_housing
             }
         }
 
-        public void SendRejectToPrivateAgreement(int id) // where involved is currentuser only.
+        public void SendRejectToPrivateAgreement(int id)
         {
             for (int i = 0; i < agreements.Count; i++)
             {
@@ -78,7 +79,7 @@ namespace Student_housing
             }
         }
 
-        public void SendAcceptToPublicAgreement(int id, string studentWhoVoted) // where involved is "Everyone".
+        public void SendAcceptToPublicAgreement(int id, string studentWhoVoted)
         {
             for (int i = 0; i < agreements.Count; i++)
             {
@@ -94,7 +95,7 @@ namespace Student_housing
             }
         }
 
-        public void SendRejectToPublicAgreement(int id, string studentWhoVoted) // where involved is "Everyone".
+        public void SendRejectToPublicAgreement(int id, string studentWhoVoted)
         {
             for (int i = 0; i < agreements.Count; i++)
             {
@@ -110,7 +111,6 @@ namespace Student_housing
             }
         }
 
-        // Get amount of voters for checking if voting passed or failed.
         public int GetAgreementVoters(int id)
         {
             int voters = 0;
@@ -124,7 +124,6 @@ namespace Student_housing
             return voters;
         }
 
-        // Get percentage of voters
         public int GetAgreementVotesPercentage(int id)
         {
             int percentage = 0;

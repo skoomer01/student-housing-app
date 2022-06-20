@@ -8,6 +8,7 @@ namespace Student_housing
 {
     public class NormalExpense
     {
+        //Attributes
         UserManager userManager;
         public readonly int expenseID;
         private double total;
@@ -24,6 +25,7 @@ namespace Student_housing
         private int bathIndex = 0;
         private int kitchenIndex = 0;
 
+        //Constructors
         public NormalExpense(UserManager userManager)
         {
             this.userManager = userManager;

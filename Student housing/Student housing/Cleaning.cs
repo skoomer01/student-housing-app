@@ -8,17 +8,20 @@ namespace Student_housing
 {
     public class Cleaning
     {
+        //Attributes
         private UserManager userManager;
         private int bathIndex = 0;
         private int kitchenIndex = 0;
         private int sharedIndex = 0;
         private int toiletIndex = 0;
 
+        //Constructor
         public Cleaning(UserManager userManager)
         {
             this.userManager = userManager;
         }
-        //methods
+
+        //Methods
         public string AddUsers(int index)
         {
             if (index >= userManager.GetUsers().Length)

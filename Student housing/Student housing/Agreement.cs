@@ -8,11 +8,13 @@ namespace Student_housing
 {
     public class Agreement
     {
+
+        //Attributes
         private static int autoIncId = 1;
         private int votes = 0;
         private int voters = 0;
 
-        //constructor
+        //Constructor
         public Agreement(DateTime dateCreated, string studentsInvolved, string agreement)
         {
             this.Id = autoIncId;
@@ -24,31 +26,7 @@ namespace Student_housing
             autoIncId++;
         }
 
-        //constructors for testdata
-        public Agreement(DateTime dateCreated, string studentsInvolved, string agreement, string status)
-        {
-            this.Id = autoIncId;
-            this.DateCreated = dateCreated;
-            this.StudentsInvolved = studentsInvolved;
-            this.AgreementDescription = agreement;
-            this.Status = status;
-            autoIncId++;
-        }
-        public Agreement(DateTime dateCreated, string studentsInvolved, string agreement, string status, int votes, int voters, string voterNames)
-        {
-            this.Id = autoIncId;
-            this.DateCreated = dateCreated;
-            this.StudentsInvolved = studentsInvolved;
-            this.AgreementDescription = agreement;
-            this.Status = status;
-            this.votes = votes;
-            this.voters = voters;
-            this.VoterList = "->" + voterNames;
-            autoIncId++;
-            UpdateStatusVotes();
-        }
-
-        //properties
+        //Properties
         public int Id { get; private set; }
         public DateTime DateCreated { get; private set; }
         public string StudentsInvolved { get; private set; }
@@ -56,7 +34,7 @@ namespace Student_housing
         public string Status { get; private set; }
         public string VoterList { get; private set; }
 
-        //methods
+        //Methods
         public int GetVoters()
         {
             return this.voters;
@@ -98,9 +76,6 @@ namespace Student_housing
         {
             this.AgreementDescription = newDescription;
         }
-
-
-
     }
 }
 

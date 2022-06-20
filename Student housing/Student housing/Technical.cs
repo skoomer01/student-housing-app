@@ -8,10 +8,12 @@ namespace Student_housing
 {
     public class Technical
     {
+        //Attributes
         private string techicalText;
         private User user;
         private Nullable <DateTime> date;
 
+        //Methods
         public Technical(string text, User user)
         {
             this.techicalText = text;

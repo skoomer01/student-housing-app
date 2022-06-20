@@ -8,8 +8,10 @@ namespace Student_housing
 {
     public class NotificationManager
     {
+        //Attribute
         private List<string> notifications = new List<string>();
 
+        //Methods
         public string[] GetNotificationList()
         {
             return notifications.ToArray();

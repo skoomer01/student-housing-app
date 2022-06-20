@@ -66,8 +66,8 @@ namespace Student_housing
 
             }
             catch (Exception ex)
-            { //MessageBox.Show(ex.Message);
-             }
+            {
+            }
             finally
             { if (fs != null) fs.Close(); }
         }
