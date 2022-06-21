@@ -751,8 +751,7 @@ namespace Student_housing
             string text = "No events this week!!! Reason:";
             string value = "";
             Events noEvent = new Events("No event today");
-            classesManager.EventManager.AddEvent(noEvent);
-            
+
             if (InputBox("No event this week", "Write down why it should not be an event this week:", ref value) == DialogResult.OK)
             {
                 classesManager.NotificationManager.AddNotification((text+value));
@@ -796,6 +795,14 @@ namespace Student_housing
             tcStudent.SelectedTab = tpEvents;
             buttonPannel.Height = btnEventsTab.Height;
             buttonPannel.Top = btnEventsTab.Top;
+            foreach (var notification in classesManager.NotificationManager.GetNotificationList())
+            {
+                int allow = (int)DateTime.Now.Ticks - (int)classesManager.NotificationManager.dateOfCreation.Ticks;
+                if (notification.Contains("No events this week!!!") && (allow < 7))
+                {
+                    DisableButtons(100);
+                }
+            }
         }
 
         private void btnTechnicalTab_Click(object sender, EventArgs e)

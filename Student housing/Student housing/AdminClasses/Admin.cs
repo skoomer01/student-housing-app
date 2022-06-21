@@ -22,13 +22,13 @@ namespace Student_housing
 
 
         //Properties
-        public String Username
+        public string Username
         {
             get { return this.username; }
             set { this.username = value; }
         }
 
-        public String Password
+        public string Password
         {
             get { return this.password; }
             set { this.password = value; }

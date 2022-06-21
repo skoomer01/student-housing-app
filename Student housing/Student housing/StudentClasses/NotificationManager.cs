@@ -11,6 +11,7 @@ namespace Student_housing
         //Attribute
         private List<string> notifications = new List<string>();
 
+        public DateTime dateOfCreation { get; private set; }
         //Methods
         public string[] GetNotificationList()
         {
@@ -19,7 +20,8 @@ namespace Student_housing
 
         public void AddNotification(string notification)
         {
-            notifications.Add(notification);
+            dateOfCreation = DateTime.Today;
+            notifications.Add(dateOfCreation.ToString("MM/dd/yyyy") + " " + notification);
         }
     }
 }

@@ -1784,12 +1784,14 @@
             // 
             // lbNotifications
             // 
+            this.lbNotifications.AllowDrop = true;
             this.lbNotifications.BackColor = System.Drawing.Color.Ivory;
             this.lbNotifications.FormattingEnabled = true;
-            this.lbNotifications.Location = new System.Drawing.Point(1014, 25);
+            this.lbNotifications.HorizontalScrollbar = true;
+            this.lbNotifications.Location = new System.Drawing.Point(959, 12);
             this.lbNotifications.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.lbNotifications.Name = "lbNotifications";
-            this.lbNotifications.Size = new System.Drawing.Size(192, 95);
+            this.lbNotifications.Size = new System.Drawing.Size(209, 95);
             this.lbNotifications.TabIndex = 13;
             // 
             // STUDENT
@@ -1797,7 +1799,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Ivory;
-            this.ClientSize = new System.Drawing.Size(1283, 690);
+            this.ClientSize = new System.Drawing.Size(1409, 690);
             this.Controls.Add(this.lbNotifications);
             this.Controls.Add(this.buttonPannel);
             this.Controls.Add(this.btnTechnicalTab);
