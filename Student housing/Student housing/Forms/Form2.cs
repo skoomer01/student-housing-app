@@ -553,7 +553,7 @@ namespace Student_housing
             }
                 foreach (NormalExpense e in classesManager.ExpenseManager.GetExpenses())
                 {
-                    if (e.Members.Contains(currentUser) || !(e.MembersWhoPaid.Contains(currentUser)))
+                    if (e.Members.Contains(currentUser) && e.MembersWhoPaid.Contains(currentUser) == false)
                     {
                         lbExpenses.Items.Add($"{e.Title}, Total: {e.Total}, You owe: {e.AmountToBePaidPerMember}");
                     }
