@@ -41,15 +41,9 @@ namespace Student_housing
             revisedComplaints.Add(complaint);
         }
 
-        public void RemoveComplaint(Complaint complaint)
+        public void RemoveComplaint(int i)
         {
-            foreach (Complaint complaint1 in complaints)
-            {
-                if (complaint == complaint1)
-                {
-                    complaints.Remove(complaint);
-                }
-            }
+            complaints.RemoveAt(i);
         }
     }
 }

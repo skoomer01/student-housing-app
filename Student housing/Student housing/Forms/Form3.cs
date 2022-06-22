@@ -37,8 +37,8 @@ namespace Student_housing
             buttonPannelAdmin.Top = btnUsersAdminTab.Top;
 
             lblTitle.Text = "Welcome back, " + admin.Username + "!";
-            LoadFromFile("Rules");
-            LoadFromFile("Guidelines");
+            LoadFromFile("../../Resources/Rules");
+            LoadFromFile("../../Resources/Guidelines");
             FillComplaintLbx();
             FillComplaintCbx();
             ShowVisits();
@@ -55,6 +55,11 @@ namespace Student_housing
             User newUser = new User(username, password);
             userManager.addUser(newUser);
             classesManager.SerializeObject();
+            lbxAllUsers.Items.Clear();
+            foreach(User u in userManager.GetUsers())
+            {
+                lbxAllUsers.Items.Add(u.Username + " " + u.Password);
+            }
         }
 
         public void FillUserData()
@@ -155,11 +160,11 @@ namespace Student_housing
                 fs = new FileStream(filename, FileMode.Open, FileAccess.Read);
                 fs.Seek(0, SeekOrigin.Begin);
                 sr = new StreamReader(fs);
-                if(filename == "Rules")
+                if(filename == "../../Resources/Rules")
                 {
                         rtbRules.Text = sr.ReadToEnd();
                 }
-                else
+                else if (filename == "../../Resources/Guidelines")
                 {
                         rtbGuidelines.Text = sr.ReadToEnd();
                 }
@@ -210,8 +215,8 @@ namespace Student_housing
         {
             string rules = rtbRules.Text.ToString();
             string guidelines = rtbGuidelines.Text.ToString();
-            WriteToFile("Rules", rules);
-            WriteToFile("Guidelines", guidelines);
+            WriteToFile("../../Resources/Rules", rules);
+            WriteToFile("../../Resources/Guidelines", guidelines);
         }
 
         #endregion
@@ -248,14 +253,12 @@ namespace Student_housing
                     if (selectedIndex == i)
                     {
                         lbxAllComplaints.Items.RemoveAt(i);
-                        int index = 0;
-                        foreach(Complaint complaint in classesManager.ComplaintManager.Complaints)
+                        for (int index = 0; index < classesManager.ComplaintManager.Complaints.Count;)
                         {
-                            if(index == i)
+                            if (index == i)
                             {
-                                classesManager.ComplaintManager.RemoveComplaint(complaint);
+                                classesManager.ComplaintManager.RemoveComplaint(index);
                             }
-                            index++;
                         }
                     }
                 }

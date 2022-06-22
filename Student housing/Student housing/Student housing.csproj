@@ -110,6 +110,9 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="Resources\Guidelines" />
+    <None Include="Resources\Rules" />
+    <None Include="Resources\SaveData" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

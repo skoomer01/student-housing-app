@@ -61,22 +61,18 @@ namespace Student_housing
             tbxSharedItemsBath.Text = classesManager.NormalExpense.AddTenants(classesManager.NormalExpense.BathIndex);
             tbxSharedItemsKitchen.Text = classesManager.NormalExpense.AddTenants(classesManager.NormalExpense.KitchenIndex);
 
-            ShowEvents();
-            UpdateListBox();
-
-            foreach (User u in userManager.GetUsers())
-            {
-                cbExpenseMembers.Items.Add(u.Username);
-            }
-
             lblTitle.Text = "Welcome back, " + currentUser.Username + "!";
 
-            LoadFromFile("Rules");
-            LoadFromFile("Guidelines");
+            expenseMembers = new List<User>();
         }
 
         public void UpdateUI()
         {
+            LoadFromFile("../../Resources/Rules");
+            LoadFromFile("../../Resources/Guidelines");
+            ShowEvents();
+            UpdateListBox();
+            FillExpenseCbx();
             UpdateAgreementsDgv();
             RefreshComboboxNames();
             FillComplaintCbx();
@@ -96,11 +92,11 @@ namespace Student_housing
                 fs = new FileStream(filename, FileMode.Open, FileAccess.Read);
                 fs.Seek(0, SeekOrigin.Begin);
                 sr = new StreamReader(fs);
-                if (filename == "Rules")
+                if (filename == "../../Resources/Rules")
                 {
                     rtbStudentRules.Text = sr.ReadToEnd();
                 }
-                else
+                else if (filename == "../../Resources/Guidelines")
                 {
                     rtbStudentGuidelines.Text = sr.ReadToEnd();
                 }
@@ -547,23 +543,37 @@ namespace Student_housing
         private void UpdateListBox()
         {
             lbExpenses.Items.Clear();
+            lbExpenseMembers.Items.Clear();
             if(expenseMembers != null)
             {
                 foreach (User u in expenseMembers)
                 {
                     lbExpenseMembers.Items.Add(u.Username);
                 }
+            }
                 foreach (NormalExpense e in classesManager.ExpenseManager.GetExpenses())
                 {
-                    if (e.Members.Contains(currentUser) && !e.MembersWhoPaid.Contains(currentUser))
+                    if (e.Members.Contains(currentUser) || !(e.MembersWhoPaid.Contains(currentUser)))
                     {
                         lbExpenses.Items.Add($"{e.Title}, Total: {e.Total}, You owe: {e.AmountToBePaidPerMember}");
                     }
                 }
                 var expenses = classesManager.ExpenseManager.GetExpenses();
-            }
+            
             
         }
+
+        private void FillExpenseCbx()
+        {
+            foreach (User u in userManager.GetUsers())
+            {
+                if (u.Username != currentUser.Username)
+                {
+                    cbExpenseMembers.Items.Add(u.Username);
+                }
+            }
+        }
+
         private void ClearExpenseInputs()
         {
             txtBoxExpenseTitle.Clear();
@@ -605,7 +615,7 @@ namespace Student_housing
 
         private void btnAddMember_Click(object sender, EventArgs e)
         {
-            expenseMembers = new List<User>();
+            
             User[] users = userManager.GetUsers();
             string username = cbExpenseMembers.SelectedItem.ToString();
             User foundUser = userManager.getUser(username);
@@ -645,6 +655,7 @@ namespace Student_housing
             lbExpenseMembers.Items.Clear();
             ClearExpenseInputs();
             UpdateListBox();
+            expenseMembers.Clear();
         }
 
         private void btnPay_Click(object sender, EventArgs e)

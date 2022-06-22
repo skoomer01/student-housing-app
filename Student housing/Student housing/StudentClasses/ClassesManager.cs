@@ -44,7 +44,7 @@ namespace Student_housing
             BinaryFormatter bf = null;
             try
             {
-                fs = new FileStream("../../../DataFiles/SaveData", FileMode.OpenOrCreate, FileAccess.Write);
+                fs = new FileStream("../../Resources/SaveData", FileMode.OpenOrCreate, FileAccess.Write);
                 bf = new BinaryFormatter();
                 bf.Serialize(fs, this.userManager);
             }
@@ -60,7 +60,7 @@ namespace Student_housing
             BinaryFormatter bf = null;
             try
             {
-                fs = new FileStream("../../../DataFiles/SaveData", FileMode.Open, FileAccess.Read);
+                fs = new FileStream("../../Resources/SaveData", FileMode.Open, FileAccess.Read);
                 bf = new BinaryFormatter();
                 this.userManager = (UserManager)bf.Deserialize(fs);
 

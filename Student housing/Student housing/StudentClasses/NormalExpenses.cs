@@ -38,7 +38,7 @@ namespace Student_housing
             this.payee = payee;
             this.title = title;
             this.members = members;
-            this.amountLeftToBePaid = total;
+            this.amountLeftToBePaid = total - ComputeAmountToBePaidPerMember();
             this.amountToBePaidPerMember = ComputeAmountToBePaidPerMember();
             this.membersWhoPaid = new List<User>() { payee };
             this.created_at = DateTime.Now.Date;
